@@ -1,0 +1,11 @@
+# IO.Swagger.Model.HuskyCrate
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **string** | The id of the crate. | [optional] 
+**Name** | **string** | The name of the crate. | [optional] 
+**Type** | **string** | The type of the crate. | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
