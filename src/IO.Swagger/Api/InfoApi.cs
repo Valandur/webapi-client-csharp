@@ -43,6 +43,44 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of Object</returns>
         ApiResponse<Object> GetInfoWithHttpInfo ();
+        /// <summary>
+        /// Server properties
+        /// </summary>
+        /// <remarks>
+        /// Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ServerPropertiesList</returns>
+        ServerPropertiesList GetServerProperties ();
+
+        /// <summary>
+        /// Server properties
+        /// </summary>
+        /// <remarks>
+        /// Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ServerPropertiesList</returns>
+        ApiResponse<ServerPropertiesList> GetServerPropertiesWithHttpInfo ();
+        /// <summary>
+        /// Server stats
+        /// </summary>
+        /// <remarks>
+        /// Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>StatsResponse</returns>
+        StatsResponse GetStats ();
+
+        /// <summary>
+        /// Server stats
+        /// </summary>
+        /// <remarks>
+        /// Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of StatsResponse</returns>
+        ApiResponse<StatsResponse> GetStatsWithHttpInfo ();
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -64,6 +102,44 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (Object)</returns>
         System.Threading.Tasks.Task<ApiResponse<Object>> GetInfoAsyncWithHttpInfo ();
+        /// <summary>
+        /// Server properties
+        /// </summary>
+        /// <remarks>
+        /// Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ServerPropertiesList</returns>
+        System.Threading.Tasks.Task<ServerPropertiesList> GetServerPropertiesAsync ();
+
+        /// <summary>
+        /// Server properties
+        /// </summary>
+        /// <remarks>
+        /// Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ServerPropertiesList)</returns>
+        System.Threading.Tasks.Task<ApiResponse<ServerPropertiesList>> GetServerPropertiesAsyncWithHttpInfo ();
+        /// <summary>
+        /// Server stats
+        /// </summary>
+        /// <remarks>
+        /// Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of StatsResponse</returns>
+        System.Threading.Tasks.Task<StatsResponse> GetStatsAsync ();
+
+        /// <summary>
+        /// Server stats
+        /// </summary>
+        /// <remarks>
+        /// Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (StatsResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<StatsResponse>> GetStatsAsyncWithHttpInfo ();
         #endregion Asynchronous Operations
     }
 
@@ -323,6 +399,304 @@ namespace IO.Swagger.Api
             return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (Object) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Object)));
+        }
+
+        /// <summary>
+        /// Server properties Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ServerPropertiesList</returns>
+        public ServerPropertiesList GetServerProperties ()
+        {
+             ApiResponse<ServerPropertiesList> localVarResponse = GetServerPropertiesWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Server properties Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of ServerPropertiesList</returns>
+        public ApiResponse< ServerPropertiesList > GetServerPropertiesWithHttpInfo ()
+        {
+
+            var localVarPath = "/info/properties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (headerKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("x-webapi-key")))
+            {
+                localVarHeaderParams["x-webapi-key"] = Configuration.GetApiKeyWithPrefix("x-webapi-key");
+            }
+
+            // authentication (queryKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams["key"] = Configuration.GetApiKeyWithPrefix("key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetServerProperties", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ServerPropertiesList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ServerPropertiesList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerPropertiesList)));
+        }
+
+        /// <summary>
+        /// Server properties Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ServerPropertiesList</returns>
+        public async System.Threading.Tasks.Task<ServerPropertiesList> GetServerPropertiesAsync ()
+        {
+             ApiResponse<ServerPropertiesList> localVarResponse = await GetServerPropertiesAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Server properties Get the main server properties (server.properties file)  &gt; Required permission: properties.list 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (ServerPropertiesList)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<ServerPropertiesList>> GetServerPropertiesAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/info/properties";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (headerKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("x-webapi-key")))
+            {
+                localVarHeaderParams["x-webapi-key"] = Configuration.GetApiKeyWithPrefix("x-webapi-key");
+            }
+            // authentication (queryKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams["key"] = Configuration.GetApiKeyWithPrefix("key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetServerProperties", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<ServerPropertiesList>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (ServerPropertiesList) Configuration.ApiClient.Deserialize(localVarResponse, typeof(ServerPropertiesList)));
+        }
+
+        /// <summary>
+        /// Server stats Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>StatsResponse</returns>
+        public StatsResponse GetStats ()
+        {
+             ApiResponse<StatsResponse> localVarResponse = GetStatsWithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Server stats Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of StatsResponse</returns>
+        public ApiResponse< StatsResponse > GetStatsWithHttpInfo ()
+        {
+
+            var localVarPath = "/info/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (headerKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("x-webapi-key")))
+            {
+                localVarHeaderParams["x-webapi-key"] = Configuration.GetApiKeyWithPrefix("x-webapi-key");
+            }
+
+            // authentication (queryKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams["key"] = Configuration.GetApiKeyWithPrefix("key");
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetStats", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StatsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StatsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StatsResponse)));
+        }
+
+        /// <summary>
+        /// Server stats Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of StatsResponse</returns>
+        public async System.Threading.Tasks.Task<StatsResponse> GetStatsAsync ()
+        {
+             ApiResponse<StatsResponse> localVarResponse = await GetStatsAsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Server stats Get statistical information about the server, such as player count, cpu and memory usage over time.  &gt; Required permission: info.stats 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (StatsResponse)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<StatsResponse>> GetStatsAsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/info/stats";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+            // authentication (headerKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("x-webapi-key")))
+            {
+                localVarHeaderParams["x-webapi-key"] = Configuration.GetApiKeyWithPrefix("x-webapi-key");
+            }
+            // authentication (queryKey) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams["key"] = Configuration.GetApiKeyWithPrefix("key");
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetStats", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<StatsResponse>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (StatsResponse) Configuration.ApiClient.Deserialize(localVarResponse, typeof(StatsResponse)));
         }
 
     }

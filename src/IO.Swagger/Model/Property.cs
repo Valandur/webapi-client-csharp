@@ -25,33 +25,35 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// NationsNationResponse
+    /// Property
     /// </summary>
     [DataContract]
-    public partial class NationsNationResponse :  IEquatable<NationsNationResponse>, IValidatableObject
+    public partial class Property :  IEquatable<Property>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NationsNationResponse" /> class.
+        /// Initializes a new instance of the <see cref="Property" /> class.
         /// </summary>
-        /// <param name="Ok">Ok.</param>
-        /// <param name="Nation">Nation.</param>
-        public NationsNationResponse(Ok Ok = default(Ok), NationsNationFull Nation = default(NationsNationFull))
+        /// <param name="Key">The key of the property..</param>
+        /// <param name="Value">The current value of the property..</param>
+        public Property(string Key = default(string), string Value = default(string))
         {
-            this.Ok = Ok;
-            this.Nation = Nation;
+            this.Key = Key;
+            this.Value = Value;
         }
         
         /// <summary>
-        /// Gets or Sets Ok
+        /// The key of the property.
         /// </summary>
-        [DataMember(Name="ok", EmitDefaultValue=false)]
-        public Ok Ok { get; set; }
+        /// <value>The key of the property.</value>
+        [DataMember(Name="key", EmitDefaultValue=false)]
+        public string Key { get; set; }
 
         /// <summary>
-        /// Gets or Sets Nation
+        /// The current value of the property.
         /// </summary>
-        [DataMember(Name="nation", EmitDefaultValue=false)]
-        public NationsNationFull Nation { get; set; }
+        /// <value>The current value of the property.</value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public string Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -60,9 +62,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NationsNationResponse {\n");
-            sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  Nation: ").Append(Nation).Append("\n");
+            sb.Append("class Property {\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -84,15 +86,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as NationsNationResponse);
+            return this.Equals(obj as Property);
         }
 
         /// <summary>
-        /// Returns true if NationsNationResponse instances are equal
+        /// Returns true if Property instances are equal
         /// </summary>
-        /// <param name="other">Instance of NationsNationResponse to be compared</param>
+        /// <param name="other">Instance of Property to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NationsNationResponse other)
+        public bool Equals(Property other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -100,14 +102,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Ok == other.Ok ||
-                    this.Ok != null &&
-                    this.Ok.Equals(other.Ok)
+                    this.Key == other.Key ||
+                    this.Key != null &&
+                    this.Key.Equals(other.Key)
                 ) && 
                 (
-                    this.Nation == other.Nation ||
-                    this.Nation != null &&
-                    this.Nation.Equals(other.Nation)
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
                 );
         }
 
@@ -122,10 +124,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Ok != null)
-                    hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.Nation != null)
-                    hash = hash * 59 + this.Nation.GetHashCode();
+                if (this.Key != null)
+                    hash = hash * 59 + this.Key.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
                 return hash;
             }
         }

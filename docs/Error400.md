@@ -1,10 +1,9 @@
-# IO.Swagger.Model.NationsNationsResponse
+# IO.Swagger.Model.Error400
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ok** | [**Ok**](Ok.md) |  | [optional] 
-**Nations** | [**List&lt;NationsNation&gt;**](NationsNation.md) | A list of nations. | [optional] 
+**Error** | **string** | A description of the type of error that occured. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

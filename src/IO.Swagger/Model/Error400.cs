@@ -25,41 +25,26 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ExecuteTileEntityMethodResponse
+    /// Error400
     /// </summary>
     [DataContract]
-    public partial class ExecuteTileEntityMethodResponse :  IEquatable<ExecuteTileEntityMethodResponse>, IValidatableObject
+    public partial class Error400 :  IEquatable<Error400>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteTileEntityMethodResponse" /> class.
+        /// Initializes a new instance of the <see cref="Error400" /> class.
         /// </summary>
-        /// <param name="Ok">Ok.</param>
-        /// <param name="TileEntity">TileEntity.</param>
-        /// <param name="Result">Result.</param>
-        public ExecuteTileEntityMethodResponse(Ok Ok = default(Ok), TileEntityFull TileEntity = default(TileEntityFull), RawResponse Result = default(RawResponse))
+        /// <param name="Error">A description of the type of error that occured..</param>
+        public Error400(string Error = default(string))
         {
-            this.Ok = Ok;
-            this.TileEntity = TileEntity;
-            this.Result = Result;
+            this.Error = Error;
         }
         
         /// <summary>
-        /// Gets or Sets Ok
+        /// A description of the type of error that occured.
         /// </summary>
-        [DataMember(Name="ok", EmitDefaultValue=false)]
-        public Ok Ok { get; set; }
-
-        /// <summary>
-        /// Gets or Sets TileEntity
-        /// </summary>
-        [DataMember(Name="tileEntity", EmitDefaultValue=false)]
-        public TileEntityFull TileEntity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Result
-        /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
-        public RawResponse Result { get; set; }
+        /// <value>A description of the type of error that occured.</value>
+        [DataMember(Name="error", EmitDefaultValue=false)]
+        public string Error { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +53,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExecuteTileEntityMethodResponse {\n");
-            sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  TileEntity: ").Append(TileEntity).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("class Error400 {\n");
+            sb.Append("  Error: ").Append(Error).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +76,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ExecuteTileEntityMethodResponse);
+            return this.Equals(obj as Error400);
         }
 
         /// <summary>
-        /// Returns true if ExecuteTileEntityMethodResponse instances are equal
+        /// Returns true if Error400 instances are equal
         /// </summary>
-        /// <param name="other">Instance of ExecuteTileEntityMethodResponse to be compared</param>
+        /// <param name="other">Instance of Error400 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ExecuteTileEntityMethodResponse other)
+        public bool Equals(Error400 other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,19 +92,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Ok == other.Ok ||
-                    this.Ok != null &&
-                    this.Ok.Equals(other.Ok)
-                ) && 
-                (
-                    this.TileEntity == other.TileEntity ||
-                    this.TileEntity != null &&
-                    this.TileEntity.Equals(other.TileEntity)
-                ) && 
-                (
-                    this.Result == other.Result ||
-                    this.Result != null &&
-                    this.Result.Equals(other.Result)
+                    this.Error == other.Error ||
+                    this.Error != null &&
+                    this.Error.Equals(other.Error)
                 );
         }
 
@@ -136,12 +109,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Ok != null)
-                    hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.TileEntity != null)
-                    hash = hash * 59 + this.TileEntity.GetHashCode();
-                if (this.Result != null)
-                    hash = hash * 59 + this.Result.GetHashCode();
+                if (this.Error != null)
+                    hash = hash * 59 + this.Error.GetHashCode();
                 return hash;
             }
         }

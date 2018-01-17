@@ -25,34 +25,44 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// NationsNationsResponse
+    /// CreateWebBookRequest
     /// </summary>
     [DataContract]
-    public partial class NationsNationsResponse :  IEquatable<NationsNationsResponse>, IValidatableObject
+    public partial class CreateWebBookRequest :  IEquatable<CreateWebBookRequest>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NationsNationsResponse" /> class.
+        /// Initializes a new instance of the <see cref="CreateWebBookRequest" /> class.
         /// </summary>
-        /// <param name="Ok">Ok.</param>
-        /// <param name="Nations">A list of nations..</param>
-        public NationsNationsResponse(Ok Ok = default(Ok), List<NationsNation> Nations = default(List<NationsNation>))
+        /// <param name="Id">The unique id of the web book..</param>
+        /// <param name="Title">The title of the web book..</param>
+        /// <param name="Lines">The lines that make up the content of the book..</param>
+        public CreateWebBookRequest(string Id = default(string), string Title = default(string), List<string> Lines = default(List<string>))
         {
-            this.Ok = Ok;
-            this.Nations = Nations;
+            this.Id = Id;
+            this.Title = Title;
+            this.Lines = Lines;
         }
         
         /// <summary>
-        /// Gets or Sets Ok
+        /// The unique id of the web book.
         /// </summary>
-        [DataMember(Name="ok", EmitDefaultValue=false)]
-        public Ok Ok { get; set; }
+        /// <value>The unique id of the web book.</value>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// A list of nations.
+        /// The title of the web book.
         /// </summary>
-        /// <value>A list of nations.</value>
-        [DataMember(Name="nations", EmitDefaultValue=false)]
-        public List<NationsNation> Nations { get; set; }
+        /// <value>The title of the web book.</value>
+        [DataMember(Name="title", EmitDefaultValue=false)]
+        public string Title { get; set; }
+
+        /// <summary>
+        /// The lines that make up the content of the book.
+        /// </summary>
+        /// <value>The lines that make up the content of the book.</value>
+        [DataMember(Name="lines", EmitDefaultValue=false)]
+        public List<string> Lines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -61,9 +71,10 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NationsNationsResponse {\n");
-            sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  Nations: ").Append(Nations).Append("\n");
+            sb.Append("class CreateWebBookRequest {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Lines: ").Append(Lines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -85,15 +96,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as NationsNationsResponse);
+            return this.Equals(obj as CreateWebBookRequest);
         }
 
         /// <summary>
-        /// Returns true if NationsNationsResponse instances are equal
+        /// Returns true if CreateWebBookRequest instances are equal
         /// </summary>
-        /// <param name="other">Instance of NationsNationsResponse to be compared</param>
+        /// <param name="other">Instance of CreateWebBookRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NationsNationsResponse other)
+        public bool Equals(CreateWebBookRequest other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -101,14 +112,19 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Ok == other.Ok ||
-                    this.Ok != null &&
-                    this.Ok.Equals(other.Ok)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.Nations == other.Nations ||
-                    this.Nations != null &&
-                    this.Nations.SequenceEqual(other.Nations)
+                    this.Title == other.Title ||
+                    this.Title != null &&
+                    this.Title.Equals(other.Title)
+                ) && 
+                (
+                    this.Lines == other.Lines ||
+                    this.Lines != null &&
+                    this.Lines.SequenceEqual(other.Lines)
                 );
         }
 
@@ -123,10 +139,12 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Ok != null)
-                    hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.Nations != null)
-                    hash = hash * 59 + this.Nations.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
+                if (this.Title != null)
+                    hash = hash * 59 + this.Title.GetHashCode();
+                if (this.Lines != null)
+                    hash = hash * 59 + this.Lines.GetHashCode();
                 return hash;
             }
         }
