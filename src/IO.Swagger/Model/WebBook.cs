@@ -25,41 +25,44 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ExecuteTileEntityMethodResponse
+    /// WebBook
     /// </summary>
     [DataContract]
-    public partial class ExecuteTileEntityMethodResponse :  IEquatable<ExecuteTileEntityMethodResponse>, IValidatableObject
+    public partial class WebBook :  IEquatable<WebBook>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteTileEntityMethodResponse" /> class.
+        /// Initializes a new instance of the <see cref="WebBook" /> class.
         /// </summary>
-        /// <param name="Ok">Ok.</param>
-        /// <param name="TileEntity">TileEntity.</param>
-        /// <param name="Result">Result.</param>
-        public ExecuteTileEntityMethodResponse(Ok Ok = default(Ok), TileEntityFull TileEntity = default(TileEntityFull), RawResponse Result = default(RawResponse))
+        /// <param name="Id">The id of the web books..</param>
+        /// <param name="Title">The title of the web book..</param>
+        /// <param name="Lines">The lines of text in the web book..</param>
+        public WebBook(string Id = default(string), string Title = default(string), List<string> Lines = default(List<string>))
         {
-            this.Ok = Ok;
-            this.TileEntity = TileEntity;
-            this.Result = Result;
+            this.Id = Id;
+            this.Title = Title;
+            this.Lines = Lines;
         }
         
         /// <summary>
-        /// Gets or Sets Ok
+        /// The id of the web books.
         /// </summary>
-        [DataMember(Name="ok", EmitDefaultValue=false)]
-        public Ok Ok { get; set; }
+        /// <value>The id of the web books.</value>
+        [DataMember(Name="id", EmitDefaultValue=false)]
+        public string Id { get; set; }
 
         /// <summary>
-        /// Gets or Sets TileEntity
+        /// The title of the web book.
         /// </summary>
-        [DataMember(Name="tileEntity", EmitDefaultValue=false)]
-        public TileEntityFull TileEntity { get; set; }
+        /// <value>The title of the web book.</value>
+        [DataMember(Name="title", EmitDefaultValue=false)]
+        public string Title { get; set; }
 
         /// <summary>
-        /// Gets or Sets Result
+        /// The lines of text in the web book.
         /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
-        public RawResponse Result { get; set; }
+        /// <value>The lines of text in the web book.</value>
+        [DataMember(Name="lines", EmitDefaultValue=false)]
+        public List<string> Lines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +71,10 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExecuteTileEntityMethodResponse {\n");
-            sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  TileEntity: ").Append(TileEntity).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("class WebBook {\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
+            sb.Append("  Title: ").Append(Title).Append("\n");
+            sb.Append("  Lines: ").Append(Lines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +96,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ExecuteTileEntityMethodResponse);
+            return this.Equals(obj as WebBook);
         }
 
         /// <summary>
-        /// Returns true if ExecuteTileEntityMethodResponse instances are equal
+        /// Returns true if WebBook instances are equal
         /// </summary>
-        /// <param name="other">Instance of ExecuteTileEntityMethodResponse to be compared</param>
+        /// <param name="other">Instance of WebBook to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ExecuteTileEntityMethodResponse other)
+        public bool Equals(WebBook other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,19 +112,19 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Ok == other.Ok ||
-                    this.Ok != null &&
-                    this.Ok.Equals(other.Ok)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
-                    this.TileEntity == other.TileEntity ||
-                    this.TileEntity != null &&
-                    this.TileEntity.Equals(other.TileEntity)
+                    this.Title == other.Title ||
+                    this.Title != null &&
+                    this.Title.Equals(other.Title)
                 ) && 
                 (
-                    this.Result == other.Result ||
-                    this.Result != null &&
-                    this.Result.Equals(other.Result)
+                    this.Lines == other.Lines ||
+                    this.Lines != null &&
+                    this.Lines.SequenceEqual(other.Lines)
                 );
         }
 
@@ -136,12 +139,12 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Ok != null)
-                    hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.TileEntity != null)
-                    hash = hash * 59 + this.TileEntity.GetHashCode();
-                if (this.Result != null)
-                    hash = hash * 59 + this.Result.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
+                if (this.Title != null)
+                    hash = hash * 59 + this.Title.GetHashCode();
+                if (this.Lines != null)
+                    hash = hash * 59 + this.Lines.GetHashCode();
                 return hash;
             }
         }

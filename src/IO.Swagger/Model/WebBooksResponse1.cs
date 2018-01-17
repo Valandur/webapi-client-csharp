@@ -25,22 +25,20 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ExecuteTileEntityMethodResponse
+    /// WebBooksResponse1
     /// </summary>
     [DataContract]
-    public partial class ExecuteTileEntityMethodResponse :  IEquatable<ExecuteTileEntityMethodResponse>, IValidatableObject
+    public partial class WebBooksResponse1 :  IEquatable<WebBooksResponse1>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteTileEntityMethodResponse" /> class.
+        /// Initializes a new instance of the <see cref="WebBooksResponse1" /> class.
         /// </summary>
         /// <param name="Ok">Ok.</param>
-        /// <param name="TileEntity">TileEntity.</param>
-        /// <param name="Result">Result.</param>
-        public ExecuteTileEntityMethodResponse(Ok Ok = default(Ok), TileEntityFull TileEntity = default(TileEntityFull), RawResponse Result = default(RawResponse))
+        /// <param name="Crate">Crate.</param>
+        public WebBooksResponse1(Ok Ok = default(Ok), WebBookFull Crate = default(WebBookFull))
         {
             this.Ok = Ok;
-            this.TileEntity = TileEntity;
-            this.Result = Result;
+            this.Crate = Crate;
         }
         
         /// <summary>
@@ -50,16 +48,10 @@ namespace IO.Swagger.Model
         public Ok Ok { get; set; }
 
         /// <summary>
-        /// Gets or Sets TileEntity
+        /// Gets or Sets Crate
         /// </summary>
-        [DataMember(Name="tileEntity", EmitDefaultValue=false)]
-        public TileEntityFull TileEntity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Result
-        /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
-        public RawResponse Result { get; set; }
+        [DataMember(Name="crate", EmitDefaultValue=false)]
+        public WebBookFull Crate { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +60,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExecuteTileEntityMethodResponse {\n");
+            sb.Append("class WebBooksResponse1 {\n");
             sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  TileEntity: ").Append(TileEntity).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("  Crate: ").Append(Crate).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +84,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ExecuteTileEntityMethodResponse);
+            return this.Equals(obj as WebBooksResponse1);
         }
 
         /// <summary>
-        /// Returns true if ExecuteTileEntityMethodResponse instances are equal
+        /// Returns true if WebBooksResponse1 instances are equal
         /// </summary>
-        /// <param name="other">Instance of ExecuteTileEntityMethodResponse to be compared</param>
+        /// <param name="other">Instance of WebBooksResponse1 to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ExecuteTileEntityMethodResponse other)
+        public bool Equals(WebBooksResponse1 other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -114,14 +105,9 @@ namespace IO.Swagger.Model
                     this.Ok.Equals(other.Ok)
                 ) && 
                 (
-                    this.TileEntity == other.TileEntity ||
-                    this.TileEntity != null &&
-                    this.TileEntity.Equals(other.TileEntity)
-                ) && 
-                (
-                    this.Result == other.Result ||
-                    this.Result != null &&
-                    this.Result.Equals(other.Result)
+                    this.Crate == other.Crate ||
+                    this.Crate != null &&
+                    this.Crate.Equals(other.Crate)
                 );
         }
 
@@ -138,10 +124,8 @@ namespace IO.Swagger.Model
                 // Suitable nullity checks etc, of course :)
                 if (this.Ok != null)
                     hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.TileEntity != null)
-                    hash = hash * 59 + this.TileEntity.GetHashCode();
-                if (this.Result != null)
-                    hash = hash * 59 + this.Result.GetHashCode();
+                if (this.Crate != null)
+                    hash = hash * 59 + this.Crate.GetHashCode();
                 return hash;
             }
         }

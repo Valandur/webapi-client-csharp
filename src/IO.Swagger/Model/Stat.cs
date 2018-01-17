@@ -25,41 +25,35 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// ExecuteTileEntityMethodResponse
+    /// Stat
     /// </summary>
     [DataContract]
-    public partial class ExecuteTileEntityMethodResponse :  IEquatable<ExecuteTileEntityMethodResponse>, IValidatableObject
+    public partial class Stat :  IEquatable<Stat>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="ExecuteTileEntityMethodResponse" /> class.
+        /// Initializes a new instance of the <see cref="Stat" /> class.
         /// </summary>
-        /// <param name="Ok">Ok.</param>
-        /// <param name="TileEntity">TileEntity.</param>
-        /// <param name="Result">Result.</param>
-        public ExecuteTileEntityMethodResponse(Ok Ok = default(Ok), TileEntityFull TileEntity = default(TileEntityFull), RawResponse Result = default(RawResponse))
+        /// <param name="Timestamp">The timestamp (epoch seconds) at which the value was recorded.</param>
+        /// <param name="Value">The recorded value for this metric..</param>
+        public Stat(decimal? Timestamp = default(decimal?), decimal? Value = default(decimal?))
         {
-            this.Ok = Ok;
-            this.TileEntity = TileEntity;
-            this.Result = Result;
+            this.Timestamp = Timestamp;
+            this.Value = Value;
         }
         
         /// <summary>
-        /// Gets or Sets Ok
+        /// The timestamp (epoch seconds) at which the value was recorded
         /// </summary>
-        [DataMember(Name="ok", EmitDefaultValue=false)]
-        public Ok Ok { get; set; }
+        /// <value>The timestamp (epoch seconds) at which the value was recorded</value>
+        [DataMember(Name="timestamp", EmitDefaultValue=false)]
+        public decimal? Timestamp { get; set; }
 
         /// <summary>
-        /// Gets or Sets TileEntity
+        /// The recorded value for this metric.
         /// </summary>
-        [DataMember(Name="tileEntity", EmitDefaultValue=false)]
-        public TileEntityFull TileEntity { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Result
-        /// </summary>
-        [DataMember(Name="result", EmitDefaultValue=false)]
-        public RawResponse Result { get; set; }
+        /// <value>The recorded value for this metric.</value>
+        [DataMember(Name="value", EmitDefaultValue=false)]
+        public decimal? Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,10 +62,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class ExecuteTileEntityMethodResponse {\n");
-            sb.Append("  Ok: ").Append(Ok).Append("\n");
-            sb.Append("  TileEntity: ").Append(TileEntity).Append("\n");
-            sb.Append("  Result: ").Append(Result).Append("\n");
+            sb.Append("class Stat {\n");
+            sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
+            sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,15 +86,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as ExecuteTileEntityMethodResponse);
+            return this.Equals(obj as Stat);
         }
 
         /// <summary>
-        /// Returns true if ExecuteTileEntityMethodResponse instances are equal
+        /// Returns true if Stat instances are equal
         /// </summary>
-        /// <param name="other">Instance of ExecuteTileEntityMethodResponse to be compared</param>
+        /// <param name="other">Instance of Stat to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(ExecuteTileEntityMethodResponse other)
+        public bool Equals(Stat other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -109,19 +102,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Ok == other.Ok ||
-                    this.Ok != null &&
-                    this.Ok.Equals(other.Ok)
+                    this.Timestamp == other.Timestamp ||
+                    this.Timestamp != null &&
+                    this.Timestamp.Equals(other.Timestamp)
                 ) && 
                 (
-                    this.TileEntity == other.TileEntity ||
-                    this.TileEntity != null &&
-                    this.TileEntity.Equals(other.TileEntity)
-                ) && 
-                (
-                    this.Result == other.Result ||
-                    this.Result != null &&
-                    this.Result.Equals(other.Result)
+                    this.Value == other.Value ||
+                    this.Value != null &&
+                    this.Value.Equals(other.Value)
                 );
         }
 
@@ -136,12 +124,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Ok != null)
-                    hash = hash * 59 + this.Ok.GetHashCode();
-                if (this.TileEntity != null)
-                    hash = hash * 59 + this.TileEntity.GetHashCode();
-                if (this.Result != null)
-                    hash = hash * 59 + this.Result.GetHashCode();
+                if (this.Timestamp != null)
+                    hash = hash * 59 + this.Timestamp.GetHashCode();
+                if (this.Value != null)
+                    hash = hash * 59 + this.Value.GetHashCode();
                 return hash;
             }
         }

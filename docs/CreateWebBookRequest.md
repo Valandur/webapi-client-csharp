@@ -1,11 +1,11 @@
-# IO.Swagger.Model.ExecuteTileEntityMethodResponse
+# IO.Swagger.Model.CreateWebBookRequest
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Ok** | [**Ok**](Ok.md) |  | [optional] 
-**TileEntity** | [**TileEntityFull**](TileEntityFull.md) |  | [optional] 
-**Result** | [**RawResponse**](RawResponse.md) |  | [optional] 
+**Id** | **string** | The unique id of the web book. | [optional] 
+**Title** | **string** | The title of the web book. | [optional] 
+**Lines** | **List&lt;string&gt;** | The lines that make up the content of the book. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

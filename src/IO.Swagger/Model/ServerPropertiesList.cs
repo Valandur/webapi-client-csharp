@@ -25,52 +25,34 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// NationsNation
+    /// ServerPropertiesList
     /// </summary>
     [DataContract]
-    public partial class NationsNation :  IEquatable<NationsNation>, IValidatableObject
+    public partial class ServerPropertiesList :  IEquatable<ServerPropertiesList>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NationsNation" /> class.
+        /// Initializes a new instance of the <see cref="ServerPropertiesList" /> class.
         /// </summary>
-        /// <param name="Uuid">The unique id of the nation..</param>
-        /// <param name="Name">The name of the nation..</param>
-        /// <param name="Tag">The tag of the nation..</param>
-        /// <param name="President">President.</param>
-        public NationsNation(string Uuid = default(string), string Name = default(string), string Tag = default(string), Player President = default(Player))
+        /// <param name="Ok">Ok.</param>
+        /// <param name="Properties">A list of server properties..</param>
+        public ServerPropertiesList(Ok Ok = default(Ok), List<Property> Properties = default(List<Property>))
         {
-            this.Uuid = Uuid;
-            this.Name = Name;
-            this.Tag = Tag;
-            this.President = President;
+            this.Ok = Ok;
+            this.Properties = Properties;
         }
         
         /// <summary>
-        /// The unique id of the nation.
+        /// Gets or Sets Ok
         /// </summary>
-        /// <value>The unique id of the nation.</value>
-        [DataMember(Name="uuid", EmitDefaultValue=false)]
-        public string Uuid { get; set; }
+        [DataMember(Name="ok", EmitDefaultValue=false)]
+        public Ok Ok { get; set; }
 
         /// <summary>
-        /// The name of the nation.
+        /// A list of server properties.
         /// </summary>
-        /// <value>The name of the nation.</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The tag of the nation.
-        /// </summary>
-        /// <value>The tag of the nation.</value>
-        [DataMember(Name="tag", EmitDefaultValue=false)]
-        public string Tag { get; set; }
-
-        /// <summary>
-        /// Gets or Sets President
-        /// </summary>
-        [DataMember(Name="president", EmitDefaultValue=false)]
-        public Player President { get; set; }
+        /// <value>A list of server properties.</value>
+        [DataMember(Name="properties", EmitDefaultValue=false)]
+        public List<Property> Properties { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -79,11 +61,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NationsNation {\n");
-            sb.Append("  Uuid: ").Append(Uuid).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Tag: ").Append(Tag).Append("\n");
-            sb.Append("  President: ").Append(President).Append("\n");
+            sb.Append("class ServerPropertiesList {\n");
+            sb.Append("  Ok: ").Append(Ok).Append("\n");
+            sb.Append("  Properties: ").Append(Properties).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -105,15 +85,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as NationsNation);
+            return this.Equals(obj as ServerPropertiesList);
         }
 
         /// <summary>
-        /// Returns true if NationsNation instances are equal
+        /// Returns true if ServerPropertiesList instances are equal
         /// </summary>
-        /// <param name="other">Instance of NationsNation to be compared</param>
+        /// <param name="other">Instance of ServerPropertiesList to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NationsNation other)
+        public bool Equals(ServerPropertiesList other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -121,24 +101,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Uuid == other.Uuid ||
-                    this.Uuid != null &&
-                    this.Uuid.Equals(other.Uuid)
+                    this.Ok == other.Ok ||
+                    this.Ok != null &&
+                    this.Ok.Equals(other.Ok)
                 ) && 
                 (
-                    this.Name == other.Name ||
-                    this.Name != null &&
-                    this.Name.Equals(other.Name)
-                ) && 
-                (
-                    this.Tag == other.Tag ||
-                    this.Tag != null &&
-                    this.Tag.Equals(other.Tag)
-                ) && 
-                (
-                    this.President == other.President ||
-                    this.President != null &&
-                    this.President.Equals(other.President)
+                    this.Properties == other.Properties ||
+                    this.Properties != null &&
+                    this.Properties.SequenceEqual(other.Properties)
                 );
         }
 
@@ -153,14 +123,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Uuid != null)
-                    hash = hash * 59 + this.Uuid.GetHashCode();
-                if (this.Name != null)
-                    hash = hash * 59 + this.Name.GetHashCode();
-                if (this.Tag != null)
-                    hash = hash * 59 + this.Tag.GetHashCode();
-                if (this.President != null)
-                    hash = hash * 59 + this.President.GetHashCode();
+                if (this.Ok != null)
+                    hash = hash * 59 + this.Ok.GetHashCode();
+                if (this.Properties != null)
+                    hash = hash * 59 + this.Properties.GetHashCode();
                 return hash;
             }
         }

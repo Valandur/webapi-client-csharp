@@ -25,61 +25,70 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// NationsRect
+    /// StatsResponse
     /// </summary>
     [DataContract]
-    public partial class NationsRect :  IEquatable<NationsRect>, IValidatableObject
+    public partial class StatsResponse :  IEquatable<StatsResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="NationsRect" /> class.
+        /// Initializes a new instance of the <see cref="StatsResponse" /> class.
         /// </summary>
-        /// <param name="World">World.</param>
-        /// <param name="MinX">The minimum x coordinate of this rect..</param>
-        /// <param name="MinY">The minimum y coordinate of this rect..</param>
-        /// <param name="MaxX">The maximum x coordinate of this rect..</param>
-        /// <param name="MaxY">The maximum y coordinate of this rect..</param>
-        public NationsRect(World World = default(World), decimal? MinX = default(decimal?), decimal? MinY = default(decimal?), decimal? MaxX = default(decimal?), decimal? MaxY = default(decimal?))
+        /// <param name="Ok">Ok.</param>
+        /// <param name="Tps">Array of time and TPS values.</param>
+        /// <param name="Players">Array of time and player count values.</param>
+        /// <param name="Cpu">Array of time and CPU load values.</param>
+        /// <param name="Memory">Array of time and memory load values.</param>
+        /// <param name="Disk">Array of time and disk usage values.</param>
+        public StatsResponse(Ok Ok = default(Ok), List<Stat> Tps = default(List<Stat>), List<Stat> Players = default(List<Stat>), List<Stat> Cpu = default(List<Stat>), List<Stat> Memory = default(List<Stat>), List<Stat> Disk = default(List<Stat>))
         {
-            this.World = World;
-            this.MinX = MinX;
-            this.MinY = MinY;
-            this.MaxX = MaxX;
-            this.MaxY = MaxY;
+            this.Ok = Ok;
+            this.Tps = Tps;
+            this.Players = Players;
+            this.Cpu = Cpu;
+            this.Memory = Memory;
+            this.Disk = Disk;
         }
         
         /// <summary>
-        /// Gets or Sets World
+        /// Gets or Sets Ok
         /// </summary>
-        [DataMember(Name="world", EmitDefaultValue=false)]
-        public World World { get; set; }
+        [DataMember(Name="ok", EmitDefaultValue=false)]
+        public Ok Ok { get; set; }
 
         /// <summary>
-        /// The minimum x coordinate of this rect.
+        /// Array of time and TPS values
         /// </summary>
-        /// <value>The minimum x coordinate of this rect.</value>
-        [DataMember(Name="minX", EmitDefaultValue=false)]
-        public decimal? MinX { get; set; }
+        /// <value>Array of time and TPS values</value>
+        [DataMember(Name="tps", EmitDefaultValue=false)]
+        public List<Stat> Tps { get; set; }
 
         /// <summary>
-        /// The minimum y coordinate of this rect.
+        /// Array of time and player count values
         /// </summary>
-        /// <value>The minimum y coordinate of this rect.</value>
-        [DataMember(Name="minY", EmitDefaultValue=false)]
-        public decimal? MinY { get; set; }
+        /// <value>Array of time and player count values</value>
+        [DataMember(Name="players", EmitDefaultValue=false)]
+        public List<Stat> Players { get; set; }
 
         /// <summary>
-        /// The maximum x coordinate of this rect.
+        /// Array of time and CPU load values
         /// </summary>
-        /// <value>The maximum x coordinate of this rect.</value>
-        [DataMember(Name="maxX", EmitDefaultValue=false)]
-        public decimal? MaxX { get; set; }
+        /// <value>Array of time and CPU load values</value>
+        [DataMember(Name="cpu", EmitDefaultValue=false)]
+        public List<Stat> Cpu { get; set; }
 
         /// <summary>
-        /// The maximum y coordinate of this rect.
+        /// Array of time and memory load values
         /// </summary>
-        /// <value>The maximum y coordinate of this rect.</value>
-        [DataMember(Name="maxY", EmitDefaultValue=false)]
-        public decimal? MaxY { get; set; }
+        /// <value>Array of time and memory load values</value>
+        [DataMember(Name="memory", EmitDefaultValue=false)]
+        public List<Stat> Memory { get; set; }
+
+        /// <summary>
+        /// Array of time and disk usage values
+        /// </summary>
+        /// <value>Array of time and disk usage values</value>
+        [DataMember(Name="disk", EmitDefaultValue=false)]
+        public List<Stat> Disk { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -88,12 +97,13 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class NationsRect {\n");
-            sb.Append("  World: ").Append(World).Append("\n");
-            sb.Append("  MinX: ").Append(MinX).Append("\n");
-            sb.Append("  MinY: ").Append(MinY).Append("\n");
-            sb.Append("  MaxX: ").Append(MaxX).Append("\n");
-            sb.Append("  MaxY: ").Append(MaxY).Append("\n");
+            sb.Append("class StatsResponse {\n");
+            sb.Append("  Ok: ").Append(Ok).Append("\n");
+            sb.Append("  Tps: ").Append(Tps).Append("\n");
+            sb.Append("  Players: ").Append(Players).Append("\n");
+            sb.Append("  Cpu: ").Append(Cpu).Append("\n");
+            sb.Append("  Memory: ").Append(Memory).Append("\n");
+            sb.Append("  Disk: ").Append(Disk).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -115,15 +125,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as NationsRect);
+            return this.Equals(obj as StatsResponse);
         }
 
         /// <summary>
-        /// Returns true if NationsRect instances are equal
+        /// Returns true if StatsResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of NationsRect to be compared</param>
+        /// <param name="other">Instance of StatsResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(NationsRect other)
+        public bool Equals(StatsResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -131,29 +141,34 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.World == other.World ||
-                    this.World != null &&
-                    this.World.Equals(other.World)
+                    this.Ok == other.Ok ||
+                    this.Ok != null &&
+                    this.Ok.Equals(other.Ok)
                 ) && 
                 (
-                    this.MinX == other.MinX ||
-                    this.MinX != null &&
-                    this.MinX.Equals(other.MinX)
+                    this.Tps == other.Tps ||
+                    this.Tps != null &&
+                    this.Tps.SequenceEqual(other.Tps)
                 ) && 
                 (
-                    this.MinY == other.MinY ||
-                    this.MinY != null &&
-                    this.MinY.Equals(other.MinY)
+                    this.Players == other.Players ||
+                    this.Players != null &&
+                    this.Players.SequenceEqual(other.Players)
                 ) && 
                 (
-                    this.MaxX == other.MaxX ||
-                    this.MaxX != null &&
-                    this.MaxX.Equals(other.MaxX)
+                    this.Cpu == other.Cpu ||
+                    this.Cpu != null &&
+                    this.Cpu.SequenceEqual(other.Cpu)
                 ) && 
                 (
-                    this.MaxY == other.MaxY ||
-                    this.MaxY != null &&
-                    this.MaxY.Equals(other.MaxY)
+                    this.Memory == other.Memory ||
+                    this.Memory != null &&
+                    this.Memory.SequenceEqual(other.Memory)
+                ) && 
+                (
+                    this.Disk == other.Disk ||
+                    this.Disk != null &&
+                    this.Disk.SequenceEqual(other.Disk)
                 );
         }
 
@@ -168,16 +183,18 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.World != null)
-                    hash = hash * 59 + this.World.GetHashCode();
-                if (this.MinX != null)
-                    hash = hash * 59 + this.MinX.GetHashCode();
-                if (this.MinY != null)
-                    hash = hash * 59 + this.MinY.GetHashCode();
-                if (this.MaxX != null)
-                    hash = hash * 59 + this.MaxX.GetHashCode();
-                if (this.MaxY != null)
-                    hash = hash * 59 + this.MaxY.GetHashCode();
+                if (this.Ok != null)
+                    hash = hash * 59 + this.Ok.GetHashCode();
+                if (this.Tps != null)
+                    hash = hash * 59 + this.Tps.GetHashCode();
+                if (this.Players != null)
+                    hash = hash * 59 + this.Players.GetHashCode();
+                if (this.Cpu != null)
+                    hash = hash * 59 + this.Cpu.GetHashCode();
+                if (this.Memory != null)
+                    hash = hash * 59 + this.Memory.GetHashCode();
+                if (this.Disk != null)
+                    hash = hash * 59 + this.Disk.GetHashCode();
                 return hash;
             }
         }

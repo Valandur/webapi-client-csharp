@@ -25,26 +25,34 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// InlineResponse400
+    /// WebBooksResponse
     /// </summary>
     [DataContract]
-    public partial class InlineResponse400 :  IEquatable<InlineResponse400>, IValidatableObject
+    public partial class WebBooksResponse :  IEquatable<WebBooksResponse>, IValidatableObject
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="InlineResponse400" /> class.
+        /// Initializes a new instance of the <see cref="WebBooksResponse" /> class.
         /// </summary>
-        /// <param name="Error">A description of the type of error that occured..</param>
-        public InlineResponse400(string Error = default(string))
+        /// <param name="Ok">Ok.</param>
+        /// <param name="Crates">A list of web books..</param>
+        public WebBooksResponse(Ok Ok = default(Ok), List<WebBook> Crates = default(List<WebBook>))
         {
-            this.Error = Error;
+            this.Ok = Ok;
+            this.Crates = Crates;
         }
         
         /// <summary>
-        /// A description of the type of error that occured.
+        /// Gets or Sets Ok
         /// </summary>
-        /// <value>A description of the type of error that occured.</value>
-        [DataMember(Name="error", EmitDefaultValue=false)]
-        public string Error { get; set; }
+        [DataMember(Name="ok", EmitDefaultValue=false)]
+        public Ok Ok { get; set; }
+
+        /// <summary>
+        /// A list of web books.
+        /// </summary>
+        /// <value>A list of web books.</value>
+        [DataMember(Name="crates", EmitDefaultValue=false)]
+        public List<WebBook> Crates { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -53,8 +61,9 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class InlineResponse400 {\n");
-            sb.Append("  Error: ").Append(Error).Append("\n");
+            sb.Append("class WebBooksResponse {\n");
+            sb.Append("  Ok: ").Append(Ok).Append("\n");
+            sb.Append("  Crates: ").Append(Crates).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -76,15 +85,15 @@ namespace IO.Swagger.Model
         public override bool Equals(object obj)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as InlineResponse400);
+            return this.Equals(obj as WebBooksResponse);
         }
 
         /// <summary>
-        /// Returns true if InlineResponse400 instances are equal
+        /// Returns true if WebBooksResponse instances are equal
         /// </summary>
-        /// <param name="other">Instance of InlineResponse400 to be compared</param>
+        /// <param name="other">Instance of WebBooksResponse to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(InlineResponse400 other)
+        public bool Equals(WebBooksResponse other)
         {
             // credit: http://stackoverflow.com/a/10454552/677735
             if (other == null)
@@ -92,9 +101,14 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Error == other.Error ||
-                    this.Error != null &&
-                    this.Error.Equals(other.Error)
+                    this.Ok == other.Ok ||
+                    this.Ok != null &&
+                    this.Ok.Equals(other.Ok)
+                ) && 
+                (
+                    this.Crates == other.Crates ||
+                    this.Crates != null &&
+                    this.Crates.SequenceEqual(other.Crates)
                 );
         }
 
@@ -109,8 +123,10 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Error != null)
-                    hash = hash * 59 + this.Error.GetHashCode();
+                if (this.Ok != null)
+                    hash = hash * 59 + this.Ok.GetHashCode();
+                if (this.Crates != null)
+                    hash = hash * 59 + this.Crates.GetHashCode();
                 return hash;
             }
         }
