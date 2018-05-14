@@ -1,20 +1,175 @@
 # IO.Swagger.Api.HuskyCratesApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCrate**](HuskyCratesApi.md#getcrate) | **GET** /husky/crate/{id} | Detailed crate info
-[**GetCrates**](HuskyCratesApi.md#getcrates) | **GET** /husky/crate | Crate list
+[**CreateCrate**](HuskyCratesApi.md#createcrate) | **POST** /husky-crates/crate | Create a crate
+[**DeleteCrate**](HuskyCratesApi.md#deletecrate) | **DELETE** /husky-crates/crate/{id} | Delete a crate
+[**GetCrate**](HuskyCratesApi.md#getcrate) | **GET** /husky-crates/crate/{id} | Get a crate
+[**ListCrates**](HuskyCratesApi.md#listcrates) | **GET** /husky-crates/crate | List crates
+[**ModifyCrate**](HuskyCratesApi.md#modifycrate) | **PUT** /husky-crates/crate/{id} | Change a crate
 
+
+<a name="createcrate"></a>
+# **CreateCrate**
+> HuskyCratesCrate CreateCrate (HuskyCratesCrate body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Create a crate
+
+Creates a new crate.     **Required permissions:**    - **husky-crates.crate.create **   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class CreateCrateExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new HuskyCratesApi();
+            var body = new HuskyCratesCrate(); // HuskyCratesCrate |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Create a crate
+                HuskyCratesCrate result = apiInstance.CreateCrate(body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling HuskyCratesApi.CreateCrate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**HuskyCratesCrate**](HuskyCratesCrate.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**HuskyCratesCrate**](HuskyCratesCrate.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="deletecrate"></a>
+# **DeleteCrate**
+> HuskyCratesCrate DeleteCrate (string id, bool? details = null, string accept = null, bool? pretty = null)
+
+Delete a crate
+
+Delete a crate.     **Required permissions:**    - **husky-crates.crate.delete**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class DeleteCrateExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new HuskyCratesApi();
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Delete a crate
+                HuskyCratesCrate result = apiInstance.DeleteCrate(id, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling HuskyCratesApi.DeleteCrate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**HuskyCratesCrate**](HuskyCratesCrate.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getcrate"></a>
 # **GetCrate**
-> HuskyCrateResponse GetCrate (string id)
+> HuskyCratesCrate GetCrate (string id, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed crate info
+Get a crate
 
-Get detailed information about a crate.  > Required permission: husky.crate.one 
+Get detailed information about a crate.     **Required permissions:**    - **husky-crates.crate.one**   
 
 ### Example
 ```csharp
@@ -30,22 +185,25 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new HuskyCratesApi();
-            var id = id_example;  // string | The id of the crate to get detailed information about.
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed crate info
-                HuskyCrateResponse result = apiInstance.GetCrate(id);
+                // Get a crate
+                HuskyCratesCrate result = apiInstance.GetCrate(id, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -61,15 +219,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the crate to get detailed information about. | 
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**HuskyCrateResponse**](HuskyCrateResponse.md)
+[**HuskyCratesCrate**](HuskyCratesCrate.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -78,13 +239,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getcrates"></a>
-# **GetCrates**
-> HuskyCratesResponse GetCrates (string details = null)
+<a name="listcrates"></a>
+# **ListCrates**
+> List<HuskyCratesCrate> ListCrates (bool? details = null, string accept = null, bool? pretty = null)
 
-Crate list
+List crates
 
-Get a list of all the crates on the server.  > Required permission: husky.crate.list 
+Get a list of all the crates on the server.     **Required permissions:**    - **husky-crates.crate.list**   
 
 ### Example
 ```csharp
@@ -96,31 +257,33 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetCratesExample
+    public class ListCratesExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new HuskyCratesApi();
-            var details = details_example;  // string | Pass this parameter to receive the full details for each crate. (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Crate list
-                HuskyCratesResponse result = apiInstance.GetCrates(details);
+                // List crates
+                List&lt;HuskyCratesCrate&gt; result = apiInstance.ListCrates(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling HuskyCratesApi.GetCrates: " + e.Message );
+                Debug.Print("Exception when calling HuskyCratesApi.ListCrates: " + e.Message );
             }
         }
     }
@@ -131,15 +294,95 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **details** | **string**| Pass this parameter to receive the full details for each crate. | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**HuskyCratesResponse**](HuskyCratesResponse.md)
+[**List<HuskyCratesCrate>**](HuskyCratesCrate.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifycrate"></a>
+# **ModifyCrate**
+> HuskyCratesCrate ModifyCrate (string id, HuskyCratesCrate body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Change a crate
+
+Modify a crate.     **Required permissions:**    - **husky-crates.crate.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyCrateExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new HuskyCratesApi();
+            var id = id_example;  // string | 
+            var body = new HuskyCratesCrate(); // HuskyCratesCrate |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Change a crate
+                HuskyCratesCrate result = apiInstance.ModifyCrate(id, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling HuskyCratesApi.ModifyCrate: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  | 
+ **body** | [**HuskyCratesCrate**](HuskyCratesCrate.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**HuskyCratesCrate**](HuskyCratesCrate.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

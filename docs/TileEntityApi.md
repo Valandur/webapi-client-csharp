@@ -1,99 +1,21 @@
 # IO.Swagger.Api.TileEntityApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ExecuteTileEntityMethod**](TileEntityApi.md#executetileentitymethod) | **POST** /tile-entity/{worldUuid}/{x}/{y}/{z} | Execute tile entity methods
-[**GetTileEntities**](TileEntityApi.md#gettileentities) | **GET** /tile-entity | Tile entities list
-[**GetTileEntity**](TileEntityApi.md#gettileentity) | **GET** /tile-entity/{worldUuid}/{x}/{y}/{z} | Detailed tile entity info
+[**ExecuteMethod**](TileEntityApi.md#executemethod) | **POST** /tile-entity/{world}/{x}/{y}/{z}/method | Execute a method
+[**GetTileEntity**](TileEntityApi.md#gettileentity) | **GET** /tile-entity/{world}/{x}/{y}/{z} | Get tile entity
+[**ListTileEntities**](TileEntityApi.md#listtileentities) | **GET** /tile-entity | List tile entities
 
 
-<a name="executetileentitymethod"></a>
-# **ExecuteTileEntityMethod**
-> ExecuteTileEntityMethodResponse ExecuteTileEntityMethod (string worldUuid, int? x, int? y, int? z, RawRequest request)
+<a name="executemethod"></a>
+# **ExecuteMethod**
+> ExecuteMethodResponse ExecuteMethod (string world, int? x, int? y, int? z, ExecuteMethodRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
-Execute tile entity methods
+Execute a method
 
-Provides direct access to the underlaying tile entity object and can execute any method on it.  > Required permission: tile-entity.method 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class ExecuteTileEntityMethodExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new TileEntityApi();
-            var worldUuid = worldUuid_example;  // string | The uuid of the world the tile entity is in.
-            var x = 56;  // int? | The x-coordinate of the tile entity.
-            var y = 56;  // int? | The y-coordinate of the tile entity.
-            var z = 56;  // int? | The z-coordinate of the tile entity.
-            var request = new RawRequest(); // RawRequest | Information about which method to execute.
-
-            try
-            {
-                // Execute tile entity methods
-                ExecuteTileEntityMethodResponse result = apiInstance.ExecuteTileEntityMethod(worldUuid, x, y, z, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling TileEntityApi.ExecuteTileEntityMethod: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **worldUuid** | **string**| The uuid of the world the tile entity is in. | 
- **x** | **int?**| The x-coordinate of the tile entity. | 
- **y** | **int?**| The y-coordinate of the tile entity. | 
- **z** | **int?**| The z-coordinate of the tile entity. | 
- **request** | [**RawRequest**](RawRequest.md)| Information about which method to execute. | 
-
-### Return type
-
-[**ExecuteTileEntityMethodResponse**](ExecuteTileEntityMethodResponse.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="gettileentities"></a>
-# **GetTileEntities**
-> TileEntitiesResponse GetTileEntities (string world = null, string type = null, string limit = null)
-
-Tile entities list
-
-Get a list of all tile entities on the server (in all worlds, unless specified).  > Required permission: tile-entity.list 
+Provides direct access to the underlaying tile entity object and can execute any method on it.     **Required permissions:**    - **tile-entity.method**   
 
 ### Example
 ```csharp
@@ -105,33 +27,38 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetTileEntitiesExample
+    public class ExecuteMethodExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new TileEntityApi();
-            var world = world_example;  // string | The uuid of the world to filter entities by. (optional) 
-            var type = type_example;  // string | The TileEntityType id to filter the tile entities by. (optional) 
-            var limit = limit_example;  // string | The maximum amount of tile entities to return. (optional) 
+            var world = world_example;  // string | The world the tile entity is in
+            var x = 56;  // int? | The x-coordinate of the tile-entity
+            var y = 56;  // int? | The x-coordinate of the tile-entity
+            var z = 56;  // int? | The x-coordinate of the tile-entity
+            var body = new ExecuteMethodRequest(); // ExecuteMethodRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Tile entities list
-                TileEntitiesResponse result = apiInstance.GetTileEntities(world, type, limit);
+                // Execute a method
+                ExecuteMethodResponse result = apiInstance.ExecuteMethod(world, x, y, z, body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling TileEntityApi.GetTileEntities: " + e.Message );
+                Debug.Print("Exception when calling TileEntityApi.ExecuteMethod: " + e.Message );
             }
         }
     }
@@ -142,17 +69,22 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **world** | **string**| The uuid of the world to filter entities by. | [optional] 
- **type** | **string**| The TileEntityType id to filter the tile entities by. | [optional] 
- **limit** | **string**| The maximum amount of tile entities to return. | [optional] 
+ **world** | **string**| The world the tile entity is in | 
+ **x** | **int?**| The x-coordinate of the tile-entity | 
+ **y** | **int?**| The x-coordinate of the tile-entity | 
+ **z** | **int?**| The x-coordinate of the tile-entity | 
+ **body** | [**ExecuteMethodRequest**](ExecuteMethodRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**TileEntitiesResponse**](TileEntitiesResponse.md)
+[**ExecuteMethodResponse**](ExecuteMethodResponse.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -163,11 +95,11 @@ Name | Type | Description  | Notes
 
 <a name="gettileentity"></a>
 # **GetTileEntity**
-> TileEntityResponse GetTileEntity (string worldUuid, int? x, int? y, int? z, string fields = null, string methods = null)
+> TileEntity GetTileEntity (string world, int? x, int? y, int? z, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed tile entity info
+Get tile entity
 
-Get detailed information about a tile entity.  > Required permission: tile-entity.one 
+Get detailed information about a tile entity.     **Required permissions:**    - **tile-entity.one**   
 
 ### Example
 ```csharp
@@ -183,27 +115,28 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new TileEntityApi();
-            var worldUuid = worldUuid_example;  // string | The uuid of the world the tile entity is in.
-            var x = 56;  // int? | The x-coordinate of the tile entity.
-            var y = 56;  // int? | The y-coordinate of the tile entity.
-            var z = 56;  // int? | The z-coordinate of the tile entity.
-            var fields = fields_example;  // string | An optional list of additional fields to get. (optional) 
-            var methods = methods_example;  // string | An optional list of additional methods to get. (optional) 
+            var world = world_example;  // string | The world the tile entity is in
+            var x = 56;  // int? | The x-coordinate of the tile-entity
+            var y = 56;  // int? | The y-coordinate of the tile-entity
+            var z = 56;  // int? | The z-coordinate of the tile-entity
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed tile entity info
-                TileEntityResponse result = apiInstance.GetTileEntity(worldUuid, x, y, z, fields, methods);
+                // Get tile entity
+                TileEntity result = apiInstance.GetTileEntity(world, x, y, z, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -219,20 +152,105 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **worldUuid** | **string**| The uuid of the world the tile entity is in. | 
- **x** | **int?**| The x-coordinate of the tile entity. | 
- **y** | **int?**| The y-coordinate of the tile entity. | 
- **z** | **int?**| The z-coordinate of the tile entity. | 
- **fields** | **string**| An optional list of additional fields to get. | [optional] 
- **methods** | **string**| An optional list of additional methods to get. | [optional] 
+ **world** | **string**| The world the tile entity is in | 
+ **x** | **int?**| The x-coordinate of the tile-entity | 
+ **y** | **int?**| The y-coordinate of the tile-entity | 
+ **z** | **int?**| The z-coordinate of the tile-entity | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**TileEntityResponse**](TileEntityResponse.md)
+[**TileEntity**](TileEntity.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listtileentities"></a>
+# **ListTileEntities**
+> List<TileEntity> ListTileEntities (string world = null, string type = null, string min = null, string max = null, int? limit = null, bool? details = null, string accept = null, bool? pretty = null)
+
+List tile entities
+
+Get a list of all tile entities on the server (in all worlds, unless specified).     **Required permissions:**    - **tile-entity.list**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ListTileEntitiesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new TileEntityApi();
+            var world = world_example;  // string | The world to filter tile entities by (optional) 
+            var type = type_example;  // string | The type if of tile entities to filter by (optional) 
+            var min = min_example;  // string | The minimum coordinates at which the tile entity must be, min=x|y|z (optional) 
+            var max = max_example;  // string | The maximum coordinates at which the tile entity must be, max=x|y|z (optional) 
+            var limit = 56;  // int? | The maximum amount of tile entities returned (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // List tile entities
+                List&lt;TileEntity&gt; result = apiInstance.ListTileEntities(world, type, min, max, limit, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TileEntityApi.ListTileEntities: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world** | **string**| The world to filter tile entities by | [optional] 
+ **type** | **string**| The type if of tile entities to filter by | [optional] 
+ **min** | **string**| The minimum coordinates at which the tile entity must be, min&#x3D;x|y|z | [optional] 
+ **max** | **string**| The maximum coordinates at which the tile entity must be, max&#x3D;x|y|z | [optional] 
+ **limit** | **int?**| The maximum amount of tile entities returned | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**List<TileEntity>**](TileEntity.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

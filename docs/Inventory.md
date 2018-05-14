@@ -3,10 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | **string** | The name of the inventory. | [optional] 
-**StackCount** | **decimal?** | The amount of different stacks in the inventory. | [optional] 
-**ItemCount** | **decimal?** | The total amount of items in the inventory. | [optional] 
-**Items** | [**List&lt;ItemStack&gt;**](ItemStack.md) | The item stacks in the inventory | [optional] 
+**Capacity** | **int?** | The maximum capacity of the inventory (maximum number of stacks) | 
+**ItemStacks** | [**List&lt;ItemStack&gt;**](ItemStack.md) | Gets a list of item stacks in the inventory | 
+**Link** | **string** | The API link that can be used to obtain more information about this object | 
+**Name** | **string** | The name of the inventory | 
+**TotalItems** | **int?** | The total amount of items currently in the inventory | 
+**Type** | [**CatalogType**](CatalogType.md) | The type of the inventory | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

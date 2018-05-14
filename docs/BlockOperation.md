@@ -3,12 +3,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uuid** | **string** | The UUID of the block update operation. | [optional] 
-**Type** | **string** | The type of action that is being performed by this operation. | [optional] 
-**Status** | **string** | The current status of the operation, one of: INIT, RUNNING, PAUSED, DONE, ERRORED.  | [optional] 
-**Progress** | **float?** | The update progress of this operation, from 0 (nothing done) to 1 (completely done). | [optional] 
-**EstTimeRemaining** | **decimal?** | The estimated amount of seconds remaining before this operation is completed. | [optional] 
-**Link** | **string** | The Web-API url to access for details about this operation. | [optional] 
+**Error** | **string** | The error message, if any | 
+**Errored** | **bool?** | True if this block operation produced errors, false otherwise. | 
+**EstimatedSecondsRemaining** | **float?** | The estimated amount of time remaining until this block operation is complete (in seconds) | 
+**Link** | **string** | The API link that can be used to obtain more information about this object | 
+**Max** | [**Vector3i**](Vector3i.md) | The maximum block belonging to this operation | 
+**Min** | [**Vector3i**](Vector3i.md) | The minimum block belonging to this operation | 
+**Progress** | **float?** | The current progress of the block operation, from 0 (&#x3D;started) to 1 (&#x3D;finished) | 
+**Status** | **string** | The current status of the block operation | 
+**Type** | **string** | The type of block operation | 
+**Uuid** | **Guid?** | The unique UUID identifying this block operation | 
+**World** | [**World**](World.md) | The world in which this block operation is running | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

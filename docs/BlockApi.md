@@ -1,24 +1,24 @@
 # IO.Swagger.Api.BlockApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelBlockOperation**](BlockApi.md#cancelblockoperation) | **DELETE** /block/op/{uuid} | Cancel block operation
-[**ChangeBlockOperation**](BlockApi.md#changeblockoperation) | **PUT** /block/op/{uuid} | Modify block operation
-[**GetBlock**](BlockApi.md#getblock) | **GET** /block/{world}/{x}/{y}/{z} | Get one block
-[**GetBlockOperation**](BlockApi.md#getblockoperation) | **GET** /block/op/{uuid} | Block operation details
-[**GetBlockOperations**](BlockApi.md#getblockoperations) | **GET** /block/op | List block operations
-[**StartBlockOperation**](BlockApi.md#startblockoperation) | **POST** /block/op | Create block operation
+[**CreateBlockOperation**](BlockApi.md#createblockoperation) | **POST** /block/op | Create a block operation
+[**DeleteBlockOperation**](BlockApi.md#deleteblockoperation) | **DELETE** /block/op/{uuid} | Stop a block operation
+[**GetBlock**](BlockApi.md#getblock) | **GET** /block/{world}/{x}/{y}/{z} | Get a block
+[**GetBlockOperation**](BlockApi.md#getblockoperation) | **GET** /block/op/{uuid} | Get a block operation
+[**ListBlockOperations**](BlockApi.md#listblockoperations) | **GET** /block/op | List block operations
+[**ModifyBlockOperation**](BlockApi.md#modifyblockoperation) | **PUT** /block/op/{uuid} | Modify a block operation
 
 
-<a name="cancelblockoperation"></a>
-# **CancelBlockOperation**
-> BlockOperationResponse CancelBlockOperation (string uuid)
+<a name="createblockoperation"></a>
+# **CreateBlockOperation**
+> BlockOperation CreateBlockOperation (CreateBlockOperationRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
-Cancel block operation
+Create a block operation
 
-Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**  > Required permission: block.op.delete 
+Start a request to get or change blocks on the server.     **Required permissions:**    - **block.op.create**   
 
 ### Example
 ```csharp
@@ -30,31 +30,34 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class CancelBlockOperationExample
+    public class CreateBlockOperationExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new BlockApi();
-            var uuid = uuid_example;  // string | The uuid of the block operation.
+            var body = new CreateBlockOperationRequest(); // CreateBlockOperationRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Cancel block operation
-                BlockOperationResponse result = apiInstance.CancelBlockOperation(uuid);
+                // Create a block operation
+                BlockOperation result = apiInstance.CreateBlockOperation(body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling BlockApi.CancelBlockOperation: " + e.Message );
+                Debug.Print("Exception when calling BlockApi.CreateBlockOperation: " + e.Message );
             }
         }
     }
@@ -65,15 +68,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the block operation. | 
+ **body** | [**CreateBlockOperationRequest**](CreateBlockOperationRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -82,13 +88,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="changeblockoperation"></a>
-# **ChangeBlockOperation**
-> BlockOperationResponse ChangeBlockOperation (string uuid, Data data)
+<a name="deleteblockoperation"></a>
+# **DeleteBlockOperation**
+> BlockOperation DeleteBlockOperation (Guid? uuid, bool? details = null, string accept = null, bool? pretty = null)
 
-Modify block operation
+Stop a block operation
 
-Modify an existing block operation to either pause or continue it.  > Required permission: block.op.change 
+Cancel a pending or running block operation. **THIS DOES NOT UNDO THE BLOCK CHANGES**     **Required permissions:**    - **block.op.delete**   
 
 ### Example
 ```csharp
@@ -100,32 +106,34 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class ChangeBlockOperationExample
+    public class DeleteBlockOperationExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new BlockApi();
-            var uuid = uuid_example;  // string | The uuid of the block operation.
-            var data = new Data(); // Data | The new data applied to the block operation.
+            var uuid = new Guid?(); // Guid? | The uuid of the block operation
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Modify block operation
-                BlockOperationResponse result = apiInstance.ChangeBlockOperation(uuid, data);
+                // Stop a block operation
+                BlockOperation result = apiInstance.DeleteBlockOperation(uuid, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling BlockApi.ChangeBlockOperation: " + e.Message );
+                Debug.Print("Exception when calling BlockApi.DeleteBlockOperation: " + e.Message );
             }
         }
     }
@@ -136,16 +144,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the block operation. | 
- **data** | [**Data**](Data.md)| The new data applied to the block operation. | 
+ **uuid** | [**Guid?**](Guid?.md)| The uuid of the block operation | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -156,11 +166,11 @@ Name | Type | Description  | Notes
 
 <a name="getblock"></a>
 # **GetBlock**
-> SingleBlock GetBlock (string world, int? x, int? y, int? z)
+> BlockState GetBlock (string world, int? x, int? y, int? z, bool? details = null, string accept = null, bool? pretty = null)
 
-Get one block
+Get a block
 
-Gets information about one block in the world.  > Required permission: block.one 
+Gets information about one block in the world.     **Required permissions:**    - **block.one**   
 
 ### Example
 ```csharp
@@ -176,25 +186,28 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new BlockApi();
-            var world = world_example;  // string | The uuid of the world the block is in.
-            var x = 56;  // int? | The x-coordinate of the block.
-            var y = 56;  // int? | The y-coordinate of the block.
-            var z = 56;  // int? | The z-coordinate of the block.
+            var world = world_example;  // string | The uuid of the world to get the block from
+            var x = 56;  // int? | The x-coordinate of the block
+            var y = 56;  // int? | The y-coordinate of the block
+            var z = 56;  // int? | The z-coordinate of the block
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Get one block
-                SingleBlock result = apiInstance.GetBlock(world, x, y, z);
+                // Get a block
+                BlockState result = apiInstance.GetBlock(world, x, y, z, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -210,18 +223,21 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **world** | **string**| The uuid of the world the block is in. | 
- **x** | **int?**| The x-coordinate of the block. | 
- **y** | **int?**| The y-coordinate of the block. | 
- **z** | **int?**| The z-coordinate of the block. | 
+ **world** | **string**| The uuid of the world to get the block from | 
+ **x** | **int?**| The x-coordinate of the block | 
+ **y** | **int?**| The y-coordinate of the block | 
+ **z** | **int?**| The z-coordinate of the block | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**SingleBlock**](SingleBlock.md)
+[**BlockState**](BlockState.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -232,11 +248,11 @@ Name | Type | Description  | Notes
 
 <a name="getblockoperation"></a>
 # **GetBlockOperation**
-> BlockOperationResponse GetBlockOperation (string uuid)
+> BlockOperation GetBlockOperation (Guid? uuid, bool? details = null, string accept = null, bool? pretty = null)
 
-Block operation details
+Get a block operation
 
-Gets details about a specific block operation  > Required permission: block.op.one 
+Gets details about a specific block operation     **Required permissions:**    - **block.op.one**   
 
 ### Example
 ```csharp
@@ -252,22 +268,25 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new BlockApi();
-            var uuid = uuid_example;  // string | The uuid of the block operation.
+            var uuid = new Guid?(); // Guid? | The uuid of the block operation
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Block operation details
-                BlockOperationResponse result = apiInstance.GetBlockOperation(uuid);
+                // Get a block operation
+                BlockOperation result = apiInstance.GetBlockOperation(uuid, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -283,15 +302,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the block operation. | 
+ **uuid** | [**Guid?**](Guid?.md)| The uuid of the block operation | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**BlockOperation**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -300,13 +322,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getblockoperations"></a>
-# **GetBlockOperations**
-> BlockOperationsList GetBlockOperations ()
+<a name="listblockoperations"></a>
+# **ListBlockOperations**
+> List<BlockOperation> ListBlockOperations (bool? details = null, string accept = null, bool? pretty = null)
 
 List block operations
 
-Returns a list of all the currently running block operations.  > Required permission: block.op.list 
+Returns a list of all the currently running block operations.     **Required permissions:**    - **block.op.list**   
 
 ### Example
 ```csharp
@@ -318,97 +340,33 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetBlockOperationsExample
+    public class ListBlockOperationsExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new BlockApi();
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
                 // List block operations
-                BlockOperationsList result = apiInstance.GetBlockOperations();
+                List&lt;BlockOperation&gt; result = apiInstance.ListBlockOperations(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling BlockApi.GetBlockOperations: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**BlockOperationsList**](BlockOperationsList.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="startblockoperation"></a>
-# **StartBlockOperation**
-> BlockOperationResponse StartBlockOperation (List<BlockOperationNew> request)
-
-Create block operation
-
-Start a request to get or change blocks on the server.  > Required permission: block.op.create 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class StartBlockOperationExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new BlockApi();
-            var request = new List<BlockOperationNew>(); // List<BlockOperationNew> | The requested changes to blocks
-
-            try
-            {
-                // Create block operation
-                BlockOperationResponse result = apiInstance.StartBlockOperation(request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling BlockApi.StartBlockOperation: " + e.Message );
+                Debug.Print("Exception when calling BlockApi.ListBlockOperations: " + e.Message );
             }
         }
     }
@@ -419,15 +377,95 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **request** | [**List&lt;BlockOperationNew&gt;**](BlockOperationNew.md)| The requested changes to blocks | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**BlockOperationResponse**](BlockOperationResponse.md)
+[**List<BlockOperation>**](BlockOperation.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifyblockoperation"></a>
+# **ModifyBlockOperation**
+> BlockOperation ModifyBlockOperation (Guid? uuid, ModifyBlockOperationRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Modify a block operation
+
+Modify an existing block operation to either pause or continue it.     **Required permissions:**    - **block.op.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyBlockOperationExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new BlockApi();
+            var uuid = new Guid?(); // Guid? | The uuid of the block operation
+            var body = new ModifyBlockOperationRequest(); // ModifyBlockOperationRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Modify a block operation
+                BlockOperation result = apiInstance.ModifyBlockOperation(uuid, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling BlockApi.ModifyBlockOperation: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**Guid?**](Guid?.md)| The uuid of the block operation | 
+ **body** | [**ModifyBlockOperationRequest**](ModifyBlockOperationRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**BlockOperation**](BlockOperation.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

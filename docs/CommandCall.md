@@ -3,11 +3,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Timestamp** | **string** | The timestamp when the message was sent (server time). | [optional] 
-**Command** | **string** | The name of the command that was executed. | [optional] 
-**Args** | **List&lt;string&gt;** | The command arguments passed to the command. | [optional] 
-**Source** | **Object** | An object describing the source (executor) of the command. Usually a player or the console. | [optional] 
-**Result** | [**CommandResult**](CommandResult.md) |  | [optional] 
+**Args** | **string** | The arguments that were passed to the command | 
+**Cancelled** | **bool?** | True if the command was cancelled, false otherwise | 
+**Cause** | [**Cause**](Cause.md) | The cause of the command execution | 
+**Command** | **string** | The command that was executed (without arguments) | 
+**Link** | **string** | The API link that can be used to obtain more information about this object | 
+**Result** | [**CommandResult**](CommandResult.md) | The result of the command execution | 
+**Timestamp** | **long?** | The timestamp at which the command was executed (epoch millis) | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
