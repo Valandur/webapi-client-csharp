@@ -1,93 +1,21 @@
 # IO.Swagger.Api.MMCTicketsApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeTicket**](MMCTicketsApi.md#changeticket) | **PUT** /mmctickets/ticket/{id} | Edit ticket
-[**GetTicket**](MMCTicketsApi.md#getticket) | **GET** /mmctickets/ticket/{id} | Detailed ticket info
-[**GetTickets**](MMCTicketsApi.md#gettickets) | **GET** /mmctickets/ticket | Ticket list
+[**GetTicket**](MMCTicketsApi.md#getticket) | **GET** /mmc-tickets/ticket/{id} | Get a ticket
+[**ListTickets**](MMCTicketsApi.md#listtickets) | **GET** /mmc-tickets/ticket | List tickets
+[**ModifyTicket**](MMCTicketsApi.md#modifyticket) | **PUT** /mmc-tickets/ticket/{id} | Modify a ticket
 
-
-<a name="changeticket"></a>
-# **ChangeTicket**
-> MMCTicketsTicketResponse ChangeTicket (string id, MMCUpdateTicketRequest updateTicketRequest)
-
-Edit ticket
-
-Update the properties of an existing ticket.  > Required permission: mmctickets.ticket.change 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class ChangeTicketExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new MMCTicketsApi();
-            var id = id_example;  // string | The id of the ticket.
-            var updateTicketRequest = new MMCUpdateTicketRequest(); // MMCUpdateTicketRequest | The new properties of the ticket
-
-            try
-            {
-                // Edit ticket
-                MMCTicketsTicketResponse result = apiInstance.ChangeTicket(id, updateTicketRequest);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling MMCTicketsApi.ChangeTicket: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the ticket. | 
- **updateTicketRequest** | [**MMCUpdateTicketRequest**](MMCUpdateTicketRequest.md)| The new properties of the ticket | 
-
-### Return type
-
-[**MMCTicketsTicketResponse**](MMCTicketsTicketResponse.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="getticket"></a>
 # **GetTicket**
-> MMCTicketsTicketResponse GetTicket (string id)
+> MMCTicketsTicket GetTicket (int? id, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed ticket info
+Get a ticket
 
-Get detailed information about a ticket.  > Required permission: mmctickets.ticket.one 
+Get detailed information about a ticket.     **Required permissions:**    - **mmc-tickets.ticket.one**   
 
 ### Example
 ```csharp
@@ -103,22 +31,25 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new MMCTicketsApi();
-            var id = id_example;  // string | The id of the ticket to get detailed information about.
+            var id = 56;  // int? | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed ticket info
-                MMCTicketsTicketResponse result = apiInstance.GetTicket(id);
+                // Get a ticket
+                MMCTicketsTicket result = apiInstance.GetTicket(id, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -134,15 +65,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the ticket to get detailed information about. | 
+ **id** | **int?**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**MMCTicketsTicketResponse**](MMCTicketsTicketResponse.md)
+[**MMCTicketsTicket**](MMCTicketsTicket.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -151,13 +85,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="gettickets"></a>
-# **GetTickets**
-> MMCTicketsTicketsResponse GetTickets (string details = null)
+<a name="listtickets"></a>
+# **ListTickets**
+> List<MMCTicketsTicket> ListTickets (bool? details = null, string accept = null, bool? pretty = null)
 
-Ticket list
+List tickets
 
-Get a list of all the tickets on the server.  > Required permission: mmtickets.ticket.list 
+Get a list of all the tickets on the server.     **Required permissions:**    - **mmc-tickets.ticket.list**   
 
 ### Example
 ```csharp
@@ -169,31 +103,33 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetTicketsExample
+    public class ListTicketsExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new MMCTicketsApi();
-            var details = details_example;  // string | Pass this parameter to receive the full details for each ticket. (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Ticket list
-                MMCTicketsTicketsResponse result = apiInstance.GetTickets(details);
+                // List tickets
+                List&lt;MMCTicketsTicket&gt; result = apiInstance.ListTickets(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling MMCTicketsApi.GetTickets: " + e.Message );
+                Debug.Print("Exception when calling MMCTicketsApi.ListTickets: " + e.Message );
             }
         }
     }
@@ -204,15 +140,95 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **details** | **string**| Pass this parameter to receive the full details for each ticket. | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**MMCTicketsTicketsResponse**](MMCTicketsTicketsResponse.md)
+[**List<MMCTicketsTicket>**](MMCTicketsTicket.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifyticket"></a>
+# **ModifyTicket**
+> MMCTicketsTicket ModifyTicket (int? id, MMCTicketsTicket body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Modify a ticket
+
+Modify the properties of an existing ticket.     **Required permissions:**    - **mmc-tickets.ticket.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyTicketExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new MMCTicketsApi();
+            var id = 56;  // int? | 
+            var body = new MMCTicketsTicket(); // MMCTicketsTicket |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Modify a ticket
+                MMCTicketsTicket result = apiInstance.ModifyTicket(id, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling MMCTicketsApi.ModifyTicket: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **int?**|  | 
+ **body** | [**MMCTicketsTicket**](MMCTicketsTicket.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**MMCTicketsTicket**](MMCTicketsTicket.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

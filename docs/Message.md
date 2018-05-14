@@ -3,8 +3,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Uuid** | **string** | The unique UUID assigned to the message by the Web-API. | [optional] 
-**Id** | **string** | The id of the message. This will be sent back in the reply, so you can identify the request. | [optional] 
+**Content** | **string** | The content of the message | 
+**Link** | **string** | The API link that can be used to obtain more information about this object | 
+**Receivers** | **List&lt;Object&gt;** | The receivers of this message | 
+**Timestamp** | **long?** | The timestamp at which the chat message was sent (epoch millis) | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

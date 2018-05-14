@@ -1,24 +1,25 @@
 # IO.Swagger.Api.WebBooksApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateBook**](WebBooksApi.md#createbook) | **POST** /webbooks/book | Create web book
-[**DeleteBook**](WebBooksApi.md#deletebook) | **DELETE** /webbooks/book/{id} | Delete a web book
-[**GetBook**](WebBooksApi.md#getbook) | **GET** /webbooks/book/{id} | Detailed web book info
-[**GetBookHtml**](WebBooksApi.md#getbookhtml) | **GET** /webbooks/book/{id}/html | Web Book HTML
-[**GetBookHtmlPost**](WebBooksApi.md#getbookhtmlpost) | **POST** /webbooks/book/{id}/html | Web Book HTML
-[**GetBooks**](WebBooksApi.md#getbooks) | **GET** /webbooks/book | Books list
+[**CreateWebBook**](WebBooksApi.md#createwebbook) | **POST** /web-books/book | Create a book
+[**DeleteWebBook**](WebBooksApi.md#deletewebbook) | **DELETE** /web-books/book/{id} | Delete a book
+[**GetWebBook**](WebBooksApi.md#getwebbook) | **GET** /web-books/book/{id} | Get a book
+[**GetWebBookContent**](WebBooksApi.md#getwebbookcontent) | **GET** /web-books/book/{id}/html | Book HTML
+[**GetWebBookContentPost**](WebBooksApi.md#getwebbookcontentpost) | **POST** /web-books/book/{id}/html | Book HTML
+[**ListWebBooks**](WebBooksApi.md#listwebbooks) | **GET** /web-books/book | List books
+[**ModifyWebBook**](WebBooksApi.md#modifywebbook) | **PUT** /web-books/book/{id} | Modify a book
 
 
-<a name="createbook"></a>
-# **CreateBook**
-> WebBooksResponse1 CreateBook (CreateWebBookRequest createWebBookRequest)
+<a name="createwebbook"></a>
+# **CreateWebBook**
+> WebBooksBook CreateWebBook (WebBooksBook body = null, bool? details = null, string accept = null, bool? pretty = null)
 
-Create web book
+Create a book
 
-Create a new web book from the specified data.  > Required permission: webbooks.book.create 
+Create a new web book from the specified data.     **Required permissions:**    - **web-books.book.create**   
 
 ### Example
 ```csharp
@@ -30,31 +31,34 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class CreateBookExample
+    public class CreateWebBookExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new WebBooksApi();
-            var createWebBookRequest = new CreateWebBookRequest(); // CreateWebBookRequest | 
+            var body = new WebBooksBook(); // WebBooksBook |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Create web book
-                WebBooksResponse1 result = apiInstance.CreateBook(createWebBookRequest);
+                // Create a book
+                WebBooksBook result = apiInstance.CreateWebBook(body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.CreateBook: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.CreateWebBook: " + e.Message );
             }
         }
     }
@@ -65,15 +69,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createWebBookRequest** | [**CreateWebBookRequest**](CreateWebBookRequest.md)|  | 
+ **body** | [**WebBooksBook**](WebBooksBook.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**WebBooksResponse1**](WebBooksResponse1.md)
+[**WebBooksBook**](WebBooksBook.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -82,13 +89,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="deletebook"></a>
-# **DeleteBook**
-> void DeleteBook (string id)
+<a name="deletewebbook"></a>
+# **DeleteWebBook**
+> WebBooksBook DeleteWebBook (string id, bool? details = null, string accept = null, bool? pretty = null)
 
-Delete a web book
+Delete a book
 
-Delete a web book.  > Required permission: webbooks.book.delete 
+Delete a web book.     **Required permissions:**    - **web-books.book.delete**   
 
 ### Example
 ```csharp
@@ -100,30 +107,34 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class DeleteBookExample
+    public class DeleteWebBookExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new WebBooksApi();
-            var id = id_example;  // string | The id of the web book to delete.
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Delete a web book
-                apiInstance.DeleteBook(id);
+                // Delete a book
+                WebBooksBook result = apiInstance.DeleteWebBook(id, details, accept, pretty);
+                Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.DeleteBook: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.DeleteWebBook: " + e.Message );
             }
         }
     }
@@ -134,15 +145,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the web book to delete. | 
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-void (empty response body)
+[**WebBooksBook**](WebBooksBook.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -151,13 +165,13 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbook"></a>
-# **GetBook**
-> WebBooksResponse1 GetBook (string id)
+<a name="getwebbook"></a>
+# **GetWebBook**
+> WebBooksBook GetWebBook (string id, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed web book info
+Get a book
 
-Get detailed information about a web book.  > Required permission: webbooks.book.one 
+Get detailed information about a web book.     **Required permissions:**    - **web-books.book.one**   
 
 ### Example
 ```csharp
@@ -169,31 +183,34 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetBookExample
+    public class GetWebBookExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new WebBooksApi();
-            var id = id_example;  // string | The id of the web book to get detailed information about.
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed web book info
-                WebBooksResponse1 result = apiInstance.GetBook(id);
+                // Get a book
+                WebBooksBook result = apiInstance.GetWebBook(id, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.GetBook: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.GetWebBook: " + e.Message );
             }
         }
     }
@@ -204,15 +221,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the web book to get detailed information about. | 
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**WebBooksResponse1**](WebBooksResponse1.md)
+[**WebBooksBook**](WebBooksBook.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -221,13 +241,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbookhtml"></a>
-# **GetBookHtml**
-> string GetBookHtml (string id)
+<a name="getwebbookcontent"></a>
+# **GetWebBookContent**
+> string GetWebBookContent (string id, bool? details = null, string accept = null, bool? pretty = null)
 
-Web Book HTML
+Book HTML
 
-Get the web book content as HTML.  > Required permission: webbooks.book.html 
+Get the web book content as HTML.
 
 ### Example
 ```csharp
@@ -239,31 +259,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetBookHtmlExample
+    public class GetWebBookContentExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
             var apiInstance = new WebBooksApi();
-            var id = id_example;  // string | The id of the web book to get the html for.
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Web Book HTML
-                string result = apiInstance.GetBookHtml(id);
+                // Book HTML
+                string result = apiInstance.GetWebBookContent(id, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.GetBookHtml: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.GetWebBookContent: " + e.Message );
             }
         }
     }
@@ -274,7 +288,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the web book to get the html for. | 
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
@@ -282,22 +299,22 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
+ - **Content-Type**: application/x-www-form-urlencoded, application/xml, application/json
+ - **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbookhtmlpost"></a>
-# **GetBookHtmlPost**
-> string GetBookHtmlPost (string id)
+<a name="getwebbookcontentpost"></a>
+# **GetWebBookContentPost**
+> string GetWebBookContentPost (string id, bool? details = null, string accept = null, bool? pretty = null)
 
-Web Book HTML
+Book HTML
 
-Get the web book content as HTML.  > Required permission: webbooks.book.html 
+Get the web book content as HTML.
 
 ### Example
 ```csharp
@@ -309,31 +326,25 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetBookHtmlPostExample
+    public class GetWebBookContentPostExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
             var apiInstance = new WebBooksApi();
-            var id = id_example;  // string | The id of the web book to get the html for.
+            var id = id_example;  // string | 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Web Book HTML
-                string result = apiInstance.GetBookHtmlPost(id);
+                // Book HTML
+                string result = apiInstance.GetWebBookContentPost(id, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.GetBookHtmlPost: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.GetWebBookContentPost: " + e.Message );
             }
         }
     }
@@ -344,7 +355,10 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **string**| The id of the web book to get the html for. | 
+ **id** | **string**|  | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
@@ -352,22 +366,22 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
+ - **Content-Type**: application/x-www-form-urlencoded, application/xml, application/json
+ - **Accept**: text/html
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getbooks"></a>
-# **GetBooks**
-> WebBooksResponse GetBooks (string details = null)
+<a name="listwebbooks"></a>
+# **ListWebBooks**
+> List<WebBooksBook> ListWebBooks (bool? details = null, string accept = null, bool? pretty = null)
 
-Books list
+List books
 
-Get a list of all the web books on the server.  > Required permission: webbooks.book.list 
+Get a list of all the web books on the server.     **Required permissions:**    - **web-books.book.list**   
 
 ### Example
 ```csharp
@@ -379,31 +393,33 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetBooksExample
+    public class ListWebBooksExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new WebBooksApi();
-            var details = details_example;  // string | Pass this parameter to receive the full details for each web book. (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Books list
-                WebBooksResponse result = apiInstance.GetBooks(details);
+                // List books
+                List&lt;WebBooksBook&gt; result = apiInstance.ListWebBooks(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling WebBooksApi.GetBooks: " + e.Message );
+                Debug.Print("Exception when calling WebBooksApi.ListWebBooks: " + e.Message );
             }
         }
     }
@@ -414,15 +430,95 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **details** | **string**| Pass this parameter to receive the full details for each web book. | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**WebBooksResponse**](WebBooksResponse.md)
+[**List<WebBooksBook>**](WebBooksBook.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifywebbook"></a>
+# **ModifyWebBook**
+> WebBooksBook ModifyWebBook (string id, WebBooksBook body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Modify a book
+
+Modify an existing book.     **Required permissions:**    - **web-books.book.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyWebBookExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new WebBooksApi();
+            var id = id_example;  // string | 
+            var body = new WebBooksBook(); // WebBooksBook |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Modify a book
+                WebBooksBook result = apiInstance.ModifyWebBook(id, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling WebBooksApi.ModifyWebBook: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **string**|  | 
+ **body** | [**WebBooksBook**](WebBooksBook.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**WebBooksBook**](WebBooksBook.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

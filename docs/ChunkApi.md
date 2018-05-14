@@ -1,20 +1,21 @@
 # IO.Swagger.Api.ChunkApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetChunk**](ChunkApi.md#getchunk) | **GET** /world/{uuid}/chunk/{x}/{z} | Detailed chunk info
-[**GetChunks**](ChunkApi.md#getchunks) | **GET** /world/{uuid}/chunk | Loaded chunk list
+[**CreateChunkAt**](ChunkApi.md#createchunkat) | **POST** /chunk/{world}/{x}/{z} | Load &amp; Generate a chunk
+[**GetChunkAt**](ChunkApi.md#getchunkat) | **GET** /chunk/{world}/{x}/{z} | Get a chunk
+[**ListChunks**](ChunkApi.md#listchunks) | **GET** /chunk/{world} | List chunks
 
 
-<a name="getchunk"></a>
-# **GetChunk**
-> ChunkResponse GetChunk (string uuid, int? x, int? z)
+<a name="createchunkat"></a>
+# **CreateChunkAt**
+> Chunk CreateChunkAt (string world, int? x, int? z, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed chunk info
+Load & Generate a chunk
 
-Get detailed information about a chunk  > Required permission: world.chunk.one 
+Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
 
 ### Example
 ```csharp
@@ -26,33 +27,36 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetChunkExample
+    public class CreateChunkAtExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ChunkApi();
-            var uuid = uuid_example;  // string | The uuid of the world.
-            var x = 56;  // int? | The x-coordinate of the chunk.
-            var z = 56;  // int? | The z-coordinate of the chunk.
+            var world = world_example;  // string | The uuid of the world in which to create the chunk
+            var x = 56;  // int? | The x-coordinate of the chunk (in chunk coordinates)
+            var z = 56;  // int? | The z-coordinate of the chunk (in chunk coordinates)
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed chunk info
-                ChunkResponse result = apiInstance.GetChunk(uuid, x, z);
+                // Load & Generate a chunk
+                Chunk result = apiInstance.CreateChunkAt(world, x, z, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ChunkApi.GetChunk: " + e.Message );
+                Debug.Print("Exception when calling ChunkApi.CreateChunkAt: " + e.Message );
             }
         }
     }
@@ -63,17 +67,20 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the world. | 
- **x** | **int?**| The x-coordinate of the chunk. | 
- **z** | **int?**| The z-coordinate of the chunk. | 
+ **world** | **string**| The uuid of the world in which to create the chunk | 
+ **x** | **int?**| The x-coordinate of the chunk (in chunk coordinates) | 
+ **z** | **int?**| The z-coordinate of the chunk (in chunk coordinates) | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**ChunkResponse**](ChunkResponse.md)
+[**Chunk**](Chunk.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -82,13 +89,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="getchunks"></a>
-# **GetChunks**
-> ChunksResponse GetChunks (string uuid)
+<a name="getchunkat"></a>
+# **GetChunkAt**
+> Chunk GetChunkAt (string world, int? x, int? z, bool? details = null, string accept = null, bool? pretty = null)
 
-Loaded chunk list
+Get a chunk
 
-Gets a list of all the loaded chunks for the specified world.  > Required permission: world.chunk.list 
+Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
 
 ### Example
 ```csharp
@@ -100,31 +107,36 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class GetChunksExample
+    public class GetChunkAtExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new ChunkApi();
-            var uuid = uuid_example;  // string | The uuid of the world.
+            var world = world_example;  // string | The uuid of the world in which to get the chunk
+            var x = 56;  // int? | The x-coordinate of the chunk (in chunk coordinates)
+            var z = 56;  // int? | The z-coordinate of the chunk (in chunk coordinates)
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Loaded chunk list
-                ChunksResponse result = apiInstance.GetChunks(uuid);
+                // Get a chunk
+                Chunk result = apiInstance.GetChunkAt(world, x, z, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling ChunkApi.GetChunks: " + e.Message );
+                Debug.Print("Exception when calling ChunkApi.GetChunkAt: " + e.Message );
             }
         }
     }
@@ -135,15 +147,96 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the world. | 
+ **world** | **string**| The uuid of the world in which to get the chunk | 
+ **x** | **int?**| The x-coordinate of the chunk (in chunk coordinates) | 
+ **z** | **int?**| The z-coordinate of the chunk (in chunk coordinates) | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**ChunksResponse**](ChunksResponse.md)
+[**Chunk**](Chunk.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listchunks"></a>
+# **ListChunks**
+> List<Chunk> ListChunks (string world, bool? details = null, string accept = null, bool? pretty = null)
+
+List chunks
+
+Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ListChunksExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new ChunkApi();
+            var world = world_example;  // string | The uuid of the for which to get all chunks
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // List chunks
+                List&lt;Chunk&gt; result = apiInstance.ListChunks(world, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ChunkApi.ListChunks: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world** | **string**| The uuid of the for which to get all chunks | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**List<Chunk>**](Chunk.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

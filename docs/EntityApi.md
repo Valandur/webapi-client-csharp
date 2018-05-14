@@ -1,96 +1,24 @@
 # IO.Swagger.Api.EntityApi
 
-All URIs are relative to *http://<host>/api*
+All URIs are relative to *https://localhost/api/v5*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeEntity**](EntityApi.md#changeentity) | **PUT** /entity/{uuid} | Edit entity
-[**CreateEntity**](EntityApi.md#createentity) | **POST** /entity | Create an entity
-[**DestroyEntity**](EntityApi.md#destroyentity) | **DELETE** /entity/{uuid} | Destroy an entity
-[**ExecuteEntityMethod**](EntityApi.md#executeentitymethod) | **POST** /entity/{uuid} | Execute entity method
-[**GetEntities**](EntityApi.md#getentities) | **GET** /entity | Entities list
-[**GetEntity**](EntityApi.md#getentity) | **GET** /entity/{uuid} | Detailed entity info
+[**CreateEntity**](EntityApi.md#createentity) | **POST** /entity | Spawn an entity
+[**ExecuteMethod**](EntityApi.md#executemethod) | **POST** /entity/{entity}/method | Execute a method
+[**GetEntity**](EntityApi.md#getentity) | **GET** /entity/{entity} | Get entity
+[**ListEntities**](EntityApi.md#listentities) | **GET** /entity | List entities
+[**ModifyEntity**](EntityApi.md#modifyentity) | **PUT** /entity/{entity} | Modify an entity
+[**RemoveEntity**](EntityApi.md#removeentity) | **DELETE** /entity/{entity} | Destroy an entity
 
-
-<a name="changeentity"></a>
-# **ChangeEntity**
-> EntityResponse ChangeEntity (string uuid, UpdateEntityRequest updateEntityRequest)
-
-Edit entity
-
-Update the properties of an existing entity.  > Required permission: entity.change 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class ChangeEntityExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new EntityApi();
-            var uuid = uuid_example;  // string | The uuid of the entity.
-            var updateEntityRequest = new UpdateEntityRequest(); // UpdateEntityRequest | The new properties of the entity
-
-            try
-            {
-                // Edit entity
-                EntityResponse result = apiInstance.ChangeEntity(uuid, updateEntityRequest);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling EntityApi.ChangeEntity: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the entity. | 
- **updateEntityRequest** | [**UpdateEntityRequest**](UpdateEntityRequest.md)| The new properties of the entity | 
-
-### Return type
-
-[**EntityResponse**](EntityResponse.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 <a name="createentity"></a>
 # **CreateEntity**
-> EntityResponse CreateEntity (CreateEntityRequest createEntityRequest)
+> Entity CreateEntity (CreateEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
-Create an entity
+Spawn an entity
 
-Creates & Spawns a new entity with the specified properties.  > Required permission: entity.create 
+Creates & Spawns a new entity with the specified properties.     **Required permissions:**    - **entity.create**   
 
 ### Example
 ```csharp
@@ -106,22 +34,25 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new EntityApi();
-            var createEntityRequest = new CreateEntityRequest(); // CreateEntityRequest | 
+            var body = new CreateEntityRequest(); // CreateEntityRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Create an entity
-                EntityResponse result = apiInstance.CreateEntity(createEntityRequest);
+                // Spawn an entity
+                Entity result = apiInstance.CreateEntity(body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -137,15 +68,18 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createEntityRequest** | [**CreateEntityRequest**](CreateEntityRequest.md)|  | 
+ **body** | [**CreateEntityRequest**](CreateEntityRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**EntityResponse**](EntityResponse.md)
+[**Entity**](Entity.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -154,13 +88,13 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="destroyentity"></a>
-# **DestroyEntity**
-> EntityResponse DestroyEntity (string uuid)
+<a name="executemethod"></a>
+# **ExecuteMethod**
+> ExecuteMethodResponse ExecuteMethod (Guid? entity, ExecuteMethodRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
-Destroy an entity
+Execute a method
 
-Destroys an entity.  > Required permission: entity.delete 
+Provides direct access to the underlaying entity object and can execute any method on it.     **Required permissions:**    - **entity.method**   
 
 ### Example
 ```csharp
@@ -172,31 +106,35 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class DestroyEntityExample
+    public class ExecuteMethodExample
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new EntityApi();
-            var uuid = uuid_example;  // string | The uuid of the entity.
+            var entity = new Guid?(); // Guid? | The uuid of the entity
+            var body = new ExecuteMethodRequest(); // ExecuteMethodRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Destroy an entity
-                EntityResponse result = apiInstance.DestroyEntity(uuid);
+                // Execute a method
+                ExecuteMethodResponse result = apiInstance.ExecuteMethod(entity, body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling EntityApi.DestroyEntity: " + e.Message );
+                Debug.Print("Exception when calling EntityApi.ExecuteMethod: " + e.Message );
             }
         }
     }
@@ -207,157 +145,19 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the entity. | 
+ **entity** | [**Guid?**](Guid?.md)| The uuid of the entity | 
+ **body** | [**ExecuteMethodRequest**](ExecuteMethodRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**EntityResponse**](EntityResponse.md)
+[**ExecuteMethodResponse**](ExecuteMethodResponse.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="executeentitymethod"></a>
-# **ExecuteEntityMethod**
-> EntityMethodResult ExecuteEntityMethod (string uuid, RawRequest request)
-
-Execute entity method
-
-Provides direct access to the underlaying entity object and can execute any method on it.  > Required permission: entity.method 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class ExecuteEntityMethodExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new EntityApi();
-            var uuid = uuid_example;  // string | The uuid of the entity.
-            var request = new RawRequest(); // RawRequest | Information about which method to execute.
-
-            try
-            {
-                // Execute entity method
-                EntityMethodResult result = apiInstance.ExecuteEntityMethod(uuid, request);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling EntityApi.ExecuteEntityMethod: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the entity. | 
- **request** | [**RawRequest**](RawRequest.md)| Information about which method to execute. | 
-
-### Return type
-
-[**EntityMethodResult**](EntityMethodResult.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, application/xml
- - **Accept**: application/json, application/xml
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-<a name="getentities"></a>
-# **GetEntities**
-> EntitiesList GetEntities (string details = null)
-
-Entities list
-
-Get a list of all entities on the server (in all worlds).  > Required permission: entity.list 
-
-### Example
-```csharp
-using System;
-using System.Diagnostics;
-using IO.Swagger.Api;
-using IO.Swagger.Client;
-using IO.Swagger.Model;
-
-namespace Example
-{
-    public class GetEntitiesExample
-    {
-        public void main()
-        {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
-            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
-
-            var apiInstance = new EntityApi();
-            var details = details_example;  // string | Pass this parameter to receive the full details for each entity. (optional) 
-
-            try
-            {
-                // Entities list
-                EntitiesList result = apiInstance.GetEntities(details);
-                Debug.WriteLine(result);
-            }
-            catch (Exception e)
-            {
-                Debug.Print("Exception when calling EntityApi.GetEntities: " + e.Message );
-            }
-        }
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **details** | **string**| Pass this parameter to receive the full details for each entity. | [optional] 
-
-### Return type
-
-[**EntitiesList**](EntitiesList.md)
-
-### Authorization
-
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 
@@ -368,11 +168,11 @@ Name | Type | Description  | Notes
 
 <a name="getentity"></a>
 # **GetEntity**
-> EntityResponse GetEntity (string uuid, string fields = null, string methods = null)
+> Entity GetEntity (Guid? entity, bool? details = null, string accept = null, bool? pretty = null)
 
-Detailed entity info
+Get entity
 
-Get detailed information about an entity.  > Required permission: entity.one 
+Get detailed information about an entity.     **Required permissions:**    - **entity.one**   
 
 ### Example
 ```csharp
@@ -388,24 +188,25 @@ namespace Example
     {
         public void main()
         {
-            // Configure API key authorization: headerKey
-            Configuration.Default.ApiKey.Add("x-webapi-key", "YOUR_API_KEY");
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("x-webapi-key", "Bearer");
-            // Configure API key authorization: queryKey
-            Configuration.Default.ApiKey.Add("key", "YOUR_API_KEY");
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
             // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-            // Configuration.Default.ApiKeyPrefix.Add("key", "Bearer");
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
 
             var apiInstance = new EntityApi();
-            var uuid = uuid_example;  // string | The uuid of the entity to get detailed information about.
-            var fields = fields_example;  // string | An optional list of additional fields to get. (optional) 
-            var methods = methods_example;  // string | An optional list of additional methods to get. (optional) 
+            var entity = new Guid?(); // Guid? | The uuid of the entity
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
 
             try
             {
-                // Detailed entity info
-                EntityResponse result = apiInstance.GetEntity(uuid, fields, methods);
+                // Get entity
+                Entity result = apiInstance.GetEntity(entity, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -421,17 +222,256 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **uuid** | **string**| The uuid of the entity to get detailed information about. | 
- **fields** | **string**| An optional list of additional fields to get. | [optional] 
- **methods** | **string**| An optional list of additional methods to get. | [optional] 
+ **entity** | [**Guid?**](Guid?.md)| The uuid of the entity | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
 
 ### Return type
 
-[**EntityResponse**](EntityResponse.md)
+[**Entity**](Entity.md)
 
 ### Authorization
 
-[headerKey](../README.md#headerKey), [queryKey](../README.md#queryKey)
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="listentities"></a>
+# **ListEntities**
+> List<Entity> ListEntities (string world = null, string type = null, string min = null, string max = null, int? limit = null, bool? details = null, string accept = null, bool? pretty = null)
+
+List entities
+
+Get a list of all entities on the server (in all worlds).     **Required permissions:**    - **entity.list**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ListEntitiesExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new EntityApi();
+            var world = world_example;  // string | The world to filter the entities by (optional) 
+            var type = type_example;  // string | The type id of the entities to filter by (optional) 
+            var min = min_example;  // string | The minimum coordinates at which the entity must be, min=x|y|z (optional) 
+            var max = max_example;  // string | The maximum coordinates at which the entity must be, max=x|y|z (optional) 
+            var limit = 56;  // int? | The maximum amount of entities returned (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // List entities
+                List&lt;Entity&gt; result = apiInstance.ListEntities(world, type, min, max, limit, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling EntityApi.ListEntities: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world** | **string**| The world to filter the entities by | [optional] 
+ **type** | **string**| The type id of the entities to filter by | [optional] 
+ **min** | **string**| The minimum coordinates at which the entity must be, min&#x3D;x|y|z | [optional] 
+ **max** | **string**| The maximum coordinates at which the entity must be, max&#x3D;x|y|z | [optional] 
+ **limit** | **int?**| The maximum amount of entities returned | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**List<Entity>**](Entity.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifyentity"></a>
+# **ModifyEntity**
+> Entity ModifyEntity (Guid? entity, UpdateEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Modify an entity
+
+Modify the properties of an existing entity.     **Required permissions:**    - **entity.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyEntityExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new EntityApi();
+            var entity = new Guid?(); // Guid? | The uuid of the entity
+            var body = new UpdateEntityRequest(); // UpdateEntityRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Modify an entity
+                Entity result = apiInstance.ModifyEntity(entity, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling EntityApi.ModifyEntity: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity** | [**Guid?**](Guid?.md)| The uuid of the entity | 
+ **body** | [**UpdateEntityRequest**](UpdateEntityRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**Entity**](Entity.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="removeentity"></a>
+# **RemoveEntity**
+> Entity RemoveEntity (Guid? entity, bool? details = null, string accept = null, bool? pretty = null)
+
+Destroy an entity
+
+Destroys an entity.     **Required permissions:**    - **entity.delete**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class RemoveEntityExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new EntityApi();
+            var entity = new Guid?(); // Guid? | The uuid of the entity
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Destroy an entity
+                Entity result = apiInstance.RemoveEntity(entity, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling EntityApi.RemoveEntity: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **entity** | [**Guid?**](Guid?.md)| The uuid of the entity | 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**Entity**](Entity.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
 
 ### HTTP request headers
 

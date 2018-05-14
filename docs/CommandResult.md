@@ -3,11 +3,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AffectedBlocks** | **decimal?** | The number of block that were affected. | [optional] 
-**AffectedEntities** | **decimal?** | The number of entities that were affected. | [optional] 
-**AffectedItems** | **decimal?** | The number of items that were affected. | [optional] 
-**QueryResult** | **decimal?** | The query result number. | [optional] 
-**SuccessCount** | **decimal?** | The success count. | [optional] 
+**Link** | **string** | The API link that can be used to obtain more information about this object | 
+**AffectedBlocks** | **int?** | The number of blocks that were affected by this command | [optional] 
+**AffectedEntities** | **int?** | The number of entities that were affected by this command | [optional] 
+**AffectedItems** | **int?** | The number of items that were affected by this command | [optional] 
+**QueryResult** | **int?** | The results of the query | [optional] 
+**SuccessCount** | **int?** | The success count | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
