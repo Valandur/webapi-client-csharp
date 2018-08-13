@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 <a name="createworld"></a>
 # **CreateWorld**
-> WorldFull CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+> World CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
 Create a world
 
@@ -52,7 +52,7 @@ namespace Example
             try
             {
                 // Create a world
-                WorldFull result = apiInstance.CreateWorld(body, details, accept, pretty);
+                World result = apiInstance.CreateWorld(body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteworld"></a>
 # **DeleteWorld**
-> WorldFull DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
+> World DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
 
 Delete a world
 
@@ -128,7 +128,7 @@ namespace Example
             try
             {
                 // Delete a world
-                WorldFull result = apiInstance.DeleteWorld(world, details, accept, pretty);
+                World result = apiInstance.DeleteWorld(world, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 
 <a name="getworld"></a>
 # **GetWorld**
-> WorldFull GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
+> World GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
 
 Get a world
 
@@ -282,7 +282,7 @@ namespace Example
             try
             {
                 // Get a world
-                WorldFull result = apiInstance.GetWorld(world, details, accept, pretty);
+                World result = apiInstance.GetWorld(world, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 
@@ -320,7 +320,7 @@ Name | Type | Description  | Notes
 
 <a name="listworlds"></a>
 # **ListWorlds**
-> List<WorldFull> ListWorlds (bool? details = null, string accept = null, bool? pretty = null)
+> List<World> ListWorlds (bool? details = null, string accept = null, bool? pretty = null)
 
 List worlds
 
@@ -357,7 +357,7 @@ namespace Example
             try
             {
                 // List worlds
-                List&lt;WorldFull&gt; result = apiInstance.ListWorlds(details, accept, pretty);
+                List&lt;World&gt; result = apiInstance.ListWorlds(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -379,7 +379,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<WorldFull>**](WorldFull.md)
+[**List<World>**](World.md)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ Name | Type | Description  | Notes
 
 <a name="modifyworld"></a>
 # **ModifyWorld**
-> WorldFull ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+> World ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
 Modify a world
 
@@ -433,7 +433,7 @@ namespace Example
             try
             {
                 // Modify a world
-                WorldFull result = apiInstance.ModifyWorld(world, body, details, accept, pretty);
+                World result = apiInstance.ModifyWorld(world, body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -457,7 +457,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**WorldFull**](WorldFull.md)
+[**World**](World.md)
 
 ### Authorization
 

@@ -99,6 +99,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'FoodLevel'
         }
         /// <summary>
+        /// Test the property 'GameMode'
+        /// </summary>
+        [Test]
+        public void GameModeTest()
+        {
+            // TODO unit test for the property 'GameMode'
+        }
+        /// <summary>
         /// Test the property 'Health'
         /// </summary>
         [Test]

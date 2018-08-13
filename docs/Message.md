@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Content** | **string** | The content of the message | 
-**Link** | **string** | The API link that can be used to obtain more information about this object | 
 **Receivers** | **List&lt;Object&gt;** | The receivers of this message | 
 **Timestamp** | **long?** | The timestamp at which the chat message was sent (epoch millis) | 
 

@@ -38,7 +38,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InteractiveMessage" /> class.
         /// </summary>
-        /// <param name="Id">The id of the message. Used for sender of the message to identify responses. (required).</param>
+        /// <param name="Id">The id of the message. Used to identify responses. (required).</param>
         /// <param name="Target">The target of the message, usually this is a player UUID. Can be set to \&quot;server\&quot; to send to all online players. (required).</param>
         /// <param name="Uuid">The unique UUID of this message (required).</param>
         /// <param name="Message">The actual content of the message.</param>
@@ -81,9 +81,9 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// The id of the message. Used for sender of the message to identify responses.
+        /// The id of the message. Used to identify responses.
         /// </summary>
-        /// <value>The id of the message. Used for sender of the message to identify responses.</value>
+        /// <value>The id of the message. Used to identify responses.</value>
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
 

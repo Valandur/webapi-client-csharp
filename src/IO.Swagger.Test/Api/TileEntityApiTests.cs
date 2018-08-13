@@ -120,6 +120,25 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOf<List<TileEntity>> (response, "response is List<TileEntity>");
         }
         
+        /// <summary>
+        /// Test ModifyTileEntity
+        /// </summary>
+        [Test]
+        public void ModifyTileEntityTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string world = null;
+            //int? x = null;
+            //int? y = null;
+            //int? z = null;
+            //UpdateTileEntityRequest body = null;
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //var response = instance.ModifyTileEntity(world, x, y, z, body, details, accept, pretty);
+            //Assert.IsInstanceOf<TileEntity> (response, "response is TileEntity");
+        }
+        
     }
 
 }

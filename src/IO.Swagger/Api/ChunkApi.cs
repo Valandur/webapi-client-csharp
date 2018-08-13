@@ -28,7 +28,7 @@ namespace IO.Swagger.Api
         /// Load &amp; Generate a chunk
         /// </summary>
         /// <remarks>
-        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -44,7 +44,7 @@ namespace IO.Swagger.Api
         /// Load &amp; Generate a chunk
         /// </summary>
         /// <remarks>
-        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -59,7 +59,7 @@ namespace IO.Swagger.Api
         /// Get a chunk
         /// </summary>
         /// <remarks>
-        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -75,7 +75,7 @@ namespace IO.Swagger.Api
         /// Get a chunk
         /// </summary>
         /// <remarks>
-        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -90,7 +90,7 @@ namespace IO.Swagger.Api
         /// List chunks
         /// </summary>
         /// <remarks>
-        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -104,7 +104,7 @@ namespace IO.Swagger.Api
         /// List chunks
         /// </summary>
         /// <remarks>
-        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -119,7 +119,7 @@ namespace IO.Swagger.Api
         /// Load &amp; Generate a chunk
         /// </summary>
         /// <remarks>
-        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -135,7 +135,7 @@ namespace IO.Swagger.Api
         /// Load &amp; Generate a chunk
         /// </summary>
         /// <remarks>
-        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -150,7 +150,7 @@ namespace IO.Swagger.Api
         /// Get a chunk
         /// </summary>
         /// <remarks>
-        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -166,7 +166,7 @@ namespace IO.Swagger.Api
         /// Get a chunk
         /// </summary>
         /// <remarks>
-        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -181,7 +181,7 @@ namespace IO.Swagger.Api
         /// List chunks
         /// </summary>
         /// <remarks>
-        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -195,7 +195,7 @@ namespace IO.Swagger.Api
         /// List chunks
         /// </summary>
         /// <remarks>
-        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -305,7 +305,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -322,7 +322,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -405,7 +405,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -423,7 +423,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.chunk.create**   
+        /// Load &amp; Generate a chunk Forces a chunk to be loaded into memory, and created if it does not exist.     **Required permissions:**    - **chunk.create**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to create the chunk</param>
@@ -506,7 +506,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -523,7 +523,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -606,7 +606,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -624,7 +624,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.chunk.one **   
+        /// Get a chunk Get detailed information about a chunk     **Required permissions:**    - **chunk.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the world in which to get the chunk</param>
@@ -707,7 +707,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -722,7 +722,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -795,7 +795,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>
@@ -811,7 +811,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.chunk.list**   
+        /// List chunks Gets a list of all the loaded chunks for the specified world.     **Required permissions:**    - **chunk.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="world">The uuid of the for which to get all chunks</param>

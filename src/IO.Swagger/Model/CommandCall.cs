@@ -131,13 +131,6 @@ namespace IO.Swagger.Model
         public string Command { get; set; }
 
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// The result of the command execution
         /// </summary>
         /// <value>The result of the command execution</value>
@@ -163,7 +156,6 @@ namespace IO.Swagger.Model
             sb.Append("  Cancelled: ").Append(Cancelled).Append("\n");
             sb.Append("  Cause: ").Append(Cause).Append("\n");
             sb.Append("  Command: ").Append(Command).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
@@ -221,11 +213,6 @@ namespace IO.Swagger.Model
                     this.Command.Equals(input.Command))
                 ) && 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.Result == input.Result ||
                     (this.Result != null &&
                     this.Result.Equals(input.Result))
@@ -254,8 +241,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Cause.GetHashCode();
                 if (this.Command != null)
                     hashCode = hashCode * 59 + this.Command.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.Result != null)
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
                 if (this.Timestamp != null)

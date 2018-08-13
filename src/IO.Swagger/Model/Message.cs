@@ -80,13 +80,6 @@ namespace IO.Swagger.Model
         public string Content { get; set; }
 
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// The receivers of this message
         /// </summary>
         /// <value>The receivers of this message</value>
@@ -109,7 +102,6 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class Message {\n");
             sb.Append("  Content: ").Append(Content).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Receivers: ").Append(Receivers).Append("\n");
             sb.Append("  Timestamp: ").Append(Timestamp).Append("\n");
             sb.Append("}\n");
@@ -152,11 +144,6 @@ namespace IO.Swagger.Model
                     this.Content.Equals(input.Content))
                 ) && 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.Receivers == input.Receivers ||
                     this.Receivers != null &&
                     this.Receivers.SequenceEqual(input.Receivers)
@@ -179,8 +166,6 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Content != null)
                     hashCode = hashCode * 59 + this.Content.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.Receivers != null)
                     hashCode = hashCode * 59 + this.Receivers.GetHashCode();
                 if (this.Timestamp != null)

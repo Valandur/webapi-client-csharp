@@ -86,7 +86,7 @@ namespace IO.Swagger.Model
         /// <param name="Notified">True if staff has been notified about this ticket, false otherwise.</param>
         /// <param name="Sender">The sender of this ticket.</param>
         /// <param name="Staff">The staff member that was assigned to this ticket.</param>
-        public MMCTicketsTicket(int? Id = default(int?), string Message = default(string), StatusEnum Status = default(StatusEnum), long? Timestamp = default(long?), string Comment = default(string), Location Location = default(Location), int? Notified = default(int?), PlayerFull Sender = default(PlayerFull), Player Staff = default(Player))
+        public MMCTicketsTicket(int? Id = default(int?), string Message = default(string), StatusEnum Status = default(StatusEnum), long? Timestamp = default(long?), string Comment = default(string), Location Location = default(Location), int? Notified = default(int?), Player Sender = default(Player), Player Staff = default(Player))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -186,7 +186,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>The sender of this ticket</value>
         [DataMember(Name="sender", EmitDefaultValue=false)]
-        public PlayerFull Sender { get; set; }
+        public Player Sender { get; set; }
 
         /// <summary>
         /// The staff member that was assigned to this ticket

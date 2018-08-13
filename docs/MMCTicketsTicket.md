@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **Comment** | **string** | The comment added by staff to this ticket | [optional] 
 **Location** | [**Location**](Location.md) | The location at which this ticket was submitted | [optional] 
 **Notified** | **int?** | True if staff has been notified about this ticket, false otherwise | [optional] 
-**Sender** | [**PlayerFull**](PlayerFull.md) | The sender of this ticket | [optional] 
+**Sender** | [**Player**](Player.md) | The sender of this ticket | [optional] 
 **Staff** | [**Player**](Player.md) | The staff member that was assigned to this ticket | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

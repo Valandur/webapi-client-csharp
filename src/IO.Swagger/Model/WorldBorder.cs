@@ -151,13 +151,6 @@ namespace IO.Swagger.Model
         public double? Diameter { get; set; }
 
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// The new diameter of the border, in case it is collapsing/expanding
         /// </summary>
         /// <value>The new diameter of the border, in case it is collapsing/expanding</value>
@@ -197,7 +190,6 @@ namespace IO.Swagger.Model
             sb.Append("  DamageAmount: ").Append(DamageAmount).Append("\n");
             sb.Append("  DamageThreshold: ").Append(DamageThreshold).Append("\n");
             sb.Append("  Diameter: ").Append(Diameter).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  NewDiameter: ").Append(NewDiameter).Append("\n");
             sb.Append("  TimeRemaining: ").Append(TimeRemaining).Append("\n");
             sb.Append("  WarningDistance: ").Append(WarningDistance).Append("\n");
@@ -257,11 +249,6 @@ namespace IO.Swagger.Model
                     this.Diameter.Equals(input.Diameter))
                 ) && 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.NewDiameter == input.NewDiameter ||
                     (this.NewDiameter != null &&
                     this.NewDiameter.Equals(input.NewDiameter))
@@ -300,8 +287,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.DamageThreshold.GetHashCode();
                 if (this.Diameter != null)
                     hashCode = hashCode * 59 + this.Diameter.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.NewDiameter != null)
                     hashCode = hashCode * 59 + this.NewDiameter.GetHashCode();
                 if (this.TimeRemaining != null)

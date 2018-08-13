@@ -77,13 +77,6 @@ namespace IO.Swagger.Model
         public Dictionary<string, Object> Context { get; set; }
 
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
         /// <returns>String presentation of the object</returns>
@@ -93,7 +86,6 @@ namespace IO.Swagger.Model
             sb.Append("class Cause {\n");
             sb.Append("  Causes: ").Append(Causes).Append("\n");
             sb.Append("  Context: ").Append(Context).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -137,11 +129,6 @@ namespace IO.Swagger.Model
                     this.Context == input.Context ||
                     this.Context != null &&
                     this.Context.SequenceEqual(input.Context)
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
                 );
         }
 
@@ -158,8 +145,6 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Causes.GetHashCode();
                 if (this.Context != null)
                     hashCode = hashCode * 59 + this.Context.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 return hashCode;
             }
         }

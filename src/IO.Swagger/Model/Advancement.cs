@@ -39,7 +39,6 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="Advancement" /> class.
         /// </summary>
         /// <param name="Id">The unique id of the advancement (required).</param>
-        /// <param name="Name">The name of the advancement (required).</param>
         /// <param name="Title">The title of the advancement (required).</param>
         /// <param name="AnnounceToChat">True if the achieving of this advancement is announced in chat, false otherwise.</param>
         /// <param name="Description">The description of the advancement.</param>
@@ -47,7 +46,7 @@ namespace IO.Swagger.Model
         /// <param name="Parent">The parent advancement, which must be unlocked prior to this advancement.</param>
         /// <param name="ShowToast">True if achieving this advancement shows the player a toast message, false otherwise.</param>
         /// <param name="Tree">The advancement tree that this advancement belongs to.</param>
-        public Advancement(string Id = default(string), string Name = default(string), string Title = default(string), bool? AnnounceToChat = default(bool?), string Description = default(string), bool? Hidden = default(bool?), Advancement Parent = default(Advancement), bool? ShowToast = default(bool?), CatalogTypeAdvancementTree Tree = default(CatalogTypeAdvancementTree))
+        public Advancement(string Id = default(string), string Title = default(string), bool? AnnounceToChat = default(bool?), string Description = default(string), bool? Hidden = default(bool?), Advancement Parent = default(Advancement), bool? ShowToast = default(bool?), CatalogTypeAdvancementTree Tree = default(CatalogTypeAdvancementTree))
         {
             // to ensure "Id" is required (not null)
             if (Id == null)
@@ -57,15 +56,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.Id = Id;
-            }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for Advancement and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
             }
             // to ensure "Title" is required (not null)
             if (Title == null)
@@ -92,18 +82,11 @@ namespace IO.Swagger.Model
         public string Id { get; set; }
 
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// The name of the advancement
         /// </summary>
         /// <value>The name of the advancement</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
         /// <summary>
         /// The title of the advancement
@@ -163,7 +146,6 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class Advancement {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Title: ").Append(Title).Append("\n");
             sb.Append("  AnnounceToChat: ").Append(AnnounceToChat).Append("\n");
@@ -210,11 +192,6 @@ namespace IO.Swagger.Model
                     this.Id == input.Id ||
                     (this.Id != null &&
                     this.Id.Equals(input.Id))
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -269,8 +246,6 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 if (this.Title != null)

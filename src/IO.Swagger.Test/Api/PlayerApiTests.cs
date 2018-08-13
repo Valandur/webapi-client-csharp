@@ -92,7 +92,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.GetPlayer(player, details, accept, pretty);
-            //Assert.IsInstanceOf<PlayerFull> (response, "response is PlayerFull");
+            //Assert.IsInstanceOf<Player> (response, "response is Player");
         }
         
         /// <summary>
@@ -106,7 +106,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.ListPlayers(details, accept, pretty);
-            //Assert.IsInstanceOf<List<PlayerFull>> (response, "response is List<PlayerFull>");
+            //Assert.IsInstanceOf<List<Player>> (response, "response is List<Player>");
         }
         
         /// <summary>
@@ -122,7 +122,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.ModifyPlayer(player, body, details, accept, pretty);
-            //Assert.IsInstanceOf<PlayerFull> (response, "response is PlayerFull");
+            //Assert.IsInstanceOf<Player> (response, "response is Player");
         }
         
     }

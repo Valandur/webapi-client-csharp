@@ -65,6 +65,24 @@ namespace IO.Swagger.Test
             //Assert.IsInstanceOfType<BlockOperation> (instance, "variable 'instance' is a BlockOperation");
         }
 
+        /// <summary>
+        /// Test deserialize a BlockChangeOperation from type BlockOperation
+        /// </summary>
+        [Test]
+        public void BlockChangeOperationDeserializeFromBlockOperationTest()
+        {
+            // TODO uncomment below to test deserialize a BlockChangeOperation from type BlockOperation
+            //Assert.IsInstanceOf<BlockOperation>(JsonConvert.DeserializeObject<BlockOperation>(new BlockChangeOperation().ToJson()));
+        }
+        /// <summary>
+        /// Test deserialize a BlockGetOperation from type BlockOperation
+        /// </summary>
+        [Test]
+        public void BlockGetOperationDeserializeFromBlockOperationTest()
+        {
+            // TODO uncomment below to test deserialize a BlockGetOperation from type BlockOperation
+            //Assert.IsInstanceOf<BlockOperation>(JsonConvert.DeserializeObject<BlockOperation>(new BlockGetOperation().ToJson()));
+        }
 
         /// <summary>
         /// Test the property 'Error'
@@ -73,14 +91,6 @@ namespace IO.Swagger.Test
         public void ErrorTest()
         {
             // TODO unit test for the property 'Error'
-        }
-        /// <summary>
-        /// Test the property 'Errored'
-        /// </summary>
-        [Test]
-        public void ErroredTest()
-        {
-            // TODO unit test for the property 'Errored'
         }
         /// <summary>
         /// Test the property 'EstimatedSecondsRemaining'

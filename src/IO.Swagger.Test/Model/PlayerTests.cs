@@ -67,12 +67,44 @@ namespace IO.Swagger.Test
 
 
         /// <summary>
+        /// Test the property 'Address'
+        /// </summary>
+        [Test]
+        public void AddressTest()
+        {
+            // TODO unit test for the property 'Address'
+        }
+        /// <summary>
+        /// Test the property 'Inventory'
+        /// </summary>
+        [Test]
+        public void InventoryTest()
+        {
+            // TODO unit test for the property 'Inventory'
+        }
+        /// <summary>
+        /// Test the property 'Latency'
+        /// </summary>
+        [Test]
+        public void LatencyTest()
+        {
+            // TODO unit test for the property 'Latency'
+        }
+        /// <summary>
         /// Test the property 'Link'
         /// </summary>
         [Test]
         public void LinkTest()
         {
             // TODO unit test for the property 'Link'
+        }
+        /// <summary>
+        /// Test the property 'Location'
+        /// </summary>
+        [Test]
+        public void LocationTest()
+        {
+            // TODO unit test for the property 'Location'
         }
         /// <summary>
         /// Test the property 'Name'
@@ -91,12 +123,1628 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Online'
         }
         /// <summary>
+        /// Test the property 'Rotation'
+        /// </summary>
+        [Test]
+        public void RotationTest()
+        {
+            // TODO unit test for the property 'Rotation'
+        }
+        /// <summary>
+        /// Test the property 'Scale'
+        /// </summary>
+        [Test]
+        public void ScaleTest()
+        {
+            // TODO unit test for the property 'Scale'
+        }
+        /// <summary>
+        /// Test the property 'UnlockedAdvancements'
+        /// </summary>
+        [Test]
+        public void UnlockedAdvancementsTest()
+        {
+            // TODO unit test for the property 'UnlockedAdvancements'
+        }
+        /// <summary>
         /// Test the property 'Uuid'
         /// </summary>
         [Test]
         public void UuidTest()
         {
             // TODO unit test for the property 'Uuid'
+        }
+        /// <summary>
+        /// Test the property 'Velocity'
+        /// </summary>
+        [Test]
+        public void VelocityTest()
+        {
+            // TODO unit test for the property 'Velocity'
+        }
+        /// <summary>
+        /// Test the property 'Boots'
+        /// </summary>
+        [Test]
+        public void BootsTest()
+        {
+            // TODO unit test for the property 'Boots'
+        }
+        /// <summary>
+        /// Test the property 'Chestplate'
+        /// </summary>
+        [Test]
+        public void ChestplateTest()
+        {
+            // TODO unit test for the property 'Chestplate'
+        }
+        /// <summary>
+        /// Test the property 'Helmet'
+        /// </summary>
+        [Test]
+        public void HelmetTest()
+        {
+            // TODO unit test for the property 'Helmet'
+        }
+        /// <summary>
+        /// Test the property 'Leggings'
+        /// </summary>
+        [Test]
+        public void LeggingsTest()
+        {
+            // TODO unit test for the property 'Leggings'
+        }
+        /// <summary>
+        /// Test the property 'Absorption'
+        /// </summary>
+        [Test]
+        public void AbsorptionTest()
+        {
+            // TODO unit test for the property 'Absorption'
+        }
+        /// <summary>
+        /// Test the property 'Age'
+        /// </summary>
+        [Test]
+        public void AgeTest()
+        {
+            // TODO unit test for the property 'Age'
+        }
+        /// <summary>
+        /// Test the property 'Aggressive'
+        /// </summary>
+        [Test]
+        public void AggressiveTest()
+        {
+            // TODO unit test for the property 'Aggressive'
+        }
+        /// <summary>
+        /// Test the property 'AiEnabled'
+        /// </summary>
+        [Test]
+        public void AiEnabledTest()
+        {
+            // TODO unit test for the property 'AiEnabled'
+        }
+        /// <summary>
+        /// Test the property 'AngerLevel'
+        /// </summary>
+        [Test]
+        public void AngerLevelTest()
+        {
+            // TODO unit test for the property 'AngerLevel'
+        }
+        /// <summary>
+        /// Test the property 'ArmorStand'
+        /// </summary>
+        [Test]
+        public void ArmorStandTest()
+        {
+            // TODO unit test for the property 'ArmorStand'
+        }
+        /// <summary>
+        /// Test the property 'Art'
+        /// </summary>
+        [Test]
+        public void ArtTest()
+        {
+            // TODO unit test for the property 'Art'
+        }
+        /// <summary>
+        /// Test the property 'Attached'
+        /// </summary>
+        [Test]
+        public void AttachedTest()
+        {
+            // TODO unit test for the property 'Attached'
+        }
+        /// <summary>
+        /// Test the property 'Author'
+        /// </summary>
+        [Test]
+        public void AuthorTest()
+        {
+            // TODO unit test for the property 'Author'
+        }
+        /// <summary>
+        /// Test the property 'Axis'
+        /// </summary>
+        [Test]
+        public void AxisTest()
+        {
+            // TODO unit test for the property 'Axis'
+        }
+        /// <summary>
+        /// Test the property 'Banner'
+        /// </summary>
+        [Test]
+        public void BannerTest()
+        {
+            // TODO unit test for the property 'Banner'
+        }
+        /// <summary>
+        /// Test the property 'Beacon'
+        /// </summary>
+        [Test]
+        public void BeaconTest()
+        {
+            // TODO unit test for the property 'Beacon'
+        }
+        /// <summary>
+        /// Test the property 'BigMushroom'
+        /// </summary>
+        [Test]
+        public void BigMushroomTest()
+        {
+            // TODO unit test for the property 'BigMushroom'
+        }
+        /// <summary>
+        /// Test the property 'Block'
+        /// </summary>
+        [Test]
+        public void BlockTest()
+        {
+            // TODO unit test for the property 'Block'
+        }
+        /// <summary>
+        /// Test the property 'Breathing'
+        /// </summary>
+        [Test]
+        public void BreathingTest()
+        {
+            // TODO unit test for the property 'Breathing'
+        }
+        /// <summary>
+        /// Test the property 'Breedable'
+        /// </summary>
+        [Test]
+        public void BreedableTest()
+        {
+            // TODO unit test for the property 'Breedable'
+        }
+        /// <summary>
+        /// Test the property 'BrewingStand'
+        /// </summary>
+        [Test]
+        public void BrewingStandTest()
+        {
+            // TODO unit test for the property 'BrewingStand'
+        }
+        /// <summary>
+        /// Test the property 'Brick'
+        /// </summary>
+        [Test]
+        public void BrickTest()
+        {
+            // TODO unit test for the property 'Brick'
+        }
+        /// <summary>
+        /// Test the property 'Career'
+        /// </summary>
+        [Test]
+        public void CareerTest()
+        {
+            // TODO unit test for the property 'Career'
+        }
+        /// <summary>
+        /// Test the property 'Charged'
+        /// </summary>
+        [Test]
+        public void ChargedTest()
+        {
+            // TODO unit test for the property 'Charged'
+        }
+        /// <summary>
+        /// Test the property 'Coal'
+        /// </summary>
+        [Test]
+        public void CoalTest()
+        {
+            // TODO unit test for the property 'Coal'
+        }
+        /// <summary>
+        /// Test the property 'Color'
+        /// </summary>
+        [Test]
+        public void ColorTest()
+        {
+            // TODO unit test for the property 'Color'
+        }
+        /// <summary>
+        /// Test the property 'Command'
+        /// </summary>
+        [Test]
+        public void CommandTest()
+        {
+            // TODO unit test for the property 'Command'
+        }
+        /// <summary>
+        /// Test the property 'Comparator'
+        /// </summary>
+        [Test]
+        public void ComparatorTest()
+        {
+            // TODO unit test for the property 'Comparator'
+        }
+        /// <summary>
+        /// Test the property 'ConnectedDirection'
+        /// </summary>
+        [Test]
+        public void ConnectedDirectionTest()
+        {
+            // TODO unit test for the property 'ConnectedDirection'
+        }
+        /// <summary>
+        /// Test the property 'CookedFish'
+        /// </summary>
+        [Test]
+        public void CookedFishTest()
+        {
+            // TODO unit test for the property 'CookedFish'
+        }
+        /// <summary>
+        /// Test the property 'Cooldown'
+        /// </summary>
+        [Test]
+        public void CooldownTest()
+        {
+            // TODO unit test for the property 'Cooldown'
+        }
+        /// <summary>
+        /// Test the property 'CriticalHit'
+        /// </summary>
+        [Test]
+        public void CriticalHitTest()
+        {
+            // TODO unit test for the property 'CriticalHit'
+        }
+        /// <summary>
+        /// Test the property 'CustomName'
+        /// </summary>
+        [Test]
+        public void CustomNameTest()
+        {
+            // TODO unit test for the property 'CustomName'
+        }
+        /// <summary>
+        /// Test the property 'Damage'
+        /// </summary>
+        [Test]
+        public void DamageTest()
+        {
+            // TODO unit test for the property 'Damage'
+        }
+        /// <summary>
+        /// Test the property 'Damageable'
+        /// </summary>
+        [Test]
+        public void DamageableTest()
+        {
+            // TODO unit test for the property 'Damageable'
+        }
+        /// <summary>
+        /// Test the property 'Decayable'
+        /// </summary>
+        [Test]
+        public void DecayableTest()
+        {
+            // TODO unit test for the property 'Decayable'
+        }
+        /// <summary>
+        /// Test the property 'Delay'
+        /// </summary>
+        [Test]
+        public void DelayTest()
+        {
+            // TODO unit test for the property 'Delay'
+        }
+        /// <summary>
+        /// Test the property 'DespawnDelay'
+        /// </summary>
+        [Test]
+        public void DespawnDelayTest()
+        {
+            // TODO unit test for the property 'DespawnDelay'
+        }
+        /// <summary>
+        /// Test the property 'Direction'
+        /// </summary>
+        [Test]
+        public void DirectionTest()
+        {
+            // TODO unit test for the property 'Direction'
+        }
+        /// <summary>
+        /// Test the property 'Dirt'
+        /// </summary>
+        [Test]
+        public void DirtTest()
+        {
+            // TODO unit test for the property 'Dirt'
+        }
+        /// <summary>
+        /// Test the property 'Disarmed'
+        /// </summary>
+        [Test]
+        public void DisarmedTest()
+        {
+            // TODO unit test for the property 'Disarmed'
+        }
+        /// <summary>
+        /// Test the property 'DisguisedBlock'
+        /// </summary>
+        [Test]
+        public void DisguisedBlockTest()
+        {
+            // TODO unit test for the property 'DisguisedBlock'
+        }
+        /// <summary>
+        /// Test the property 'DisplayName'
+        /// </summary>
+        [Test]
+        public void DisplayNameTest()
+        {
+            // TODO unit test for the property 'DisplayName'
+        }
+        /// <summary>
+        /// Test the property 'DominantHand'
+        /// </summary>
+        [Test]
+        public void DominantHandTest()
+        {
+            // TODO unit test for the property 'DominantHand'
+        }
+        /// <summary>
+        /// Test the property 'DoublePlant'
+        /// </summary>
+        [Test]
+        public void DoublePlantTest()
+        {
+            // TODO unit test for the property 'DoublePlant'
+        }
+        /// <summary>
+        /// Test the property 'Drops'
+        /// </summary>
+        [Test]
+        public void DropsTest()
+        {
+            // TODO unit test for the property 'Drops'
+        }
+        /// <summary>
+        /// Test the property 'Durability'
+        /// </summary>
+        [Test]
+        public void DurabilityTest()
+        {
+            // TODO unit test for the property 'Durability'
+        }
+        /// <summary>
+        /// Test the property 'Dye'
+        /// </summary>
+        [Test]
+        public void DyeTest()
+        {
+            // TODO unit test for the property 'Dye'
+        }
+        /// <summary>
+        /// Test the property 'Enchantments'
+        /// </summary>
+        [Test]
+        public void EnchantmentsTest()
+        {
+            // TODO unit test for the property 'Enchantments'
+        }
+        /// <summary>
+        /// Test the property 'EndGateway'
+        /// </summary>
+        [Test]
+        public void EndGatewayTest()
+        {
+            // TODO unit test for the property 'EndGateway'
+        }
+        /// <summary>
+        /// Test the property 'ExpOrb'
+        /// </summary>
+        [Test]
+        public void ExpOrbTest()
+        {
+            // TODO unit test for the property 'ExpOrb'
+        }
+        /// <summary>
+        /// Test the property 'Experience'
+        /// </summary>
+        [Test]
+        public void ExperienceTest()
+        {
+            // TODO unit test for the property 'Experience'
+        }
+        /// <summary>
+        /// Test the property 'ExpireTicks'
+        /// </summary>
+        [Test]
+        public void ExpireTicksTest()
+        {
+            // TODO unit test for the property 'ExpireTicks'
+        }
+        /// <summary>
+        /// Test the property 'ExplosionRadius'
+        /// </summary>
+        [Test]
+        public void ExplosionRadiusTest()
+        {
+            // TODO unit test for the property 'ExplosionRadius'
+        }
+        /// <summary>
+        /// Test the property 'Extended'
+        /// </summary>
+        [Test]
+        public void ExtendedTest()
+        {
+            // TODO unit test for the property 'Extended'
+        }
+        /// <summary>
+        /// Test the property 'FallDistance'
+        /// </summary>
+        [Test]
+        public void FallDistanceTest()
+        {
+            // TODO unit test for the property 'FallDistance'
+        }
+        /// <summary>
+        /// Test the property 'FallingBlock'
+        /// </summary>
+        [Test]
+        public void FallingBlockTest()
+        {
+            // TODO unit test for the property 'FallingBlock'
+        }
+        /// <summary>
+        /// Test the property 'Filled'
+        /// </summary>
+        [Test]
+        public void FilledTest()
+        {
+            // TODO unit test for the property 'Filled'
+        }
+        /// <summary>
+        /// Test the property 'FireworkEffects'
+        /// </summary>
+        [Test]
+        public void FireworkEffectsTest()
+        {
+            // TODO unit test for the property 'FireworkEffects'
+        }
+        /// <summary>
+        /// Test the property 'FireworkRocket'
+        /// </summary>
+        [Test]
+        public void FireworkRocketTest()
+        {
+            // TODO unit test for the property 'FireworkRocket'
+        }
+        /// <summary>
+        /// Test the property 'Fish'
+        /// </summary>
+        [Test]
+        public void FishTest()
+        {
+            // TODO unit test for the property 'Fish'
+        }
+        /// <summary>
+        /// Test the property 'Flammable'
+        /// </summary>
+        [Test]
+        public void FlammableTest()
+        {
+            // TODO unit test for the property 'Flammable'
+        }
+        /// <summary>
+        /// Test the property 'Fluid'
+        /// </summary>
+        [Test]
+        public void FluidTest()
+        {
+            // TODO unit test for the property 'Fluid'
+        }
+        /// <summary>
+        /// Test the property 'FluidLevel'
+        /// </summary>
+        [Test]
+        public void FluidLevelTest()
+        {
+            // TODO unit test for the property 'FluidLevel'
+        }
+        /// <summary>
+        /// Test the property 'FluidTanks'
+        /// </summary>
+        [Test]
+        public void FluidTanksTest()
+        {
+            // TODO unit test for the property 'FluidTanks'
+        }
+        /// <summary>
+        /// Test the property 'Flying'
+        /// </summary>
+        [Test]
+        public void FlyingTest()
+        {
+            // TODO unit test for the property 'Flying'
+        }
+        /// <summary>
+        /// Test the property 'FlyingAbility'
+        /// </summary>
+        [Test]
+        public void FlyingAbilityTest()
+        {
+            // TODO unit test for the property 'FlyingAbility'
+        }
+        /// <summary>
+        /// Test the property 'Food'
+        /// </summary>
+        [Test]
+        public void FoodTest()
+        {
+            // TODO unit test for the property 'Food'
+        }
+        /// <summary>
+        /// Test the property 'Furnace'
+        /// </summary>
+        [Test]
+        public void FurnaceTest()
+        {
+            // TODO unit test for the property 'Furnace'
+        }
+        /// <summary>
+        /// Test the property 'Fuse'
+        /// </summary>
+        [Test]
+        public void FuseTest()
+        {
+            // TODO unit test for the property 'Fuse'
+        }
+        /// <summary>
+        /// Test the property 'GameMode'
+        /// </summary>
+        [Test]
+        public void GameModeTest()
+        {
+            // TODO unit test for the property 'GameMode'
+        }
+        /// <summary>
+        /// Test the property 'Generation'
+        /// </summary>
+        [Test]
+        public void GenerationTest()
+        {
+            // TODO unit test for the property 'Generation'
+        }
+        /// <summary>
+        /// Test the property 'Glowing'
+        /// </summary>
+        [Test]
+        public void GlowingTest()
+        {
+            // TODO unit test for the property 'Glowing'
+        }
+        /// <summary>
+        /// Test the property 'GoldenApple'
+        /// </summary>
+        [Test]
+        public void GoldenAppleTest()
+        {
+            // TODO unit test for the property 'GoldenApple'
+        }
+        /// <summary>
+        /// Test the property 'Griefs'
+        /// </summary>
+        [Test]
+        public void GriefsTest()
+        {
+            // TODO unit test for the property 'Griefs'
+        }
+        /// <summary>
+        /// Test the property 'Growth'
+        /// </summary>
+        [Test]
+        public void GrowthTest()
+        {
+            // TODO unit test for the property 'Growth'
+        }
+        /// <summary>
+        /// Test the property 'Health'
+        /// </summary>
+        [Test]
+        public void HealthTest()
+        {
+            // TODO unit test for the property 'Health'
+        }
+        /// <summary>
+        /// Test the property 'Hide'
+        /// </summary>
+        [Test]
+        public void HideTest()
+        {
+            // TODO unit test for the property 'Hide'
+        }
+        /// <summary>
+        /// Test the property 'Hinge'
+        /// </summary>
+        [Test]
+        public void HingeTest()
+        {
+            // TODO unit test for the property 'Hinge'
+        }
+        /// <summary>
+        /// Test the property 'Horse'
+        /// </summary>
+        [Test]
+        public void HorseTest()
+        {
+            // TODO unit test for the property 'Horse'
+        }
+        /// <summary>
+        /// Test the property 'Igniteable'
+        /// </summary>
+        [Test]
+        public void IgniteableTest()
+        {
+            // TODO unit test for the property 'Igniteable'
+        }
+        /// <summary>
+        /// Test the property 'InWall'
+        /// </summary>
+        [Test]
+        public void InWallTest()
+        {
+            // TODO unit test for the property 'InWall'
+        }
+        /// <summary>
+        /// Test the property 'Invisibility'
+        /// </summary>
+        [Test]
+        public void InvisibilityTest()
+        {
+            // TODO unit test for the property 'Invisibility'
+        }
+        /// <summary>
+        /// Test the property 'Invulnerability'
+        /// </summary>
+        [Test]
+        public void InvulnerabilityTest()
+        {
+            // TODO unit test for the property 'Invulnerability'
+        }
+        /// <summary>
+        /// Test the property 'Joined'
+        /// </summary>
+        [Test]
+        public void JoinedTest()
+        {
+            // TODO unit test for the property 'Joined'
+        }
+        /// <summary>
+        /// Test the property 'Knockback'
+        /// </summary>
+        [Test]
+        public void KnockbackTest()
+        {
+            // TODO unit test for the property 'Knockback'
+        }
+        /// <summary>
+        /// Test the property 'Layer'
+        /// </summary>
+        [Test]
+        public void LayerTest()
+        {
+            // TODO unit test for the property 'Layer'
+        }
+        /// <summary>
+        /// Test the property 'Leash'
+        /// </summary>
+        [Test]
+        public void LeashTest()
+        {
+            // TODO unit test for the property 'Leash'
+        }
+        /// <summary>
+        /// Test the property 'LockToken'
+        /// </summary>
+        [Test]
+        public void LockTokenTest()
+        {
+            // TODO unit test for the property 'LockToken'
+        }
+        /// <summary>
+        /// Test the property 'LogAxis'
+        /// </summary>
+        [Test]
+        public void LogAxisTest()
+        {
+            // TODO unit test for the property 'LogAxis'
+        }
+        /// <summary>
+        /// Test the property 'Lore'
+        /// </summary>
+        [Test]
+        public void LoreTest()
+        {
+            // TODO unit test for the property 'Lore'
+        }
+        /// <summary>
+        /// Test the property 'MinecartBlock'
+        /// </summary>
+        [Test]
+        public void MinecartBlockTest()
+        {
+            // TODO unit test for the property 'MinecartBlock'
+        }
+        /// <summary>
+        /// Test the property 'MobSpawner'
+        /// </summary>
+        [Test]
+        public void MobSpawnerTest()
+        {
+            // TODO unit test for the property 'MobSpawner'
+        }
+        /// <summary>
+        /// Test the property 'Moisture'
+        /// </summary>
+        [Test]
+        public void MoistureTest()
+        {
+            // TODO unit test for the property 'Moisture'
+        }
+        /// <summary>
+        /// Test the property 'Note'
+        /// </summary>
+        [Test]
+        public void NoteTest()
+        {
+            // TODO unit test for the property 'Note'
+        }
+        /// <summary>
+        /// Test the property 'Occupied'
+        /// </summary>
+        [Test]
+        public void OccupiedTest()
+        {
+            // TODO unit test for the property 'Occupied'
+        }
+        /// <summary>
+        /// Test the property 'Ocelot'
+        /// </summary>
+        [Test]
+        public void OcelotTest()
+        {
+            // TODO unit test for the property 'Ocelot'
+        }
+        /// <summary>
+        /// Test the property 'Open'
+        /// </summary>
+        [Test]
+        public void OpenTest()
+        {
+            // TODO unit test for the property 'Open'
+        }
+        /// <summary>
+        /// Test the property 'Pages'
+        /// </summary>
+        [Test]
+        public void PagesTest()
+        {
+            // TODO unit test for the property 'Pages'
+        }
+        /// <summary>
+        /// Test the property 'Passengers'
+        /// </summary>
+        [Test]
+        public void PassengersTest()
+        {
+            // TODO unit test for the property 'Passengers'
+        }
+        /// <summary>
+        /// Test the property 'Persists'
+        /// </summary>
+        [Test]
+        public void PersistsTest()
+        {
+            // TODO unit test for the property 'Persists'
+        }
+        /// <summary>
+        /// Test the property 'PickupDelay'
+        /// </summary>
+        [Test]
+        public void PickupDelayTest()
+        {
+            // TODO unit test for the property 'PickupDelay'
+        }
+        /// <summary>
+        /// Test the property 'PickupRule'
+        /// </summary>
+        [Test]
+        public void PickupRuleTest()
+        {
+            // TODO unit test for the property 'PickupRule'
+        }
+        /// <summary>
+        /// Test the property 'PigSaddle'
+        /// </summary>
+        [Test]
+        public void PigSaddleTest()
+        {
+            // TODO unit test for the property 'PigSaddle'
+        }
+        /// <summary>
+        /// Test the property 'Piston'
+        /// </summary>
+        [Test]
+        public void PistonTest()
+        {
+            // TODO unit test for the property 'Piston'
+        }
+        /// <summary>
+        /// Test the property 'PlaceableOn'
+        /// </summary>
+        [Test]
+        public void PlaceableOnTest()
+        {
+            // TODO unit test for the property 'PlaceableOn'
+        }
+        /// <summary>
+        /// Test the property 'Plant'
+        /// </summary>
+        [Test]
+        public void PlantTest()
+        {
+            // TODO unit test for the property 'Plant'
+        }
+        /// <summary>
+        /// Test the property 'PlayerCreated'
+        /// </summary>
+        [Test]
+        public void PlayerCreatedTest()
+        {
+            // TODO unit test for the property 'PlayerCreated'
+        }
+        /// <summary>
+        /// Test the property 'Playing'
+        /// </summary>
+        [Test]
+        public void PlayingTest()
+        {
+            // TODO unit test for the property 'Playing'
+        }
+        /// <summary>
+        /// Test the property 'Portion'
+        /// </summary>
+        [Test]
+        public void PortionTest()
+        {
+            // TODO unit test for the property 'Portion'
+        }
+        /// <summary>
+        /// Test the property 'PotionEffects'
+        /// </summary>
+        [Test]
+        public void PotionEffectsTest()
+        {
+            // TODO unit test for the property 'PotionEffects'
+        }
+        /// <summary>
+        /// Test the property 'Powered'
+        /// </summary>
+        [Test]
+        public void PoweredTest()
+        {
+            // TODO unit test for the property 'Powered'
+        }
+        /// <summary>
+        /// Test the property 'Prismarine'
+        /// </summary>
+        [Test]
+        public void PrismarineTest()
+        {
+            // TODO unit test for the property 'Prismarine'
+        }
+        /// <summary>
+        /// Test the property 'Quartz'
+        /// </summary>
+        [Test]
+        public void QuartzTest()
+        {
+            // TODO unit test for the property 'Quartz'
+        }
+        /// <summary>
+        /// Test the property 'Rabbit'
+        /// </summary>
+        [Test]
+        public void RabbitTest()
+        {
+            // TODO unit test for the property 'Rabbit'
+        }
+        /// <summary>
+        /// Test the property 'RailDirection'
+        /// </summary>
+        [Test]
+        public void RailDirectionTest()
+        {
+            // TODO unit test for the property 'RailDirection'
+        }
+        /// <summary>
+        /// Test the property 'RedstonePower'
+        /// </summary>
+        [Test]
+        public void RedstonePowerTest()
+        {
+            // TODO unit test for the property 'RedstonePower'
+        }
+        /// <summary>
+        /// Test the property 'RepresentedItem'
+        /// </summary>
+        [Test]
+        public void RepresentedItemTest()
+        {
+            // TODO unit test for the property 'RepresentedItem'
+        }
+        /// <summary>
+        /// Test the property 'RepresentedPlayer'
+        /// </summary>
+        [Test]
+        public void RepresentedPlayerTest()
+        {
+            // TODO unit test for the property 'RepresentedPlayer'
+        }
+        /// <summary>
+        /// Test the property 'RespawnLocations'
+        /// </summary>
+        [Test]
+        public void RespawnLocationsTest()
+        {
+            // TODO unit test for the property 'RespawnLocations'
+        }
+        /// <summary>
+        /// Test the property 'Sand'
+        /// </summary>
+        [Test]
+        public void SandTest()
+        {
+            // TODO unit test for the property 'Sand'
+        }
+        /// <summary>
+        /// Test the property 'SandStone'
+        /// </summary>
+        [Test]
+        public void SandStoneTest()
+        {
+            // TODO unit test for the property 'SandStone'
+        }
+        /// <summary>
+        /// Test the property 'Screaming'
+        /// </summary>
+        [Test]
+        public void ScreamingTest()
+        {
+            // TODO unit test for the property 'Screaming'
+        }
+        /// <summary>
+        /// Test the property 'Seamless'
+        /// </summary>
+        [Test]
+        public void SeamlessTest()
+        {
+            // TODO unit test for the property 'Seamless'
+        }
+        /// <summary>
+        /// Test the property 'Shatters'
+        /// </summary>
+        [Test]
+        public void ShattersTest()
+        {
+            // TODO unit test for the property 'Shatters'
+        }
+        /// <summary>
+        /// Test the property 'Sheared'
+        /// </summary>
+        [Test]
+        public void ShearedTest()
+        {
+            // TODO unit test for the property 'Sheared'
+        }
+        /// <summary>
+        /// Test the property 'Shrub'
+        /// </summary>
+        [Test]
+        public void ShrubTest()
+        {
+            // TODO unit test for the property 'Shrub'
+        }
+        /// <summary>
+        /// Test the property 'Sign'
+        /// </summary>
+        [Test]
+        public void SignTest()
+        {
+            // TODO unit test for the property 'Sign'
+        }
+        /// <summary>
+        /// Test the property 'Silent'
+        /// </summary>
+        [Test]
+        public void SilentTest()
+        {
+            // TODO unit test for the property 'Silent'
+        }
+        /// <summary>
+        /// Test the property 'Sitting'
+        /// </summary>
+        [Test]
+        public void SittingTest()
+        {
+            // TODO unit test for the property 'Sitting'
+        }
+        /// <summary>
+        /// Test the property 'Skin'
+        /// </summary>
+        [Test]
+        public void SkinTest()
+        {
+            // TODO unit test for the property 'Skin'
+        }
+        /// <summary>
+        /// Test the property 'Skull'
+        /// </summary>
+        [Test]
+        public void SkullTest()
+        {
+            // TODO unit test for the property 'Skull'
+        }
+        /// <summary>
+        /// Test the property 'Slab'
+        /// </summary>
+        [Test]
+        public void SlabTest()
+        {
+            // TODO unit test for the property 'Slab'
+        }
+        /// <summary>
+        /// Test the property 'Sleeping'
+        /// </summary>
+        [Test]
+        public void SleepingTest()
+        {
+            // TODO unit test for the property 'Sleeping'
+        }
+        /// <summary>
+        /// Test the property 'Slime'
+        /// </summary>
+        [Test]
+        public void SlimeTest()
+        {
+            // TODO unit test for the property 'Slime'
+        }
+        /// <summary>
+        /// Test the property 'Sneaking'
+        /// </summary>
+        [Test]
+        public void SneakingTest()
+        {
+            // TODO unit test for the property 'Sneaking'
+        }
+        /// <summary>
+        /// Test the property 'Snow'
+        /// </summary>
+        [Test]
+        public void SnowTest()
+        {
+            // TODO unit test for the property 'Snow'
+        }
+        /// <summary>
+        /// Test the property 'Spawn'
+        /// </summary>
+        [Test]
+        public void SpawnTest()
+        {
+            // TODO unit test for the property 'Spawn'
+        }
+        /// <summary>
+        /// Test the property 'Sprinting'
+        /// </summary>
+        [Test]
+        public void SprintingTest()
+        {
+            // TODO unit test for the property 'Sprinting'
+        }
+        /// <summary>
+        /// Test the property 'StairShape'
+        /// </summary>
+        [Test]
+        public void StairShapeTest()
+        {
+            // TODO unit test for the property 'StairShape'
+        }
+        /// <summary>
+        /// Test the property 'Statistics'
+        /// </summary>
+        [Test]
+        public void StatisticsTest()
+        {
+            // TODO unit test for the property 'Statistics'
+        }
+        /// <summary>
+        /// Test the property 'Stone'
+        /// </summary>
+        [Test]
+        public void StoneTest()
+        {
+            // TODO unit test for the property 'Stone'
+        }
+        /// <summary>
+        /// Test the property 'StoredEnchantments'
+        /// </summary>
+        [Test]
+        public void StoredEnchantmentsTest()
+        {
+            // TODO unit test for the property 'StoredEnchantments'
+        }
+        /// <summary>
+        /// Test the property 'Structure'
+        /// </summary>
+        [Test]
+        public void StructureTest()
+        {
+            // TODO unit test for the property 'Structure'
+        }
+        /// <summary>
+        /// Test the property 'StuckArrows'
+        /// </summary>
+        [Test]
+        public void StuckArrowsTest()
+        {
+            // TODO unit test for the property 'StuckArrows'
+        }
+        /// <summary>
+        /// Test the property 'Tamed'
+        /// </summary>
+        [Test]
+        public void TamedTest()
+        {
+            // TODO unit test for the property 'Tamed'
+        }
+        /// <summary>
+        /// Test the property 'Target'
+        /// </summary>
+        [Test]
+        public void TargetTest()
+        {
+            // TODO unit test for the property 'Target'
+        }
+        /// <summary>
+        /// Test the property 'Trades'
+        /// </summary>
+        [Test]
+        public void TradesTest()
+        {
+            // TODO unit test for the property 'Trades'
+        }
+        /// <summary>
+        /// Test the property 'Tree'
+        /// </summary>
+        [Test]
+        public void TreeTest()
+        {
+            // TODO unit test for the property 'Tree'
+        }
+        /// <summary>
+        /// Test the property 'Vehicle'
+        /// </summary>
+        [Test]
+        public void VehicleTest()
+        {
+            // TODO unit test for the property 'Vehicle'
+        }
+        /// <summary>
+        /// Test the property 'Wall'
+        /// </summary>
+        [Test]
+        public void WallTest()
+        {
+            // TODO unit test for the property 'Wall'
+        }
+        /// <summary>
+        /// Test the property 'Wet'
+        /// </summary>
+        [Test]
+        public void WetTest()
+        {
+            // TODO unit test for the property 'Wet'
+        }
+        /// <summary>
+        /// Test the property 'Wires'
+        /// </summary>
+        [Test]
+        public void WiresTest()
+        {
+            // TODO unit test for the property 'Wires'
+        }
+        /// <summary>
+        /// Test the property 'AcceptsItems'
+        /// </summary>
+        [Test]
+        public void AcceptsItemsTest()
+        {
+            // TODO unit test for the property 'AcceptsItems'
+        }
+        /// <summary>
+        /// Test the property 'ApplicableEffect'
+        /// </summary>
+        [Test]
+        public void ApplicableEffectTest()
+        {
+            // TODO unit test for the property 'ApplicableEffect'
+        }
+        /// <summary>
+        /// Test the property 'ArmorSlotType'
+        /// </summary>
+        [Test]
+        public void ArmorSlotTypeTest()
+        {
+            // TODO unit test for the property 'ArmorSlotType'
+        }
+        /// <summary>
+        /// Test the property 'ArmorType'
+        /// </summary>
+        [Test]
+        public void ArmorTypeTest()
+        {
+            // TODO unit test for the property 'ArmorType'
+        }
+        /// <summary>
+        /// Test the property 'BlastResistance'
+        /// </summary>
+        [Test]
+        public void BlastResistanceTest()
+        {
+            // TODO unit test for the property 'BlastResistance'
+        }
+        /// <summary>
+        /// Test the property 'BurningFuel'
+        /// </summary>
+        [Test]
+        public void BurningFuelTest()
+        {
+            // TODO unit test for the property 'BurningFuel'
+        }
+        /// <summary>
+        /// Test the property 'DamageAbsorption'
+        /// </summary>
+        [Test]
+        public void DamageAbsorptionTest()
+        {
+            // TODO unit test for the property 'DamageAbsorption'
+        }
+        /// <summary>
+        /// Test the property 'Efficiency'
+        /// </summary>
+        [Test]
+        public void EfficiencyTest()
+        {
+            // TODO unit test for the property 'Efficiency'
+        }
+        /// <summary>
+        /// Test the property 'EquipmentType'
+        /// </summary>
+        [Test]
+        public void EquipmentTypeTest()
+        {
+            // TODO unit test for the property 'EquipmentType'
+        }
+        /// <summary>
+        /// Test the property 'EquiptmentSlotType'
+        /// </summary>
+        [Test]
+        public void EquiptmentSlotTypeTest()
+        {
+            // TODO unit test for the property 'EquiptmentSlotType'
+        }
+        /// <summary>
+        /// Test the property 'EyeHeight'
+        /// </summary>
+        [Test]
+        public void EyeHeightTest()
+        {
+            // TODO unit test for the property 'EyeHeight'
+        }
+        /// <summary>
+        /// Test the property 'EyeLocation'
+        /// </summary>
+        [Test]
+        public void EyeLocationTest()
+        {
+            // TODO unit test for the property 'EyeLocation'
+        }
+        /// <summary>
+        /// Test the property 'FluidTemperature'
+        /// </summary>
+        [Test]
+        public void FluidTemperatureTest()
+        {
+            // TODO unit test for the property 'FluidTemperature'
+        }
+        /// <summary>
+        /// Test the property 'FluidViscosity'
+        /// </summary>
+        [Test]
+        public void FluidViscosityTest()
+        {
+            // TODO unit test for the property 'FluidViscosity'
+        }
+        /// <summary>
+        /// Test the property 'FoodRestoration'
+        /// </summary>
+        [Test]
+        public void FoodRestorationTest()
+        {
+            // TODO unit test for the property 'FoodRestoration'
+        }
+        /// <summary>
+        /// Test the property 'FullBlockSelectionBox'
+        /// </summary>
+        [Test]
+        public void FullBlockSelectionBoxTest()
+        {
+            // TODO unit test for the property 'FullBlockSelectionBox'
+        }
+        /// <summary>
+        /// Test the property 'GravityAffected'
+        /// </summary>
+        [Test]
+        public void GravityAffectedTest()
+        {
+            // TODO unit test for the property 'GravityAffected'
+        }
+        /// <summary>
+        /// Test the property 'GroundLuminance'
+        /// </summary>
+        [Test]
+        public void GroundLuminanceTest()
+        {
+            // TODO unit test for the property 'GroundLuminance'
+        }
+        /// <summary>
+        /// Test the property 'GuiId'
+        /// </summary>
+        [Test]
+        public void GuiIdTest()
+        {
+            // TODO unit test for the property 'GuiId'
+        }
+        /// <summary>
+        /// Test the property 'Hardness'
+        /// </summary>
+        [Test]
+        public void HardnessTest()
+        {
+            // TODO unit test for the property 'Hardness'
+        }
+        /// <summary>
+        /// Test the property 'HeldItem'
+        /// </summary>
+        [Test]
+        public void HeldItemTest()
+        {
+            // TODO unit test for the property 'HeldItem'
+        }
+        /// <summary>
+        /// Test the property 'Identifiable'
+        /// </summary>
+        [Test]
+        public void IdentifiableTest()
+        {
+            // TODO unit test for the property 'Identifiable'
+        }
+        /// <summary>
+        /// Test the property 'IndirectlyPowered'
+        /// </summary>
+        [Test]
+        public void IndirectlyPoweredTest()
+        {
+            // TODO unit test for the property 'IndirectlyPowered'
+        }
+        /// <summary>
+        /// Test the property 'Instrument'
+        /// </summary>
+        [Test]
+        public void InstrumentTest()
+        {
+            // TODO unit test for the property 'Instrument'
+        }
+        /// <summary>
+        /// Test the property 'InventoryCapacity'
+        /// </summary>
+        [Test]
+        public void InventoryCapacityTest()
+        {
+            // TODO unit test for the property 'InventoryCapacity'
+        }
+        /// <summary>
+        /// Test the property 'InventoryDimension'
+        /// </summary>
+        [Test]
+        public void InventoryDimensionTest()
+        {
+            // TODO unit test for the property 'InventoryDimension'
+        }
+        /// <summary>
+        /// Test the property 'InventoryTitle'
+        /// </summary>
+        [Test]
+        public void InventoryTitleTest()
+        {
+            // TODO unit test for the property 'InventoryTitle'
+        }
+        /// <summary>
+        /// Test the property 'LightEmission'
+        /// </summary>
+        [Test]
+        public void LightEmissionTest()
+        {
+            // TODO unit test for the property 'LightEmission'
+        }
+        /// <summary>
+        /// Test the property 'Matter'
+        /// </summary>
+        [Test]
+        public void MatterTest()
+        {
+            // TODO unit test for the property 'Matter'
+        }
+        /// <summary>
+        /// Test the property 'Passable'
+        /// </summary>
+        [Test]
+        public void PassableTest()
+        {
+            // TODO unit test for the property 'Passable'
+        }
+        /// <summary>
+        /// Test the property 'Record'
+        /// </summary>
+        [Test]
+        public void RecordTest()
+        {
+            // TODO unit test for the property 'Record'
+        }
+        /// <summary>
+        /// Test the property 'Replaceable'
+        /// </summary>
+        [Test]
+        public void ReplaceableTest()
+        {
+            // TODO unit test for the property 'Replaceable'
+        }
+        /// <summary>
+        /// Test the property 'SaturationProperty'
+        /// </summary>
+        [Test]
+        public void SaturationPropertyTest()
+        {
+            // TODO unit test for the property 'SaturationProperty'
+        }
+        /// <summary>
+        /// Test the property 'SkyLuminance'
+        /// </summary>
+        [Test]
+        public void SkyLuminanceTest()
+        {
+            // TODO unit test for the property 'SkyLuminance'
+        }
+        /// <summary>
+        /// Test the property 'SlotIndex'
+        /// </summary>
+        [Test]
+        public void SlotIndexTest()
+        {
+            // TODO unit test for the property 'SlotIndex'
+        }
+        /// <summary>
+        /// Test the property 'SlotPos'
+        /// </summary>
+        [Test]
+        public void SlotPosTest()
+        {
+            // TODO unit test for the property 'SlotPos'
+        }
+        /// <summary>
+        /// Test the property 'SlotSide'
+        /// </summary>
+        [Test]
+        public void SlotSideTest()
+        {
+            // TODO unit test for the property 'SlotSide'
+        }
+        /// <summary>
+        /// Test the property 'Smeltable'
+        /// </summary>
+        [Test]
+        public void SmeltableTest()
+        {
+            // TODO unit test for the property 'Smeltable'
+        }
+        /// <summary>
+        /// Test the property 'SolidCube'
+        /// </summary>
+        [Test]
+        public void SolidCubeTest()
+        {
+            // TODO unit test for the property 'SolidCube'
+        }
+        /// <summary>
+        /// Test the property 'StatisticsTracked'
+        /// </summary>
+        [Test]
+        public void StatisticsTrackedTest()
+        {
+            // TODO unit test for the property 'StatisticsTracked'
+        }
+        /// <summary>
+        /// Test the property 'SurrogateBlock'
+        /// </summary>
+        [Test]
+        public void SurrogateBlockTest()
+        {
+            // TODO unit test for the property 'SurrogateBlock'
+        }
+        /// <summary>
+        /// Test the property 'Temperature'
+        /// </summary>
+        [Test]
+        public void TemperatureTest()
+        {
+            // TODO unit test for the property 'Temperature'
+        }
+        /// <summary>
+        /// Test the property 'ToolType'
+        /// </summary>
+        [Test]
+        public void ToolTypeTest()
+        {
+            // TODO unit test for the property 'ToolType'
+        }
+        /// <summary>
+        /// Test the property 'Unbreakable'
+        /// </summary>
+        [Test]
+        public void UnbreakableTest()
+        {
+            // TODO unit test for the property 'Unbreakable'
+        }
+        /// <summary>
+        /// Test the property 'UseLimit'
+        /// </summary>
+        [Test]
+        public void UseLimitTest()
+        {
+            // TODO unit test for the property 'UseLimit'
         }
 
     }

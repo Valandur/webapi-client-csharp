@@ -90,7 +90,7 @@ Name | Type | Description  | Notes
 
 <a name="getplayer"></a>
 # **GetPlayer**
-> PlayerFull GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null)
+> Player GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null)
 
 Get a player
 
@@ -128,7 +128,7 @@ namespace Example
             try
             {
                 // Get a player
-                PlayerFull result = apiInstance.GetPlayer(player, details, accept, pretty);
+                Player result = apiInstance.GetPlayer(player, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerFull**](PlayerFull.md)
+[**Player**](Player.md)
 
 ### Authorization
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 <a name="listplayers"></a>
 # **ListPlayers**
-> List<PlayerFull> ListPlayers (bool? details = null, string accept = null, bool? pretty = null)
+> List<Player> ListPlayers (bool? details = null, string accept = null, bool? pretty = null)
 
 List players
 
@@ -203,7 +203,7 @@ namespace Example
             try
             {
                 // List players
-                List&lt;PlayerFull&gt; result = apiInstance.ListPlayers(details, accept, pretty);
+                List&lt;Player&gt; result = apiInstance.ListPlayers(details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List<PlayerFull>**](PlayerFull.md)
+[**List<Player>**](Player.md)
 
 ### Authorization
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 <a name="modifyplayer"></a>
 # **ModifyPlayer**
-> PlayerFull ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+> Player ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
 
 Modify a player
 
@@ -279,7 +279,7 @@ namespace Example
             try
             {
                 // Modify a player
-                PlayerFull result = apiInstance.ModifyPlayer(player, body, details, accept, pretty);
+                Player result = apiInstance.ModifyPlayer(player, body, details, accept, pretty);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
@@ -303,7 +303,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PlayerFull**](PlayerFull.md)
+[**Player**](Player.md)
 
 ### Authorization
 

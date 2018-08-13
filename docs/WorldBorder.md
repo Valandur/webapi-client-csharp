@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **DamageAmount** | **double?** | The amount of damage done to players outside the border | 
 **DamageThreshold** | **double?** | The maximum amount of damage done to a player | 
 **Diameter** | **double?** | The diameter of the border | 
-**Link** | **string** | The API link that can be used to obtain more information about this object | 
 **NewDiameter** | **double?** | The new diameter of the border, in case it is collapsing/expanding | 
 **TimeRemaining** | **long?** | The time remaining until the border reaches it&#39;s new size | 
 **WarningDistance** | **int?** | The amount of distance from the border a player will receive a warning at | 

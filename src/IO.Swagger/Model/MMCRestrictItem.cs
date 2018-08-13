@@ -40,13 +40,14 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <param name="BanReason">The reason why the item is banned (required).</param>
         /// <param name="BreakingBanned">True if breaking of this item is banned, false otherwise (required).</param>
+        /// <param name="CraftBanned">True if crafting this item is banned, false otherwise (required).</param>
         /// <param name="DropBanned">True if dropping this item is banned, false otherwise (required).</param>
         /// <param name="Item">The item type that is banned (required).</param>
         /// <param name="OwnershipBanned">True if ownership of this item is banned, false otherwise (required).</param>
         /// <param name="PlacingBanned">True if the placing of this item is banned, false otherwise (required).</param>
         /// <param name="UsageBanned">True if the usage of this item is banned, false otherwise (required).</param>
         /// <param name="WorldBanned">True if this item is banned from the world, false otherwise? (required).</param>
-        public MMCRestrictItem(string BanReason = default(string), bool? BreakingBanned = default(bool?), bool? DropBanned = default(bool?), CatalogTypeItemType Item = default(CatalogTypeItemType), bool? OwnershipBanned = default(bool?), bool? PlacingBanned = default(bool?), bool? UsageBanned = default(bool?), bool? WorldBanned = default(bool?))
+        public MMCRestrictItem(string BanReason = default(string), bool? BreakingBanned = default(bool?), bool? CraftBanned = default(bool?), bool? DropBanned = default(bool?), CatalogTypeItemType Item = default(CatalogTypeItemType), bool? OwnershipBanned = default(bool?), bool? PlacingBanned = default(bool?), bool? UsageBanned = default(bool?), bool? WorldBanned = default(bool?))
         {
             // to ensure "BanReason" is required (not null)
             if (BanReason == null)
@@ -65,6 +66,15 @@ namespace IO.Swagger.Model
             else
             {
                 this.BreakingBanned = BreakingBanned;
+            }
+            // to ensure "CraftBanned" is required (not null)
+            if (CraftBanned == null)
+            {
+                throw new InvalidDataException("CraftBanned is a required property for MMCRestrictItem and cannot be null");
+            }
+            else
+            {
+                this.CraftBanned = CraftBanned;
             }
             // to ensure "DropBanned" is required (not null)
             if (DropBanned == null)
@@ -137,6 +147,13 @@ namespace IO.Swagger.Model
         public bool? BreakingBanned { get; set; }
 
         /// <summary>
+        /// True if crafting this item is banned, false otherwise
+        /// </summary>
+        /// <value>True if crafting this item is banned, false otherwise</value>
+        [DataMember(Name="craftBanned", EmitDefaultValue=false)]
+        public bool? CraftBanned { get; set; }
+
+        /// <summary>
         /// True if dropping this item is banned, false otherwise
         /// </summary>
         /// <value>True if dropping this item is banned, false otherwise</value>
@@ -195,6 +212,7 @@ namespace IO.Swagger.Model
             sb.Append("class MMCRestrictItem {\n");
             sb.Append("  BanReason: ").Append(BanReason).Append("\n");
             sb.Append("  BreakingBanned: ").Append(BreakingBanned).Append("\n");
+            sb.Append("  CraftBanned: ").Append(CraftBanned).Append("\n");
             sb.Append("  DropBanned: ").Append(DropBanned).Append("\n");
             sb.Append("  Item: ").Append(Item).Append("\n");
             sb.Append("  Link: ").Append(Link).Append("\n");
@@ -247,6 +265,11 @@ namespace IO.Swagger.Model
                     this.BreakingBanned.Equals(input.BreakingBanned))
                 ) && 
                 (
+                    this.CraftBanned == input.CraftBanned ||
+                    (this.CraftBanned != null &&
+                    this.CraftBanned.Equals(input.CraftBanned))
+                ) && 
+                (
                     this.DropBanned == input.DropBanned ||
                     (this.DropBanned != null &&
                     this.DropBanned.Equals(input.DropBanned))
@@ -296,6 +319,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.BanReason.GetHashCode();
                 if (this.BreakingBanned != null)
                     hashCode = hashCode * 59 + this.BreakingBanned.GetHashCode();
+                if (this.CraftBanned != null)
+                    hashCode = hashCode * 59 + this.CraftBanned.GetHashCode();
                 if (this.DropBanned != null)
                     hashCode = hashCode * 59 + this.DropBanned.GetHashCode();
                 if (this.Item != null)

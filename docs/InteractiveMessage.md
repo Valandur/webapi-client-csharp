@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | **string** | The id of the message. Used for sender of the message to identify responses. | 
+**Id** | **string** | The id of the message. Used to identify responses. | 
 **Link** | **string** | The API link that can be used to obtain more information about this object | 
 **Target** | **string** | The target of the message, usually this is a player UUID. Can be set to \&quot;server\&quot; to send to all online players. | 
 **Uuid** | **Guid?** | The unique UUID of this message | 

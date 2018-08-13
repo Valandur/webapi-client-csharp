@@ -19,6 +19,7 @@ using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using JsonSubTypes;
 using System.ComponentModel.DataAnnotations;
 using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
@@ -28,6 +29,9 @@ namespace IO.Swagger.Model
     /// BlockOperation
     /// </summary>
     [DataContract]
+    [JsonConverter(typeof(JsonSubtypes), "type")]
+    [JsonSubtypes.KnownSubType(typeof(BlockChangeOperation), "BlockChangeOperation")]
+    [JsonSubtypes.KnownSubType(typeof(BlockGetOperation), "BlockGetOperation")]
     public partial class BlockOperation :  IEquatable<BlockOperation>, IValidatableObject
     {
         /// <summary>
@@ -117,7 +121,6 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="BlockOperation" /> class.
         /// </summary>
         /// <param name="Error">The error message, if any (required).</param>
-        /// <param name="Errored">True if this block operation produced errors, false otherwise. (required).</param>
         /// <param name="EstimatedSecondsRemaining">The estimated amount of time remaining until this block operation is complete (in seconds) (required).</param>
         /// <param name="Max">The maximum block belonging to this operation (required).</param>
         /// <param name="Min">The minimum block belonging to this operation (required).</param>
@@ -126,7 +129,7 @@ namespace IO.Swagger.Model
         /// <param name="Type">The type of block operation (required).</param>
         /// <param name="Uuid">The unique UUID identifying this block operation (required).</param>
         /// <param name="World">The world in which this block operation is running (required).</param>
-        public BlockOperation(string Error = default(string), bool? Errored = default(bool?), float? EstimatedSecondsRemaining = default(float?), Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), float? Progress = default(float?), StatusEnum Status = default(StatusEnum), TypeEnum Type = default(TypeEnum), Guid? Uuid = default(Guid?), World World = default(World))
+        public BlockOperation(string Error = default(string), float? EstimatedSecondsRemaining = default(float?), Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), float? Progress = default(float?), StatusEnum Status = default(StatusEnum), TypeEnum Type = default(TypeEnum), Guid? Uuid = default(Guid?), World World = default(World))
         {
             // to ensure "Error" is required (not null)
             if (Error == null)
@@ -136,15 +139,6 @@ namespace IO.Swagger.Model
             else
             {
                 this.Error = Error;
-            }
-            // to ensure "Errored" is required (not null)
-            if (Errored == null)
-            {
-                throw new InvalidDataException("Errored is a required property for BlockOperation and cannot be null");
-            }
-            else
-            {
-                this.Errored = Errored;
             }
             // to ensure "EstimatedSecondsRemaining" is required (not null)
             if (EstimatedSecondsRemaining == null)
@@ -228,13 +222,6 @@ namespace IO.Swagger.Model
         public string Error { get; set; }
 
         /// <summary>
-        /// True if this block operation produced errors, false otherwise.
-        /// </summary>
-        /// <value>True if this block operation produced errors, false otherwise.</value>
-        [DataMember(Name="errored", EmitDefaultValue=false)]
-        public bool? Errored { get; set; }
-
-        /// <summary>
         /// The estimated amount of time remaining until this block operation is complete (in seconds)
         /// </summary>
         /// <value>The estimated amount of time remaining until this block operation is complete (in seconds)</value>
@@ -294,7 +281,6 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class BlockOperation {\n");
             sb.Append("  Error: ").Append(Error).Append("\n");
-            sb.Append("  Errored: ").Append(Errored).Append("\n");
             sb.Append("  EstimatedSecondsRemaining: ").Append(EstimatedSecondsRemaining).Append("\n");
             sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Max: ").Append(Max).Append("\n");
@@ -312,7 +298,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -342,11 +328,6 @@ namespace IO.Swagger.Model
                     this.Error == input.Error ||
                     (this.Error != null &&
                     this.Error.Equals(input.Error))
-                ) && 
-                (
-                    this.Errored == input.Errored ||
-                    (this.Errored != null &&
-                    this.Errored.Equals(input.Errored))
                 ) && 
                 (
                     this.EstimatedSecondsRemaining == input.EstimatedSecondsRemaining ||
@@ -406,8 +387,6 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Error != null)
                     hashCode = hashCode * 59 + this.Error.GetHashCode();
-                if (this.Errored != null)
-                    hashCode = hashCode * 59 + this.Errored.GetHashCode();
                 if (this.EstimatedSecondsRemaining != null)
                     hashCode = hashCode * 59 + this.EstimatedSecondsRemaining.GetHashCode();
                 if (this.Link != null)
@@ -436,6 +415,16 @@ namespace IO.Swagger.Model
         /// <param name="validationContext">Validation context</param>
         /// <returns>Validation Result</returns>
         IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
+            return this.BaseValidate(validationContext);
+        }
+
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        protected IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> BaseValidate(ValidationContext validationContext)
         {
             yield break;
         }

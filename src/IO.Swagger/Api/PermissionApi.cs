@@ -55,7 +55,7 @@ namespace IO.Swagger.Api
         /// Get subject
         /// </summary>
         /// <remarks>
-        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -70,7 +70,7 @@ namespace IO.Swagger.Api
         /// Get subject
         /// </summary>
         /// <remarks>
-        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -165,7 +165,7 @@ namespace IO.Swagger.Api
         /// Get subject
         /// </summary>
         /// <remarks>
-        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -180,7 +180,7 @@ namespace IO.Swagger.Api
         /// Get subject
         /// </summary>
         /// <remarks>
-        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -520,7 +520,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -536,7 +536,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -614,7 +614,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>
@@ -631,7 +631,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.list**   
+        /// Get subject Gets one specific subject belonging to a certain collection     **Required permissions:**    - **permission.collection.subject.one**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="id"></param>

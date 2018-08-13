@@ -3,7 +3,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Link** | **string** | The API link that can be used to obtain more information about this object | 
 **AffectedBlocks** | **int?** | The number of blocks that were affected by this command | [optional] 
 **AffectedEntities** | **int?** | The number of entities that were affected by this command | [optional] 
 **AffectedItems** | **int?** | The number of items that were affected by this command | [optional] 

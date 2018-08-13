@@ -25,10 +25,10 @@ using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 namespace IO.Swagger.Model
 {
     /// <summary>
-    /// WorldFull
+    /// Slot
     /// </summary>
     [DataContract]
-    public partial class WorldFull :  IEquatable<WorldFull>, IValidatableObject
+    public partial class Slot :  IEquatable<Slot>, IValidatableObject
     {
         /// <summary>
         /// Defines Axis
@@ -348,31 +348,14 @@ namespace IO.Swagger.Model
         [DataMember(Name="matter", EmitDefaultValue=false)]
         public MatterEnum? Matter { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorldFull" /> class.
+        /// Initializes a new instance of the <see cref="Slot" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected WorldFull() { }
+        protected Slot() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="WorldFull" /> class.
+        /// Initializes a new instance of the <see cref="Slot" /> class.
         /// </summary>
-        /// <param name="Loaded">True if the world is loaded, false otherwise (required).</param>
-        /// <param name="Name">The name of this world (required).</param>
-        /// <param name="Uuid">The unique UUID that identifies this world (required).</param>
-        /// <param name="MapFeaturesEnabled">True if map specific features are enabled for this world, false otherwise (required).</param>
-        /// <param name="Border">The border of the world (required).</param>
-        /// <param name="Spawn">Spawn.</param>
-        /// <param name="LoadOnStartup">True if this world is loaded when the server starts, false otherwise (required).</param>
-        /// <param name="KeepSpawnLoaded">True if the spawn of this world is always kept loaded, false otherwise (required).</param>
-        /// <param name="AllowCommands">True if commands are allowed to be executed in this world, false otherwise (required).</param>
-        /// <param name="GenerateBonusChests">True if bonus chests are generated for this world, false otherwise (required).</param>
-        /// <param name="Time">The current time in the world (required).</param>
-        /// <param name="Seed">The seed of the world (required).</param>
-        /// <param name="Difficulty">The difficulty of the world (required).</param>
-        /// <param name="GameRules">A map of world rule names to values (required).</param>
-        /// <param name="Weather">The current weather in the world (required).</param>
-        /// <param name="GameMode">GameMode.</param>
-        /// <param name="GeneratorType">The generator type used for this world (required).</param>
-        /// <param name="DimensionType">The dimension of the world (required).</param>
+        /// <param name="Stack">The item stack that is in this slot (required).</param>
         /// <param name="Absorption">Absorption.</param>
         /// <param name="Age">Age.</param>
         /// <param name="Aggressive">Aggressive.</param>
@@ -439,6 +422,7 @@ namespace IO.Swagger.Model
         /// <param name="Food">Food.</param>
         /// <param name="Furnace">Furnace.</param>
         /// <param name="Fuse">Fuse.</param>
+        /// <param name="GameMode">GameMode.</param>
         /// <param name="Generation">Generation.</param>
         /// <param name="Glowing">Glowing.</param>
         /// <param name="GoldenApple">GoldenApple.</param>
@@ -506,6 +490,7 @@ namespace IO.Swagger.Model
         /// <param name="Slime">Slime.</param>
         /// <param name="Sneaking">Sneaking.</param>
         /// <param name="Snow">Snow.</param>
+        /// <param name="Spawn">Spawn.</param>
         /// <param name="Sprinting">Sprinting.</param>
         /// <param name="StairShape">StairShape.</param>
         /// <param name="Statistics">Statistics.</param>
@@ -566,154 +551,17 @@ namespace IO.Swagger.Model
         /// <param name="ToolType">ToolType.</param>
         /// <param name="Unbreakable">Unbreakable.</param>
         /// <param name="UseLimit">UseLimit.</param>
-        public WorldFull(bool? Loaded = default(bool?), string Name = default(string), Guid? Uuid = default(Guid?), bool? MapFeaturesEnabled = default(bool?), WorldBorder Border = default(WorldBorder), CatalogType Spawn = default(CatalogType), bool? LoadOnStartup = default(bool?), bool? KeepSpawnLoaded = default(bool?), bool? AllowCommands = default(bool?), bool? GenerateBonusChests = default(bool?), long? Time = default(long?), long? Seed = default(long?), CatalogTypeDifficulty Difficulty = default(CatalogTypeDifficulty), Dictionary<string, string> GameRules = default(Dictionary<string, string>), CatalogTypeWeather Weather = default(CatalogTypeWeather), GameMode GameMode = default(GameMode), CatalogTypeGeneratorType GeneratorType = default(CatalogTypeGeneratorType), CatalogTypeDimensionType DimensionType = default(CatalogTypeDimensionType), double? Absorption = default(double?), AgeableData Age = default(AgeableData), bool? Aggressive = default(bool?), bool? AiEnabled = default(bool?), int? AngerLevel = default(int?), ArmorStandData ArmorStand = default(ArmorStandData), CatalogType Art = default(CatalogType), bool? Attached = default(bool?), string Author = default(string), AxisEnum? Axis = default(AxisEnum?), BannerData Banner = default(BannerData), BeaconData Beacon = default(BeaconData), CatalogType BigMushroom = default(CatalogType), BlockState Block = default(BlockState), BreathingData Breathing = default(BreathingData), bool? Breedable = default(bool?), BrewingStandData BrewingStand = default(BrewingStandData), CatalogType Brick = default(CatalogType), Career Career = default(Career), bool? Charged = default(bool?), CatalogType Coal = default(CatalogType), Color Color = default(Color), CommandData Command = default(CommandData), CatalogType Comparator = default(CatalogType), List<ConnectedDirectionEnum> ConnectedDirection = default(List<ConnectedDirectionEnum>), CatalogType CookedFish = default(CatalogType), int? Cooldown = default(int?), bool? CriticalHit = default(bool?), bool? CustomName = default(bool?), double? Damage = default(double?), DamageableData Damageable = default(DamageableData), bool? Decayable = default(bool?), int? Delay = default(int?), DespawnDelayData DespawnDelay = default(DespawnDelayData), DirectionEnum? Direction = default(DirectionEnum?), CatalogType Dirt = default(CatalogType), bool? Disarmed = default(bool?), CatalogType DisguisedBlock = default(CatalogType), string DisplayName = default(string), CatalogType DominantHand = default(CatalogType), CatalogType DoublePlant = default(CatalogType), bool? Drops = default(bool?), DurabilityData Durability = default(DurabilityData), DyeColor Dye = default(DyeColor), List<Enchantment> Enchantments = default(List<Enchantment>), EndGatewayData EndGateway = default(EndGatewayData), int? ExpOrb = default(int?), ExperienceHolderData Experience = default(ExperienceHolderData), int? ExpireTicks = default(int?), int? ExplosionRadius = default(int?), bool? Extended = default(bool?), float? FallDistance = default(float?), FallingBlockData FallingBlock = default(FallingBlockData), bool? Filled = default(bool?), List<FireworkEffect> FireworkEffects = default(List<FireworkEffect>), FireworkRocketData FireworkRocket = default(FireworkRocketData), CatalogType Fish = default(CatalogType), bool? Flammable = default(bool?), FluidStack Fluid = default(FluidStack), int? FluidLevel = default(int?), Dictionary<string, List<FluidStack>> FluidTanks = default(Dictionary<string, List<FluidStack>>), bool? Flying = default(bool?), bool? FlyingAbility = default(bool?), FoodData Food = default(FoodData), FurnaceData Furnace = default(FurnaceData), FuseData Fuse = default(FuseData), int? Generation = default(int?), bool? Glowing = default(bool?), CatalogType GoldenApple = default(CatalogType), bool? Griefs = default(bool?), GrowthData Growth = default(GrowthData), HealthData Health = default(HealthData), HideData Hide = default(HideData), CatalogType Hinge = default(CatalogType), HorseData Horse = default(HorseData), IgniteableData Igniteable = default(IgniteableData), bool? InWall = default(bool?), Inventory Inventory = default(Inventory), InvisibilityData Invisibility = default(InvisibilityData), InvulnerabilityData Invulnerability = default(InvulnerabilityData), JoinData Joined = default(JoinData), int? Knockback = default(int?), int? Layer = default(int?), LeashData Leash = default(LeashData), string LockToken = default(string), CatalogType LogAxis = default(CatalogType), List<string> Lore = default(List<string>), MinecartBlockData MinecartBlock = default(MinecartBlockData), MobSpawnerData MobSpawner = default(MobSpawnerData), int? Moisture = default(int?), CatalogType Note = default(CatalogType), bool? Occupied = default(bool?), CatalogType Ocelot = default(CatalogType), bool? Open = default(bool?), List<string> Pages = default(List<string>), List<Guid?> Passengers = default(List<Guid?>), bool? Persists = default(bool?), PickupDelayData PickupDelay = default(PickupDelayData), CatalogType PickupRule = default(CatalogType), bool? PigSaddle = default(bool?), CatalogType Piston = default(CatalogType), List<CatalogType> PlaceableOn = default(List<CatalogType>), CatalogType Plant = default(CatalogType), bool? PlayerCreated = default(bool?), bool? Playing = default(bool?), CatalogType Portion = default(CatalogType), List<PotionEffect> PotionEffects = default(List<PotionEffect>), bool? Powered = default(bool?), CatalogType Prismarine = default(CatalogType), CatalogType Quartz = default(CatalogType), CatalogType Rabbit = default(CatalogType), CatalogType RailDirection = default(CatalogType), int? RedstonePower = default(int?), ItemStack RepresentedItem = default(ItemStack), string RepresentedPlayer = default(string), Dictionary<string, Location> RespawnLocations = default(Dictionary<string, Location>), CatalogType Sand = default(CatalogType), CatalogType SandStone = default(CatalogType), bool? Screaming = default(bool?), bool? Seamless = default(bool?), bool? Shatters = default(bool?), bool? Sheared = default(bool?), CatalogType Shrub = default(CatalogType), List<string> Sign = default(List<string>), bool? Silent = default(bool?), bool? Sitting = default(bool?), Guid? Skin = default(Guid?), CatalogType Skull = default(CatalogType), CatalogType Slab = default(CatalogType), bool? Sleeping = default(bool?), SlimeData Slime = default(SlimeData), bool? Sneaking = default(bool?), bool? Snow = default(bool?), bool? Sprinting = default(bool?), CatalogType StairShape = default(CatalogType), List<Stat> Statistics = default(List<Stat>), CatalogType Stone = default(CatalogType), List<Enchantment> StoredEnchantments = default(List<Enchantment>), StructureData Structure = default(StructureData), int? StuckArrows = default(int?), TameableData Tamed = default(TameableData), Vector3d Target = default(Vector3d), List<TradeOffer> Trades = default(List<TradeOffer>), CatalogType Tree = default(CatalogType), VehicleData Vehicle = default(VehicleData), CatalogType Wall = default(CatalogType), bool? Wet = default(bool?), WireAttachmentData Wires = default(WireAttachmentData), AcceptsItems AcceptsItems = default(AcceptsItems), List<PotionEffect> ApplicableEffect = default(List<PotionEffect>), ArmorSlotType ArmorSlotType = default(ArmorSlotType), CatalogType ArmorType = default(CatalogType), double? BlastResistance = default(double?), int? BurningFuel = default(int?), int? DamageAbsorption = default(int?), double? Efficiency = default(double?), CatalogType EquipmentType = default(CatalogType), EquipmentSlotType EquiptmentSlotType = default(EquipmentSlotType), double? EyeHeight = default(double?), Vector3d EyeLocation = default(Vector3d), int? FluidTemperature = default(int?), int? FluidViscosity = default(int?), int? FoodRestoration = default(int?), bool? FullBlockSelectionBox = default(bool?), bool? GravityAffected = default(bool?), double? GroundLuminance = default(double?), GuiIdProperty GuiId = default(GuiIdProperty), double? Hardness = default(double?), CatalogType HeldItem = default(CatalogType), Identifiable Identifiable = default(Identifiable), bool? IndirectlyPowered = default(bool?), CatalogType Instrument = default(CatalogType), InventoryCapacity InventoryCapacity = default(InventoryCapacity), InventoryDimension InventoryDimension = default(InventoryDimension), InventoryTitle InventoryTitle = default(InventoryTitle), int? LightEmission = default(int?), MatterEnum? Matter = default(MatterEnum?), bool? Passable = default(bool?), CatalogType Record = default(CatalogType), bool? Replaceable = default(bool?), double? SaturationProperty = default(double?), double? SkyLuminance = default(double?), SlotIndex SlotIndex = default(SlotIndex), SlotPos SlotPos = default(SlotPos), SlotSide SlotSide = default(SlotSide), bool? Smeltable = default(bool?), bool? SolidCube = default(bool?), bool? StatisticsTracked = default(bool?), bool? SurrogateBlock = default(bool?), double? Temperature = default(double?), CatalogType ToolType = default(CatalogType), bool? Unbreakable = default(bool?), int? UseLimit = default(int?))
+        public Slot(ItemStack Stack = default(ItemStack), double? Absorption = default(double?), AgeableData Age = default(AgeableData), bool? Aggressive = default(bool?), bool? AiEnabled = default(bool?), int? AngerLevel = default(int?), ArmorStandData ArmorStand = default(ArmorStandData), CatalogType Art = default(CatalogType), bool? Attached = default(bool?), string Author = default(string), AxisEnum? Axis = default(AxisEnum?), BannerData Banner = default(BannerData), BeaconData Beacon = default(BeaconData), CatalogType BigMushroom = default(CatalogType), BlockState Block = default(BlockState), BreathingData Breathing = default(BreathingData), bool? Breedable = default(bool?), BrewingStandData BrewingStand = default(BrewingStandData), CatalogType Brick = default(CatalogType), Career Career = default(Career), bool? Charged = default(bool?), CatalogType Coal = default(CatalogType), Color Color = default(Color), CommandData Command = default(CommandData), CatalogType Comparator = default(CatalogType), List<ConnectedDirectionEnum> ConnectedDirection = default(List<ConnectedDirectionEnum>), CatalogType CookedFish = default(CatalogType), int? Cooldown = default(int?), bool? CriticalHit = default(bool?), bool? CustomName = default(bool?), double? Damage = default(double?), DamageableData Damageable = default(DamageableData), bool? Decayable = default(bool?), int? Delay = default(int?), DespawnDelayData DespawnDelay = default(DespawnDelayData), DirectionEnum? Direction = default(DirectionEnum?), CatalogType Dirt = default(CatalogType), bool? Disarmed = default(bool?), CatalogType DisguisedBlock = default(CatalogType), string DisplayName = default(string), CatalogType DominantHand = default(CatalogType), CatalogType DoublePlant = default(CatalogType), bool? Drops = default(bool?), DurabilityData Durability = default(DurabilityData), DyeColor Dye = default(DyeColor), List<Enchantment> Enchantments = default(List<Enchantment>), EndGatewayData EndGateway = default(EndGatewayData), int? ExpOrb = default(int?), ExperienceHolderData Experience = default(ExperienceHolderData), int? ExpireTicks = default(int?), int? ExplosionRadius = default(int?), bool? Extended = default(bool?), float? FallDistance = default(float?), FallingBlockData FallingBlock = default(FallingBlockData), bool? Filled = default(bool?), List<FireworkEffect> FireworkEffects = default(List<FireworkEffect>), FireworkRocketData FireworkRocket = default(FireworkRocketData), CatalogType Fish = default(CatalogType), bool? Flammable = default(bool?), FluidStack Fluid = default(FluidStack), int? FluidLevel = default(int?), Dictionary<string, List<FluidStack>> FluidTanks = default(Dictionary<string, List<FluidStack>>), bool? Flying = default(bool?), bool? FlyingAbility = default(bool?), FoodData Food = default(FoodData), FurnaceData Furnace = default(FurnaceData), FuseData Fuse = default(FuseData), GameMode GameMode = default(GameMode), int? Generation = default(int?), bool? Glowing = default(bool?), CatalogType GoldenApple = default(CatalogType), bool? Griefs = default(bool?), GrowthData Growth = default(GrowthData), HealthData Health = default(HealthData), HideData Hide = default(HideData), CatalogType Hinge = default(CatalogType), HorseData Horse = default(HorseData), IgniteableData Igniteable = default(IgniteableData), bool? InWall = default(bool?), Inventory Inventory = default(Inventory), InvisibilityData Invisibility = default(InvisibilityData), InvulnerabilityData Invulnerability = default(InvulnerabilityData), JoinData Joined = default(JoinData), int? Knockback = default(int?), int? Layer = default(int?), LeashData Leash = default(LeashData), string LockToken = default(string), CatalogType LogAxis = default(CatalogType), List<string> Lore = default(List<string>), MinecartBlockData MinecartBlock = default(MinecartBlockData), MobSpawnerData MobSpawner = default(MobSpawnerData), int? Moisture = default(int?), CatalogType Note = default(CatalogType), bool? Occupied = default(bool?), CatalogType Ocelot = default(CatalogType), bool? Open = default(bool?), List<string> Pages = default(List<string>), List<Guid?> Passengers = default(List<Guid?>), bool? Persists = default(bool?), PickupDelayData PickupDelay = default(PickupDelayData), CatalogType PickupRule = default(CatalogType), bool? PigSaddle = default(bool?), CatalogType Piston = default(CatalogType), List<CatalogType> PlaceableOn = default(List<CatalogType>), CatalogType Plant = default(CatalogType), bool? PlayerCreated = default(bool?), bool? Playing = default(bool?), CatalogType Portion = default(CatalogType), List<PotionEffect> PotionEffects = default(List<PotionEffect>), bool? Powered = default(bool?), CatalogType Prismarine = default(CatalogType), CatalogType Quartz = default(CatalogType), CatalogType Rabbit = default(CatalogType), CatalogType RailDirection = default(CatalogType), int? RedstonePower = default(int?), ItemStack RepresentedItem = default(ItemStack), string RepresentedPlayer = default(string), Dictionary<string, Location> RespawnLocations = default(Dictionary<string, Location>), CatalogType Sand = default(CatalogType), CatalogType SandStone = default(CatalogType), bool? Screaming = default(bool?), bool? Seamless = default(bool?), bool? Shatters = default(bool?), bool? Sheared = default(bool?), CatalogType Shrub = default(CatalogType), List<string> Sign = default(List<string>), bool? Silent = default(bool?), bool? Sitting = default(bool?), Guid? Skin = default(Guid?), CatalogType Skull = default(CatalogType), CatalogType Slab = default(CatalogType), bool? Sleeping = default(bool?), SlimeData Slime = default(SlimeData), bool? Sneaking = default(bool?), bool? Snow = default(bool?), CatalogType Spawn = default(CatalogType), bool? Sprinting = default(bool?), CatalogType StairShape = default(CatalogType), List<Stat> Statistics = default(List<Stat>), CatalogType Stone = default(CatalogType), List<Enchantment> StoredEnchantments = default(List<Enchantment>), StructureData Structure = default(StructureData), int? StuckArrows = default(int?), TameableData Tamed = default(TameableData), Vector3d Target = default(Vector3d), List<TradeOffer> Trades = default(List<TradeOffer>), CatalogType Tree = default(CatalogType), VehicleData Vehicle = default(VehicleData), CatalogType Wall = default(CatalogType), bool? Wet = default(bool?), WireAttachmentData Wires = default(WireAttachmentData), AcceptsItems AcceptsItems = default(AcceptsItems), List<PotionEffect> ApplicableEffect = default(List<PotionEffect>), ArmorSlotType ArmorSlotType = default(ArmorSlotType), CatalogType ArmorType = default(CatalogType), double? BlastResistance = default(double?), int? BurningFuel = default(int?), int? DamageAbsorption = default(int?), double? Efficiency = default(double?), CatalogType EquipmentType = default(CatalogType), EquipmentSlotType EquiptmentSlotType = default(EquipmentSlotType), double? EyeHeight = default(double?), Vector3d EyeLocation = default(Vector3d), int? FluidTemperature = default(int?), int? FluidViscosity = default(int?), int? FoodRestoration = default(int?), bool? FullBlockSelectionBox = default(bool?), bool? GravityAffected = default(bool?), double? GroundLuminance = default(double?), GuiIdProperty GuiId = default(GuiIdProperty), double? Hardness = default(double?), CatalogType HeldItem = default(CatalogType), Identifiable Identifiable = default(Identifiable), bool? IndirectlyPowered = default(bool?), CatalogType Instrument = default(CatalogType), InventoryCapacity InventoryCapacity = default(InventoryCapacity), InventoryDimension InventoryDimension = default(InventoryDimension), InventoryTitle InventoryTitle = default(InventoryTitle), int? LightEmission = default(int?), MatterEnum? Matter = default(MatterEnum?), bool? Passable = default(bool?), CatalogType Record = default(CatalogType), bool? Replaceable = default(bool?), double? SaturationProperty = default(double?), double? SkyLuminance = default(double?), SlotIndex SlotIndex = default(SlotIndex), SlotPos SlotPos = default(SlotPos), SlotSide SlotSide = default(SlotSide), bool? Smeltable = default(bool?), bool? SolidCube = default(bool?), bool? StatisticsTracked = default(bool?), bool? SurrogateBlock = default(bool?), double? Temperature = default(double?), CatalogType ToolType = default(CatalogType), bool? Unbreakable = default(bool?), int? UseLimit = default(int?))
         {
-            // to ensure "Loaded" is required (not null)
-            if (Loaded == null)
+            // to ensure "Stack" is required (not null)
+            if (Stack == null)
             {
-                throw new InvalidDataException("Loaded is a required property for WorldFull and cannot be null");
+                throw new InvalidDataException("Stack is a required property for Slot and cannot be null");
             }
             else
             {
-                this.Loaded = Loaded;
+                this.Stack = Stack;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
-            {
-                throw new InvalidDataException("Name is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
-            // to ensure "Uuid" is required (not null)
-            if (Uuid == null)
-            {
-                throw new InvalidDataException("Uuid is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Uuid = Uuid;
-            }
-            // to ensure "MapFeaturesEnabled" is required (not null)
-            if (MapFeaturesEnabled == null)
-            {
-                throw new InvalidDataException("MapFeaturesEnabled is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.MapFeaturesEnabled = MapFeaturesEnabled;
-            }
-            // to ensure "Border" is required (not null)
-            if (Border == null)
-            {
-                throw new InvalidDataException("Border is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Border = Border;
-            }
-            // to ensure "LoadOnStartup" is required (not null)
-            if (LoadOnStartup == null)
-            {
-                throw new InvalidDataException("LoadOnStartup is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.LoadOnStartup = LoadOnStartup;
-            }
-            // to ensure "KeepSpawnLoaded" is required (not null)
-            if (KeepSpawnLoaded == null)
-            {
-                throw new InvalidDataException("KeepSpawnLoaded is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.KeepSpawnLoaded = KeepSpawnLoaded;
-            }
-            // to ensure "AllowCommands" is required (not null)
-            if (AllowCommands == null)
-            {
-                throw new InvalidDataException("AllowCommands is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.AllowCommands = AllowCommands;
-            }
-            // to ensure "GenerateBonusChests" is required (not null)
-            if (GenerateBonusChests == null)
-            {
-                throw new InvalidDataException("GenerateBonusChests is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.GenerateBonusChests = GenerateBonusChests;
-            }
-            // to ensure "Time" is required (not null)
-            if (Time == null)
-            {
-                throw new InvalidDataException("Time is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Time = Time;
-            }
-            // to ensure "Seed" is required (not null)
-            if (Seed == null)
-            {
-                throw new InvalidDataException("Seed is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Seed = Seed;
-            }
-            // to ensure "Difficulty" is required (not null)
-            if (Difficulty == null)
-            {
-                throw new InvalidDataException("Difficulty is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Difficulty = Difficulty;
-            }
-            // to ensure "GameRules" is required (not null)
-            if (GameRules == null)
-            {
-                throw new InvalidDataException("GameRules is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.GameRules = GameRules;
-            }
-            // to ensure "Weather" is required (not null)
-            if (Weather == null)
-            {
-                throw new InvalidDataException("Weather is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.Weather = Weather;
-            }
-            // to ensure "GeneratorType" is required (not null)
-            if (GeneratorType == null)
-            {
-                throw new InvalidDataException("GeneratorType is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.GeneratorType = GeneratorType;
-            }
-            // to ensure "DimensionType" is required (not null)
-            if (DimensionType == null)
-            {
-                throw new InvalidDataException("DimensionType is a required property for WorldFull and cannot be null");
-            }
-            else
-            {
-                this.DimensionType = DimensionType;
-            }
-            this.Spawn = Spawn;
-            this.GameMode = GameMode;
             this.Absorption = Absorption;
             this.Age = Age;
             this.Aggressive = Aggressive;
@@ -780,6 +628,7 @@ namespace IO.Swagger.Model
             this.Food = Food;
             this.Furnace = Furnace;
             this.Fuse = Fuse;
+            this.GameMode = GameMode;
             this.Generation = Generation;
             this.Glowing = Glowing;
             this.GoldenApple = GoldenApple;
@@ -847,6 +696,7 @@ namespace IO.Swagger.Model
             this.Slime = Slime;
             this.Sneaking = Sneaking;
             this.Snow = Snow;
+            this.Spawn = Spawn;
             this.Sprinting = Sprinting;
             this.StairShape = StairShape;
             this.Statistics = Statistics;
@@ -910,135 +760,11 @@ namespace IO.Swagger.Model
         }
         
         /// <summary>
-        /// The API link that can be used to obtain more information about this object
+        /// The item stack that is in this slot
         /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
-        /// True if the world is loaded, false otherwise
-        /// </summary>
-        /// <value>True if the world is loaded, false otherwise</value>
-        [DataMember(Name="loaded", EmitDefaultValue=false)]
-        public bool? Loaded { get; set; }
-
-        /// <summary>
-        /// The name of this world
-        /// </summary>
-        /// <value>The name of this world</value>
-        [DataMember(Name="name", EmitDefaultValue=false)]
-        public string Name { get; set; }
-
-        /// <summary>
-        /// The unique UUID that identifies this world
-        /// </summary>
-        /// <value>The unique UUID that identifies this world</value>
-        [DataMember(Name="uuid", EmitDefaultValue=false)]
-        public Guid? Uuid { get; set; }
-
-        /// <summary>
-        /// True if map specific features are enabled for this world, false otherwise
-        /// </summary>
-        /// <value>True if map specific features are enabled for this world, false otherwise</value>
-        [DataMember(Name="mapFeaturesEnabled", EmitDefaultValue=false)]
-        public bool? MapFeaturesEnabled { get; set; }
-
-        /// <summary>
-        /// The border of the world
-        /// </summary>
-        /// <value>The border of the world</value>
-        [DataMember(Name="border", EmitDefaultValue=false)]
-        public WorldBorder Border { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Spawn
-        /// </summary>
-        [DataMember(Name="spawn", EmitDefaultValue=false)]
-        public CatalogType Spawn { get; set; }
-
-        /// <summary>
-        /// True if this world is loaded when the server starts, false otherwise
-        /// </summary>
-        /// <value>True if this world is loaded when the server starts, false otherwise</value>
-        [DataMember(Name="loadOnStartup", EmitDefaultValue=false)]
-        public bool? LoadOnStartup { get; set; }
-
-        /// <summary>
-        /// True if the spawn of this world is always kept loaded, false otherwise
-        /// </summary>
-        /// <value>True if the spawn of this world is always kept loaded, false otherwise</value>
-        [DataMember(Name="keepSpawnLoaded", EmitDefaultValue=false)]
-        public bool? KeepSpawnLoaded { get; set; }
-
-        /// <summary>
-        /// True if commands are allowed to be executed in this world, false otherwise
-        /// </summary>
-        /// <value>True if commands are allowed to be executed in this world, false otherwise</value>
-        [DataMember(Name="allowCommands", EmitDefaultValue=false)]
-        public bool? AllowCommands { get; set; }
-
-        /// <summary>
-        /// True if bonus chests are generated for this world, false otherwise
-        /// </summary>
-        /// <value>True if bonus chests are generated for this world, false otherwise</value>
-        [DataMember(Name="generateBonusChests", EmitDefaultValue=false)]
-        public bool? GenerateBonusChests { get; set; }
-
-        /// <summary>
-        /// The current time in the world
-        /// </summary>
-        /// <value>The current time in the world</value>
-        [DataMember(Name="time", EmitDefaultValue=false)]
-        public long? Time { get; set; }
-
-        /// <summary>
-        /// The seed of the world
-        /// </summary>
-        /// <value>The seed of the world</value>
-        [DataMember(Name="seed", EmitDefaultValue=false)]
-        public long? Seed { get; set; }
-
-        /// <summary>
-        /// The difficulty of the world
-        /// </summary>
-        /// <value>The difficulty of the world</value>
-        [DataMember(Name="difficulty", EmitDefaultValue=false)]
-        public CatalogTypeDifficulty Difficulty { get; set; }
-
-        /// <summary>
-        /// A map of world rule names to values
-        /// </summary>
-        /// <value>A map of world rule names to values</value>
-        [DataMember(Name="gameRules", EmitDefaultValue=false)]
-        public Dictionary<string, string> GameRules { get; set; }
-
-        /// <summary>
-        /// The current weather in the world
-        /// </summary>
-        /// <value>The current weather in the world</value>
-        [DataMember(Name="weather", EmitDefaultValue=false)]
-        public CatalogTypeWeather Weather { get; set; }
-
-        /// <summary>
-        /// Gets or Sets GameMode
-        /// </summary>
-        [DataMember(Name="gameMode", EmitDefaultValue=false)]
-        public GameMode GameMode { get; set; }
-
-        /// <summary>
-        /// The generator type used for this world
-        /// </summary>
-        /// <value>The generator type used for this world</value>
-        [DataMember(Name="generatorType", EmitDefaultValue=false)]
-        public CatalogTypeGeneratorType GeneratorType { get; set; }
-
-        /// <summary>
-        /// The dimension of the world
-        /// </summary>
-        /// <value>The dimension of the world</value>
-        [DataMember(Name="dimensionType", EmitDefaultValue=false)]
-        public CatalogTypeDimensionType DimensionType { get; set; }
+        /// <value>The item stack that is in this slot</value>
+        [DataMember(Name="stack", EmitDefaultValue=false)]
+        public ItemStack Stack { get; set; }
 
         /// <summary>
         /// Gets or Sets Absorption
@@ -1420,6 +1146,12 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="fuse", EmitDefaultValue=false)]
         public FuseData Fuse { get; set; }
+
+        /// <summary>
+        /// Gets or Sets GameMode
+        /// </summary>
+        [DataMember(Name="gameMode", EmitDefaultValue=false)]
+        public GameMode GameMode { get; set; }
 
         /// <summary>
         /// Gets or Sets Generation
@@ -1824,6 +1556,12 @@ namespace IO.Swagger.Model
         public bool? Snow { get; set; }
 
         /// <summary>
+        /// Gets or Sets Spawn
+        /// </summary>
+        [DataMember(Name="spawn", EmitDefaultValue=false)]
+        public CatalogType Spawn { get; set; }
+
+        /// <summary>
         /// Gets or Sets Sprinting
         /// </summary>
         [DataMember(Name="sprinting", EmitDefaultValue=false)]
@@ -2185,26 +1923,8 @@ namespace IO.Swagger.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class WorldFull {\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
-            sb.Append("  Loaded: ").Append(Loaded).Append("\n");
-            sb.Append("  Name: ").Append(Name).Append("\n");
-            sb.Append("  Uuid: ").Append(Uuid).Append("\n");
-            sb.Append("  MapFeaturesEnabled: ").Append(MapFeaturesEnabled).Append("\n");
-            sb.Append("  Border: ").Append(Border).Append("\n");
-            sb.Append("  Spawn: ").Append(Spawn).Append("\n");
-            sb.Append("  LoadOnStartup: ").Append(LoadOnStartup).Append("\n");
-            sb.Append("  KeepSpawnLoaded: ").Append(KeepSpawnLoaded).Append("\n");
-            sb.Append("  AllowCommands: ").Append(AllowCommands).Append("\n");
-            sb.Append("  GenerateBonusChests: ").Append(GenerateBonusChests).Append("\n");
-            sb.Append("  Time: ").Append(Time).Append("\n");
-            sb.Append("  Seed: ").Append(Seed).Append("\n");
-            sb.Append("  Difficulty: ").Append(Difficulty).Append("\n");
-            sb.Append("  GameRules: ").Append(GameRules).Append("\n");
-            sb.Append("  Weather: ").Append(Weather).Append("\n");
-            sb.Append("  GameMode: ").Append(GameMode).Append("\n");
-            sb.Append("  GeneratorType: ").Append(GeneratorType).Append("\n");
-            sb.Append("  DimensionType: ").Append(DimensionType).Append("\n");
+            sb.Append("class Slot {\n");
+            sb.Append("  Stack: ").Append(Stack).Append("\n");
             sb.Append("  Absorption: ").Append(Absorption).Append("\n");
             sb.Append("  Age: ").Append(Age).Append("\n");
             sb.Append("  Aggressive: ").Append(Aggressive).Append("\n");
@@ -2271,6 +1991,7 @@ namespace IO.Swagger.Model
             sb.Append("  Food: ").Append(Food).Append("\n");
             sb.Append("  Furnace: ").Append(Furnace).Append("\n");
             sb.Append("  Fuse: ").Append(Fuse).Append("\n");
+            sb.Append("  GameMode: ").Append(GameMode).Append("\n");
             sb.Append("  Generation: ").Append(Generation).Append("\n");
             sb.Append("  Glowing: ").Append(Glowing).Append("\n");
             sb.Append("  GoldenApple: ").Append(GoldenApple).Append("\n");
@@ -2338,6 +2059,7 @@ namespace IO.Swagger.Model
             sb.Append("  Slime: ").Append(Slime).Append("\n");
             sb.Append("  Sneaking: ").Append(Sneaking).Append("\n");
             sb.Append("  Snow: ").Append(Snow).Append("\n");
+            sb.Append("  Spawn: ").Append(Spawn).Append("\n");
             sb.Append("  Sprinting: ").Append(Sprinting).Append("\n");
             sb.Append("  StairShape: ").Append(StairShape).Append("\n");
             sb.Append("  Statistics: ").Append(Statistics).Append("\n");
@@ -2418,114 +2140,24 @@ namespace IO.Swagger.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as WorldFull);
+            return this.Equals(input as Slot);
         }
 
         /// <summary>
-        /// Returns true if WorldFull instances are equal
+        /// Returns true if Slot instances are equal
         /// </summary>
-        /// <param name="input">Instance of WorldFull to be compared</param>
+        /// <param name="input">Instance of Slot to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(WorldFull input)
+        public bool Equals(Slot input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
-                    this.Loaded == input.Loaded ||
-                    (this.Loaded != null &&
-                    this.Loaded.Equals(input.Loaded))
-                ) && 
-                (
-                    this.Name == input.Name ||
-                    (this.Name != null &&
-                    this.Name.Equals(input.Name))
-                ) && 
-                (
-                    this.Uuid == input.Uuid ||
-                    (this.Uuid != null &&
-                    this.Uuid.Equals(input.Uuid))
-                ) && 
-                (
-                    this.MapFeaturesEnabled == input.MapFeaturesEnabled ||
-                    (this.MapFeaturesEnabled != null &&
-                    this.MapFeaturesEnabled.Equals(input.MapFeaturesEnabled))
-                ) && 
-                (
-                    this.Border == input.Border ||
-                    (this.Border != null &&
-                    this.Border.Equals(input.Border))
-                ) && 
-                (
-                    this.Spawn == input.Spawn ||
-                    (this.Spawn != null &&
-                    this.Spawn.Equals(input.Spawn))
-                ) && 
-                (
-                    this.LoadOnStartup == input.LoadOnStartup ||
-                    (this.LoadOnStartup != null &&
-                    this.LoadOnStartup.Equals(input.LoadOnStartup))
-                ) && 
-                (
-                    this.KeepSpawnLoaded == input.KeepSpawnLoaded ||
-                    (this.KeepSpawnLoaded != null &&
-                    this.KeepSpawnLoaded.Equals(input.KeepSpawnLoaded))
-                ) && 
-                (
-                    this.AllowCommands == input.AllowCommands ||
-                    (this.AllowCommands != null &&
-                    this.AllowCommands.Equals(input.AllowCommands))
-                ) && 
-                (
-                    this.GenerateBonusChests == input.GenerateBonusChests ||
-                    (this.GenerateBonusChests != null &&
-                    this.GenerateBonusChests.Equals(input.GenerateBonusChests))
-                ) && 
-                (
-                    this.Time == input.Time ||
-                    (this.Time != null &&
-                    this.Time.Equals(input.Time))
-                ) && 
-                (
-                    this.Seed == input.Seed ||
-                    (this.Seed != null &&
-                    this.Seed.Equals(input.Seed))
-                ) && 
-                (
-                    this.Difficulty == input.Difficulty ||
-                    (this.Difficulty != null &&
-                    this.Difficulty.Equals(input.Difficulty))
-                ) && 
-                (
-                    this.GameRules == input.GameRules ||
-                    this.GameRules != null &&
-                    this.GameRules.SequenceEqual(input.GameRules)
-                ) && 
-                (
-                    this.Weather == input.Weather ||
-                    (this.Weather != null &&
-                    this.Weather.Equals(input.Weather))
-                ) && 
-                (
-                    this.GameMode == input.GameMode ||
-                    (this.GameMode != null &&
-                    this.GameMode.Equals(input.GameMode))
-                ) && 
-                (
-                    this.GeneratorType == input.GeneratorType ||
-                    (this.GeneratorType != null &&
-                    this.GeneratorType.Equals(input.GeneratorType))
-                ) && 
-                (
-                    this.DimensionType == input.DimensionType ||
-                    (this.DimensionType != null &&
-                    this.DimensionType.Equals(input.DimensionType))
+                    this.Stack == input.Stack ||
+                    (this.Stack != null &&
+                    this.Stack.Equals(input.Stack))
                 ) && 
                 (
                     this.Absorption == input.Absorption ||
@@ -2856,6 +2488,11 @@ namespace IO.Swagger.Model
                     this.Fuse == input.Fuse ||
                     (this.Fuse != null &&
                     this.Fuse.Equals(input.Fuse))
+                ) && 
+                (
+                    this.GameMode == input.GameMode ||
+                    (this.GameMode != null &&
+                    this.GameMode.Equals(input.GameMode))
                 ) && 
                 (
                     this.Generation == input.Generation ||
@@ -3193,6 +2830,11 @@ namespace IO.Swagger.Model
                     this.Snow.Equals(input.Snow))
                 ) && 
                 (
+                    this.Spawn == input.Spawn ||
+                    (this.Spawn != null &&
+                    this.Spawn.Equals(input.Spawn))
+                ) && 
+                (
                     this.Sprinting == input.Sprinting ||
                     (this.Sprinting != null &&
                     this.Sprinting.Equals(input.Sprinting))
@@ -3503,44 +3145,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
-                if (this.Loaded != null)
-                    hashCode = hashCode * 59 + this.Loaded.GetHashCode();
-                if (this.Name != null)
-                    hashCode = hashCode * 59 + this.Name.GetHashCode();
-                if (this.Uuid != null)
-                    hashCode = hashCode * 59 + this.Uuid.GetHashCode();
-                if (this.MapFeaturesEnabled != null)
-                    hashCode = hashCode * 59 + this.MapFeaturesEnabled.GetHashCode();
-                if (this.Border != null)
-                    hashCode = hashCode * 59 + this.Border.GetHashCode();
-                if (this.Spawn != null)
-                    hashCode = hashCode * 59 + this.Spawn.GetHashCode();
-                if (this.LoadOnStartup != null)
-                    hashCode = hashCode * 59 + this.LoadOnStartup.GetHashCode();
-                if (this.KeepSpawnLoaded != null)
-                    hashCode = hashCode * 59 + this.KeepSpawnLoaded.GetHashCode();
-                if (this.AllowCommands != null)
-                    hashCode = hashCode * 59 + this.AllowCommands.GetHashCode();
-                if (this.GenerateBonusChests != null)
-                    hashCode = hashCode * 59 + this.GenerateBonusChests.GetHashCode();
-                if (this.Time != null)
-                    hashCode = hashCode * 59 + this.Time.GetHashCode();
-                if (this.Seed != null)
-                    hashCode = hashCode * 59 + this.Seed.GetHashCode();
-                if (this.Difficulty != null)
-                    hashCode = hashCode * 59 + this.Difficulty.GetHashCode();
-                if (this.GameRules != null)
-                    hashCode = hashCode * 59 + this.GameRules.GetHashCode();
-                if (this.Weather != null)
-                    hashCode = hashCode * 59 + this.Weather.GetHashCode();
-                if (this.GameMode != null)
-                    hashCode = hashCode * 59 + this.GameMode.GetHashCode();
-                if (this.GeneratorType != null)
-                    hashCode = hashCode * 59 + this.GeneratorType.GetHashCode();
-                if (this.DimensionType != null)
-                    hashCode = hashCode * 59 + this.DimensionType.GetHashCode();
+                if (this.Stack != null)
+                    hashCode = hashCode * 59 + this.Stack.GetHashCode();
                 if (this.Absorption != null)
                     hashCode = hashCode * 59 + this.Absorption.GetHashCode();
                 if (this.Age != null)
@@ -3673,6 +3279,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Furnace.GetHashCode();
                 if (this.Fuse != null)
                     hashCode = hashCode * 59 + this.Fuse.GetHashCode();
+                if (this.GameMode != null)
+                    hashCode = hashCode * 59 + this.GameMode.GetHashCode();
                 if (this.Generation != null)
                     hashCode = hashCode * 59 + this.Generation.GetHashCode();
                 if (this.Glowing != null)
@@ -3807,6 +3415,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.Sneaking.GetHashCode();
                 if (this.Snow != null)
                     hashCode = hashCode * 59 + this.Snow.GetHashCode();
+                if (this.Spawn != null)
+                    hashCode = hashCode * 59 + this.Spawn.GetHashCode();
                 if (this.Sprinting != null)
                     hashCode = hashCode * 59 + this.Sprinting.GetHashCode();
                 if (this.StairShape != null)

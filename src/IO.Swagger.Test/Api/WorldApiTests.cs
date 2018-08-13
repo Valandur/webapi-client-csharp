@@ -76,7 +76,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.CreateWorld(body, details, accept, pretty);
-            //Assert.IsInstanceOf<WorldFull> (response, "response is WorldFull");
+            //Assert.IsInstanceOf<World> (response, "response is World");
         }
         
         /// <summary>
@@ -91,7 +91,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.DeleteWorld(world, details, accept, pretty);
-            //Assert.IsInstanceOf<WorldFull> (response, "response is WorldFull");
+            //Assert.IsInstanceOf<World> (response, "response is World");
         }
         
         /// <summary>
@@ -122,7 +122,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.GetWorld(world, details, accept, pretty);
-            //Assert.IsInstanceOf<WorldFull> (response, "response is WorldFull");
+            //Assert.IsInstanceOf<World> (response, "response is World");
         }
         
         /// <summary>
@@ -136,7 +136,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.ListWorlds(details, accept, pretty);
-            //Assert.IsInstanceOf<List<WorldFull>> (response, "response is List<WorldFull>");
+            //Assert.IsInstanceOf<List<World>> (response, "response is List<World>");
         }
         
         /// <summary>
@@ -152,7 +152,7 @@ namespace IO.Swagger.Test
             //string accept = null;
             //bool? pretty = null;
             //var response = instance.ModifyWorld(world, body, details, accept, pretty);
-            //Assert.IsInstanceOf<WorldFull> (response, "response is WorldFull");
+            //Assert.IsInstanceOf<World> (response, "response is World");
         }
         
     }

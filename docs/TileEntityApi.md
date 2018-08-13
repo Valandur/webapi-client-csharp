@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**ExecuteMethod**](TileEntityApi.md#executemethod) | **POST** /tile-entity/{world}/{x}/{y}/{z}/method | Execute a method
 [**GetTileEntity**](TileEntityApi.md#gettileentity) | **GET** /tile-entity/{world}/{x}/{y}/{z} | Get tile entity
 [**ListTileEntities**](TileEntityApi.md#listtileentities) | **GET** /tile-entity | List tile entities
+[**ModifyTileEntity**](TileEntityApi.md#modifytileentity) | **PUT** /tile-entity/{world}/{x}/{y}/{z} | Modify tile entity
 
 
 <a name="executemethod"></a>
@@ -247,6 +248,90 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List<TileEntity>**](TileEntity.md)
+
+### Authorization
+
+[ApiKeyHeader](../README.md#ApiKeyHeader), [ApiKeyQuery](../README.md#ApiKeyQuery)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, application/xml
+ - **Accept**: application/json, application/xml
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="modifytileentity"></a>
+# **ModifyTileEntity**
+> TileEntity ModifyTileEntity (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+
+Modify tile entity
+
+Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class ModifyTileEntityExample
+    {
+        public void main()
+        {
+            // Configure API key authorization: ApiKeyHeader
+            Configuration.Default.AddApiKey("X-WebAPI-Key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("X-WebAPI-Key", "Bearer");
+            // Configure API key authorization: ApiKeyQuery
+            Configuration.Default.AddApiKey("key", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // Configuration.Default.AddApiKeyPrefix("key", "Bearer");
+
+            var apiInstance = new TileEntityApi();
+            var world = world_example;  // string | The world the tile entity is in
+            var x = 56;  // int? | The x-coordinate of the tile-entity
+            var y = 56;  // int? | The y-coordinate of the tile-entity
+            var z = 56;  // int? | The z-coordinate of the tile-entity
+            var body = new UpdateTileEntityRequest(); // UpdateTileEntityRequest |  (optional) 
+            var details = true;  // bool? | Add to include additional details, omit or false otherwise (optional) 
+            var accept = accept_example;  // string | Override the 'Accept' request header (useful for debugging your requests) (optional) 
+            var pretty = true;  // bool? | Add to make the Web-API pretty print the response (useful for debugging your requests) (optional) 
+
+            try
+            {
+                // Modify tile entity
+                TileEntity result = apiInstance.ModifyTileEntity(world, x, y, z, body, details, accept, pretty);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TileEntityApi.ModifyTileEntity: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **world** | **string**| The world the tile entity is in | 
+ **x** | **int?**| The x-coordinate of the tile-entity | 
+ **y** | **int?**| The y-coordinate of the tile-entity | 
+ **z** | **int?**| The z-coordinate of the tile-entity | 
+ **body** | [**UpdateTileEntityRequest**](UpdateTileEntityRequest.md)|  | [optional] 
+ **details** | **bool?**| Add to include additional details, omit or false otherwise | [optional] 
+ **accept** | **string**| Override the &#39;Accept&#39; request header (useful for debugging your requests) | [optional] 
+ **pretty** | **bool?**| Add to make the Web-API pretty print the response (useful for debugging your requests) | [optional] 
+
+### Return type
+
+[**TileEntity**](TileEntity.md)
 
 ### Authorization
 

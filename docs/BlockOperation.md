@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Error** | **string** | The error message, if any | 
-**Errored** | **bool?** | True if this block operation produced errors, false otherwise. | 
 **EstimatedSecondsRemaining** | **float?** | The estimated amount of time remaining until this block operation is complete (in seconds) | 
 **Link** | **string** | The API link that can be used to obtain more information about this object | 
 **Max** | [**Vector3i**](Vector3i.md) | The maximum block belonging to this operation | 

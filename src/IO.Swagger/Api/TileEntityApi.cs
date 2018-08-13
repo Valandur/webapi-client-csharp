@@ -127,6 +127,41 @@ namespace IO.Swagger.Api
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>ApiResponse of List&lt;TileEntity&gt;</returns>
         ApiResponse<List<TileEntity>> ListTileEntitiesWithHttpInfo (string world = null, string type = null, string min = null, string max = null, int? limit = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Modify tile entity
+        /// </summary>
+        /// <remarks>
+        /// Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>TileEntity</returns>
+        TileEntity ModifyTileEntity (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Modify tile entity
+        /// </summary>
+        /// <remarks>
+        /// Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of TileEntity</returns>
+        ApiResponse<TileEntity> ModifyTileEntityWithHttpInfo (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -232,6 +267,41 @@ namespace IO.Swagger.Api
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>Task of ApiResponse (List&lt;TileEntity&gt;)</returns>
         System.Threading.Tasks.Task<ApiResponse<List<TileEntity>>> ListTileEntitiesAsyncWithHttpInfo (string world = null, string type = null, string min = null, string max = null, int? limit = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Modify tile entity
+        /// </summary>
+        /// <remarks>
+        /// Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of TileEntity</returns>
+        System.Threading.Tasks.Task<TileEntity> ModifyTileEntityAsync (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Modify tile entity
+        /// </summary>
+        /// <remarks>
+        /// Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (TileEntity)</returns>
+        System.Threading.Tasks.Task<ApiResponse<TileEntity>> ModifyTileEntityAsyncWithHttpInfo (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Asynchronous Operations
     }
 
@@ -971,6 +1041,239 @@ namespace IO.Swagger.Api
             return new ApiResponse<List<TileEntity>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (List<TileEntity>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<TileEntity>)));
+        }
+
+        /// <summary>
+        /// Modify tile entity Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>TileEntity</returns>
+        public TileEntity ModifyTileEntity (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<TileEntity> localVarResponse = ModifyTileEntityWithHttpInfo(world, x, y, z, body, details, accept, pretty);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Modify tile entity Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of TileEntity</returns>
+        public ApiResponse< TileEntity > ModifyTileEntityWithHttpInfo (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'world' is set
+            if (world == null)
+                throw new ApiException(400, "Missing required parameter 'world' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'x' is set
+            if (x == null)
+                throw new ApiException(400, "Missing required parameter 'x' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'y' is set
+            if (y == null)
+                throw new ApiException(400, "Missing required parameter 'y' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'z' is set
+            if (z == null)
+                throw new ApiException(400, "Missing required parameter 'z' when calling TileEntityApi->ModifyTileEntity");
+
+            var localVarPath = "/tile-entity/{world}/{x}/{y}/{z}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (world != null) localVarPathParams.Add("world", Configuration.ApiClient.ParameterToString(world)); // path parameter
+            if (x != null) localVarPathParams.Add("x", Configuration.ApiClient.ParameterToString(x)); // path parameter
+            if (y != null) localVarPathParams.Add("y", Configuration.ApiClient.ParameterToString(y)); // path parameter
+            if (z != null) localVarPathParams.Add("z", Configuration.ApiClient.ParameterToString(z)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModifyTileEntity", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TileEntity>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (TileEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TileEntity)));
+        }
+
+        /// <summary>
+        /// Modify tile entity Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of TileEntity</returns>
+        public async System.Threading.Tasks.Task<TileEntity> ModifyTileEntityAsync (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<TileEntity> localVarResponse = await ModifyTileEntityAsyncWithHttpInfo(world, x, y, z, body, details, accept, pretty);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Modify tile entity Modify the properties of an existing tile entity.     **Required permissions:**    - **tile-entity.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="world">The world the tile entity is in</param>
+        /// <param name="x">The x-coordinate of the tile-entity</param>
+        /// <param name="y">The y-coordinate of the tile-entity</param>
+        /// <param name="z">The z-coordinate of the tile-entity</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (TileEntity)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<TileEntity>> ModifyTileEntityAsyncWithHttpInfo (string world, int? x, int? y, int? z, UpdateTileEntityRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'world' is set
+            if (world == null)
+                throw new ApiException(400, "Missing required parameter 'world' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'x' is set
+            if (x == null)
+                throw new ApiException(400, "Missing required parameter 'x' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'y' is set
+            if (y == null)
+                throw new ApiException(400, "Missing required parameter 'y' when calling TileEntityApi->ModifyTileEntity");
+            // verify the required parameter 'z' is set
+            if (z == null)
+                throw new ApiException(400, "Missing required parameter 'z' when calling TileEntityApi->ModifyTileEntity");
+
+            var localVarPath = "/tile-entity/{world}/{x}/{y}/{z}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (world != null) localVarPathParams.Add("world", Configuration.ApiClient.ParameterToString(world)); // path parameter
+            if (x != null) localVarPathParams.Add("x", Configuration.ApiClient.ParameterToString(x)); // path parameter
+            if (y != null) localVarPathParams.Add("y", Configuration.ApiClient.ParameterToString(y)); // path parameter
+            if (z != null) localVarPathParams.Add("z", Configuration.ApiClient.ParameterToString(z)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModifyTileEntity", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<TileEntity>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (TileEntity) Configuration.ApiClient.Deserialize(localVarResponse, typeof(TileEntity)));
         }
 
     }

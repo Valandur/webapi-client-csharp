@@ -122,13 +122,6 @@ namespace IO.Swagger.Model
         [DataMember(Name="id", EmitDefaultValue=false)]
         public string Id { get; set; }
 
-        /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
 
         /// <summary>
         /// True if this is an optional dependency, false otherwise
@@ -153,7 +146,6 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class PluginDependency {\n");
             sb.Append("  Id: ").Append(Id).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  LoadOrder: ").Append(LoadOrder).Append("\n");
             sb.Append("  Optional: ").Append(Optional).Append("\n");
             sb.Append("  Version: ").Append(Version).Append("\n");
@@ -197,11 +189,6 @@ namespace IO.Swagger.Model
                     this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.LoadOrder == input.LoadOrder ||
                     (this.LoadOrder != null &&
                     this.LoadOrder.Equals(input.LoadOrder))
@@ -229,8 +216,6 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Id != null)
                     hashCode = hashCode * 59 + this.Id.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.LoadOrder != null)
                     hashCode = hashCode * 59 + this.LoadOrder.GetHashCode();
                 if (this.Optional != null)

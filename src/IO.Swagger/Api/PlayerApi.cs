@@ -64,8 +64,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>PlayerFull</returns>
-        PlayerFull GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Player</returns>
+        Player GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Get a player
@@ -78,8 +78,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of PlayerFull</returns>
-        ApiResponse<PlayerFull> GetPlayerWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of Player</returns>
+        ApiResponse<Player> GetPlayerWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// List players
         /// </summary>
@@ -90,8 +90,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>List&lt;PlayerFull&gt;</returns>
-        List<PlayerFull> ListPlayers (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>List&lt;Player&gt;</returns>
+        List<Player> ListPlayers (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// List players
@@ -103,8 +103,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of List&lt;PlayerFull&gt;</returns>
-        ApiResponse<List<PlayerFull>> ListPlayersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of List&lt;Player&gt;</returns>
+        ApiResponse<List<Player>> ListPlayersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Modify a player
         /// </summary>
@@ -117,8 +117,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>PlayerFull</returns>
-        PlayerFull ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Player</returns>
+        Player ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Modify a player
@@ -132,8 +132,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of PlayerFull</returns>
-        ApiResponse<PlayerFull> ModifyPlayerWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of Player</returns>
+        ApiResponse<Player> ModifyPlayerWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -176,8 +176,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of PlayerFull</returns>
-        System.Threading.Tasks.Task<PlayerFull> GetPlayerAsync (string player, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of Player</returns>
+        System.Threading.Tasks.Task<Player> GetPlayerAsync (string player, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Get a player
@@ -190,8 +190,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (PlayerFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlayerFull>> GetPlayerAsyncWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (Player)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Player>> GetPlayerAsyncWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// List players
         /// </summary>
@@ -202,8 +202,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of List&lt;PlayerFull&gt;</returns>
-        System.Threading.Tasks.Task<List<PlayerFull>> ListPlayersAsync (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of List&lt;Player&gt;</returns>
+        System.Threading.Tasks.Task<List<Player>> ListPlayersAsync (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// List players
@@ -215,8 +215,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;PlayerFull&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<PlayerFull>>> ListPlayersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (List&lt;Player&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<Player>>> ListPlayersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Modify a player
         /// </summary>
@@ -229,8 +229,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of PlayerFull</returns>
-        System.Threading.Tasks.Task<PlayerFull> ModifyPlayerAsync (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of Player</returns>
+        System.Threading.Tasks.Task<Player> ModifyPlayerAsync (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Modify a player
@@ -244,8 +244,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (PlayerFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PlayerFull>> ModifyPlayerAsyncWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (Player)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Player>> ModifyPlayerAsyncWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Asynchronous Operations
     }
 
@@ -551,10 +551,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>PlayerFull</returns>
-        public PlayerFull GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Player</returns>
+        public Player GetPlayer (string player, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PlayerFull> localVarResponse = GetPlayerWithHttpInfo(player, details, accept, pretty);
+             ApiResponse<Player> localVarResponse = GetPlayerWithHttpInfo(player, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -566,8 +566,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of PlayerFull</returns>
-        public ApiResponse< PlayerFull > GetPlayerWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of Player</returns>
+        public ApiResponse< Player > GetPlayerWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'player' is set
             if (player == null)
@@ -626,9 +626,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PlayerFull>(localVarStatusCode,
+            return new ApiResponse<Player>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PlayerFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlayerFull)));
+                (Player) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Player)));
         }
 
         /// <summary>
@@ -639,10 +639,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of PlayerFull</returns>
-        public async System.Threading.Tasks.Task<PlayerFull> GetPlayerAsync (string player, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of Player</returns>
+        public async System.Threading.Tasks.Task<Player> GetPlayerAsync (string player, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PlayerFull> localVarResponse = await GetPlayerAsyncWithHttpInfo(player, details, accept, pretty);
+             ApiResponse<Player> localVarResponse = await GetPlayerAsyncWithHttpInfo(player, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -655,8 +655,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (PlayerFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PlayerFull>> GetPlayerAsyncWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (Player)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Player>> GetPlayerAsyncWithHttpInfo (string player, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'player' is set
             if (player == null)
@@ -715,9 +715,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PlayerFull>(localVarStatusCode,
+            return new ApiResponse<Player>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PlayerFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlayerFull)));
+                (Player) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Player)));
         }
 
         /// <summary>
@@ -727,10 +727,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>List&lt;PlayerFull&gt;</returns>
-        public List<PlayerFull> ListPlayers (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>List&lt;Player&gt;</returns>
+        public List<Player> ListPlayers (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<List<PlayerFull>> localVarResponse = ListPlayersWithHttpInfo(details, accept, pretty);
+             ApiResponse<List<Player>> localVarResponse = ListPlayersWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -741,8 +741,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of List&lt;PlayerFull&gt;</returns>
-        public ApiResponse< List<PlayerFull> > ListPlayersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of List&lt;Player&gt;</returns>
+        public ApiResponse< List<Player> > ListPlayersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/player";
@@ -797,9 +797,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<PlayerFull>>(localVarStatusCode,
+            return new ApiResponse<List<Player>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<PlayerFull>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<PlayerFull>)));
+                (List<Player>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Player>)));
         }
 
         /// <summary>
@@ -809,10 +809,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of List&lt;PlayerFull&gt;</returns>
-        public async System.Threading.Tasks.Task<List<PlayerFull>> ListPlayersAsync (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of List&lt;Player&gt;</returns>
+        public async System.Threading.Tasks.Task<List<Player>> ListPlayersAsync (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<List<PlayerFull>> localVarResponse = await ListPlayersAsyncWithHttpInfo(details, accept, pretty);
+             ApiResponse<List<Player>> localVarResponse = await ListPlayersAsyncWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -824,8 +824,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;PlayerFull&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<PlayerFull>>> ListPlayersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (List&lt;Player&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<Player>>> ListPlayersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/player";
@@ -880,9 +880,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<PlayerFull>>(localVarStatusCode,
+            return new ApiResponse<List<Player>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<PlayerFull>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<PlayerFull>)));
+                (List<Player>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<Player>)));
         }
 
         /// <summary>
@@ -894,10 +894,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>PlayerFull</returns>
-        public PlayerFull ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Player</returns>
+        public Player ModifyPlayer (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PlayerFull> localVarResponse = ModifyPlayerWithHttpInfo(player, body, details, accept, pretty);
+             ApiResponse<Player> localVarResponse = ModifyPlayerWithHttpInfo(player, body, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -910,8 +910,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of PlayerFull</returns>
-        public ApiResponse< PlayerFull > ModifyPlayerWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of Player</returns>
+        public ApiResponse< Player > ModifyPlayerWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'player' is set
             if (player == null)
@@ -978,9 +978,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PlayerFull>(localVarStatusCode,
+            return new ApiResponse<Player>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PlayerFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlayerFull)));
+                (Player) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Player)));
         }
 
         /// <summary>
@@ -992,10 +992,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of PlayerFull</returns>
-        public async System.Threading.Tasks.Task<PlayerFull> ModifyPlayerAsync (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of Player</returns>
+        public async System.Threading.Tasks.Task<Player> ModifyPlayerAsync (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PlayerFull> localVarResponse = await ModifyPlayerAsyncWithHttpInfo(player, body, details, accept, pretty);
+             ApiResponse<Player> localVarResponse = await ModifyPlayerAsyncWithHttpInfo(player, body, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -1009,8 +1009,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (PlayerFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PlayerFull>> ModifyPlayerAsyncWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (Player)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Player>> ModifyPlayerAsyncWithHttpInfo (string player, UpdatePlayerRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'player' is set
             if (player == null)
@@ -1077,9 +1077,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PlayerFull>(localVarStatusCode,
+            return new ApiResponse<Player>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PlayerFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PlayerFull)));
+                (Player) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Player)));
         }
 
     }

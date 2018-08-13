@@ -12,7 +12,7 @@ Contact: inithilian@gmail.com
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6F5B817E-D2DD-4CDB-913C-2572E72D1EAB}</ProjectGuid>
+    <ProjectGuid>{A7D2779B-8EEF-4792-903F-FD2281FAD1ED}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

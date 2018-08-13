@@ -25,30 +25,109 @@ namespace IO.Swagger.Api
     {
         #region Synchronous Operations
         /// <summary>
+        /// Create a user
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        UserPermissionStruct CreateUser (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Create a user
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        ApiResponse<UserPermissionStruct> CreateUserWithHttpInfo (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <remarks>
+        /// Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        UserPermissionStruct DeleteUser (string name, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <remarks>
+        /// Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        ApiResponse<UserPermissionStruct> DeleteUserWithHttpInfo (string name, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
         /// Check info
         /// </summary>
         /// <remarks>
-        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>PermissionStruct</returns>
-        PermissionStruct GetUserDetails (bool? details = null, string accept = null, bool? pretty = null);
+        PermissionStruct GetMe (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Check info
         /// </summary>
         /// <remarks>
-        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>ApiResponse of PermissionStruct</returns>
-        ApiResponse<PermissionStruct> GetUserDetailsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        ApiResponse<PermissionStruct> GetMeWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// List users
+        /// </summary>
+        /// <remarks>
+        /// Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>List&lt;UserPermissionStruct&gt;</returns>
+        List<UserPermissionStruct> GetUsers (bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// List users
+        /// </summary>
+        /// <remarks>
+        /// Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of List&lt;UserPermissionStruct&gt;</returns>
+        ApiResponse<List<UserPermissionStruct>> GetUsersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Login
         /// </summary>
@@ -80,7 +159,7 @@ namespace IO.Swagger.Api
         /// Logout
         /// </summary>
         /// <remarks>
-        /// Invalidate the current API key, logging out the active user.
+        /// Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -93,7 +172,7 @@ namespace IO.Swagger.Api
         /// Logout
         /// </summary>
         /// <remarks>
-        /// Invalidate the current API key, logging out the active user.
+        /// Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -101,33 +180,168 @@ namespace IO.Swagger.Api
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>ApiResponse of PermissionStruct</returns>
         ApiResponse<PermissionStruct> LogoutWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// null     **Required permissions:**    - **user.**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns></returns>
+        void LogoutRedirect (string redirect = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// null     **Required permissions:**    - **user.**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> LogoutRedirectWithHttpInfo (string redirect = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Update a user
+        /// </summary>
+        /// <remarks>
+        /// Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        UserPermissionStruct ModifyUser (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Update a user
+        /// </summary>
+        /// <remarks>
+        /// Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        ApiResponse<UserPermissionStruct> ModifyUserWithHttpInfo (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
+        /// <summary>
+        /// Create a user
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        System.Threading.Tasks.Task<UserPermissionStruct> CreateUserAsync (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Create a user
+        /// </summary>
+        /// <remarks>
+        /// Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> CreateUserAsyncWithHttpInfo (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <remarks>
+        /// Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        System.Threading.Tasks.Task<UserPermissionStruct> DeleteUserAsync (string name, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Delete a user
+        /// </summary>
+        /// <remarks>
+        /// Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> DeleteUserAsyncWithHttpInfo (string name, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Check info
         /// </summary>
         /// <remarks>
-        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>Task of PermissionStruct</returns>
-        System.Threading.Tasks.Task<PermissionStruct> GetUserDetailsAsync (bool? details = null, string accept = null, bool? pretty = null);
+        System.Threading.Tasks.Task<PermissionStruct> GetMeAsync (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Check info
         /// </summary>
         /// <remarks>
-        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>Task of ApiResponse (PermissionStruct)</returns>
-        System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> GetUserDetailsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> GetMeAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// List users
+        /// </summary>
+        /// <remarks>
+        /// Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of List&lt;UserPermissionStruct&gt;</returns>
+        System.Threading.Tasks.Task<List<UserPermissionStruct>> GetUsersAsync (bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// List users
+        /// </summary>
+        /// <remarks>
+        /// Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (List&lt;UserPermissionStruct&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<UserPermissionStruct>>> GetUsersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Login
         /// </summary>
@@ -159,7 +373,7 @@ namespace IO.Swagger.Api
         /// Logout
         /// </summary>
         /// <remarks>
-        /// Invalidate the current API key, logging out the active user.
+        /// Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -172,7 +386,7 @@ namespace IO.Swagger.Api
         /// Logout
         /// </summary>
         /// <remarks>
-        /// Invalidate the current API key, logging out the active user.
+        /// Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -180,6 +394,62 @@ namespace IO.Swagger.Api
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>Task of ApiResponse (PermissionStruct)</returns>
         System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> LogoutAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// null     **Required permissions:**    - **user.**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task LogoutRedirectAsync (string redirect = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <remarks>
+        /// null     **Required permissions:**    - **user.**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> LogoutRedirectAsyncWithHttpInfo (string redirect = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <summary>
+        /// Update a user
+        /// </summary>
+        /// <remarks>
+        /// Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        System.Threading.Tasks.Task<UserPermissionStruct> ModifyUserAsync (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+
+        /// <summary>
+        /// Update a user
+        /// </summary>
+        /// <remarks>
+        /// Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> ModifyUserAsyncWithHttpInfo (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Asynchronous Operations
     }
 
@@ -281,28 +551,555 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Create a user Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        public UserPermissionStruct CreateUser (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = CreateUserWithHttpInfo(body, details, accept, pretty);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Create a user Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        public ApiResponse< UserPermissionStruct > CreateUserWithHttpInfo (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
+        }
+
+        /// <summary>
+        /// Create a user Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        public async System.Threading.Tasks.Task<UserPermissionStruct> CreateUserAsync (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = await CreateUserAsyncWithHttpInfo(body, details, accept, pretty);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Create a user Creates a new Web-API user with the specified username and password.     **Required permissions:**    - **user.create**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> CreateUserAsyncWithHttpInfo (CreateUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("CreateUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
+        }
+
+        /// <summary>
+        /// Delete a user Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        public UserPermissionStruct DeleteUser (string name, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = DeleteUserWithHttpInfo(name, details, accept, pretty);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Delete a user Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        public ApiResponse< UserPermissionStruct > DeleteUserWithHttpInfo (string name, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling UserApi->DeleteUser");
+
+            var localVarPath = "/user/{name}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
+        }
+
+        /// <summary>
+        /// Delete a user Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        public async System.Threading.Tasks.Task<UserPermissionStruct> DeleteUserAsync (string name, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = await DeleteUserAsyncWithHttpInfo(name, details, accept, pretty);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Delete a user Removes a Web-API user.     **Required permissions:**    - **user.delete**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> DeleteUserAsyncWithHttpInfo (string name, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling UserApi->DeleteUser");
+
+            var localVarPath = "/user/{name}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("DeleteUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
+        }
+
+        /// <summary>
+        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>PermissionStruct</returns>
-        public PermissionStruct GetUserDetails (bool? details = null, string accept = null, bool? pretty = null)
+        public PermissionStruct GetMe (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PermissionStruct> localVarResponse = GetUserDetailsWithHttpInfo(details, accept, pretty);
+             ApiResponse<PermissionStruct> localVarResponse = GetMeWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
         /// <returns>ApiResponse of PermissionStruct</returns>
-        public ApiResponse< PermissionStruct > GetUserDetailsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        public ApiResponse< PermissionStruct > GetMeWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user/me";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetMe", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PermissionStruct)));
+        }
+
+        /// <summary>
+        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of PermissionStruct</returns>
+        public async System.Threading.Tasks.Task<PermissionStruct> GetMeAsync (bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<PermissionStruct> localVarResponse = await GetMeAsyncWithHttpInfo(details, accept, pretty);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (PermissionStruct)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> GetMeAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user/me";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetMe", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<PermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (PermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PermissionStruct)));
+        }
+
+        /// <summary>
+        /// List users Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>List&lt;UserPermissionStruct&gt;</returns>
+        public List<UserPermissionStruct> GetUsers (bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<List<UserPermissionStruct>> localVarResponse = GetUsersWithHttpInfo(details, accept, pretty);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// List users Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of List&lt;UserPermissionStruct&gt;</returns>
+        public ApiResponse< List<UserPermissionStruct> > GetUsersWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/user";
@@ -353,39 +1150,39 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUserDetails", localVarResponse);
+                Exception exception = ExceptionFactory("GetUsers", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PermissionStruct>(localVarStatusCode,
+            return new ApiResponse<List<UserPermissionStruct>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PermissionStruct)));
+                (List<UserPermissionStruct>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPermissionStruct>)));
         }
 
         /// <summary>
-        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// List users Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of PermissionStruct</returns>
-        public async System.Threading.Tasks.Task<PermissionStruct> GetUserDetailsAsync (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of List&lt;UserPermissionStruct&gt;</returns>
+        public async System.Threading.Tasks.Task<List<UserPermissionStruct>> GetUsersAsync (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<PermissionStruct> localVarResponse = await GetUserDetailsAsyncWithHttpInfo(details, accept, pretty);
+             ApiResponse<List<UserPermissionStruct>> localVarResponse = await GetUsersAsyncWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// Check info Checks to see if the passed api key is still valid and retrieves the user info and permissions associated with this key     **Required permissions:**    - **user.user**   
+        /// List users Gets a list of all the Web-API users.     **Required permissions:**    - **user.list**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (PermissionStruct)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> GetUserDetailsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (List&lt;UserPermissionStruct&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<UserPermissionStruct>>> GetUsersAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/user";
@@ -436,13 +1233,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("GetUserDetails", localVarResponse);
+                Exception exception = ExceptionFactory("GetUsers", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<PermissionStruct>(localVarStatusCode,
+            return new ApiResponse<List<UserPermissionStruct>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (PermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PermissionStruct)));
+                (List<UserPermissionStruct>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<UserPermissionStruct>)));
         }
 
         /// <summary>
@@ -472,7 +1269,7 @@ namespace IO.Swagger.Api
         public ApiResponse< PermissionStruct > LoginWithHttpInfo (AuthenticationRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
 
-            var localVarPath = "/user";
+            var localVarPath = "/user/login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -555,7 +1352,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<PermissionStruct>> LoginAsyncWithHttpInfo (AuthenticationRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
 
-            var localVarPath = "/user";
+            var localVarPath = "/user/login";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -611,7 +1408,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Logout Invalidate the current API key, logging out the active user.
+        /// Logout Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -625,7 +1422,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Logout Invalidate the current API key, logging out the active user.
+        /// Logout Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -663,6 +1460,16 @@ namespace IO.Swagger.Api
             if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
             if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
@@ -683,7 +1490,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Logout Invalidate the current API key, logging out the active user.
+        /// Logout Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -698,7 +1505,7 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// Logout Invalidate the current API key, logging out the active user.
+        /// Logout Invalidate the current API key, logging out the active user.     **Required permissions:**    - **user.**   
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
@@ -736,6 +1543,16 @@ namespace IO.Swagger.Api
             if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
             if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
 
             // make the HTTP request
             IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
@@ -753,6 +1570,372 @@ namespace IO.Swagger.Api
             return new ApiResponse<PermissionStruct>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (PermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(PermissionStruct)));
+        }
+
+        /// <summary>
+        ///  null     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns></returns>
+        public void LogoutRedirect (string redirect = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             LogoutRedirectWithHttpInfo(redirect, details, accept, pretty);
+        }
+
+        /// <summary>
+        ///  null     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> LogoutRedirectWithHttpInfo (string redirect = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user/logout";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (redirect != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "redirect", redirect)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LogoutRedirect", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        ///  null     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task LogoutRedirectAsync (string redirect = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             await LogoutRedirectAsyncWithHttpInfo(redirect, details, accept, pretty);
+
+        }
+
+        /// <summary>
+        ///  null     **Required permissions:**    - **user.**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="redirect">The URL the client should be redirect to after logout (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> LogoutRedirectAsyncWithHttpInfo (string redirect = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+
+            var localVarPath = "/user/logout";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (redirect != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "redirect", redirect)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("LogoutRedirect", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// Update a user Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>UserPermissionStruct</returns>
+        public UserPermissionStruct ModifyUser (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = ModifyUserWithHttpInfo(name, body, details, accept, pretty);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Update a user Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>ApiResponse of UserPermissionStruct</returns>
+        public ApiResponse< UserPermissionStruct > ModifyUserWithHttpInfo (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling UserApi->ModifyUser");
+
+            var localVarPath = "/user/{name}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModifyUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
+        }
+
+        /// <summary>
+        /// Update a user Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of UserPermissionStruct</returns>
+        public async System.Threading.Tasks.Task<UserPermissionStruct> ModifyUserAsync (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+             ApiResponse<UserPermissionStruct> localVarResponse = await ModifyUserAsyncWithHttpInfo(name, body, details, accept, pretty);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// Update a user Changes the properties of a Web-API user     **Required permissions:**    - **user.modify**   
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="name">The username of the user to delete</param>
+        /// <param name="body"> (optional)</param>
+        /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
+        /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
+        /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
+        /// <returns>Task of ApiResponse (UserPermissionStruct)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<UserPermissionStruct>> ModifyUserAsyncWithHttpInfo (string name, ModifyUserRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        {
+            // verify the required parameter 'name' is set
+            if (name == null)
+                throw new ApiException(400, "Missing required parameter 'name' when calling UserApi->ModifyUser");
+
+            var localVarPath = "/user/{name}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json", 
+                "application/xml"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json",
+                "application/xml"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (name != null) localVarPathParams.Add("name", Configuration.ApiClient.ParameterToString(name)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (body != null && body.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = body; // byte array
+            }
+
+            // authentication (ApiKeyHeader) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            {
+                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+            }
+            // authentication (ApiKeyQuery) required
+            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            {
+                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+            }
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ModifyUser", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<UserPermissionStruct>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (UserPermissionStruct) Configuration.ApiClient.Deserialize(localVarResponse, typeof(UserPermissionStruct)));
         }
 
     }

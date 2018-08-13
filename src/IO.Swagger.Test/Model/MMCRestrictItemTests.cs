@@ -83,6 +83,14 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'BreakingBanned'
         }
         /// <summary>
+        /// Test the property 'CraftBanned'
+        /// </summary>
+        [Test]
+        public void CraftBannedTest()
+        {
+            // TODO unit test for the property 'CraftBanned'
+        }
+        /// <summary>
         /// Test the property 'DropBanned'
         /// </summary>
         [Test]

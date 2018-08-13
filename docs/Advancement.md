@@ -4,7 +4,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | **string** | The unique id of the advancement | 
-**Link** | **string** | The API link that can be used to obtain more information about this object | 
 **Name** | **string** | The name of the advancement | 
 **Title** | **string** | The title of the advancement | 
 **AnnounceToChat** | **bool?** | True if the achieving of this advancement is announced in chat, false otherwise | [optional] 

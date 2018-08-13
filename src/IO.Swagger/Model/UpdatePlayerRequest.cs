@@ -37,8 +37,9 @@ namespace IO.Swagger.Model
         /// <param name="Exhaustion">The exhaustion of the player.</param>
         /// <param name="ExperienceSinceLevel">The amount of experience gained since the last level.</param>
         /// <param name="FoodLevel">The food level of the player.</param>
+        /// <param name="GameMode">The game mode of the player.</param>
         /// <param name="Health">The current amount of health the player has.</param>
-        /// <param name="Inventory">The ItemStacks in the inventory of the entity.</param>
+        /// <param name="Inventory">The slots in the inventory of the entity to modify.</param>
         /// <param name="Level">The player level.</param>
         /// <param name="MaxHealth">The maximum health of the player.</param>
         /// <param name="Position">The position that the entity will be moved to.</param>
@@ -48,12 +49,13 @@ namespace IO.Swagger.Model
         /// <param name="TotalExperience">The total experience of the player.</param>
         /// <param name="Velocity">The new speed of the entity.</param>
         /// <param name="World">The world that the entity will be moved to.</param>
-        public UpdatePlayerRequest(DamageRequest Damage = default(DamageRequest), double? Exhaustion = default(double?), int? ExperienceSinceLevel = default(int?), int? FoodLevel = default(int?), double? Health = default(double?), List<ItemStack> Inventory = default(List<ItemStack>), int? Level = default(int?), double? MaxHealth = default(double?), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), double? Saturation = default(double?), Vector3d Scale = default(Vector3d), int? TotalExperience = default(int?), Vector3d Velocity = default(Vector3d), string World = default(string))
+        public UpdatePlayerRequest(DamageRequest Damage = default(DamageRequest), double? Exhaustion = default(double?), int? ExperienceSinceLevel = default(int?), int? FoodLevel = default(int?), string GameMode = default(string), double? Health = default(double?), List<SlotRequest> Inventory = default(List<SlotRequest>), int? Level = default(int?), double? MaxHealth = default(double?), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), double? Saturation = default(double?), Vector3d Scale = default(Vector3d), int? TotalExperience = default(int?), Vector3d Velocity = default(Vector3d), string World = default(string))
         {
             this.Damage = Damage;
             this.Exhaustion = Exhaustion;
             this.ExperienceSinceLevel = ExperienceSinceLevel;
             this.FoodLevel = FoodLevel;
+            this.GameMode = GameMode;
             this.Health = Health;
             this.Inventory = Inventory;
             this.Level = Level;
@@ -96,6 +98,13 @@ namespace IO.Swagger.Model
         public int? FoodLevel { get; set; }
 
         /// <summary>
+        /// The game mode of the player
+        /// </summary>
+        /// <value>The game mode of the player</value>
+        [DataMember(Name="gameMode", EmitDefaultValue=false)]
+        public string GameMode { get; set; }
+
+        /// <summary>
         /// The current amount of health the player has
         /// </summary>
         /// <value>The current amount of health the player has</value>
@@ -103,11 +112,11 @@ namespace IO.Swagger.Model
         public double? Health { get; set; }
 
         /// <summary>
-        /// The ItemStacks in the inventory of the entity
+        /// The slots in the inventory of the entity to modify
         /// </summary>
-        /// <value>The ItemStacks in the inventory of the entity</value>
+        /// <value>The slots in the inventory of the entity to modify</value>
         [DataMember(Name="inventory", EmitDefaultValue=false)]
-        public List<ItemStack> Inventory { get; set; }
+        public List<SlotRequest> Inventory { get; set; }
 
         /// <summary>
         /// The player level
@@ -184,6 +193,7 @@ namespace IO.Swagger.Model
             sb.Append("  Exhaustion: ").Append(Exhaustion).Append("\n");
             sb.Append("  ExperienceSinceLevel: ").Append(ExperienceSinceLevel).Append("\n");
             sb.Append("  FoodLevel: ").Append(FoodLevel).Append("\n");
+            sb.Append("  GameMode: ").Append(GameMode).Append("\n");
             sb.Append("  Health: ").Append(Health).Append("\n");
             sb.Append("  Inventory: ").Append(Inventory).Append("\n");
             sb.Append("  Level: ").Append(Level).Append("\n");
@@ -248,6 +258,11 @@ namespace IO.Swagger.Model
                     this.FoodLevel == input.FoodLevel ||
                     (this.FoodLevel != null &&
                     this.FoodLevel.Equals(input.FoodLevel))
+                ) && 
+                (
+                    this.GameMode == input.GameMode ||
+                    (this.GameMode != null &&
+                    this.GameMode.Equals(input.GameMode))
                 ) && 
                 (
                     this.Health == input.Health ||
@@ -323,6 +338,8 @@ namespace IO.Swagger.Model
                     hashCode = hashCode * 59 + this.ExperienceSinceLevel.GetHashCode();
                 if (this.FoodLevel != null)
                     hashCode = hashCode * 59 + this.FoodLevel.GetHashCode();
+                if (this.GameMode != null)
+                    hashCode = hashCode * 59 + this.GameMode.GetHashCode();
                 if (this.Health != null)
                     hashCode = hashCode * 59 + this.Health.GetHashCode();
                 if (this.Inventory != null)

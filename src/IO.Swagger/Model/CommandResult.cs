@@ -33,11 +33,6 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandResult" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected CommandResult() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="CommandResult" /> class.
-        /// </summary>
         /// <param name="AffectedBlocks">The number of blocks that were affected by this command.</param>
         /// <param name="AffectedEntities">The number of entities that were affected by this command.</param>
         /// <param name="AffectedItems">The number of items that were affected by this command.</param>
@@ -52,13 +47,6 @@ namespace IO.Swagger.Model
             this.SuccessCount = SuccessCount;
         }
         
-        /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
         /// <summary>
         /// The number of blocks that were affected by this command
         /// </summary>
@@ -102,7 +90,6 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class CommandResult {\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  AffectedBlocks: ").Append(AffectedBlocks).Append("\n");
             sb.Append("  AffectedEntities: ").Append(AffectedEntities).Append("\n");
             sb.Append("  AffectedItems: ").Append(AffectedItems).Append("\n");
@@ -143,11 +130,6 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.AffectedBlocks == input.AffectedBlocks ||
                     (this.AffectedBlocks != null &&
                     this.AffectedBlocks.Equals(input.AffectedBlocks))
@@ -183,8 +165,6 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.AffectedBlocks != null)
                     hashCode = hashCode * 59 + this.AffectedBlocks.GetHashCode();
                 if (this.AffectedEntities != null)

@@ -35,8 +35,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        WorldFull CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>World</returns>
+        World CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Create a world
@@ -49,8 +49,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        ApiResponse<WorldFull> CreateWorldWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of World</returns>
+        ApiResponse<World> CreateWorldWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Delete a world
         /// </summary>
@@ -62,8 +62,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        WorldFull DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>World</returns>
+        World DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Delete a world
@@ -76,8 +76,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        ApiResponse<WorldFull> DeleteWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of World</returns>
+        ApiResponse<World> DeleteWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Execute a method
         /// </summary>
@@ -118,8 +118,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        WorldFull GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>World</returns>
+        World GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Get a world
@@ -132,8 +132,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        ApiResponse<WorldFull> GetWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of World</returns>
+        ApiResponse<World> GetWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// List worlds
         /// </summary>
@@ -144,8 +144,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>List&lt;WorldFull&gt;</returns>
-        List<WorldFull> ListWorlds (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>List&lt;World&gt;</returns>
+        List<World> ListWorlds (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// List worlds
@@ -157,8 +157,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorldFull&gt;</returns>
-        ApiResponse<List<WorldFull>> ListWorldsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of List&lt;World&gt;</returns>
+        ApiResponse<List<World>> ListWorldsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Modify a world
         /// </summary>
@@ -171,8 +171,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        WorldFull ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>World</returns>
+        World ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Modify a world
@@ -186,8 +186,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        ApiResponse<WorldFull> ModifyWorldWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>ApiResponse of World</returns>
+        ApiResponse<World> ModifyWorldWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -201,8 +201,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        System.Threading.Tasks.Task<WorldFull> CreateWorldAsync (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of World</returns>
+        System.Threading.Tasks.Task<World> CreateWorldAsync (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Create a world
@@ -215,8 +215,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorldFull>> CreateWorldAsyncWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (World)</returns>
+        System.Threading.Tasks.Task<ApiResponse<World>> CreateWorldAsyncWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Delete a world
         /// </summary>
@@ -228,8 +228,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        System.Threading.Tasks.Task<WorldFull> DeleteWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of World</returns>
+        System.Threading.Tasks.Task<World> DeleteWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Delete a world
@@ -242,8 +242,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorldFull>> DeleteWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (World)</returns>
+        System.Threading.Tasks.Task<ApiResponse<World>> DeleteWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Execute a method
         /// </summary>
@@ -284,8 +284,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        System.Threading.Tasks.Task<WorldFull> GetWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of World</returns>
+        System.Threading.Tasks.Task<World> GetWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Get a world
@@ -298,8 +298,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorldFull>> GetWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (World)</returns>
+        System.Threading.Tasks.Task<ApiResponse<World>> GetWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// List worlds
         /// </summary>
@@ -310,8 +310,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of List&lt;WorldFull&gt;</returns>
-        System.Threading.Tasks.Task<List<WorldFull>> ListWorldsAsync (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of List&lt;World&gt;</returns>
+        System.Threading.Tasks.Task<List<World>> ListWorldsAsync (bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// List worlds
@@ -323,8 +323,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;WorldFull&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<WorldFull>>> ListWorldsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (List&lt;World&gt;)</returns>
+        System.Threading.Tasks.Task<ApiResponse<List<World>>> ListWorldsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null);
         /// <summary>
         /// Modify a world
         /// </summary>
@@ -337,8 +337,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        System.Threading.Tasks.Task<WorldFull> ModifyWorldAsync (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of World</returns>
+        System.Threading.Tasks.Task<World> ModifyWorldAsync (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
 
         /// <summary>
         /// Modify a world
@@ -352,8 +352,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        System.Threading.Tasks.Task<ApiResponse<WorldFull>> ModifyWorldAsyncWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
+        /// <returns>Task of ApiResponse (World)</returns>
+        System.Threading.Tasks.Task<ApiResponse<World>> ModifyWorldAsyncWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null);
         #endregion Asynchronous Operations
     }
 
@@ -462,10 +462,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        public WorldFull CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>World</returns>
+        public World CreateWorld (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = CreateWorldWithHttpInfo(body, details, accept, pretty);
+             ApiResponse<World> localVarResponse = CreateWorldWithHttpInfo(body, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -477,8 +477,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        public ApiResponse< WorldFull > CreateWorldWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of World</returns>
+        public ApiResponse< World > CreateWorldWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/world";
@@ -541,9 +541,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -554,10 +554,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        public async System.Threading.Tasks.Task<WorldFull> CreateWorldAsync (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of World</returns>
+        public async System.Threading.Tasks.Task<World> CreateWorldAsync (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = await CreateWorldAsyncWithHttpInfo(body, details, accept, pretty);
+             ApiResponse<World> localVarResponse = await CreateWorldAsyncWithHttpInfo(body, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -570,8 +570,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorldFull>> CreateWorldAsyncWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (World)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<World>> CreateWorldAsyncWithHttpInfo (CreateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/world";
@@ -634,9 +634,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -647,10 +647,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        public WorldFull DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>World</returns>
+        public World DeleteWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = DeleteWorldWithHttpInfo(world, details, accept, pretty);
+             ApiResponse<World> localVarResponse = DeleteWorldWithHttpInfo(world, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -662,8 +662,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        public ApiResponse< WorldFull > DeleteWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of World</returns>
+        public ApiResponse< World > DeleteWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -722,9 +722,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -735,10 +735,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        public async System.Threading.Tasks.Task<WorldFull> DeleteWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of World</returns>
+        public async System.Threading.Tasks.Task<World> DeleteWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = await DeleteWorldAsyncWithHttpInfo(world, details, accept, pretty);
+             ApiResponse<World> localVarResponse = await DeleteWorldAsyncWithHttpInfo(world, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -751,8 +751,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorldFull>> DeleteWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (World)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<World>> DeleteWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -811,9 +811,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -1021,10 +1021,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        public WorldFull GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>World</returns>
+        public World GetWorld (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = GetWorldWithHttpInfo(world, details, accept, pretty);
+             ApiResponse<World> localVarResponse = GetWorldWithHttpInfo(world, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -1036,8 +1036,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        public ApiResponse< WorldFull > GetWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of World</returns>
+        public ApiResponse< World > GetWorldWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -1096,9 +1096,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -1109,10 +1109,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        public async System.Threading.Tasks.Task<WorldFull> GetWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of World</returns>
+        public async System.Threading.Tasks.Task<World> GetWorldAsync (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = await GetWorldAsyncWithHttpInfo(world, details, accept, pretty);
+             ApiResponse<World> localVarResponse = await GetWorldAsyncWithHttpInfo(world, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -1125,8 +1125,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorldFull>> GetWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (World)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<World>> GetWorldAsyncWithHttpInfo (string world, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -1185,9 +1185,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -1197,10 +1197,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>List&lt;WorldFull&gt;</returns>
-        public List<WorldFull> ListWorlds (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>List&lt;World&gt;</returns>
+        public List<World> ListWorlds (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<List<WorldFull>> localVarResponse = ListWorldsWithHttpInfo(details, accept, pretty);
+             ApiResponse<List<World>> localVarResponse = ListWorldsWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -1211,8 +1211,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of List&lt;WorldFull&gt;</returns>
-        public ApiResponse< List<WorldFull> > ListWorldsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of List&lt;World&gt;</returns>
+        public ApiResponse< List<World> > ListWorldsWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/world";
@@ -1267,9 +1267,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<WorldFull>>(localVarStatusCode,
+            return new ApiResponse<List<World>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<WorldFull>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorldFull>)));
+                (List<World>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<World>)));
         }
 
         /// <summary>
@@ -1279,10 +1279,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of List&lt;WorldFull&gt;</returns>
-        public async System.Threading.Tasks.Task<List<WorldFull>> ListWorldsAsync (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of List&lt;World&gt;</returns>
+        public async System.Threading.Tasks.Task<List<World>> ListWorldsAsync (bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<List<WorldFull>> localVarResponse = await ListWorldsAsyncWithHttpInfo(details, accept, pretty);
+             ApiResponse<List<World>> localVarResponse = await ListWorldsAsyncWithHttpInfo(details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -1294,8 +1294,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (List&lt;WorldFull&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<WorldFull>>> ListWorldsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (List&lt;World&gt;)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<List<World>>> ListWorldsAsyncWithHttpInfo (bool? details = null, string accept = null, bool? pretty = null)
         {
 
             var localVarPath = "/world";
@@ -1350,9 +1350,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<List<WorldFull>>(localVarStatusCode,
+            return new ApiResponse<List<World>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<WorldFull>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<WorldFull>)));
+                (List<World>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<World>)));
         }
 
         /// <summary>
@@ -1364,10 +1364,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>WorldFull</returns>
-        public WorldFull ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>World</returns>
+        public World ModifyWorld (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = ModifyWorldWithHttpInfo(world, body, details, accept, pretty);
+             ApiResponse<World> localVarResponse = ModifyWorldWithHttpInfo(world, body, details, accept, pretty);
              return localVarResponse.Data;
         }
 
@@ -1380,8 +1380,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>ApiResponse of WorldFull</returns>
-        public ApiResponse< WorldFull > ModifyWorldWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>ApiResponse of World</returns>
+        public ApiResponse< World > ModifyWorldWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -1448,9 +1448,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
         /// <summary>
@@ -1462,10 +1462,10 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of WorldFull</returns>
-        public async System.Threading.Tasks.Task<WorldFull> ModifyWorldAsync (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of World</returns>
+        public async System.Threading.Tasks.Task<World> ModifyWorldAsync (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
-             ApiResponse<WorldFull> localVarResponse = await ModifyWorldAsyncWithHttpInfo(world, body, details, accept, pretty);
+             ApiResponse<World> localVarResponse = await ModifyWorldAsyncWithHttpInfo(world, body, details, accept, pretty);
              return localVarResponse.Data;
 
         }
@@ -1479,8 +1479,8 @@ namespace IO.Swagger.Api
         /// <param name="details">Add to include additional details, omit or false otherwise (optional)</param>
         /// <param name="accept">Override the &#39;Accept&#39; request header (useful for debugging your requests) (optional)</param>
         /// <param name="pretty">Add to make the Web-API pretty print the response (useful for debugging your requests) (optional)</param>
-        /// <returns>Task of ApiResponse (WorldFull)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<WorldFull>> ModifyWorldAsyncWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
+        /// <returns>Task of ApiResponse (World)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<World>> ModifyWorldAsyncWithHttpInfo (string world, UpdateWorldRequest body = null, bool? details = null, string accept = null, bool? pretty = null)
         {
             // verify the required parameter 'world' is set
             if (world == null)
@@ -1547,9 +1547,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<WorldFull>(localVarStatusCode,
+            return new ApiResponse<World>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (WorldFull) Configuration.ApiClient.Deserialize(localVarResponse, typeof(WorldFull)));
+                (World) Configuration.ApiClient.Deserialize(localVarResponse, typeof(World)));
         }
 
     }

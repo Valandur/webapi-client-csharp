@@ -34,13 +34,13 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="UpdateEntityRequest" /> class.
         /// </summary>
         /// <param name="Damage">The damage the entity will take.</param>
-        /// <param name="Inventory">The ItemStacks in the inventory of the entity.</param>
+        /// <param name="Inventory">The slots in the inventory of the entity to modify.</param>
         /// <param name="Position">The position that the entity will be moved to.</param>
         /// <param name="Rotation">The new rotation of the entity.</param>
         /// <param name="Scale">The new scale of the entity.</param>
         /// <param name="Velocity">The new speed of the entity.</param>
         /// <param name="World">The world that the entity will be moved to.</param>
-        public UpdateEntityRequest(DamageRequest Damage = default(DamageRequest), List<ItemStack> Inventory = default(List<ItemStack>), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), Vector3d Scale = default(Vector3d), Vector3d Velocity = default(Vector3d), string World = default(string))
+        public UpdateEntityRequest(DamageRequest Damage = default(DamageRequest), List<SlotRequest> Inventory = default(List<SlotRequest>), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), Vector3d Scale = default(Vector3d), Vector3d Velocity = default(Vector3d), string World = default(string))
         {
             this.Damage = Damage;
             this.Inventory = Inventory;
@@ -59,11 +59,11 @@ namespace IO.Swagger.Model
         public DamageRequest Damage { get; set; }
 
         /// <summary>
-        /// The ItemStacks in the inventory of the entity
+        /// The slots in the inventory of the entity to modify
         /// </summary>
-        /// <value>The ItemStacks in the inventory of the entity</value>
+        /// <value>The slots in the inventory of the entity to modify</value>
         [DataMember(Name="inventory", EmitDefaultValue=false)]
-        public List<ItemStack> Inventory { get; set; }
+        public List<SlotRequest> Inventory { get; set; }
 
         /// <summary>
         /// The position that the entity will be moved to

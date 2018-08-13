@@ -75,14 +75,6 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Id'
         }
         /// <summary>
-        /// Test the property 'Link'
-        /// </summary>
-        [Test]
-        public void LinkTest()
-        {
-            // TODO unit test for the property 'Link'
-        }
-        /// <summary>
         /// Test the property 'Name'
         /// </summary>
         [Test]

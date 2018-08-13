@@ -65,17 +65,61 @@ namespace IO.Swagger.Test
 
         
         /// <summary>
-        /// Test GetUserDetails
+        /// Test CreateUser
         /// </summary>
         [Test]
-        public void GetUserDetailsTest()
+        public void CreateUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //CreateUserRequest body = null;
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //var response = instance.CreateUser(body, details, accept, pretty);
+            //Assert.IsInstanceOf<UserPermissionStruct> (response, "response is UserPermissionStruct");
+        }
+        
+        /// <summary>
+        /// Test DeleteUser
+        /// </summary>
+        [Test]
+        public void DeleteUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string name = null;
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //var response = instance.DeleteUser(name, details, accept, pretty);
+            //Assert.IsInstanceOf<UserPermissionStruct> (response, "response is UserPermissionStruct");
+        }
+        
+        /// <summary>
+        /// Test GetMe
+        /// </summary>
+        [Test]
+        public void GetMeTest()
         {
             // TODO uncomment below to test the method and replace null with proper value
             //bool? details = null;
             //string accept = null;
             //bool? pretty = null;
-            //var response = instance.GetUserDetails(details, accept, pretty);
+            //var response = instance.GetMe(details, accept, pretty);
             //Assert.IsInstanceOf<PermissionStruct> (response, "response is PermissionStruct");
+        }
+        
+        /// <summary>
+        /// Test GetUsers
+        /// </summary>
+        [Test]
+        public void GetUsersTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //var response = instance.GetUsers(details, accept, pretty);
+            //Assert.IsInstanceOf<List<UserPermissionStruct>> (response, "response is List<UserPermissionStruct>");
         }
         
         /// <summary>
@@ -105,6 +149,37 @@ namespace IO.Swagger.Test
             //bool? pretty = null;
             //var response = instance.Logout(details, accept, pretty);
             //Assert.IsInstanceOf<PermissionStruct> (response, "response is PermissionStruct");
+        }
+        
+        /// <summary>
+        /// Test LogoutRedirect
+        /// </summary>
+        [Test]
+        public void LogoutRedirectTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string redirect = null;
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //instance.LogoutRedirect(redirect, details, accept, pretty);
+            
+        }
+        
+        /// <summary>
+        /// Test ModifyUser
+        /// </summary>
+        [Test]
+        public void ModifyUserTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //string name = null;
+            //ModifyUserRequest body = null;
+            //bool? details = null;
+            //string accept = null;
+            //bool? pretty = null;
+            //var response = instance.ModifyUser(name, body, details, accept, pretty);
+            //Assert.IsInstanceOf<UserPermissionStruct> (response, "response is UserPermissionStruct");
         }
         
     }

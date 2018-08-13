@@ -38,8 +38,8 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InteractiveMessageOption" /> class.
         /// </summary>
-        /// <param name="Key">The key of the option (this is sent to the webhook) (required).</param>
-        /// <param name="Value">The value of the option (this is displayed to the player) (required).</param>
+        /// <param name="Key">The key of the option (this is sent to the WebHook) (required).</param>
+        /// <param name="Value">Value.</param>
         public InteractiveMessageOption(string Key = default(string), string Value = default(string))
         {
             // to ensure "Key" is required (not null)
@@ -51,28 +51,19 @@ namespace IO.Swagger.Model
             {
                 this.Key = Key;
             }
-            // to ensure "Value" is required (not null)
-            if (Value == null)
-            {
-                throw new InvalidDataException("Value is a required property for InteractiveMessageOption and cannot be null");
-            }
-            else
-            {
-                this.Value = Value;
-            }
+            this.Value = Value;
         }
         
         /// <summary>
-        /// The key of the option (this is sent to the webhook)
+        /// The key of the option (this is sent to the WebHook)
         /// </summary>
-        /// <value>The key of the option (this is sent to the webhook)</value>
+        /// <value>The key of the option (this is sent to the WebHook)</value>
         [DataMember(Name="key", EmitDefaultValue=false)]
         public string Key { get; set; }
 
         /// <summary>
-        /// The value of the option (this is displayed to the player)
+        /// Gets or Sets Value
         /// </summary>
-        /// <value>The value of the option (this is displayed to the player)</value>
         [DataMember(Name="value", EmitDefaultValue=false)]
         public string Value { get; set; }
 

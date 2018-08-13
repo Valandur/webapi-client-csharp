@@ -75,28 +75,20 @@ namespace IO.Swagger.Test
             // TODO unit test for the property 'Capacity'
         }
         /// <summary>
-        /// Test the property 'ItemStacks'
-        /// </summary>
-        [Test]
-        public void ItemStacksTest()
-        {
-            // TODO unit test for the property 'ItemStacks'
-        }
-        /// <summary>
-        /// Test the property 'Link'
-        /// </summary>
-        [Test]
-        public void LinkTest()
-        {
-            // TODO unit test for the property 'Link'
-        }
-        /// <summary>
         /// Test the property 'Name'
         /// </summary>
         [Test]
         public void NameTest()
         {
             // TODO unit test for the property 'Name'
+        }
+        /// <summary>
+        /// Test the property 'Slots'
+        /// </summary>
+        [Test]
+        public void SlotsTest()
+        {
+            // TODO unit test for the property 'Slots'
         }
         /// <summary>
         /// Test the property 'TotalItems'

@@ -39,11 +39,11 @@ namespace IO.Swagger.Model
         /// Initializes a new instance of the <see cref="Inventory" /> class.
         /// </summary>
         /// <param name="Capacity">The maximum capacity of the inventory (maximum number of stacks) (required).</param>
-        /// <param name="ItemStacks">Gets a list of item stacks in the inventory (required).</param>
         /// <param name="Name">The name of the inventory (required).</param>
+        /// <param name="Slots">Gets a list of slots in the inventory (with their items) (required).</param>
         /// <param name="TotalItems">The total amount of items currently in the inventory (required).</param>
         /// <param name="Type">The type of the inventory (required).</param>
-        public Inventory(int? Capacity = default(int?), List<ItemStack> ItemStacks = default(List<ItemStack>), string Name = default(string), int? TotalItems = default(int?), CatalogType Type = default(CatalogType))
+        public Inventory(int? Capacity = default(int?), string Name = default(string), List<Slot> Slots = default(List<Slot>), int? TotalItems = default(int?), CatalogTypeInventoryArchetype Type = default(CatalogTypeInventoryArchetype))
         {
             // to ensure "Capacity" is required (not null)
             if (Capacity == null)
@@ -54,15 +54,6 @@ namespace IO.Swagger.Model
             {
                 this.Capacity = Capacity;
             }
-            // to ensure "ItemStacks" is required (not null)
-            if (ItemStacks == null)
-            {
-                throw new InvalidDataException("ItemStacks is a required property for Inventory and cannot be null");
-            }
-            else
-            {
-                this.ItemStacks = ItemStacks;
-            }
             // to ensure "Name" is required (not null)
             if (Name == null)
             {
@@ -71,6 +62,15 @@ namespace IO.Swagger.Model
             else
             {
                 this.Name = Name;
+            }
+            // to ensure "Slots" is required (not null)
+            if (Slots == null)
+            {
+                throw new InvalidDataException("Slots is a required property for Inventory and cannot be null");
+            }
+            else
+            {
+                this.Slots = Slots;
             }
             // to ensure "TotalItems" is required (not null)
             if (TotalItems == null)
@@ -100,25 +100,18 @@ namespace IO.Swagger.Model
         public int? Capacity { get; set; }
 
         /// <summary>
-        /// Gets a list of item stacks in the inventory
-        /// </summary>
-        /// <value>Gets a list of item stacks in the inventory</value>
-        [DataMember(Name="itemStacks", EmitDefaultValue=false)]
-        public List<ItemStack> ItemStacks { get; set; }
-
-        /// <summary>
-        /// The API link that can be used to obtain more information about this object
-        /// </summary>
-        /// <value>The API link that can be used to obtain more information about this object</value>
-        [DataMember(Name="link", EmitDefaultValue=false)]
-        public string Link { get; private set; }
-
-        /// <summary>
         /// The name of the inventory
         /// </summary>
         /// <value>The name of the inventory</value>
         [DataMember(Name="name", EmitDefaultValue=false)]
         public string Name { get; set; }
+
+        /// <summary>
+        /// Gets a list of slots in the inventory (with their items)
+        /// </summary>
+        /// <value>Gets a list of slots in the inventory (with their items)</value>
+        [DataMember(Name="slots", EmitDefaultValue=false)]
+        public List<Slot> Slots { get; set; }
 
         /// <summary>
         /// The total amount of items currently in the inventory
@@ -132,7 +125,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>The type of the inventory</value>
         [DataMember(Name="type", EmitDefaultValue=false)]
-        public CatalogType Type { get; set; }
+        public CatalogTypeInventoryArchetype Type { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -143,9 +136,8 @@ namespace IO.Swagger.Model
             var sb = new StringBuilder();
             sb.Append("class Inventory {\n");
             sb.Append("  Capacity: ").Append(Capacity).Append("\n");
-            sb.Append("  ItemStacks: ").Append(ItemStacks).Append("\n");
-            sb.Append("  Link: ").Append(Link).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Slots: ").Append(Slots).Append("\n");
             sb.Append("  TotalItems: ").Append(TotalItems).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("}\n");
@@ -188,19 +180,14 @@ namespace IO.Swagger.Model
                     this.Capacity.Equals(input.Capacity))
                 ) && 
                 (
-                    this.ItemStacks == input.ItemStacks ||
-                    this.ItemStacks != null &&
-                    this.ItemStacks.SequenceEqual(input.ItemStacks)
-                ) && 
-                (
-                    this.Link == input.Link ||
-                    (this.Link != null &&
-                    this.Link.Equals(input.Link))
-                ) && 
-                (
                     this.Name == input.Name ||
                     (this.Name != null &&
                     this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Slots == input.Slots ||
+                    this.Slots != null &&
+                    this.Slots.SequenceEqual(input.Slots)
                 ) && 
                 (
                     this.TotalItems == input.TotalItems ||
@@ -225,12 +212,10 @@ namespace IO.Swagger.Model
                 int hashCode = 41;
                 if (this.Capacity != null)
                     hashCode = hashCode * 59 + this.Capacity.GetHashCode();
-                if (this.ItemStacks != null)
-                    hashCode = hashCode * 59 + this.ItemStacks.GetHashCode();
-                if (this.Link != null)
-                    hashCode = hashCode * 59 + this.Link.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                if (this.Slots != null)
+                    hashCode = hashCode * 59 + this.Slots.GetHashCode();
                 if (this.TotalItems != null)
                     hashCode = hashCode * 59 + this.TotalItems.GetHashCode();
                 if (this.Type != null)
