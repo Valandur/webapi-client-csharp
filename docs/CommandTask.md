@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Command** | **string** | The command that is executed | [optional] 
+**Commands** | **List&lt;string&gt;** | The list of commands that are executed | [optional] 
 **Name** | **string** | The name of this task | [optional] 
 **Schedule** | [**Schedule**](Schedule.md) | The command that is executed | [optional] 
 
