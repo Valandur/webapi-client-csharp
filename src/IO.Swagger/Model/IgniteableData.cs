@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="IgniteableData" /> class.
         /// </summary>
-        /// <param name="FireDelay">The delay of the fire (required).</param>
-        /// <param name="FireTicks">The amount of ticks the fire will burn for (required).</param>
-        public IgniteableData(int? FireDelay = default(int?), int? FireTicks = default(int?))
+        /// <param name="fireDelay">The delay of the fire (required).</param>
+        /// <param name="fireTicks">The amount of ticks the fire will burn for (required).</param>
+        public IgniteableData(int? fireDelay = default(int?), int? fireTicks = default(int?))
         {
-            // to ensure "FireDelay" is required (not null)
-            if (FireDelay == null)
+            // to ensure "fireDelay" is required (not null)
+            if (fireDelay == null)
             {
-                throw new InvalidDataException("FireDelay is a required property for IgniteableData and cannot be null");
+                throw new InvalidDataException("fireDelay is a required property for IgniteableData and cannot be null");
             }
             else
             {
-                this.FireDelay = FireDelay;
+                this.FireDelay = fireDelay;
             }
-            // to ensure "FireTicks" is required (not null)
-            if (FireTicks == null)
+            // to ensure "fireTicks" is required (not null)
+            if (fireTicks == null)
             {
-                throw new InvalidDataException("FireTicks is a required property for IgniteableData and cannot be null");
+                throw new InvalidDataException("fireTicks is a required property for IgniteableData and cannot be null");
             }
             else
             {
-                this.FireTicks = FireTicks;
+                this.FireTicks = fireTicks;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

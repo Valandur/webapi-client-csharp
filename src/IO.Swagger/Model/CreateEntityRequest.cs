@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateEntityRequest" /> class.
         /// </summary>
-        /// <param name="Position">The position where the entity is spawned (required).</param>
-        /// <param name="Type">The type of entity that will be spawned (required).</param>
-        /// <param name="World">The world that the entity will be spawned in (required).</param>
-        public CreateEntityRequest(Vector3d Position = default(Vector3d), string Type = default(string), string World = default(string))
+        /// <param name="position">The position where the entity is spawned (required).</param>
+        /// <param name="type">The type of entity that will be spawned (required).</param>
+        /// <param name="world">The world that the entity will be spawned in (required).</param>
+        public CreateEntityRequest(Vector3d position = default(Vector3d), string type = default(string), string world = default(string))
         {
-            // to ensure "Position" is required (not null)
-            if (Position == null)
+            // to ensure "position" is required (not null)
+            if (position == null)
             {
-                throw new InvalidDataException("Position is a required property for CreateEntityRequest and cannot be null");
+                throw new InvalidDataException("position is a required property for CreateEntityRequest and cannot be null");
             }
             else
             {
-                this.Position = Position;
+                this.Position = position;
             }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for CreateEntityRequest and cannot be null");
-            }
-            else
-            {
-                this.Type = Type;
-            }
-            // to ensure "World" is required (not null)
-            if (World == null)
-            {
-                throw new InvalidDataException("World is a required property for CreateEntityRequest and cannot be null");
+                throw new InvalidDataException("type is a required property for CreateEntityRequest and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.Type = type;
+            }
+            // to ensure "world" is required (not null)
+            if (world == null)
+            {
+                throw new InvalidDataException("world is a required property for CreateEntityRequest and cannot be null");
+            }
+            else
+            {
+                this.World = world;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

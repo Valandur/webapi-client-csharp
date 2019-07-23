@@ -38,46 +38,46 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InteractiveMessage" /> class.
         /// </summary>
-        /// <param name="Id">The id of the message. Used to identify responses. (required).</param>
-        /// <param name="Target">The target of the message, usually this is a player UUID. Can be set to \&quot;server\&quot; to send to all online players. (required).</param>
-        /// <param name="Uuid">The unique UUID of this message (required).</param>
-        /// <param name="Message">The actual content of the message.</param>
-        /// <param name="Once">True if this message can only be replied to once per target, false otherwise.</param>
-        /// <param name="Options">Clickable options that the player can select from.</param>
-        /// <param name="Targets">A list of targets that will receive the message. Usually a list of player UUIDs.</param>
-        public InteractiveMessage(string Id = default(string), string Target = default(string), Guid? Uuid = default(Guid?), string Message = default(string), bool? Once = default(bool?), List<InteractiveMessageOption> Options = default(List<InteractiveMessageOption>), List<string> Targets = default(List<string>))
+        /// <param name="id">The id of the message. Used to identify responses. (required).</param>
+        /// <param name="target">The target of the message, usually this is a player UUID. Can be set to \&quot;server\&quot; to send to all online players. (required).</param>
+        /// <param name="uuid">The unique UUID of this message (required).</param>
+        /// <param name="message">The actual content of the message.</param>
+        /// <param name="once">True if this message can only be replied to once per target, false otherwise.</param>
+        /// <param name="options">Clickable options that the player can select from.</param>
+        /// <param name="targets">A list of targets that will receive the message. Usually a list of player UUIDs.</param>
+        public InteractiveMessage(string id = default(string), string target = default(string), Guid? uuid = default(Guid?), string message = default(string), bool? once = default(bool?), List<InteractiveMessageOption> options = default(List<InteractiveMessageOption>), List<string> targets = default(List<string>))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for InteractiveMessage and cannot be null");
+                throw new InvalidDataException("id is a required property for InteractiveMessage and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "Target" is required (not null)
-            if (Target == null)
+            // to ensure "target" is required (not null)
+            if (target == null)
             {
-                throw new InvalidDataException("Target is a required property for InteractiveMessage and cannot be null");
+                throw new InvalidDataException("target is a required property for InteractiveMessage and cannot be null");
             }
             else
             {
-                this.Target = Target;
+                this.Target = target;
             }
-            // to ensure "Uuid" is required (not null)
-            if (Uuid == null)
+            // to ensure "uuid" is required (not null)
+            if (uuid == null)
             {
-                throw new InvalidDataException("Uuid is a required property for InteractiveMessage and cannot be null");
+                throw new InvalidDataException("uuid is a required property for InteractiveMessage and cannot be null");
             }
             else
             {
-                this.Uuid = Uuid;
+                this.Uuid = uuid;
             }
-            this.Message = Message;
-            this.Once = Once;
-            this.Options = Options;
-            this.Targets = Targets;
+            this.Message = message;
+            this.Once = once;
+            this.Options = options;
+            this.Targets = targets;
         }
         
         /// <summary>
@@ -160,7 +160,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

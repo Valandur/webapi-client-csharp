@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="JoinData" /> class.
         /// </summary>
-        /// <param name="First">The first time this entity joined the server (required).</param>
-        /// <param name="Last">The most recent time this entity joined the server (required).</param>
-        public JoinData(long? First = default(long?), long? Last = default(long?))
+        /// <param name="first">The first time this entity joined the server (required).</param>
+        /// <param name="last">The most recent time this entity joined the server (required).</param>
+        public JoinData(long? first = default(long?), long? last = default(long?))
         {
-            // to ensure "First" is required (not null)
-            if (First == null)
+            // to ensure "first" is required (not null)
+            if (first == null)
             {
-                throw new InvalidDataException("First is a required property for JoinData and cannot be null");
+                throw new InvalidDataException("first is a required property for JoinData and cannot be null");
             }
             else
             {
-                this.First = First;
+                this.First = first;
             }
-            // to ensure "Last" is required (not null)
-            if (Last == null)
+            // to ensure "last" is required (not null)
+            if (last == null)
             {
-                throw new InvalidDataException("Last is a required property for JoinData and cannot be null");
+                throw new InvalidDataException("last is a required property for JoinData and cannot be null");
             }
             else
             {
-                this.Last = Last;
+                this.Last = last;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

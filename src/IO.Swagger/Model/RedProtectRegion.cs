@@ -38,76 +38,76 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="RedProtectRegion" /> class.
         /// </summary>
-        /// <param name="Id">The unique id of this region (required).</param>
-        /// <param name="Max">The maximum coordinates that define the region (required).</param>
-        /// <param name="Min">The minimum coordinates that define the region (required).</param>
-        /// <param name="Name">The name of this region (required).</param>
-        /// <param name="World">The world this region is located in (required).</param>
-        /// <param name="Admins">A list of players that are admins of this region.</param>
-        /// <param name="CanDelete">True if this region can be deleted, false otherwise.</param>
-        /// <param name="Date">The date this region was created?.</param>
-        /// <param name="Flags">A map of flags applicable to this region.</param>
-        /// <param name="Leaders">A list of players that are leaders of this region.</param>
-        /// <param name="Members">A list of players that are members of this region.</param>
-        /// <param name="Priority">The priority of this region compared to other regions.</param>
-        /// <param name="TpPoint">The teleport point for this region.</param>
-        /// <param name="WelcomeMessage">The welcome message displayed to a player when they enter this region.</param>
-        public RedProtectRegion(string Id = default(string), Vector3d Max = default(Vector3d), Vector3d Min = default(Vector3d), string Name = default(string), World World = default(World), List<Player> Admins = default(List<Player>), bool? CanDelete = default(bool?), string Date = default(string), Dictionary<string, Object> Flags = default(Dictionary<string, Object>), List<Player> Leaders = default(List<Player>), List<Player> Members = default(List<Player>), int? Priority = default(int?), Location TpPoint = default(Location), string WelcomeMessage = default(string))
+        /// <param name="id">The unique id of this region (required).</param>
+        /// <param name="max">The maximum coordinates that define the region (required).</param>
+        /// <param name="min">The minimum coordinates that define the region (required).</param>
+        /// <param name="name">The name of this region (required).</param>
+        /// <param name="world">The world this region is located in (required).</param>
+        /// <param name="admins">A list of players that are admins of this region.</param>
+        /// <param name="canDelete">True if this region can be deleted, false otherwise.</param>
+        /// <param name="date">The date this region was created?.</param>
+        /// <param name="flags">A map of flags applicable to this region.</param>
+        /// <param name="leaders">A list of players that are leaders of this region.</param>
+        /// <param name="members">A list of players that are members of this region.</param>
+        /// <param name="priority">The priority of this region compared to other regions.</param>
+        /// <param name="tpPoint">The teleport point for this region.</param>
+        /// <param name="welcomeMessage">The welcome message displayed to a player when they enter this region.</param>
+        public RedProtectRegion(string id = default(string), Vector3d max = default(Vector3d), Vector3d min = default(Vector3d), string name = default(string), World world = default(World), List<Player> admins = default(List<Player>), bool? canDelete = default(bool?), string date = default(string), Dictionary<string, Object> flags = default(Dictionary<string, Object>), List<Player> leaders = default(List<Player>), List<Player> members = default(List<Player>), int? priority = default(int?), Location tpPoint = default(Location), string welcomeMessage = default(string))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for RedProtectRegion and cannot be null");
+                throw new InvalidDataException("id is a required property for RedProtectRegion and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "Max" is required (not null)
-            if (Max == null)
+            // to ensure "max" is required (not null)
+            if (max == null)
             {
-                throw new InvalidDataException("Max is a required property for RedProtectRegion and cannot be null");
+                throw new InvalidDataException("max is a required property for RedProtectRegion and cannot be null");
             }
             else
             {
-                this.Max = Max;
+                this.Max = max;
             }
-            // to ensure "Min" is required (not null)
-            if (Min == null)
+            // to ensure "min" is required (not null)
+            if (min == null)
             {
-                throw new InvalidDataException("Min is a required property for RedProtectRegion and cannot be null");
+                throw new InvalidDataException("min is a required property for RedProtectRegion and cannot be null");
             }
             else
             {
-                this.Min = Min;
+                this.Min = min;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for RedProtectRegion and cannot be null");
+                throw new InvalidDataException("name is a required property for RedProtectRegion and cannot be null");
             }
             else
             {
-                this.Name = Name;
+                this.Name = name;
             }
-            // to ensure "World" is required (not null)
-            if (World == null)
+            // to ensure "world" is required (not null)
+            if (world == null)
             {
-                throw new InvalidDataException("World is a required property for RedProtectRegion and cannot be null");
+                throw new InvalidDataException("world is a required property for RedProtectRegion and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.World = world;
             }
-            this.Admins = Admins;
-            this.CanDelete = CanDelete;
-            this.Date = Date;
-            this.Flags = Flags;
-            this.Leaders = Leaders;
-            this.Members = Members;
-            this.Priority = Priority;
-            this.TpPoint = TpPoint;
-            this.WelcomeMessage = WelcomeMessage;
+            this.Admins = admins;
+            this.CanDelete = canDelete;
+            this.Date = date;
+            this.Flags = flags;
+            this.Leaders = leaders;
+            this.Members = members;
+            this.Priority = priority;
+            this.TpPoint = tpPoint;
+            this.WelcomeMessage = welcomeMessage;
         }
         
         /// <summary>
@@ -246,7 +246,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

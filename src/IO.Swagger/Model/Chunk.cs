@@ -38,50 +38,50 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Chunk" /> class.
         /// </summary>
-        /// <param name="Loaded">True if this chunk is currently loaded, false otherwise (required).</param>
-        /// <param name="Position">The position of this chunk (in chunk coordinates) (required).</param>
-        /// <param name="Uuid">The unique id of this chunk (required).</param>
-        /// <param name="BlockMax">The bock with the largest coordinates that is still part of this chunk.</param>
-        /// <param name="BlockMin">The bock with the smallest coordinates that is still part of this chunk.</param>
-        /// <param name="InhabitedTime">The total amount of time (in server ticks) this chunk has been inhabited by players..</param>
-        /// <param name="RegionalDifficultyFactor">The increase in difficulty due to the presence of players in the chunk.</param>
-        /// <param name="RegionalDifficultyPercentage">The increase in difficulty due to the presence of players in the chunk as a percentage.</param>
-        /// <param name="World">The world the chunk is in.</param>
-        public Chunk(bool? Loaded = default(bool?), Vector3i Position = default(Vector3i), Guid? Uuid = default(Guid?), Vector3i BlockMax = default(Vector3i), Vector3i BlockMin = default(Vector3i), int? InhabitedTime = default(int?), double? RegionalDifficultyFactor = default(double?), double? RegionalDifficultyPercentage = default(double?), World World = default(World))
+        /// <param name="loaded">True if this chunk is currently loaded, false otherwise (required).</param>
+        /// <param name="position">The position of this chunk (in chunk coordinates) (required).</param>
+        /// <param name="uuid">The unique id of this chunk (required).</param>
+        /// <param name="blockMax">The bock with the largest coordinates that is still part of this chunk.</param>
+        /// <param name="blockMin">The bock with the smallest coordinates that is still part of this chunk.</param>
+        /// <param name="inhabitedTime">The total amount of time (in server ticks) this chunk has been inhabited by players..</param>
+        /// <param name="regionalDifficultyFactor">The increase in difficulty due to the presence of players in the chunk.</param>
+        /// <param name="regionalDifficultyPercentage">The increase in difficulty due to the presence of players in the chunk as a percentage.</param>
+        /// <param name="world">The world the chunk is in.</param>
+        public Chunk(bool? loaded = default(bool?), Vector3i position = default(Vector3i), Guid? uuid = default(Guid?), Vector3i blockMax = default(Vector3i), Vector3i blockMin = default(Vector3i), int? inhabitedTime = default(int?), double? regionalDifficultyFactor = default(double?), double? regionalDifficultyPercentage = default(double?), World world = default(World))
         {
-            // to ensure "Loaded" is required (not null)
-            if (Loaded == null)
+            // to ensure "loaded" is required (not null)
+            if (loaded == null)
             {
-                throw new InvalidDataException("Loaded is a required property for Chunk and cannot be null");
+                throw new InvalidDataException("loaded is a required property for Chunk and cannot be null");
             }
             else
             {
-                this.Loaded = Loaded;
+                this.Loaded = loaded;
             }
-            // to ensure "Position" is required (not null)
-            if (Position == null)
+            // to ensure "position" is required (not null)
+            if (position == null)
             {
-                throw new InvalidDataException("Position is a required property for Chunk and cannot be null");
+                throw new InvalidDataException("position is a required property for Chunk and cannot be null");
             }
             else
             {
-                this.Position = Position;
+                this.Position = position;
             }
-            // to ensure "Uuid" is required (not null)
-            if (Uuid == null)
+            // to ensure "uuid" is required (not null)
+            if (uuid == null)
             {
-                throw new InvalidDataException("Uuid is a required property for Chunk and cannot be null");
+                throw new InvalidDataException("uuid is a required property for Chunk and cannot be null");
             }
             else
             {
-                this.Uuid = Uuid;
+                this.Uuid = uuid;
             }
-            this.BlockMax = BlockMax;
-            this.BlockMin = BlockMin;
-            this.InhabitedTime = InhabitedTime;
-            this.RegionalDifficultyFactor = RegionalDifficultyFactor;
-            this.RegionalDifficultyPercentage = RegionalDifficultyPercentage;
-            this.World = World;
+            this.BlockMax = blockMax;
+            this.BlockMin = blockMin;
+            this.InhabitedTime = inhabitedTime;
+            this.RegionalDifficultyFactor = regionalDifficultyFactor;
+            this.RegionalDifficultyPercentage = regionalDifficultyPercentage;
+            this.World = world;
         }
         
         /// <summary>
@@ -180,7 +180,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

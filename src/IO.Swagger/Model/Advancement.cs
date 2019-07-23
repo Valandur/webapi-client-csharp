@@ -38,40 +38,40 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Advancement" /> class.
         /// </summary>
-        /// <param name="Id">The unique id of the advancement (required).</param>
-        /// <param name="Title">The title of the advancement (required).</param>
-        /// <param name="AnnounceToChat">True if the achieving of this advancement is announced in chat, false otherwise.</param>
-        /// <param name="Description">The description of the advancement.</param>
-        /// <param name="Hidden">True if this is a hidden advancement.</param>
-        /// <param name="Parent">The parent advancement, which must be unlocked prior to this advancement.</param>
-        /// <param name="ShowToast">True if achieving this advancement shows the player a toast message, false otherwise.</param>
-        /// <param name="Tree">The advancement tree that this advancement belongs to.</param>
-        public Advancement(string Id = default(string), string Title = default(string), bool? AnnounceToChat = default(bool?), string Description = default(string), bool? Hidden = default(bool?), Advancement Parent = default(Advancement), bool? ShowToast = default(bool?), CatalogTypeAdvancementTree Tree = default(CatalogTypeAdvancementTree))
+        /// <param name="id">The unique id of the advancement (required).</param>
+        /// <param name="title">The title of the advancement (required).</param>
+        /// <param name="announceToChat">True if the achieving of this advancement is announced in chat, false otherwise.</param>
+        /// <param name="description">The description of the advancement.</param>
+        /// <param name="hidden">True if this is a hidden advancement.</param>
+        /// <param name="parent">The parent advancement, which must be unlocked prior to this advancement.</param>
+        /// <param name="showToast">True if achieving this advancement shows the player a toast message, false otherwise.</param>
+        /// <param name="tree">The advancement tree that this advancement belongs to.</param>
+        public Advancement(string id = default(string), string title = default(string), bool? announceToChat = default(bool?), string description = default(string), bool? hidden = default(bool?), Advancement parent = default(Advancement), bool? showToast = default(bool?), CatalogTypeAdvancementTree tree = default(CatalogTypeAdvancementTree))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for Advancement and cannot be null");
+                throw new InvalidDataException("id is a required property for Advancement and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "Title" is required (not null)
-            if (Title == null)
+            // to ensure "title" is required (not null)
+            if (title == null)
             {
-                throw new InvalidDataException("Title is a required property for Advancement and cannot be null");
+                throw new InvalidDataException("title is a required property for Advancement and cannot be null");
             }
             else
             {
-                this.Title = Title;
+                this.Title = title;
             }
-            this.AnnounceToChat = AnnounceToChat;
-            this.Description = Description;
-            this.Hidden = Hidden;
-            this.Parent = Parent;
-            this.ShowToast = ShowToast;
-            this.Tree = Tree;
+            this.AnnounceToChat = announceToChat;
+            this.Description = description;
+            this.Hidden = hidden;
+            this.Parent = parent;
+            this.ShowToast = showToast;
+            this.Tree = tree;
         }
         
         /// <summary>
@@ -162,7 +162,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

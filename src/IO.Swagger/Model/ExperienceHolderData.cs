@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExperienceHolderData" /> class.
         /// </summary>
-        /// <param name="Level">The current level of the entity.</param>
-        /// <param name="Experience">The experience gained since the last level.</param>
-        /// <param name="TotalExperience">The total amount of experience collected.</param>
-        public ExperienceHolderData(int? Level = default(int?), int? Experience = default(int?), int? TotalExperience = default(int?))
+        /// <param name="level">The current level of the entity.</param>
+        /// <param name="experience">The experience gained since the last level.</param>
+        /// <param name="totalExperience">The total amount of experience collected.</param>
+        public ExperienceHolderData(int? level = default(int?), int? experience = default(int?), int? totalExperience = default(int?))
         {
-            this.Level = Level;
-            this.Experience = Experience;
-            this.TotalExperience = TotalExperience;
+            this.Level = level;
+            this.Experience = experience;
+            this.TotalExperience = totalExperience;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

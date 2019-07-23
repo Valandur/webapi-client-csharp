@@ -38,20 +38,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InteractiveMessageOption" /> class.
         /// </summary>
-        /// <param name="Key">The key of the option (this is sent to the WebHook) (required).</param>
-        /// <param name="Value">Value.</param>
-        public InteractiveMessageOption(string Key = default(string), string Value = default(string))
+        /// <param name="key">The key of the option (this is sent to the WebHook) (required).</param>
+        /// <param name="value">value.</param>
+        public InteractiveMessageOption(string key = default(string), string value = default(string))
         {
-            // to ensure "Key" is required (not null)
-            if (Key == null)
+            // to ensure "key" is required (not null)
+            if (key == null)
             {
-                throw new InvalidDataException("Key is a required property for InteractiveMessageOption and cannot be null");
+                throw new InvalidDataException("key is a required property for InteractiveMessageOption and cannot be null");
             }
             else
             {
-                this.Key = Key;
+                this.Key = key;
             }
-            this.Value = Value;
+            this.Value = value;
         }
         
         /// <summary>
@@ -85,7 +85,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

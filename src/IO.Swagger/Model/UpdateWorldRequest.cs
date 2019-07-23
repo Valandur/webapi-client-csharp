@@ -38,38 +38,38 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateWorldRequest" /> class.
         /// </summary>
-        /// <param name="Name">The name of the world (required).</param>
-        /// <param name="AllowCommands">AllowCommands.</param>
-        /// <param name="Difficulty">Which difficulty the world is set to.</param>
-        /// <param name="GameMode">Which game mode the world defaults to.</param>
-        /// <param name="GameRules">The game rule settings of this world.</param>
-        /// <param name="Generator">Which generator to use for the world.</param>
-        /// <param name="KeepSpawnLoaded">KeepSpawnLoaded.</param>
-        /// <param name="LoadOnStartup">LoadOnStartup.</param>
-        /// <param name="Loaded">True if the world should be loaded, false otherwise.</param>
-        /// <param name="Seed">The seed of the world.</param>
-        /// <param name="UsesMapFeatures">UsesMapFeatures.</param>
-        public UpdateWorldRequest(string Name = default(string), bool? AllowCommands = default(bool?), CatalogType Difficulty = default(CatalogType), GameMode GameMode = default(GameMode), Dictionary<string, string> GameRules = default(Dictionary<string, string>), CatalogType Generator = default(CatalogType), bool? KeepSpawnLoaded = default(bool?), bool? LoadOnStartup = default(bool?), bool? Loaded = default(bool?), long? Seed = default(long?), bool? UsesMapFeatures = default(bool?))
+        /// <param name="name">The name of the world (required).</param>
+        /// <param name="allowCommands">allowCommands.</param>
+        /// <param name="difficulty">Which difficulty the world is set to.</param>
+        /// <param name="gameMode">Which game mode the world defaults to.</param>
+        /// <param name="gameRules">The game rule settings of this world.</param>
+        /// <param name="generator">Which generator to use for the world.</param>
+        /// <param name="keepSpawnLoaded">keepSpawnLoaded.</param>
+        /// <param name="loadOnStartup">loadOnStartup.</param>
+        /// <param name="loaded">True if the world should be loaded, false otherwise.</param>
+        /// <param name="seed">The seed of the world.</param>
+        /// <param name="usesMapFeatures">usesMapFeatures.</param>
+        public UpdateWorldRequest(string name = default(string), bool? allowCommands = default(bool?), CatalogType difficulty = default(CatalogType), GameMode gameMode = default(GameMode), Dictionary<string, string> gameRules = default(Dictionary<string, string>), CatalogType generator = default(CatalogType), bool? keepSpawnLoaded = default(bool?), bool? loadOnStartup = default(bool?), bool? loaded = default(bool?), long? seed = default(long?), bool? usesMapFeatures = default(bool?))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for UpdateWorldRequest and cannot be null");
+                throw new InvalidDataException("name is a required property for UpdateWorldRequest and cannot be null");
             }
             else
             {
-                this.Name = Name;
+                this.Name = name;
             }
-            this.AllowCommands = AllowCommands;
-            this.Difficulty = Difficulty;
-            this.GameMode = GameMode;
-            this.GameRules = GameRules;
-            this.Generator = Generator;
-            this.KeepSpawnLoaded = KeepSpawnLoaded;
-            this.LoadOnStartup = LoadOnStartup;
-            this.Loaded = Loaded;
-            this.Seed = Seed;
-            this.UsesMapFeatures = UsesMapFeatures;
+            this.AllowCommands = allowCommands;
+            this.Difficulty = difficulty;
+            this.GameMode = gameMode;
+            this.GameRules = gameRules;
+            this.Generator = generator;
+            this.KeepSpawnLoaded = keepSpawnLoaded;
+            this.LoadOnStartup = loadOnStartup;
+            this.Loaded = loaded;
+            this.Seed = seed;
+            this.UsesMapFeatures = usesMapFeatures;
         }
         
         /// <summary>
@@ -172,7 +172,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

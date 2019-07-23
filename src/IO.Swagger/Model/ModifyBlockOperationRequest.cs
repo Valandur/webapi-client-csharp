@@ -33,10 +33,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ModifyBlockOperationRequest" /> class.
         /// </summary>
-        /// <param name="Paused">True if the operation should be paused, false otherwise.</param>
-        public ModifyBlockOperationRequest(bool? Paused = default(bool?))
+        /// <param name="paused">True if the operation should be paused, false otherwise.</param>
+        public ModifyBlockOperationRequest(bool? paused = default(bool?))
         {
-            this.Paused = Paused;
+            this.Paused = paused;
         }
         
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

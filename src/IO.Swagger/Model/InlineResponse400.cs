@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InlineResponse400" /> class.
         /// </summary>
-        /// <param name="Error">The error message describing the error.</param>
-        /// <param name="Status">The status code of the error (also provided in the HTTP header).</param>
-        public InlineResponse400(string Error = default(string), int? Status = default(int?))
+        /// <param name="error">The error message describing the error.</param>
+        /// <param name="status">The status code of the error (also provided in the HTTP header).</param>
+        public InlineResponse400(string error = default(string), int? status = default(int?))
         {
-            this.Error = Error;
-            this.Status = Status;
+            this.Error = error;
+            this.Status = status;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

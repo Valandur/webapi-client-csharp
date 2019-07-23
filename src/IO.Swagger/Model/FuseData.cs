@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FuseData" /> class.
         /// </summary>
-        /// <param name="FuseDuration">The total amount of time (in ticks) the fuse burns for (required).</param>
-        /// <param name="TicksRemaining">The amount of ticks remaining on this fuse (required).</param>
-        public FuseData(int? FuseDuration = default(int?), int? TicksRemaining = default(int?))
+        /// <param name="fuseDuration">The total amount of time (in ticks) the fuse burns for (required).</param>
+        /// <param name="ticksRemaining">The amount of ticks remaining on this fuse (required).</param>
+        public FuseData(int? fuseDuration = default(int?), int? ticksRemaining = default(int?))
         {
-            // to ensure "FuseDuration" is required (not null)
-            if (FuseDuration == null)
+            // to ensure "fuseDuration" is required (not null)
+            if (fuseDuration == null)
             {
-                throw new InvalidDataException("FuseDuration is a required property for FuseData and cannot be null");
+                throw new InvalidDataException("fuseDuration is a required property for FuseData and cannot be null");
             }
             else
             {
-                this.FuseDuration = FuseDuration;
+                this.FuseDuration = fuseDuration;
             }
-            // to ensure "TicksRemaining" is required (not null)
-            if (TicksRemaining == null)
+            // to ensure "ticksRemaining" is required (not null)
+            if (ticksRemaining == null)
             {
-                throw new InvalidDataException("TicksRemaining is a required property for FuseData and cannot be null");
+                throw new InvalidDataException("ticksRemaining is a required property for FuseData and cannot be null");
             }
             else
             {
-                this.TicksRemaining = TicksRemaining;
+                this.TicksRemaining = ticksRemaining;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

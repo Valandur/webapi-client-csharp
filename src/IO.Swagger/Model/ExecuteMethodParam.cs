@@ -173,27 +173,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMethodParam" /> class.
         /// </summary>
-        /// <param name="Type">The type of the parameter (required).</param>
-        /// <param name="Value">The value of the parameter (required).</param>
-        public ExecuteMethodParam(TypeEnum Type = default(TypeEnum), string Value = default(string))
+        /// <param name="type">The type of the parameter (required).</param>
+        /// <param name="value">The value of the parameter (required).</param>
+        public ExecuteMethodParam(TypeEnum type = default(TypeEnum), string value = default(string))
         {
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for ExecuteMethodParam and cannot be null");
+                throw new InvalidDataException("type is a required property for ExecuteMethodParam and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            // to ensure "Value" is required (not null)
-            if (Value == null)
+            // to ensure "value" is required (not null)
+            if (value == null)
             {
-                throw new InvalidDataException("Value is a required property for ExecuteMethodParam and cannot be null");
+                throw new InvalidDataException("value is a required property for ExecuteMethodParam and cannot be null");
             }
             else
             {
-                this.Value = Value;
+                this.Value = value;
             }
         }
         
@@ -223,7 +223,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

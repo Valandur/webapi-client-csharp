@@ -33,10 +33,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateTileEntityRequest" /> class.
         /// </summary>
-        /// <param name="Inventory">The ItemStacks in the inventory of the tile entity.</param>
-        public UpdateTileEntityRequest(List<ItemStack> Inventory = default(List<ItemStack>))
+        /// <param name="inventory">The ItemStacks in the inventory of the tile entity.</param>
+        public UpdateTileEntityRequest(List<ItemStack> inventory = default(List<ItemStack>))
         {
-            this.Inventory = Inventory;
+            this.Inventory = inventory;
         }
         
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

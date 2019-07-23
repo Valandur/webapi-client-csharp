@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Schedule" /> class.
         /// </summary>
-        /// <param name="Delay">Delay.</param>
-        /// <param name="Interval">Interval.</param>
-        public Schedule(long? Delay = default(long?), long? Interval = default(long?))
+        /// <param name="delay">delay.</param>
+        /// <param name="interval">interval.</param>
+        public Schedule(long? delay = default(long?), long? interval = default(long?))
         {
-            this.Delay = Delay;
-            this.Interval = Interval;
+            this.Delay = delay;
+            this.Interval = interval;
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

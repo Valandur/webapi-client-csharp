@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Location" /> class.
         /// </summary>
-        /// <param name="Position">The position within the world that this location refers to (required).</param>
-        /// <param name="World">The world this location refers to (required).</param>
-        public Location(Vector3d Position = default(Vector3d), World World = default(World))
+        /// <param name="position">The position within the world that this location refers to (required).</param>
+        /// <param name="world">The world this location refers to (required).</param>
+        public Location(Vector3d position = default(Vector3d), World world = default(World))
         {
-            // to ensure "Position" is required (not null)
-            if (Position == null)
+            // to ensure "position" is required (not null)
+            if (position == null)
             {
-                throw new InvalidDataException("Position is a required property for Location and cannot be null");
+                throw new InvalidDataException("position is a required property for Location and cannot be null");
             }
             else
             {
-                this.Position = Position;
+                this.Position = position;
             }
-            // to ensure "World" is required (not null)
-            if (World == null)
+            // to ensure "world" is required (not null)
+            if (world == null)
             {
-                throw new InvalidDataException("World is a required property for Location and cannot be null");
+                throw new InvalidDataException("world is a required property for Location and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.World = world;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -65,52 +65,52 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateBlockOperationRequest" /> class.
         /// </summary>
-        /// <param name="Max">The maximum world coordinates spanning the cube where the operation is run (required).</param>
-        /// <param name="Min">The minimum world coordinates spanning the cube where the operation is run (required).</param>
-        /// <param name="Type">The type of the block operation (required).</param>
-        /// <param name="World">The world that the operation is run in (required).</param>
-        /// <param name="Block">The block that we want to change all other blocks into (when using an UPDATE operation.</param>
-        /// <param name="Blocks">An array of blocks defining what each block in the spanned cube.</param>
-        public CreateBlockOperationRequest(Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), TypeEnum Type = default(TypeEnum), string World = default(string), BlockState Block = default(BlockState), List<List<List<BlockState>>> Blocks = default(List<List<List<BlockState>>>))
+        /// <param name="max">The maximum world coordinates spanning the cube where the operation is run (required).</param>
+        /// <param name="min">The minimum world coordinates spanning the cube where the operation is run (required).</param>
+        /// <param name="type">The type of the block operation (required).</param>
+        /// <param name="world">The world that the operation is run in (required).</param>
+        /// <param name="block">The block that we want to change all other blocks into (when using an UPDATE operation.</param>
+        /// <param name="blocks">An array of blocks defining what each block in the spanned cube.</param>
+        public CreateBlockOperationRequest(Vector3i max = default(Vector3i), Vector3i min = default(Vector3i), TypeEnum type = default(TypeEnum), string world = default(string), BlockState block = default(BlockState), List<List<List<BlockState>>> blocks = default(List<List<List<BlockState>>>))
         {
-            // to ensure "Max" is required (not null)
-            if (Max == null)
+            // to ensure "max" is required (not null)
+            if (max == null)
             {
-                throw new InvalidDataException("Max is a required property for CreateBlockOperationRequest and cannot be null");
+                throw new InvalidDataException("max is a required property for CreateBlockOperationRequest and cannot be null");
             }
             else
             {
-                this.Max = Max;
+                this.Max = max;
             }
-            // to ensure "Min" is required (not null)
-            if (Min == null)
+            // to ensure "min" is required (not null)
+            if (min == null)
             {
-                throw new InvalidDataException("Min is a required property for CreateBlockOperationRequest and cannot be null");
+                throw new InvalidDataException("min is a required property for CreateBlockOperationRequest and cannot be null");
             }
             else
             {
-                this.Min = Min;
+                this.Min = min;
             }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for CreateBlockOperationRequest and cannot be null");
+                throw new InvalidDataException("type is a required property for CreateBlockOperationRequest and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            // to ensure "World" is required (not null)
-            if (World == null)
+            // to ensure "world" is required (not null)
+            if (world == null)
             {
-                throw new InvalidDataException("World is a required property for CreateBlockOperationRequest and cannot be null");
+                throw new InvalidDataException("world is a required property for CreateBlockOperationRequest and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.World = world;
             }
-            this.Block = Block;
-            this.Blocks = Blocks;
+            this.Block = block;
+            this.Blocks = blocks;
         }
         
         /// <summary>
@@ -171,7 +171,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

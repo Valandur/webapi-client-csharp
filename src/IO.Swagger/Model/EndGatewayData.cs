@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EndGatewayData" /> class.
         /// </summary>
-        /// <param name="Age">The age of this gateway (required).</param>
-        /// <param name="ExactTeleport">True if this is an exact teleport, false otherwise (required).</param>
-        /// <param name="ExitPosition">The exit position in the nether (required).</param>
-        /// <param name="TeleportCooldown">The cooldown of the teleport (required).</param>
-        public EndGatewayData(long? Age = default(long?), bool? ExactTeleport = default(bool?), Vector3i ExitPosition = default(Vector3i), int? TeleportCooldown = default(int?))
+        /// <param name="age">The age of this gateway (required).</param>
+        /// <param name="exactTeleport">True if this is an exact teleport, false otherwise (required).</param>
+        /// <param name="exitPosition">The exit position in the nether (required).</param>
+        /// <param name="teleportCooldown">The cooldown of the teleport (required).</param>
+        public EndGatewayData(long? age = default(long?), bool? exactTeleport = default(bool?), Vector3i exitPosition = default(Vector3i), int? teleportCooldown = default(int?))
         {
-            // to ensure "Age" is required (not null)
-            if (Age == null)
+            // to ensure "age" is required (not null)
+            if (age == null)
             {
-                throw new InvalidDataException("Age is a required property for EndGatewayData and cannot be null");
+                throw new InvalidDataException("age is a required property for EndGatewayData and cannot be null");
             }
             else
             {
-                this.Age = Age;
+                this.Age = age;
             }
-            // to ensure "ExactTeleport" is required (not null)
-            if (ExactTeleport == null)
+            // to ensure "exactTeleport" is required (not null)
+            if (exactTeleport == null)
             {
-                throw new InvalidDataException("ExactTeleport is a required property for EndGatewayData and cannot be null");
-            }
-            else
-            {
-                this.ExactTeleport = ExactTeleport;
-            }
-            // to ensure "ExitPosition" is required (not null)
-            if (ExitPosition == null)
-            {
-                throw new InvalidDataException("ExitPosition is a required property for EndGatewayData and cannot be null");
+                throw new InvalidDataException("exactTeleport is a required property for EndGatewayData and cannot be null");
             }
             else
             {
-                this.ExitPosition = ExitPosition;
+                this.ExactTeleport = exactTeleport;
             }
-            // to ensure "TeleportCooldown" is required (not null)
-            if (TeleportCooldown == null)
+            // to ensure "exitPosition" is required (not null)
+            if (exitPosition == null)
             {
-                throw new InvalidDataException("TeleportCooldown is a required property for EndGatewayData and cannot be null");
+                throw new InvalidDataException("exitPosition is a required property for EndGatewayData and cannot be null");
             }
             else
             {
-                this.TeleportCooldown = TeleportCooldown;
+                this.ExitPosition = exitPosition;
+            }
+            // to ensure "teleportCooldown" is required (not null)
+            if (teleportCooldown == null)
+            {
+                throw new InvalidDataException("teleportCooldown is a required property for EndGatewayData and cannot be null");
+            }
+            else
+            {
+                this.TeleportCooldown = teleportCooldown;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

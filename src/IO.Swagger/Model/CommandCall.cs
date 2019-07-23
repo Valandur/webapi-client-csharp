@@ -38,67 +38,67 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandCall" /> class.
         /// </summary>
-        /// <param name="Args">The arguments that were passed to the command (required).</param>
-        /// <param name="Cancelled">True if the command was cancelled, false otherwise (required).</param>
-        /// <param name="Cause">The cause of the command execution (required).</param>
-        /// <param name="Command">The command that was executed (without arguments) (required).</param>
-        /// <param name="Result">The result of the command execution (required).</param>
-        /// <param name="Timestamp">The timestamp at which the command was executed (epoch millis) (required).</param>
-        public CommandCall(string Args = default(string), bool? Cancelled = default(bool?), Cause Cause = default(Cause), string Command = default(string), CommandResult Result = default(CommandResult), long? Timestamp = default(long?))
+        /// <param name="args">The arguments that were passed to the command (required).</param>
+        /// <param name="cancelled">True if the command was cancelled, false otherwise (required).</param>
+        /// <param name="cause">The cause of the command execution (required).</param>
+        /// <param name="command">The command that was executed (without arguments) (required).</param>
+        /// <param name="result">The result of the command execution (required).</param>
+        /// <param name="timestamp">The timestamp at which the command was executed (epoch millis) (required).</param>
+        public CommandCall(string args = default(string), bool? cancelled = default(bool?), Cause cause = default(Cause), string command = default(string), CommandResult result = default(CommandResult), long? timestamp = default(long?))
         {
-            // to ensure "Args" is required (not null)
-            if (Args == null)
+            // to ensure "args" is required (not null)
+            if (args == null)
             {
-                throw new InvalidDataException("Args is a required property for CommandCall and cannot be null");
+                throw new InvalidDataException("args is a required property for CommandCall and cannot be null");
             }
             else
             {
-                this.Args = Args;
+                this.Args = args;
             }
-            // to ensure "Cancelled" is required (not null)
-            if (Cancelled == null)
+            // to ensure "cancelled" is required (not null)
+            if (cancelled == null)
             {
-                throw new InvalidDataException("Cancelled is a required property for CommandCall and cannot be null");
-            }
-            else
-            {
-                this.Cancelled = Cancelled;
-            }
-            // to ensure "Cause" is required (not null)
-            if (Cause == null)
-            {
-                throw new InvalidDataException("Cause is a required property for CommandCall and cannot be null");
+                throw new InvalidDataException("cancelled is a required property for CommandCall and cannot be null");
             }
             else
             {
-                this.Cause = Cause;
+                this.Cancelled = cancelled;
             }
-            // to ensure "Command" is required (not null)
-            if (Command == null)
+            // to ensure "cause" is required (not null)
+            if (cause == null)
             {
-                throw new InvalidDataException("Command is a required property for CommandCall and cannot be null");
-            }
-            else
-            {
-                this.Command = Command;
-            }
-            // to ensure "Result" is required (not null)
-            if (Result == null)
-            {
-                throw new InvalidDataException("Result is a required property for CommandCall and cannot be null");
+                throw new InvalidDataException("cause is a required property for CommandCall and cannot be null");
             }
             else
             {
-                this.Result = Result;
+                this.Cause = cause;
             }
-            // to ensure "Timestamp" is required (not null)
-            if (Timestamp == null)
+            // to ensure "command" is required (not null)
+            if (command == null)
             {
-                throw new InvalidDataException("Timestamp is a required property for CommandCall and cannot be null");
+                throw new InvalidDataException("command is a required property for CommandCall and cannot be null");
             }
             else
             {
-                this.Timestamp = Timestamp;
+                this.Command = command;
+            }
+            // to ensure "result" is required (not null)
+            if (result == null)
+            {
+                throw new InvalidDataException("result is a required property for CommandCall and cannot be null");
+            }
+            else
+            {
+                this.Result = result;
+            }
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
+            {
+                throw new InvalidDataException("timestamp is a required property for CommandCall and cannot be null");
+            }
+            else
+            {
+                this.Timestamp = timestamp;
             }
         }
         
@@ -166,7 +166,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

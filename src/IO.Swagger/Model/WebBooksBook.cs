@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WebBooksBook" /> class.
         /// </summary>
-        /// <param name="Lines">A list of lines that make up this book (required).</param>
-        /// <param name="Title">The title of this book (required).</param>
-        public WebBooksBook(List<string> Lines = default(List<string>), string Title = default(string))
+        /// <param name="lines">A list of lines that make up this book (required).</param>
+        /// <param name="title">The title of this book (required).</param>
+        public WebBooksBook(List<string> lines = default(List<string>), string title = default(string))
         {
-            // to ensure "Lines" is required (not null)
-            if (Lines == null)
+            // to ensure "lines" is required (not null)
+            if (lines == null)
             {
-                throw new InvalidDataException("Lines is a required property for WebBooksBook and cannot be null");
+                throw new InvalidDataException("lines is a required property for WebBooksBook and cannot be null");
             }
             else
             {
-                this.Lines = Lines;
+                this.Lines = lines;
             }
-            // to ensure "Title" is required (not null)
-            if (Title == null)
+            // to ensure "title" is required (not null)
+            if (title == null)
             {
-                throw new InvalidDataException("Title is a required property for WebBooksBook and cannot be null");
+                throw new InvalidDataException("title is a required property for WebBooksBook and cannot be null");
             }
             else
             {
-                this.Title = Title;
+                this.Title = title;
             }
         }
         
@@ -118,7 +118,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

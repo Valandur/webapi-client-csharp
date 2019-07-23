@@ -33,18 +33,18 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandResult" /> class.
         /// </summary>
-        /// <param name="AffectedBlocks">The number of blocks that were affected by this command.</param>
-        /// <param name="AffectedEntities">The number of entities that were affected by this command.</param>
-        /// <param name="AffectedItems">The number of items that were affected by this command.</param>
-        /// <param name="QueryResult">The results of the query.</param>
-        /// <param name="SuccessCount">The success count.</param>
-        public CommandResult(int? AffectedBlocks = default(int?), int? AffectedEntities = default(int?), int? AffectedItems = default(int?), int? QueryResult = default(int?), int? SuccessCount = default(int?))
+        /// <param name="affectedBlocks">The number of blocks that were affected by this command.</param>
+        /// <param name="affectedEntities">The number of entities that were affected by this command.</param>
+        /// <param name="affectedItems">The number of items that were affected by this command.</param>
+        /// <param name="queryResult">The results of the query.</param>
+        /// <param name="successCount">The success count.</param>
+        public CommandResult(int? affectedBlocks = default(int?), int? affectedEntities = default(int?), int? affectedItems = default(int?), int? queryResult = default(int?), int? successCount = default(int?))
         {
-            this.AffectedBlocks = AffectedBlocks;
-            this.AffectedEntities = AffectedEntities;
-            this.AffectedItems = AffectedItems;
-            this.QueryResult = QueryResult;
-            this.SuccessCount = SuccessCount;
+            this.AffectedBlocks = affectedBlocks;
+            this.AffectedEntities = affectedEntities;
+            this.AffectedItems = affectedItems;
+            this.QueryResult = queryResult;
+            this.SuccessCount = successCount;
         }
         
         /// <summary>
@@ -103,7 +103,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

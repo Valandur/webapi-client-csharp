@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserPermissionStruct" /> class.
         /// </summary>
-        /// <param name="Key">The key used authorize with the Web-API (required).</param>
-        /// <param name="Name">The human readable name of this permssions struct. Only useful for users. (required).</param>
-        /// <param name="Permissions">The permissions tree that this key grants access to (required).</param>
-        /// <param name="RateLimit">The rate limit in requests per second that this key permits (0 &#x3D; unlimited) (required).</param>
-        public UserPermissionStruct(string Key = default(string), string Name = default(string), Object Permissions = default(Object), int? RateLimit = default(int?))
+        /// <param name="key">The key used authorize with the Web-API (required).</param>
+        /// <param name="name">The human readable name of this permssions struct. Only useful for users. (required).</param>
+        /// <param name="permissions">The permissions tree that this key grants access to (required).</param>
+        /// <param name="rateLimit">The rate limit in requests per second that this key permits (0 &#x3D; unlimited) (required).</param>
+        public UserPermissionStruct(string key = default(string), string name = default(string), Object permissions = default(Object), int? rateLimit = default(int?))
         {
-            // to ensure "Key" is required (not null)
-            if (Key == null)
+            // to ensure "key" is required (not null)
+            if (key == null)
             {
-                throw new InvalidDataException("Key is a required property for UserPermissionStruct and cannot be null");
+                throw new InvalidDataException("key is a required property for UserPermissionStruct and cannot be null");
             }
             else
             {
-                this.Key = Key;
+                this.Key = key;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for UserPermissionStruct and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
-            // to ensure "Permissions" is required (not null)
-            if (Permissions == null)
-            {
-                throw new InvalidDataException("Permissions is a required property for UserPermissionStruct and cannot be null");
+                throw new InvalidDataException("name is a required property for UserPermissionStruct and cannot be null");
             }
             else
             {
-                this.Permissions = Permissions;
+                this.Name = name;
             }
-            // to ensure "RateLimit" is required (not null)
-            if (RateLimit == null)
+            // to ensure "permissions" is required (not null)
+            if (permissions == null)
             {
-                throw new InvalidDataException("RateLimit is a required property for UserPermissionStruct and cannot be null");
+                throw new InvalidDataException("permissions is a required property for UserPermissionStruct and cannot be null");
             }
             else
             {
-                this.RateLimit = RateLimit;
+                this.Permissions = permissions;
+            }
+            // to ensure "rateLimit" is required (not null)
+            if (rateLimit == null)
+            {
+                throw new InvalidDataException("rateLimit is a required property for UserPermissionStruct and cannot be null");
+            }
+            else
+            {
+                this.RateLimit = rateLimit;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

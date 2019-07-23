@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HealthData" /> class.
         /// </summary>
-        /// <param name="Current">The current health of the entity (required).</param>
-        /// <param name="Max">The maximum health of the entity (required).</param>
-        public HealthData(double? Current = default(double?), double? Max = default(double?))
+        /// <param name="current">The current health of the entity (required).</param>
+        /// <param name="max">The maximum health of the entity (required).</param>
+        public HealthData(double? current = default(double?), double? max = default(double?))
         {
-            // to ensure "Current" is required (not null)
-            if (Current == null)
+            // to ensure "current" is required (not null)
+            if (current == null)
             {
-                throw new InvalidDataException("Current is a required property for HealthData and cannot be null");
+                throw new InvalidDataException("current is a required property for HealthData and cannot be null");
             }
             else
             {
-                this.Current = Current;
+                this.Current = current;
             }
-            // to ensure "Max" is required (not null)
-            if (Max == null)
+            // to ensure "max" is required (not null)
+            if (max == null)
             {
-                throw new InvalidDataException("Max is a required property for HealthData and cannot be null");
+                throw new InvalidDataException("max is a required property for HealthData and cannot be null");
             }
             else
             {
-                this.Max = Max;
+                this.Max = max;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

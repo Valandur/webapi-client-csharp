@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FurnaceData" /> class.
         /// </summary>
-        /// <param name="MaxBurnTime">The maximum amount of time (in ticks) the current fuel item lasts (required).</param>
-        /// <param name="MaxCookTime">The total amount of time (in ticks) the stack has to cook for to be done (required).</param>
-        /// <param name="PassedBurnTime">The amount of time (in ticks) that has passed since this fuel item started burning (required).</param>
-        /// <param name="PassedCookTime">The amount of time (in ticks) that has passed since the item stack started cooking (required).</param>
-        public FurnaceData(int? MaxBurnTime = default(int?), int? MaxCookTime = default(int?), int? PassedBurnTime = default(int?), int? PassedCookTime = default(int?))
+        /// <param name="maxBurnTime">The maximum amount of time (in ticks) the current fuel item lasts (required).</param>
+        /// <param name="maxCookTime">The total amount of time (in ticks) the stack has to cook for to be done (required).</param>
+        /// <param name="passedBurnTime">The amount of time (in ticks) that has passed since this fuel item started burning (required).</param>
+        /// <param name="passedCookTime">The amount of time (in ticks) that has passed since the item stack started cooking (required).</param>
+        public FurnaceData(int? maxBurnTime = default(int?), int? maxCookTime = default(int?), int? passedBurnTime = default(int?), int? passedCookTime = default(int?))
         {
-            // to ensure "MaxBurnTime" is required (not null)
-            if (MaxBurnTime == null)
+            // to ensure "maxBurnTime" is required (not null)
+            if (maxBurnTime == null)
             {
-                throw new InvalidDataException("MaxBurnTime is a required property for FurnaceData and cannot be null");
+                throw new InvalidDataException("maxBurnTime is a required property for FurnaceData and cannot be null");
             }
             else
             {
-                this.MaxBurnTime = MaxBurnTime;
+                this.MaxBurnTime = maxBurnTime;
             }
-            // to ensure "MaxCookTime" is required (not null)
-            if (MaxCookTime == null)
+            // to ensure "maxCookTime" is required (not null)
+            if (maxCookTime == null)
             {
-                throw new InvalidDataException("MaxCookTime is a required property for FurnaceData and cannot be null");
-            }
-            else
-            {
-                this.MaxCookTime = MaxCookTime;
-            }
-            // to ensure "PassedBurnTime" is required (not null)
-            if (PassedBurnTime == null)
-            {
-                throw new InvalidDataException("PassedBurnTime is a required property for FurnaceData and cannot be null");
+                throw new InvalidDataException("maxCookTime is a required property for FurnaceData and cannot be null");
             }
             else
             {
-                this.PassedBurnTime = PassedBurnTime;
+                this.MaxCookTime = maxCookTime;
             }
-            // to ensure "PassedCookTime" is required (not null)
-            if (PassedCookTime == null)
+            // to ensure "passedBurnTime" is required (not null)
+            if (passedBurnTime == null)
             {
-                throw new InvalidDataException("PassedCookTime is a required property for FurnaceData and cannot be null");
+                throw new InvalidDataException("passedBurnTime is a required property for FurnaceData and cannot be null");
             }
             else
             {
-                this.PassedCookTime = PassedCookTime;
+                this.PassedBurnTime = passedBurnTime;
+            }
+            // to ensure "passedCookTime" is required (not null)
+            if (passedCookTime == null)
+            {
+                throw new InvalidDataException("passedCookTime is a required property for FurnaceData and cannot be null");
+            }
+            else
+            {
+                this.PassedCookTime = passedCookTime;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

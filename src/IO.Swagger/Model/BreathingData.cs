@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BreathingData" /> class.
         /// </summary>
-        /// <param name="Max">The maximum amount of air available to this entity (required).</param>
-        /// <param name="Remaining">The amount of air currently remaining (required).</param>
-        public BreathingData(int? Max = default(int?), int? Remaining = default(int?))
+        /// <param name="max">The maximum amount of air available to this entity (required).</param>
+        /// <param name="remaining">The amount of air currently remaining (required).</param>
+        public BreathingData(int? max = default(int?), int? remaining = default(int?))
         {
-            // to ensure "Max" is required (not null)
-            if (Max == null)
+            // to ensure "max" is required (not null)
+            if (max == null)
             {
-                throw new InvalidDataException("Max is a required property for BreathingData and cannot be null");
+                throw new InvalidDataException("max is a required property for BreathingData and cannot be null");
             }
             else
             {
-                this.Max = Max;
+                this.Max = max;
             }
-            // to ensure "Remaining" is required (not null)
-            if (Remaining == null)
+            // to ensure "remaining" is required (not null)
+            if (remaining == null)
             {
-                throw new InvalidDataException("Remaining is a required property for BreathingData and cannot be null");
+                throw new InvalidDataException("remaining is a required property for BreathingData and cannot be null");
             }
             else
             {
-                this.Remaining = Remaining;
+                this.Remaining = remaining;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

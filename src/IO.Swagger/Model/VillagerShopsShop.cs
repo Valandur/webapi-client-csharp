@@ -38,34 +38,34 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="VillagerShopsShop" /> class.
         /// </summary>
-        /// <param name="EntityType">The minecraft entity type string for this shops visual entity (required).</param>
-        /// <param name="EntityVariant">A very dynamic variant string for vanilla mobs, most variants as in the minecraft wiki should be supported.</param>
-        /// <param name="Location">Where the shop is currently located.</param>
-        /// <param name="Name">The escaped shop name.</param>
-        /// <param name="Owner">If this shop is a player shop this conatins the UUID of this shops owner. Omitting this field or setting it to null will remove the player-shop association..</param>
-        /// <param name="Rotation">The mobs roations around their up-axis.</param>
-        /// <param name="StockContainer">Location where a container should reside for stocking items. Omitting this field or setting it to null will remove the stock container. Having a player-shop without container is undefined behaviour!.</param>
-        /// <param name="StockItems">Returns a list of all stock items currently listed. This property is read only..</param>
-        /// <param name="Uid">The unique shop identifier; this is not the mob uuid.</param>
-        public VillagerShopsShop(CatalogTypeEntityType EntityType = default(CatalogTypeEntityType), string EntityVariant = default(string), Location Location = default(Location), string Name = default(string), Guid? Owner = default(Guid?), double? Rotation = default(double?), Location StockContainer = default(Location), List<VillagerShopsStockItem> StockItems = default(List<VillagerShopsStockItem>), Guid? Uid = default(Guid?))
+        /// <param name="entityType">The minecraft entity type string for this shops visual entity (required).</param>
+        /// <param name="entityVariant">A very dynamic variant string for vanilla mobs, most variants as in the minecraft wiki should be supported.</param>
+        /// <param name="location">Where the shop is currently located.</param>
+        /// <param name="name">The escaped shop name.</param>
+        /// <param name="owner">If this shop is a player shop this conatins the UUID of this shops owner. Omitting this field or setting it to null will remove the player-shop association..</param>
+        /// <param name="rotation">The mobs roations around their up-axis.</param>
+        /// <param name="stockContainer">Location where a container should reside for stocking items. Omitting this field or setting it to null will remove the stock container. Having a player-shop without container is undefined behaviour!.</param>
+        /// <param name="stockItems">Returns a list of all stock items currently listed. This property is read only..</param>
+        /// <param name="uid">The unique shop identifier; this is not the mob uuid.</param>
+        public VillagerShopsShop(CatalogTypeEntityType entityType = default(CatalogTypeEntityType), string entityVariant = default(string), Location location = default(Location), string name = default(string), Guid? owner = default(Guid?), double? rotation = default(double?), Location stockContainer = default(Location), List<VillagerShopsStockItem> stockItems = default(List<VillagerShopsStockItem>), Guid? uid = default(Guid?))
         {
-            // to ensure "EntityType" is required (not null)
-            if (EntityType == null)
+            // to ensure "entityType" is required (not null)
+            if (entityType == null)
             {
-                throw new InvalidDataException("EntityType is a required property for VillagerShopsShop and cannot be null");
+                throw new InvalidDataException("entityType is a required property for VillagerShopsShop and cannot be null");
             }
             else
             {
-                this.EntityType = EntityType;
+                this.EntityType = entityType;
             }
-            this.EntityVariant = EntityVariant;
-            this.Location = Location;
-            this.Name = Name;
-            this.Owner = Owner;
-            this.Rotation = Rotation;
-            this.StockContainer = StockContainer;
-            this.StockItems = StockItems;
-            this.Uid = Uid;
+            this.EntityVariant = entityVariant;
+            this.Location = location;
+            this.Name = name;
+            this.Owner = owner;
+            this.Rotation = rotation;
+            this.StockContainer = stockContainer;
+            this.StockItems = stockItems;
+            this.Uid = uid;
         }
         
         /// <summary>
@@ -164,7 +164,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

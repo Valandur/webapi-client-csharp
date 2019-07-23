@@ -38,57 +38,57 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UniversalMarketItem" /> class.
         /// </summary>
-        /// <param name="Display">The ItemStack displayed to the users (required).</param>
-        /// <param name="Expires">The unix timestamp (in seconds) at which this offer will expire (required).</param>
-        /// <param name="Item">The ItemStack that is being sold (required).</param>
-        /// <param name="Owner">The owner that submitted this offer (required).</param>
-        /// <param name="Price">The price this item is being sold for (required).</param>
-        public UniversalMarketItem(ItemStack Display = default(ItemStack), long? Expires = default(long?), ItemStack Item = default(ItemStack), Player Owner = default(Player), double? Price = default(double?))
+        /// <param name="display">The ItemStack displayed to the users (required).</param>
+        /// <param name="expires">The unix timestamp (in seconds) at which this offer will expire (required).</param>
+        /// <param name="item">The ItemStack that is being sold (required).</param>
+        /// <param name="owner">The owner that submitted this offer (required).</param>
+        /// <param name="price">The price this item is being sold for (required).</param>
+        public UniversalMarketItem(ItemStack display = default(ItemStack), long? expires = default(long?), ItemStack item = default(ItemStack), Player owner = default(Player), double? price = default(double?))
         {
-            // to ensure "Display" is required (not null)
-            if (Display == null)
+            // to ensure "display" is required (not null)
+            if (display == null)
             {
-                throw new InvalidDataException("Display is a required property for UniversalMarketItem and cannot be null");
+                throw new InvalidDataException("display is a required property for UniversalMarketItem and cannot be null");
             }
             else
             {
-                this.Display = Display;
+                this.Display = display;
             }
-            // to ensure "Expires" is required (not null)
-            if (Expires == null)
+            // to ensure "expires" is required (not null)
+            if (expires == null)
             {
-                throw new InvalidDataException("Expires is a required property for UniversalMarketItem and cannot be null");
-            }
-            else
-            {
-                this.Expires = Expires;
-            }
-            // to ensure "Item" is required (not null)
-            if (Item == null)
-            {
-                throw new InvalidDataException("Item is a required property for UniversalMarketItem and cannot be null");
+                throw new InvalidDataException("expires is a required property for UniversalMarketItem and cannot be null");
             }
             else
             {
-                this.Item = Item;
+                this.Expires = expires;
             }
-            // to ensure "Owner" is required (not null)
-            if (Owner == null)
+            // to ensure "item" is required (not null)
+            if (item == null)
             {
-                throw new InvalidDataException("Owner is a required property for UniversalMarketItem and cannot be null");
-            }
-            else
-            {
-                this.Owner = Owner;
-            }
-            // to ensure "Price" is required (not null)
-            if (Price == null)
-            {
-                throw new InvalidDataException("Price is a required property for UniversalMarketItem and cannot be null");
+                throw new InvalidDataException("item is a required property for UniversalMarketItem and cannot be null");
             }
             else
             {
-                this.Price = Price;
+                this.Item = item;
+            }
+            // to ensure "owner" is required (not null)
+            if (owner == null)
+            {
+                throw new InvalidDataException("owner is a required property for UniversalMarketItem and cannot be null");
+            }
+            else
+            {
+                this.Owner = owner;
+            }
+            // to ensure "price" is required (not null)
+            if (price == null)
+            {
+                throw new InvalidDataException("price is a required property for UniversalMarketItem and cannot be null");
+            }
+            else
+            {
+                this.Price = price;
             }
         }
         
@@ -156,7 +156,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

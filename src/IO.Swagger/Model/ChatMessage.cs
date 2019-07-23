@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ChatMessage" /> class.
         /// </summary>
-        /// <param name="Content">The content of the message (required).</param>
-        /// <param name="Receivers">The receivers of this message (required).</param>
-        /// <param name="Timestamp">The timestamp at which the chat message was sent (epoch millis) (required).</param>
-        /// <param name="Sender">The sender of the message (required).</param>
-        public ChatMessage(string Content = default(string), List<Object> Receivers = default(List<Object>), long? Timestamp = default(long?), Player Sender = default(Player))
+        /// <param name="content">The content of the message (required).</param>
+        /// <param name="receivers">The receivers of this message (required).</param>
+        /// <param name="timestamp">The timestamp at which the chat message was sent (epoch millis) (required).</param>
+        /// <param name="sender">The sender of the message (required).</param>
+        public ChatMessage(string content = default(string), List<Object> receivers = default(List<Object>), long? timestamp = default(long?), Player sender = default(Player))
         {
-            // to ensure "Content" is required (not null)
-            if (Content == null)
+            // to ensure "content" is required (not null)
+            if (content == null)
             {
-                throw new InvalidDataException("Content is a required property for ChatMessage and cannot be null");
+                throw new InvalidDataException("content is a required property for ChatMessage and cannot be null");
             }
             else
             {
-                this.Content = Content;
+                this.Content = content;
             }
-            // to ensure "Receivers" is required (not null)
-            if (Receivers == null)
+            // to ensure "receivers" is required (not null)
+            if (receivers == null)
             {
-                throw new InvalidDataException("Receivers is a required property for ChatMessage and cannot be null");
-            }
-            else
-            {
-                this.Receivers = Receivers;
-            }
-            // to ensure "Timestamp" is required (not null)
-            if (Timestamp == null)
-            {
-                throw new InvalidDataException("Timestamp is a required property for ChatMessage and cannot be null");
+                throw new InvalidDataException("receivers is a required property for ChatMessage and cannot be null");
             }
             else
             {
-                this.Timestamp = Timestamp;
+                this.Receivers = receivers;
             }
-            // to ensure "Sender" is required (not null)
-            if (Sender == null)
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
             {
-                throw new InvalidDataException("Sender is a required property for ChatMessage and cannot be null");
+                throw new InvalidDataException("timestamp is a required property for ChatMessage and cannot be null");
             }
             else
             {
-                this.Sender = Sender;
+                this.Timestamp = timestamp;
+            }
+            // to ensure "sender" is required (not null)
+            if (sender == null)
+            {
+                throw new InvalidDataException("sender is a required property for ChatMessage and cannot be null");
+            }
+            else
+            {
+                this.Sender = sender;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

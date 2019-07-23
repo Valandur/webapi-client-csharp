@@ -33,20 +33,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Currency" /> class.
         /// </summary>
-        /// <param name="DefaultFractionDigits">DefaultFractionDigits.</param>
-        /// <param name="DisplayName">DisplayName.</param>
-        /// <param name="Id">Id.</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="PluralDisplayName">PluralDisplayName.</param>
-        /// <param name="Symbol">Symbol.</param>
-        public Currency(int? DefaultFractionDigits = default(int?), string DisplayName = default(string), string Id = default(string), string Name = default(string), string PluralDisplayName = default(string), string Symbol = default(string))
+        /// <param name="defaultFractionDigits">defaultFractionDigits.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="id">id.</param>
+        /// <param name="name">name.</param>
+        /// <param name="pluralDisplayName">pluralDisplayName.</param>
+        /// <param name="symbol">symbol.</param>
+        public Currency(int? defaultFractionDigits = default(int?), string displayName = default(string), string id = default(string), string name = default(string), string pluralDisplayName = default(string), string symbol = default(string))
         {
-            this.DefaultFractionDigits = DefaultFractionDigits;
-            this.DisplayName = DisplayName;
-            this.Id = Id;
-            this.Name = Name;
-            this.PluralDisplayName = PluralDisplayName;
-            this.Symbol = Symbol;
+            this.DefaultFractionDigits = defaultFractionDigits;
+            this.DisplayName = displayName;
+            this.Id = id;
+            this.Name = name;
+            this.PluralDisplayName = pluralDisplayName;
+            this.Symbol = symbol;
         }
         
         /// <summary>
@@ -107,7 +107,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

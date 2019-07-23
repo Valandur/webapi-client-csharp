@@ -33,16 +33,16 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Account" /> class.
         /// </summary>
-        /// <param name="Balances">Balances.</param>
-        /// <param name="DisplayName">DisplayName.</param>
-        /// <param name="FriendlyId">FriendlyId.</param>
-        /// <param name="Id">Id.</param>
-        public Account(Dictionary<string, decimal?> Balances = default(Dictionary<string, decimal?>), string DisplayName = default(string), string FriendlyId = default(string), string Id = default(string))
+        /// <param name="balances">balances.</param>
+        /// <param name="displayName">displayName.</param>
+        /// <param name="friendlyId">friendlyId.</param>
+        /// <param name="id">id.</param>
+        public Account(Dictionary<string, decimal?> balances = default(Dictionary<string, decimal?>), string displayName = default(string), string friendlyId = default(string), string id = default(string))
         {
-            this.Balances = Balances;
-            this.DisplayName = DisplayName;
-            this.FriendlyId = FriendlyId;
-            this.Id = Id;
+            this.Balances = balances;
+            this.DisplayName = displayName;
+            this.FriendlyId = friendlyId;
+            this.Id = id;
         }
         
         /// <summary>
@@ -89,7 +89,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

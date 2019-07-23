@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Stat" /> class.
         /// </summary>
-        /// <param name="_Stat">_Stat.</param>
-        /// <param name="Value">Value.</param>
-        public Stat(string _Stat = default(string), long? Value = default(long?))
+        /// <param name="stat">stat.</param>
+        /// <param name="value">value.</param>
+        public Stat(string stat = default(string), long? value = default(long?))
         {
-            this._Stat = _Stat;
-            this.Value = Value;
+            this._Stat = stat;
+            this.Value = value;
         }
         
         /// <summary>
@@ -71,7 +71,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LocalDate" /> class.
         /// </summary>
-        /// <param name="Day">The day of the month (1-31).</param>
-        /// <param name="Month">The month in the year (1-12).</param>
-        /// <param name="Year">The year.</param>
-        public LocalDate(int? Day = default(int?), int? Month = default(int?), int? Year = default(int?))
+        /// <param name="day">The day of the month (1-31).</param>
+        /// <param name="month">The month in the year (1-12).</param>
+        /// <param name="year">The year.</param>
+        public LocalDate(int? day = default(int?), int? month = default(int?), int? year = default(int?))
         {
-            this.Day = Day;
-            this.Month = Month;
-            this.Year = Year;
+            this.Day = day;
+            this.Month = month;
+            this.Year = year;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

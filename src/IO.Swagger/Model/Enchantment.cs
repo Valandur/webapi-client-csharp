@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Enchantment" /> class.
         /// </summary>
-        /// <param name="Level">The level of the enchantment.</param>
-        /// <param name="Name">The name of the enchantment type.</param>
-        /// <param name="Id">The unique id of the enchantment type.</param>
-        public Enchantment(int? Level = default(int?), string Name = default(string), string Id = default(string))
+        /// <param name="level">The level of the enchantment.</param>
+        /// <param name="name">The name of the enchantment type.</param>
+        /// <param name="id">The unique id of the enchantment type.</param>
+        public Enchantment(int? level = default(int?), string name = default(string), string id = default(string))
         {
-            this.Level = Level;
-            this.Name = Name;
-            this.Id = Id;
+            this.Level = level;
+            this.Name = name;
+            this.Id = id;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

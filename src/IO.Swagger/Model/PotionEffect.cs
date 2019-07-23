@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PotionEffect" /> class.
         /// </summary>
-        /// <param name="Type">The type of effect this potion represents (required).</param>
-        /// <param name="Amplifier">The aplifier of this potion (I, II, III, IV, V, ...) (required).</param>
-        /// <param name="Duration">The duration this potion lasts for (required).</param>
-        public PotionEffect(CatalogType Type = default(CatalogType), int? Amplifier = default(int?), int? Duration = default(int?))
+        /// <param name="type">The type of effect this potion represents (required).</param>
+        /// <param name="amplifier">The aplifier of this potion (I, II, III, IV, V, ...) (required).</param>
+        /// <param name="duration">The duration this potion lasts for (required).</param>
+        public PotionEffect(CatalogType type = default(CatalogType), int? amplifier = default(int?), int? duration = default(int?))
         {
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for PotionEffect and cannot be null");
+                throw new InvalidDataException("type is a required property for PotionEffect and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            // to ensure "Amplifier" is required (not null)
-            if (Amplifier == null)
+            // to ensure "amplifier" is required (not null)
+            if (amplifier == null)
             {
-                throw new InvalidDataException("Amplifier is a required property for PotionEffect and cannot be null");
-            }
-            else
-            {
-                this.Amplifier = Amplifier;
-            }
-            // to ensure "Duration" is required (not null)
-            if (Duration == null)
-            {
-                throw new InvalidDataException("Duration is a required property for PotionEffect and cannot be null");
+                throw new InvalidDataException("amplifier is a required property for PotionEffect and cannot be null");
             }
             else
             {
-                this.Duration = Duration;
+                this.Amplifier = amplifier;
+            }
+            // to ensure "duration" is required (not null)
+            if (duration == null)
+            {
+                throw new InvalidDataException("duration is a required property for PotionEffect and cannot be null");
+            }
+            else
+            {
+                this.Duration = duration;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

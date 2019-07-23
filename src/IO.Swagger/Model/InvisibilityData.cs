@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="InvisibilityData" /> class.
         /// </summary>
-        /// <param name="IgnoreCollision">True if this entity ignores collisions, false otherwise (required).</param>
-        /// <param name="Invisible">True if this entity is invisible, false otherwise (required).</param>
-        /// <param name="Untargetable">True if this entity is not targetable, false otherwise (required).</param>
-        /// <param name="Vanish">True if this entity is vanished, false otherwise (required).</param>
-        public InvisibilityData(bool? IgnoreCollision = default(bool?), bool? Invisible = default(bool?), bool? Untargetable = default(bool?), bool? Vanish = default(bool?))
+        /// <param name="ignoreCollision">True if this entity ignores collisions, false otherwise (required).</param>
+        /// <param name="invisible">True if this entity is invisible, false otherwise (required).</param>
+        /// <param name="untargetable">True if this entity is not targetable, false otherwise (required).</param>
+        /// <param name="vanish">True if this entity is vanished, false otherwise (required).</param>
+        public InvisibilityData(bool? ignoreCollision = default(bool?), bool? invisible = default(bool?), bool? untargetable = default(bool?), bool? vanish = default(bool?))
         {
-            // to ensure "IgnoreCollision" is required (not null)
-            if (IgnoreCollision == null)
+            // to ensure "ignoreCollision" is required (not null)
+            if (ignoreCollision == null)
             {
-                throw new InvalidDataException("IgnoreCollision is a required property for InvisibilityData and cannot be null");
+                throw new InvalidDataException("ignoreCollision is a required property for InvisibilityData and cannot be null");
             }
             else
             {
-                this.IgnoreCollision = IgnoreCollision;
+                this.IgnoreCollision = ignoreCollision;
             }
-            // to ensure "Invisible" is required (not null)
-            if (Invisible == null)
+            // to ensure "invisible" is required (not null)
+            if (invisible == null)
             {
-                throw new InvalidDataException("Invisible is a required property for InvisibilityData and cannot be null");
-            }
-            else
-            {
-                this.Invisible = Invisible;
-            }
-            // to ensure "Untargetable" is required (not null)
-            if (Untargetable == null)
-            {
-                throw new InvalidDataException("Untargetable is a required property for InvisibilityData and cannot be null");
+                throw new InvalidDataException("invisible is a required property for InvisibilityData and cannot be null");
             }
             else
             {
-                this.Untargetable = Untargetable;
+                this.Invisible = invisible;
             }
-            // to ensure "Vanish" is required (not null)
-            if (Vanish == null)
+            // to ensure "untargetable" is required (not null)
+            if (untargetable == null)
             {
-                throw new InvalidDataException("Vanish is a required property for InvisibilityData and cannot be null");
+                throw new InvalidDataException("untargetable is a required property for InvisibilityData and cannot be null");
             }
             else
             {
-                this.Vanish = Vanish;
+                this.Untargetable = untargetable;
+            }
+            // to ensure "vanish" is required (not null)
+            if (vanish == null)
+            {
+                throw new InvalidDataException("vanish is a required property for InvisibilityData and cannot be null");
+            }
+            else
+            {
+                this.Vanish = vanish;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

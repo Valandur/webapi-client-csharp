@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerStat" /> class.
         /// </summary>
-        /// <param name="Timestamp">The epoch timestamp (in seconds) when the statistic was recorded (required).</param>
-        /// <param name="Value">The value that was recorded (required).</param>
-        public ServerStat(long? Timestamp = default(long?), decimal? Value = default(decimal?))
+        /// <param name="timestamp">The epoch timestamp (in seconds) when the statistic was recorded (required).</param>
+        /// <param name="value">The value that was recorded (required).</param>
+        public ServerStat(long? timestamp = default(long?), decimal? value = default(decimal?))
         {
-            // to ensure "Timestamp" is required (not null)
-            if (Timestamp == null)
+            // to ensure "timestamp" is required (not null)
+            if (timestamp == null)
             {
-                throw new InvalidDataException("Timestamp is a required property for ServerStat and cannot be null");
+                throw new InvalidDataException("timestamp is a required property for ServerStat and cannot be null");
             }
             else
             {
-                this.Timestamp = Timestamp;
+                this.Timestamp = timestamp;
             }
-            // to ensure "Value" is required (not null)
-            if (Value == null)
+            // to ensure "value" is required (not null)
+            if (value == null)
             {
-                throw new InvalidDataException("Value is a required property for ServerStat and cannot be null");
+                throw new InvalidDataException("value is a required property for ServerStat and cannot be null");
             }
             else
             {
-                this.Value = Value;
+                this.Value = value;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

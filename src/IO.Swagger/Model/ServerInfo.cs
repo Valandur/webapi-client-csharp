@@ -38,122 +38,122 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerInfo" /> class.
         /// </summary>
-        /// <param name="Api">Api (required).</param>
-        /// <param name="Game">Game (required).</param>
-        /// <param name="HasWhitelist">True if the server has activated the whitelist, false otherwise (required).</param>
-        /// <param name="Implementation">Implementation (required).</param>
-        /// <param name="MaxPlayers">The maximum amount of players allowed on the server (required).</param>
-        /// <param name="MinecraftVersion">The Minecraft version running on the server (required).</param>
-        /// <param name="Motd">The message of the day set on the server (required).</param>
-        /// <param name="OnlineMode">True if the server is in online mode and verifies connections, false otherwise (required).</param>
-        /// <param name="Players">The amount of players currently playing on the server (required).</param>
-        /// <param name="Tps">The average ticks per second the server is running with (required).</param>
-        /// <param name="UptimeTicks">The number of ticks the server has been running (required).</param>
-        /// <param name="Address">The address that the server is bound to.</param>
-        /// <param name="ResourcePack">The name of the resource pack this is used on the server.</param>
-        public ServerInfo(PluginContainer Api = default(PluginContainer), PluginContainer Game = default(PluginContainer), bool? HasWhitelist = default(bool?), PluginContainer Implementation = default(PluginContainer), int? MaxPlayers = default(int?), string MinecraftVersion = default(string), string Motd = default(string), bool? OnlineMode = default(bool?), int? Players = default(int?), double? Tps = default(double?), int? UptimeTicks = default(int?), string Address = default(string), string ResourcePack = default(string))
+        /// <param name="api">api (required).</param>
+        /// <param name="game">game (required).</param>
+        /// <param name="hasWhitelist">True if the server has activated the whitelist, false otherwise (required).</param>
+        /// <param name="implementation">implementation (required).</param>
+        /// <param name="maxPlayers">The maximum amount of players allowed on the server (required).</param>
+        /// <param name="minecraftVersion">The Minecraft version running on the server (required).</param>
+        /// <param name="motd">The message of the day set on the server (required).</param>
+        /// <param name="onlineMode">True if the server is in online mode and verifies connections, false otherwise (required).</param>
+        /// <param name="players">The amount of players currently playing on the server (required).</param>
+        /// <param name="tps">The average ticks per second the server is running with (required).</param>
+        /// <param name="uptimeTicks">The number of ticks the server has been running (required).</param>
+        /// <param name="address">The address that the server is bound to.</param>
+        /// <param name="resourcePack">The name of the resource pack this is used on the server.</param>
+        public ServerInfo(PluginContainer api = default(PluginContainer), PluginContainer game = default(PluginContainer), bool? hasWhitelist = default(bool?), PluginContainer implementation = default(PluginContainer), int? maxPlayers = default(int?), string minecraftVersion = default(string), string motd = default(string), bool? onlineMode = default(bool?), int? players = default(int?), double? tps = default(double?), int? uptimeTicks = default(int?), string address = default(string), string resourcePack = default(string))
         {
-            // to ensure "Api" is required (not null)
-            if (Api == null)
+            // to ensure "api" is required (not null)
+            if (api == null)
             {
-                throw new InvalidDataException("Api is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("api is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Api = Api;
+                this.Api = api;
             }
-            // to ensure "Game" is required (not null)
-            if (Game == null)
+            // to ensure "game" is required (not null)
+            if (game == null)
             {
-                throw new InvalidDataException("Game is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("game is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Game = Game;
+                this.Game = game;
             }
-            // to ensure "HasWhitelist" is required (not null)
-            if (HasWhitelist == null)
+            // to ensure "hasWhitelist" is required (not null)
+            if (hasWhitelist == null)
             {
-                throw new InvalidDataException("HasWhitelist is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("hasWhitelist is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.HasWhitelist = HasWhitelist;
+                this.HasWhitelist = hasWhitelist;
             }
-            // to ensure "Implementation" is required (not null)
-            if (Implementation == null)
+            // to ensure "implementation" is required (not null)
+            if (implementation == null)
             {
-                throw new InvalidDataException("Implementation is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("implementation is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Implementation = Implementation;
+                this.Implementation = implementation;
             }
-            // to ensure "MaxPlayers" is required (not null)
-            if (MaxPlayers == null)
+            // to ensure "maxPlayers" is required (not null)
+            if (maxPlayers == null)
             {
-                throw new InvalidDataException("MaxPlayers is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("maxPlayers is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.MaxPlayers = MaxPlayers;
+                this.MaxPlayers = maxPlayers;
             }
-            // to ensure "MinecraftVersion" is required (not null)
-            if (MinecraftVersion == null)
+            // to ensure "minecraftVersion" is required (not null)
+            if (minecraftVersion == null)
             {
-                throw new InvalidDataException("MinecraftVersion is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("minecraftVersion is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.MinecraftVersion = MinecraftVersion;
+                this.MinecraftVersion = minecraftVersion;
             }
-            // to ensure "Motd" is required (not null)
-            if (Motd == null)
+            // to ensure "motd" is required (not null)
+            if (motd == null)
             {
-                throw new InvalidDataException("Motd is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("motd is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Motd = Motd;
+                this.Motd = motd;
             }
-            // to ensure "OnlineMode" is required (not null)
-            if (OnlineMode == null)
+            // to ensure "onlineMode" is required (not null)
+            if (onlineMode == null)
             {
-                throw new InvalidDataException("OnlineMode is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("onlineMode is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.OnlineMode = OnlineMode;
+                this.OnlineMode = onlineMode;
             }
-            // to ensure "Players" is required (not null)
-            if (Players == null)
+            // to ensure "players" is required (not null)
+            if (players == null)
             {
-                throw new InvalidDataException("Players is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("players is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Players = Players;
+                this.Players = players;
             }
-            // to ensure "Tps" is required (not null)
-            if (Tps == null)
+            // to ensure "tps" is required (not null)
+            if (tps == null)
             {
-                throw new InvalidDataException("Tps is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("tps is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.Tps = Tps;
+                this.Tps = tps;
             }
-            // to ensure "UptimeTicks" is required (not null)
-            if (UptimeTicks == null)
+            // to ensure "uptimeTicks" is required (not null)
+            if (uptimeTicks == null)
             {
-                throw new InvalidDataException("UptimeTicks is a required property for ServerInfo and cannot be null");
+                throw new InvalidDataException("uptimeTicks is a required property for ServerInfo and cannot be null");
             }
             else
             {
-                this.UptimeTicks = UptimeTicks;
+                this.UptimeTicks = uptimeTicks;
             }
-            this.Address = Address;
-            this.ResourcePack = ResourcePack;
+            this.Address = address;
+            this.ResourcePack = resourcePack;
         }
         
         /// <summary>
@@ -273,7 +273,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

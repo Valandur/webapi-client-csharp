@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateUserRequest" /> class.
         /// </summary>
-        /// <param name="Password">The password of the user (required).</param>
-        /// <param name="Username">The username of the user (required).</param>
-        public CreateUserRequest(string Password = default(string), string Username = default(string))
+        /// <param name="password">The password of the user (required).</param>
+        /// <param name="username">The username of the user (required).</param>
+        public CreateUserRequest(string password = default(string), string username = default(string))
         {
-            // to ensure "Password" is required (not null)
-            if (Password == null)
+            // to ensure "password" is required (not null)
+            if (password == null)
             {
-                throw new InvalidDataException("Password is a required property for CreateUserRequest and cannot be null");
+                throw new InvalidDataException("password is a required property for CreateUserRequest and cannot be null");
             }
             else
             {
-                this.Password = Password;
+                this.Password = password;
             }
-            // to ensure "Username" is required (not null)
-            if (Username == null)
+            // to ensure "username" is required (not null)
+            if (username == null)
             {
-                throw new InvalidDataException("Username is a required property for CreateUserRequest and cannot be null");
+                throw new InvalidDataException("username is a required property for CreateUserRequest and cannot be null");
             }
             else
             {
-                this.Username = Username;
+                this.Username = username;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -33,10 +33,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TableEntryEntityArchetype" /> class.
         /// </summary>
-        /// <param name="Weight">Weight.</param>
-        public TableEntryEntityArchetype(double? Weight = default(double?))
+        /// <param name="weight">weight.</param>
+        public TableEntryEntityArchetype(double? weight = default(double?))
         {
-            this.Weight = Weight;
+            this.Weight = weight;
         }
         
         /// <summary>
@@ -62,7 +62,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

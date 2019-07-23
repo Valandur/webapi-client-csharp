@@ -38,32 +38,32 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteCommandResponse" /> class.
         /// </summary>
-        /// <param name="Cmd">The command that was executed (required).</param>
-        /// <param name="Ok">True if this command executed successfully, false otherwise (required).</param>
-        /// <param name="Error">Any potential error that occured during execution.</param>
-        /// <param name="Response">The response chat lines that were sent when executing the command.</param>
-        public ExecuteCommandResponse(string Cmd = default(string), bool? Ok = default(bool?), string Error = default(string), List<string> Response = default(List<string>))
+        /// <param name="cmd">The command that was executed (required).</param>
+        /// <param name="ok">True if this command executed successfully, false otherwise (required).</param>
+        /// <param name="error">Any potential error that occured during execution.</param>
+        /// <param name="response">The response chat lines that were sent when executing the command.</param>
+        public ExecuteCommandResponse(string cmd = default(string), bool? ok = default(bool?), string error = default(string), List<string> response = default(List<string>))
         {
-            // to ensure "Cmd" is required (not null)
-            if (Cmd == null)
+            // to ensure "cmd" is required (not null)
+            if (cmd == null)
             {
-                throw new InvalidDataException("Cmd is a required property for ExecuteCommandResponse and cannot be null");
+                throw new InvalidDataException("cmd is a required property for ExecuteCommandResponse and cannot be null");
             }
             else
             {
-                this.Cmd = Cmd;
+                this.Cmd = cmd;
             }
-            // to ensure "Ok" is required (not null)
-            if (Ok == null)
+            // to ensure "ok" is required (not null)
+            if (ok == null)
             {
-                throw new InvalidDataException("Ok is a required property for ExecuteCommandResponse and cannot be null");
+                throw new InvalidDataException("ok is a required property for ExecuteCommandResponse and cannot be null");
             }
             else
             {
-                this.Ok = Ok;
+                this.Ok = ok;
             }
-            this.Error = Error;
-            this.Response = Response;
+            this.Error = error;
+            this.Response = response;
         }
         
         /// <summary>
@@ -114,7 +114,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

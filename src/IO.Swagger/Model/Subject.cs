@@ -38,22 +38,22 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Subject" /> class.
         /// </summary>
-        /// <param name="Id">The unique id of this subject (required).</param>
-        /// <param name="FriendlyId">The friendly id of this subject (often a &#39;name&#39;.</param>
-        /// <param name="Permissions">The permissions that are assigned to this subject.</param>
-        public Subject(string Id = default(string), string FriendlyId = default(string), Dictionary<string, bool?> Permissions = default(Dictionary<string, bool?>))
+        /// <param name="id">The unique id of this subject (required).</param>
+        /// <param name="friendlyId">The friendly id of this subject (often a &#39;name&#39;.</param>
+        /// <param name="permissions">The permissions that are assigned to this subject.</param>
+        public Subject(string id = default(string), string friendlyId = default(string), Dictionary<string, bool?> permissions = default(Dictionary<string, bool?>))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for Subject and cannot be null");
+                throw new InvalidDataException("id is a required property for Subject and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            this.FriendlyId = FriendlyId;
-            this.Permissions = Permissions;
+            this.FriendlyId = friendlyId;
+            this.Permissions = permissions;
         }
         
         /// <summary>
@@ -96,7 +96,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

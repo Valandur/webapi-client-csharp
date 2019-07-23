@@ -33,22 +33,22 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdateEntityRequest" /> class.
         /// </summary>
-        /// <param name="Damage">The damage the entity will take.</param>
-        /// <param name="Inventory">The slots in the inventory of the entity to modify.</param>
-        /// <param name="Position">The position that the entity will be moved to.</param>
-        /// <param name="Rotation">The new rotation of the entity.</param>
-        /// <param name="Scale">The new scale of the entity.</param>
-        /// <param name="Velocity">The new speed of the entity.</param>
-        /// <param name="World">The world that the entity will be moved to.</param>
-        public UpdateEntityRequest(DamageRequest Damage = default(DamageRequest), List<SlotRequest> Inventory = default(List<SlotRequest>), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), Vector3d Scale = default(Vector3d), Vector3d Velocity = default(Vector3d), string World = default(string))
+        /// <param name="damage">The damage the entity will take.</param>
+        /// <param name="inventory">The slots in the inventory of the entity to modify.</param>
+        /// <param name="position">The position that the entity will be moved to.</param>
+        /// <param name="rotation">The new rotation of the entity.</param>
+        /// <param name="scale">The new scale of the entity.</param>
+        /// <param name="velocity">The new speed of the entity.</param>
+        /// <param name="world">The world that the entity will be moved to.</param>
+        public UpdateEntityRequest(DamageRequest damage = default(DamageRequest), List<SlotRequest> inventory = default(List<SlotRequest>), Vector3d position = default(Vector3d), Vector3d rotation = default(Vector3d), Vector3d scale = default(Vector3d), Vector3d velocity = default(Vector3d), string world = default(string))
         {
-            this.Damage = Damage;
-            this.Inventory = Inventory;
-            this.Position = Position;
-            this.Rotation = Rotation;
-            this.Scale = Scale;
-            this.Velocity = Velocity;
-            this.World = World;
+            this.Damage = damage;
+            this.Inventory = inventory;
+            this.Position = position;
+            this.Rotation = rotation;
+            this.Scale = scale;
+            this.Velocity = velocity;
+            this.World = world;
         }
         
         /// <summary>
@@ -123,7 +123,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

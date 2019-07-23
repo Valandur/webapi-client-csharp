@@ -38,87 +38,87 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WorldBorder" /> class.
         /// </summary>
-        /// <param name="Center">The center of the world border (required).</param>
-        /// <param name="DamageAmount">The amount of damage done to players outside the border (required).</param>
-        /// <param name="DamageThreshold">The maximum amount of damage done to a player (required).</param>
-        /// <param name="Diameter">The diameter of the border (required).</param>
-        /// <param name="NewDiameter">The new diameter of the border, in case it is collapsing/expanding (required).</param>
-        /// <param name="TimeRemaining">The time remaining until the border reaches it&#39;s new size (required).</param>
-        /// <param name="WarningDistance">The amount of distance from the border a player will receive a warning at (required).</param>
-        /// <param name="WarningTime">The amount of time near a border before a warning is shown for players (required).</param>
-        public WorldBorder(Vector3d Center = default(Vector3d), double? DamageAmount = default(double?), double? DamageThreshold = default(double?), double? Diameter = default(double?), double? NewDiameter = default(double?), long? TimeRemaining = default(long?), int? WarningDistance = default(int?), int? WarningTime = default(int?))
+        /// <param name="center">The center of the world border (required).</param>
+        /// <param name="damageAmount">The amount of damage done to players outside the border (required).</param>
+        /// <param name="damageThreshold">The maximum amount of damage done to a player (required).</param>
+        /// <param name="diameter">The diameter of the border (required).</param>
+        /// <param name="newDiameter">The new diameter of the border, in case it is collapsing/expanding (required).</param>
+        /// <param name="timeRemaining">The time remaining until the border reaches it&#39;s new size (required).</param>
+        /// <param name="warningDistance">The amount of distance from the border a player will receive a warning at (required).</param>
+        /// <param name="warningTime">The amount of time near a border before a warning is shown for players (required).</param>
+        public WorldBorder(Vector3d center = default(Vector3d), double? damageAmount = default(double?), double? damageThreshold = default(double?), double? diameter = default(double?), double? newDiameter = default(double?), long? timeRemaining = default(long?), int? warningDistance = default(int?), int? warningTime = default(int?))
         {
-            // to ensure "Center" is required (not null)
-            if (Center == null)
+            // to ensure "center" is required (not null)
+            if (center == null)
             {
-                throw new InvalidDataException("Center is a required property for WorldBorder and cannot be null");
+                throw new InvalidDataException("center is a required property for WorldBorder and cannot be null");
             }
             else
             {
-                this.Center = Center;
+                this.Center = center;
             }
-            // to ensure "DamageAmount" is required (not null)
-            if (DamageAmount == null)
+            // to ensure "damageAmount" is required (not null)
+            if (damageAmount == null)
             {
-                throw new InvalidDataException("DamageAmount is a required property for WorldBorder and cannot be null");
-            }
-            else
-            {
-                this.DamageAmount = DamageAmount;
-            }
-            // to ensure "DamageThreshold" is required (not null)
-            if (DamageThreshold == null)
-            {
-                throw new InvalidDataException("DamageThreshold is a required property for WorldBorder and cannot be null");
+                throw new InvalidDataException("damageAmount is a required property for WorldBorder and cannot be null");
             }
             else
             {
-                this.DamageThreshold = DamageThreshold;
+                this.DamageAmount = damageAmount;
             }
-            // to ensure "Diameter" is required (not null)
-            if (Diameter == null)
+            // to ensure "damageThreshold" is required (not null)
+            if (damageThreshold == null)
             {
-                throw new InvalidDataException("Diameter is a required property for WorldBorder and cannot be null");
-            }
-            else
-            {
-                this.Diameter = Diameter;
-            }
-            // to ensure "NewDiameter" is required (not null)
-            if (NewDiameter == null)
-            {
-                throw new InvalidDataException("NewDiameter is a required property for WorldBorder and cannot be null");
+                throw new InvalidDataException("damageThreshold is a required property for WorldBorder and cannot be null");
             }
             else
             {
-                this.NewDiameter = NewDiameter;
+                this.DamageThreshold = damageThreshold;
             }
-            // to ensure "TimeRemaining" is required (not null)
-            if (TimeRemaining == null)
+            // to ensure "diameter" is required (not null)
+            if (diameter == null)
             {
-                throw new InvalidDataException("TimeRemaining is a required property for WorldBorder and cannot be null");
-            }
-            else
-            {
-                this.TimeRemaining = TimeRemaining;
-            }
-            // to ensure "WarningDistance" is required (not null)
-            if (WarningDistance == null)
-            {
-                throw new InvalidDataException("WarningDistance is a required property for WorldBorder and cannot be null");
+                throw new InvalidDataException("diameter is a required property for WorldBorder and cannot be null");
             }
             else
             {
-                this.WarningDistance = WarningDistance;
+                this.Diameter = diameter;
             }
-            // to ensure "WarningTime" is required (not null)
-            if (WarningTime == null)
+            // to ensure "newDiameter" is required (not null)
+            if (newDiameter == null)
             {
-                throw new InvalidDataException("WarningTime is a required property for WorldBorder and cannot be null");
+                throw new InvalidDataException("newDiameter is a required property for WorldBorder and cannot be null");
             }
             else
             {
-                this.WarningTime = WarningTime;
+                this.NewDiameter = newDiameter;
+            }
+            // to ensure "timeRemaining" is required (not null)
+            if (timeRemaining == null)
+            {
+                throw new InvalidDataException("timeRemaining is a required property for WorldBorder and cannot be null");
+            }
+            else
+            {
+                this.TimeRemaining = timeRemaining;
+            }
+            // to ensure "warningDistance" is required (not null)
+            if (warningDistance == null)
+            {
+                throw new InvalidDataException("warningDistance is a required property for WorldBorder and cannot be null");
+            }
+            else
+            {
+                this.WarningDistance = warningDistance;
+            }
+            // to ensure "warningTime" is required (not null)
+            if (warningTime == null)
+            {
+                throw new InvalidDataException("warningTime is a required property for WorldBorder and cannot be null");
+            }
+            else
+            {
+                this.WarningTime = warningTime;
             }
         }
         
@@ -202,7 +202,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -378,7 +378,7 @@ namespace IO.Swagger.Api
         /// <returns></returns>
         public BlockApi(String basePath)
         {
-            this.Configuration = new Configuration { BasePath = basePath };
+            this.Configuration = new IO.Swagger.Client.Configuration { BasePath = basePath };
 
             ExceptionFactory = IO.Swagger.Client.Configuration.DefaultExceptionFactory;
         }
@@ -389,10 +389,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public BlockApi(Configuration configuration = null)
+        public BlockApi(IO.Swagger.Client.Configuration configuration = null)
         {
             if (configuration == null) // use the default one in Configuration
-                this.Configuration = Configuration.Default;
+                this.Configuration = IO.Swagger.Client.Configuration.Default;
             else
                 this.Configuration = configuration;
 
@@ -422,7 +422,7 @@ namespace IO.Swagger.Api
         /// Gets or sets the configuration object
         /// </summary>
         /// <value>An instance of the Configuration</value>
-        public Configuration Configuration {get; set;}
+        public IO.Swagger.Client.Configuration Configuration {get; set;}
 
         /// <summary>
         /// Provides a factory method hook for the creation of exceptions.
@@ -492,7 +492,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -502,23 +502,23 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
@@ -526,18 +526,18 @@ namespace IO.Swagger.Api
             }
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -551,7 +551,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -585,7 +585,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -595,23 +595,23 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
@@ -619,18 +619,18 @@ namespace IO.Swagger.Api
             }
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.POST, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -644,7 +644,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -680,7 +680,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -690,35 +690,35 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -732,7 +732,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -769,7 +769,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -779,35 +779,35 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -821,7 +821,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -872,7 +872,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/{world}/{x}/{y}/{z}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -882,38 +882,38 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (world != null) localVarPathParams.Add("world", Configuration.ApiClient.ParameterToString(world)); // path parameter
-            if (x != null) localVarPathParams.Add("x", Configuration.ApiClient.ParameterToString(x)); // path parameter
-            if (y != null) localVarPathParams.Add("y", Configuration.ApiClient.ParameterToString(y)); // path parameter
-            if (z != null) localVarPathParams.Add("z", Configuration.ApiClient.ParameterToString(z)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (world != null) localVarPathParams.Add("world", this.Configuration.ApiClient.ParameterToString(world)); // path parameter
+            if (x != null) localVarPathParams.Add("x", this.Configuration.ApiClient.ParameterToString(x)); // path parameter
+            if (y != null) localVarPathParams.Add("y", this.Configuration.ApiClient.ParameterToString(y)); // path parameter
+            if (z != null) localVarPathParams.Add("z", this.Configuration.ApiClient.ParameterToString(z)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -927,7 +927,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockState>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockState) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockState)));
+                (BlockState) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockState)));
         }
 
         /// <summary>
@@ -979,7 +979,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/{world}/{x}/{y}/{z}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -989,38 +989,38 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (world != null) localVarPathParams.Add("world", Configuration.ApiClient.ParameterToString(world)); // path parameter
-            if (x != null) localVarPathParams.Add("x", Configuration.ApiClient.ParameterToString(x)); // path parameter
-            if (y != null) localVarPathParams.Add("y", Configuration.ApiClient.ParameterToString(y)); // path parameter
-            if (z != null) localVarPathParams.Add("z", Configuration.ApiClient.ParameterToString(z)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (world != null) localVarPathParams.Add("world", this.Configuration.ApiClient.ParameterToString(world)); // path parameter
+            if (x != null) localVarPathParams.Add("x", this.Configuration.ApiClient.ParameterToString(x)); // path parameter
+            if (y != null) localVarPathParams.Add("y", this.Configuration.ApiClient.ParameterToString(y)); // path parameter
+            if (z != null) localVarPathParams.Add("z", this.Configuration.ApiClient.ParameterToString(z)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1034,7 +1034,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockState>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockState) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockState)));
+                (BlockState) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockState)));
         }
 
         /// <summary>
@@ -1070,7 +1070,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1080,35 +1080,35 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1122,7 +1122,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -1159,7 +1159,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1169,35 +1169,35 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1211,7 +1211,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -1242,7 +1242,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1252,34 +1252,34 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1293,7 +1293,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<BlockOperation>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BlockOperation>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BlockOperation>)));
+                (List<BlockOperation>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BlockOperation>)));
         }
 
         /// <summary>
@@ -1325,7 +1325,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1335,34 +1335,34 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1376,7 +1376,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<List<BlockOperation>>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (List<BlockOperation>) Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BlockOperation>)));
+                (List<BlockOperation>) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(List<BlockOperation>)));
         }
 
         /// <summary>
@@ -1414,7 +1414,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1424,24 +1424,24 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
@@ -1449,18 +1449,18 @@ namespace IO.Swagger.Api
             }
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) this.Configuration.ApiClient.CallApi(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1474,7 +1474,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
         /// <summary>
@@ -1513,7 +1513,7 @@ namespace IO.Swagger.Api
             var localVarPath = "/block/op/{uuid}";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarHeaderParams = new Dictionary<String, String>(this.Configuration.DefaultHeader);
             var localVarFormParams = new Dictionary<String, String>();
             var localVarFileParams = new Dictionary<String, FileParameter>();
             Object localVarPostBody = null;
@@ -1523,24 +1523,24 @@ namespace IO.Swagger.Api
                 "application/json", 
                 "application/xml"
             };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+            String localVarHttpContentType = this.Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
 
             // to determine the Accept header
             String[] localVarHttpHeaderAccepts = new String[] {
                 "application/json",
                 "application/xml"
             };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            String localVarHttpHeaderAccept = this.Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
             if (localVarHttpHeaderAccept != null)
                 localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
 
-            if (uuid != null) localVarPathParams.Add("uuid", Configuration.ApiClient.ParameterToString(uuid)); // path parameter
-            if (details != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
-            if (accept != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
-            if (pretty != null) localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
+            if (uuid != null) localVarPathParams.Add("uuid", this.Configuration.ApiClient.ParameterToString(uuid)); // path parameter
+            if (details != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "details", details)); // query parameter
+            if (accept != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "accept", accept)); // query parameter
+            if (pretty != null) localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "pretty", pretty)); // query parameter
             if (body != null && body.GetType() != typeof(byte[]))
             {
-                localVarPostBody = Configuration.ApiClient.Serialize(body); // http body (model) parameter
+                localVarPostBody = this.Configuration.ApiClient.Serialize(body); // http body (model) parameter
             }
             else
             {
@@ -1548,18 +1548,18 @@ namespace IO.Swagger.Api
             }
 
             // authentication (ApiKeyHeader) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key")))
             {
-                localVarHeaderParams["X-WebAPI-Key"] = Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
+                localVarHeaderParams["X-WebAPI-Key"] = this.Configuration.GetApiKeyWithPrefix("X-WebAPI-Key");
             }
             // authentication (ApiKeyQuery) required
-            if (!String.IsNullOrEmpty(Configuration.GetApiKeyWithPrefix("key")))
+            if (!String.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("key")))
             {
-                localVarQueryParams.AddRange(Configuration.ApiClient.ParameterToKeyValuePairs("", "key", Configuration.GetApiKeyWithPrefix("key")));
+                localVarQueryParams.AddRange(this.Configuration.ApiClient.ParameterToKeyValuePairs("", "key", this.Configuration.GetApiKeyWithPrefix("key")));
             }
 
             // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+            IRestResponse localVarResponse = (IRestResponse) await this.Configuration.ApiClient.CallApiAsync(localVarPath,
                 Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
                 localVarPathParams, localVarHttpContentType);
 
@@ -1573,7 +1573,7 @@ namespace IO.Swagger.Api
 
             return new ApiResponse<BlockOperation>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (BlockOperation) Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
+                (BlockOperation) this.Configuration.ApiClient.Deserialize(localVarResponse, typeof(BlockOperation)));
         }
 
     }

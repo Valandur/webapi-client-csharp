@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PatternLayer" /> class.
         /// </summary>
-        /// <param name="Shape">The base shape of this pattern (required).</param>
-        /// <param name="Color">The color of the pattern (required).</param>
-        public PatternLayer(CatalogType Shape = default(CatalogType), DyeColor Color = default(DyeColor))
+        /// <param name="shape">The base shape of this pattern (required).</param>
+        /// <param name="color">The color of the pattern (required).</param>
+        public PatternLayer(CatalogType shape = default(CatalogType), DyeColor color = default(DyeColor))
         {
-            // to ensure "Shape" is required (not null)
-            if (Shape == null)
+            // to ensure "shape" is required (not null)
+            if (shape == null)
             {
-                throw new InvalidDataException("Shape is a required property for PatternLayer and cannot be null");
+                throw new InvalidDataException("shape is a required property for PatternLayer and cannot be null");
             }
             else
             {
-                this.Shape = Shape;
+                this.Shape = shape;
             }
-            // to ensure "Color" is required (not null)
-            if (Color == null)
+            // to ensure "color" is required (not null)
+            if (color == null)
             {
-                throw new InvalidDataException("Color is a required property for PatternLayer and cannot be null");
+                throw new InvalidDataException("color is a required property for PatternLayer and cannot be null");
             }
             else
             {
-                this.Color = Color;
+                this.Color = color;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

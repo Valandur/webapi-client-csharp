@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_Operator** | **string** |  | [optional] 
+**Operator** | **string** |  | [optional] 
 **Key** | **string** |  | [optional] 
 **Value** | [**Vector2i**](Vector2i.md) |  | [optional] 
 **Columns** | **int?** |  | [optional] 

@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerProperty" /> class.
         /// </summary>
-        /// <param name="Key">The key of the server property (required).</param>
-        /// <param name="Value">The value of the server property (required).</param>
-        public ServerProperty(string Key = default(string), string Value = default(string))
+        /// <param name="key">The key of the server property (required).</param>
+        /// <param name="value">The value of the server property (required).</param>
+        public ServerProperty(string key = default(string), string value = default(string))
         {
-            // to ensure "Key" is required (not null)
-            if (Key == null)
+            // to ensure "key" is required (not null)
+            if (key == null)
             {
-                throw new InvalidDataException("Key is a required property for ServerProperty and cannot be null");
+                throw new InvalidDataException("key is a required property for ServerProperty and cannot be null");
             }
             else
             {
-                this.Key = Key;
+                this.Key = key;
             }
-            // to ensure "Value" is required (not null)
-            if (Value == null)
+            // to ensure "value" is required (not null)
+            if (value == null)
             {
-                throw new InvalidDataException("Value is a required property for ServerProperty and cannot be null");
+                throw new InvalidDataException("value is a required property for ServerProperty and cannot be null");
             }
             else
             {
-                this.Value = Value;
+                this.Value = value;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

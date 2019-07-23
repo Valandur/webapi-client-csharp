@@ -38,57 +38,57 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FireworkEffect" /> class.
         /// </summary>
-        /// <param name="Shape">The shape of the firework (required).</param>
-        /// <param name="Flickers">True if the firework flickers, false otherwise (required).</param>
-        /// <param name="Colors">The colors that make up this firework (required).</param>
-        /// <param name="FadeColors">The fade colors that this firework has (required).</param>
-        /// <param name="Trail">True if this firework has a trail, false otherwise (required).</param>
-        public FireworkEffect(CatalogType Shape = default(CatalogType), bool? Flickers = default(bool?), List<Color> Colors = default(List<Color>), List<Color> FadeColors = default(List<Color>), bool? Trail = default(bool?))
+        /// <param name="shape">The shape of the firework (required).</param>
+        /// <param name="flickers">True if the firework flickers, false otherwise (required).</param>
+        /// <param name="colors">The colors that make up this firework (required).</param>
+        /// <param name="fadeColors">The fade colors that this firework has (required).</param>
+        /// <param name="trail">True if this firework has a trail, false otherwise (required).</param>
+        public FireworkEffect(CatalogType shape = default(CatalogType), bool? flickers = default(bool?), List<Color> colors = default(List<Color>), List<Color> fadeColors = default(List<Color>), bool? trail = default(bool?))
         {
-            // to ensure "Shape" is required (not null)
-            if (Shape == null)
+            // to ensure "shape" is required (not null)
+            if (shape == null)
             {
-                throw new InvalidDataException("Shape is a required property for FireworkEffect and cannot be null");
+                throw new InvalidDataException("shape is a required property for FireworkEffect and cannot be null");
             }
             else
             {
-                this.Shape = Shape;
+                this.Shape = shape;
             }
-            // to ensure "Flickers" is required (not null)
-            if (Flickers == null)
+            // to ensure "flickers" is required (not null)
+            if (flickers == null)
             {
-                throw new InvalidDataException("Flickers is a required property for FireworkEffect and cannot be null");
-            }
-            else
-            {
-                this.Flickers = Flickers;
-            }
-            // to ensure "Colors" is required (not null)
-            if (Colors == null)
-            {
-                throw new InvalidDataException("Colors is a required property for FireworkEffect and cannot be null");
+                throw new InvalidDataException("flickers is a required property for FireworkEffect and cannot be null");
             }
             else
             {
-                this.Colors = Colors;
+                this.Flickers = flickers;
             }
-            // to ensure "FadeColors" is required (not null)
-            if (FadeColors == null)
+            // to ensure "colors" is required (not null)
+            if (colors == null)
             {
-                throw new InvalidDataException("FadeColors is a required property for FireworkEffect and cannot be null");
-            }
-            else
-            {
-                this.FadeColors = FadeColors;
-            }
-            // to ensure "Trail" is required (not null)
-            if (Trail == null)
-            {
-                throw new InvalidDataException("Trail is a required property for FireworkEffect and cannot be null");
+                throw new InvalidDataException("colors is a required property for FireworkEffect and cannot be null");
             }
             else
             {
-                this.Trail = Trail;
+                this.Colors = colors;
+            }
+            // to ensure "fadeColors" is required (not null)
+            if (fadeColors == null)
+            {
+                throw new InvalidDataException("fadeColors is a required property for FireworkEffect and cannot be null");
+            }
+            else
+            {
+                this.FadeColors = fadeColors;
+            }
+            // to ensure "trail" is required (not null)
+            if (trail == null)
+            {
+                throw new InvalidDataException("trail is a required property for FireworkEffect and cannot be null");
+            }
+            else
+            {
+                this.Trail = trail;
             }
         }
         
@@ -148,7 +148,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

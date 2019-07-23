@@ -33,19 +33,19 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMethodResponse" /> class.
         /// </summary>
-        /// <param name="_Object">_Object.</param>
-        /// <param name="Result">Result.</param>
-        public ExecuteMethodResponse(CachedObject _Object = default(CachedObject), Object Result = default(Object))
+        /// <param name="_object">_object.</param>
+        /// <param name="result">result.</param>
+        public ExecuteMethodResponse(CachedObject _object = default(CachedObject), Object result = default(Object))
         {
-            this._Object = _Object;
-            this.Result = Result;
+            this.Object = _object;
+            this.Result = result;
         }
         
         /// <summary>
-        /// Gets or Sets _Object
+        /// Gets or Sets Object
         /// </summary>
         [DataMember(Name="object", EmitDefaultValue=false)]
-        public CachedObject _Object { get; set; }
+        public CachedObject Object { get; set; }
 
         /// <summary>
         /// Gets or Sets Result
@@ -61,7 +61,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class ExecuteMethodResponse {\n");
-            sb.Append("  _Object: ").Append(_Object).Append("\n");
+            sb.Append("  Object: ").Append(Object).Append("\n");
             sb.Append("  Result: ").Append(Result).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -71,7 +71,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -98,9 +98,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this._Object == input._Object ||
-                    (this._Object != null &&
-                    this._Object.Equals(input._Object))
+                    this.Object == input.Object ||
+                    (this.Object != null &&
+                    this.Object.Equals(input.Object))
                 ) && 
                 (
                     this.Result == input.Result ||
@@ -118,8 +118,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this._Object != null)
-                    hashCode = hashCode * 59 + this._Object.GetHashCode();
+                if (this.Object != null)
+                    hashCode = hashCode * 59 + this.Object.GetHashCode();
                 if (this.Result != null)
                     hashCode = hashCode * 59 + this.Result.GetHashCode();
                 return hashCode;

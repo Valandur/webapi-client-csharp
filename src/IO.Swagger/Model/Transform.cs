@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Transform" /> class.
         /// </summary>
-        /// <param name="World">The world of this transform (required).</param>
-        /// <param name="Position">The position within the world (required).</param>
-        /// <param name="Rotation">The rotation of the object (required).</param>
-        /// <param name="Scale">The scale of the object (required).</param>
-        public Transform(World World = default(World), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), Vector3d Scale = default(Vector3d))
+        /// <param name="world">The world of this transform (required).</param>
+        /// <param name="position">The position within the world (required).</param>
+        /// <param name="rotation">The rotation of the object (required).</param>
+        /// <param name="scale">The scale of the object (required).</param>
+        public Transform(World world = default(World), Vector3d position = default(Vector3d), Vector3d rotation = default(Vector3d), Vector3d scale = default(Vector3d))
         {
-            // to ensure "World" is required (not null)
-            if (World == null)
+            // to ensure "world" is required (not null)
+            if (world == null)
             {
-                throw new InvalidDataException("World is a required property for Transform and cannot be null");
+                throw new InvalidDataException("world is a required property for Transform and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.World = world;
             }
-            // to ensure "Position" is required (not null)
-            if (Position == null)
+            // to ensure "position" is required (not null)
+            if (position == null)
             {
-                throw new InvalidDataException("Position is a required property for Transform and cannot be null");
-            }
-            else
-            {
-                this.Position = Position;
-            }
-            // to ensure "Rotation" is required (not null)
-            if (Rotation == null)
-            {
-                throw new InvalidDataException("Rotation is a required property for Transform and cannot be null");
+                throw new InvalidDataException("position is a required property for Transform and cannot be null");
             }
             else
             {
-                this.Rotation = Rotation;
+                this.Position = position;
             }
-            // to ensure "Scale" is required (not null)
-            if (Scale == null)
+            // to ensure "rotation" is required (not null)
+            if (rotation == null)
             {
-                throw new InvalidDataException("Scale is a required property for Transform and cannot be null");
+                throw new InvalidDataException("rotation is a required property for Transform and cannot be null");
             }
             else
             {
-                this.Scale = Scale;
+                this.Rotation = rotation;
+            }
+            // to ensure "scale" is required (not null)
+            if (scale == null)
+            {
+                throw new InvalidDataException("scale is a required property for Transform and cannot be null");
+            }
+            else
+            {
+                this.Scale = scale;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

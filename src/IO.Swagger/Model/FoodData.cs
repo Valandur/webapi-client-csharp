@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FoodData" /> class.
         /// </summary>
-        /// <param name="FoodLevel">The food level of this entity (required).</param>
-        /// <param name="Saturation">The saturation of this entity (required).</param>
-        /// <param name="Exhaustion">The exhaustion of this entity (required).</param>
-        public FoodData(int? FoodLevel = default(int?), double? Saturation = default(double?), double? Exhaustion = default(double?))
+        /// <param name="foodLevel">The food level of this entity (required).</param>
+        /// <param name="saturation">The saturation of this entity (required).</param>
+        /// <param name="exhaustion">The exhaustion of this entity (required).</param>
+        public FoodData(int? foodLevel = default(int?), double? saturation = default(double?), double? exhaustion = default(double?))
         {
-            // to ensure "FoodLevel" is required (not null)
-            if (FoodLevel == null)
+            // to ensure "foodLevel" is required (not null)
+            if (foodLevel == null)
             {
-                throw new InvalidDataException("FoodLevel is a required property for FoodData and cannot be null");
+                throw new InvalidDataException("foodLevel is a required property for FoodData and cannot be null");
             }
             else
             {
-                this.FoodLevel = FoodLevel;
+                this.FoodLevel = foodLevel;
             }
-            // to ensure "Saturation" is required (not null)
-            if (Saturation == null)
+            // to ensure "saturation" is required (not null)
+            if (saturation == null)
             {
-                throw new InvalidDataException("Saturation is a required property for FoodData and cannot be null");
-            }
-            else
-            {
-                this.Saturation = Saturation;
-            }
-            // to ensure "Exhaustion" is required (not null)
-            if (Exhaustion == null)
-            {
-                throw new InvalidDataException("Exhaustion is a required property for FoodData and cannot be null");
+                throw new InvalidDataException("saturation is a required property for FoodData and cannot be null");
             }
             else
             {
-                this.Exhaustion = Exhaustion;
+                this.Saturation = saturation;
+            }
+            // to ensure "exhaustion" is required (not null)
+            if (exhaustion == null)
+            {
+                throw new InvalidDataException("exhaustion is a required property for FoodData and cannot be null");
+            }
+            else
+            {
+                this.Exhaustion = exhaustion;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

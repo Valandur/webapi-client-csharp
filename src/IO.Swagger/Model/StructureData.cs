@@ -38,107 +38,107 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="StructureData" /> class.
         /// </summary>
-        /// <param name="Author">The author of this structure (required).</param>
-        /// <param name="IgnoreEntities">True if entities are not part of this structure, false otherwise (required).</param>
-        /// <param name="Integrity">The integrity of the structure (required).</param>
-        /// <param name="Mode">The mode of the structure (required).</param>
-        /// <param name="Position">The position of the structure (required).</param>
-        /// <param name="Powered">True if the structure is powered, false otherwise (required).</param>
-        /// <param name="Seed">The seed of this structure (required).</param>
-        /// <param name="ShowAir">True if the air blocks for this structure are shown, false otherwise (required).</param>
-        /// <param name="ShowBoundingBox">True if the bounding box for this structure is shown, false otherwise (required).</param>
-        /// <param name="Size">The size of this structure (required).</param>
-        public StructureData(string Author = default(string), bool? IgnoreEntities = default(bool?), float? Integrity = default(float?), CatalogType Mode = default(CatalogType), Vector3i Position = default(Vector3i), bool? Powered = default(bool?), long? Seed = default(long?), bool? ShowAir = default(bool?), bool? ShowBoundingBox = default(bool?), Vector3i Size = default(Vector3i))
+        /// <param name="author">The author of this structure (required).</param>
+        /// <param name="ignoreEntities">True if entities are not part of this structure, false otherwise (required).</param>
+        /// <param name="integrity">The integrity of the structure (required).</param>
+        /// <param name="mode">The mode of the structure (required).</param>
+        /// <param name="position">The position of the structure (required).</param>
+        /// <param name="powered">True if the structure is powered, false otherwise (required).</param>
+        /// <param name="seed">The seed of this structure (required).</param>
+        /// <param name="showAir">True if the air blocks for this structure are shown, false otherwise (required).</param>
+        /// <param name="showBoundingBox">True if the bounding box for this structure is shown, false otherwise (required).</param>
+        /// <param name="size">The size of this structure (required).</param>
+        public StructureData(string author = default(string), bool? ignoreEntities = default(bool?), float? integrity = default(float?), CatalogType mode = default(CatalogType), Vector3i position = default(Vector3i), bool? powered = default(bool?), long? seed = default(long?), bool? showAir = default(bool?), bool? showBoundingBox = default(bool?), Vector3i size = default(Vector3i))
         {
-            // to ensure "Author" is required (not null)
-            if (Author == null)
+            // to ensure "author" is required (not null)
+            if (author == null)
             {
-                throw new InvalidDataException("Author is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("author is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.Author = Author;
+                this.Author = author;
             }
-            // to ensure "IgnoreEntities" is required (not null)
-            if (IgnoreEntities == null)
+            // to ensure "ignoreEntities" is required (not null)
+            if (ignoreEntities == null)
             {
-                throw new InvalidDataException("IgnoreEntities is a required property for StructureData and cannot be null");
-            }
-            else
-            {
-                this.IgnoreEntities = IgnoreEntities;
-            }
-            // to ensure "Integrity" is required (not null)
-            if (Integrity == null)
-            {
-                throw new InvalidDataException("Integrity is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("ignoreEntities is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.Integrity = Integrity;
+                this.IgnoreEntities = ignoreEntities;
             }
-            // to ensure "Mode" is required (not null)
-            if (Mode == null)
+            // to ensure "integrity" is required (not null)
+            if (integrity == null)
             {
-                throw new InvalidDataException("Mode is a required property for StructureData and cannot be null");
-            }
-            else
-            {
-                this.Mode = Mode;
-            }
-            // to ensure "Position" is required (not null)
-            if (Position == null)
-            {
-                throw new InvalidDataException("Position is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("integrity is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.Position = Position;
+                this.Integrity = integrity;
             }
-            // to ensure "Powered" is required (not null)
-            if (Powered == null)
+            // to ensure "mode" is required (not null)
+            if (mode == null)
             {
-                throw new InvalidDataException("Powered is a required property for StructureData and cannot be null");
-            }
-            else
-            {
-                this.Powered = Powered;
-            }
-            // to ensure "Seed" is required (not null)
-            if (Seed == null)
-            {
-                throw new InvalidDataException("Seed is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("mode is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.Seed = Seed;
+                this.Mode = mode;
             }
-            // to ensure "ShowAir" is required (not null)
-            if (ShowAir == null)
+            // to ensure "position" is required (not null)
+            if (position == null)
             {
-                throw new InvalidDataException("ShowAir is a required property for StructureData and cannot be null");
-            }
-            else
-            {
-                this.ShowAir = ShowAir;
-            }
-            // to ensure "ShowBoundingBox" is required (not null)
-            if (ShowBoundingBox == null)
-            {
-                throw new InvalidDataException("ShowBoundingBox is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("position is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.ShowBoundingBox = ShowBoundingBox;
+                this.Position = position;
             }
-            // to ensure "Size" is required (not null)
-            if (Size == null)
+            // to ensure "powered" is required (not null)
+            if (powered == null)
             {
-                throw new InvalidDataException("Size is a required property for StructureData and cannot be null");
+                throw new InvalidDataException("powered is a required property for StructureData and cannot be null");
             }
             else
             {
-                this.Size = Size;
+                this.Powered = powered;
+            }
+            // to ensure "seed" is required (not null)
+            if (seed == null)
+            {
+                throw new InvalidDataException("seed is a required property for StructureData and cannot be null");
+            }
+            else
+            {
+                this.Seed = seed;
+            }
+            // to ensure "showAir" is required (not null)
+            if (showAir == null)
+            {
+                throw new InvalidDataException("showAir is a required property for StructureData and cannot be null");
+            }
+            else
+            {
+                this.ShowAir = showAir;
+            }
+            // to ensure "showBoundingBox" is required (not null)
+            if (showBoundingBox == null)
+            {
+                throw new InvalidDataException("showBoundingBox is a required property for StructureData and cannot be null");
+            }
+            else
+            {
+                this.ShowBoundingBox = showBoundingBox;
+            }
+            // to ensure "size" is required (not null)
+            if (size == null)
+            {
+                throw new InvalidDataException("size is a required property for StructureData and cannot be null");
+            }
+            else
+            {
+                this.Size = size;
             }
         }
         
@@ -238,7 +238,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

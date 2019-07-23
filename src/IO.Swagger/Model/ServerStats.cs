@@ -38,57 +38,57 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerStats" /> class.
         /// </summary>
-        /// <param name="Cpu">Historic values for the cpu load (required).</param>
-        /// <param name="Disk">Historic values for the disk usage (required).</param>
-        /// <param name="Memory">Historic values for the memory load (required).</param>
-        /// <param name="Players">Historic values for the number of online players (required).</param>
-        /// <param name="Tps">Historic values for the average ticks per second (required).</param>
-        public ServerStats(List<ServerStatDouble> Cpu = default(List<ServerStatDouble>), List<ServerStatDouble> Disk = default(List<ServerStatDouble>), List<ServerStatDouble> Memory = default(List<ServerStatDouble>), List<ServerStatInteger> Players = default(List<ServerStatInteger>), List<ServerStatDouble> Tps = default(List<ServerStatDouble>))
+        /// <param name="cpu">Historic values for the cpu load (required).</param>
+        /// <param name="disk">Historic values for the disk usage (required).</param>
+        /// <param name="memory">Historic values for the memory load (required).</param>
+        /// <param name="players">Historic values for the number of online players (required).</param>
+        /// <param name="tps">Historic values for the average ticks per second (required).</param>
+        public ServerStats(List<ServerStatDouble> cpu = default(List<ServerStatDouble>), List<ServerStatDouble> disk = default(List<ServerStatDouble>), List<ServerStatDouble> memory = default(List<ServerStatDouble>), List<ServerStatInteger> players = default(List<ServerStatInteger>), List<ServerStatDouble> tps = default(List<ServerStatDouble>))
         {
-            // to ensure "Cpu" is required (not null)
-            if (Cpu == null)
+            // to ensure "cpu" is required (not null)
+            if (cpu == null)
             {
-                throw new InvalidDataException("Cpu is a required property for ServerStats and cannot be null");
+                throw new InvalidDataException("cpu is a required property for ServerStats and cannot be null");
             }
             else
             {
-                this.Cpu = Cpu;
+                this.Cpu = cpu;
             }
-            // to ensure "Disk" is required (not null)
-            if (Disk == null)
+            // to ensure "disk" is required (not null)
+            if (disk == null)
             {
-                throw new InvalidDataException("Disk is a required property for ServerStats and cannot be null");
-            }
-            else
-            {
-                this.Disk = Disk;
-            }
-            // to ensure "Memory" is required (not null)
-            if (Memory == null)
-            {
-                throw new InvalidDataException("Memory is a required property for ServerStats and cannot be null");
+                throw new InvalidDataException("disk is a required property for ServerStats and cannot be null");
             }
             else
             {
-                this.Memory = Memory;
+                this.Disk = disk;
             }
-            // to ensure "Players" is required (not null)
-            if (Players == null)
+            // to ensure "memory" is required (not null)
+            if (memory == null)
             {
-                throw new InvalidDataException("Players is a required property for ServerStats and cannot be null");
-            }
-            else
-            {
-                this.Players = Players;
-            }
-            // to ensure "Tps" is required (not null)
-            if (Tps == null)
-            {
-                throw new InvalidDataException("Tps is a required property for ServerStats and cannot be null");
+                throw new InvalidDataException("memory is a required property for ServerStats and cannot be null");
             }
             else
             {
-                this.Tps = Tps;
+                this.Memory = memory;
+            }
+            // to ensure "players" is required (not null)
+            if (players == null)
+            {
+                throw new InvalidDataException("players is a required property for ServerStats and cannot be null");
+            }
+            else
+            {
+                this.Players = players;
+            }
+            // to ensure "tps" is required (not null)
+            if (tps == null)
+            {
+                throw new InvalidDataException("tps is a required property for ServerStats and cannot be null");
+            }
+            else
+            {
+                this.Tps = tps;
             }
         }
         
@@ -148,7 +148,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

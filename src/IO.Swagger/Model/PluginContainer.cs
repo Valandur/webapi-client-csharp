@@ -116,76 +116,76 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PluginContainer" /> class.
         /// </summary>
-        /// <param name="Authors">A list of authors that created this plugin (required).</param>
-        /// <param name="Dependencies">Other plugins that this plugin depends on (required).</param>
-        /// <param name="Id">The unique id of this plugin (required).</param>
-        /// <param name="Name">The name of this plugin (required).</param>
-        /// <param name="State">The current loaded state of the plugin (required).</param>
-        /// <param name="Type">The type of the plugin (required).</param>
-        /// <param name="Description">A description describing what this plugin does (hopefully).</param>
-        /// <param name="Source">The file source where the plugin was loaded from..</param>
-        /// <param name="Url">The url that was added to the plugin (probably the homepage).</param>
-        /// <param name="Version">The current version of the plugin.</param>
-        public PluginContainer(List<string> Authors = default(List<string>), List<PluginDependency> Dependencies = default(List<PluginDependency>), string Id = default(string), string Name = default(string), StateEnum State = default(StateEnum), TypeEnum Type = default(TypeEnum), string Description = default(string), string Source = default(string), string Url = default(string), string Version = default(string))
+        /// <param name="authors">A list of authors that created this plugin (required).</param>
+        /// <param name="dependencies">Other plugins that this plugin depends on (required).</param>
+        /// <param name="id">The unique id of this plugin (required).</param>
+        /// <param name="name">The name of this plugin (required).</param>
+        /// <param name="state">The current loaded state of the plugin (required).</param>
+        /// <param name="type">The type of the plugin (required).</param>
+        /// <param name="description">A description describing what this plugin does (hopefully).</param>
+        /// <param name="source">The file source where the plugin was loaded from..</param>
+        /// <param name="url">The url that was added to the plugin (probably the homepage).</param>
+        /// <param name="version">The current version of the plugin.</param>
+        public PluginContainer(List<string> authors = default(List<string>), List<PluginDependency> dependencies = default(List<PluginDependency>), string id = default(string), string name = default(string), StateEnum state = default(StateEnum), TypeEnum type = default(TypeEnum), string description = default(string), string source = default(string), string url = default(string), string version = default(string))
         {
-            // to ensure "Authors" is required (not null)
-            if (Authors == null)
+            // to ensure "authors" is required (not null)
+            if (authors == null)
             {
-                throw new InvalidDataException("Authors is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("authors is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.Authors = Authors;
+                this.Authors = authors;
             }
-            // to ensure "Dependencies" is required (not null)
-            if (Dependencies == null)
+            // to ensure "dependencies" is required (not null)
+            if (dependencies == null)
             {
-                throw new InvalidDataException("Dependencies is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("dependencies is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.Dependencies = Dependencies;
+                this.Dependencies = dependencies;
             }
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("id is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("name is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.Name = Name;
+                this.Name = name;
             }
-            // to ensure "State" is required (not null)
-            if (State == null)
+            // to ensure "state" is required (not null)
+            if (state == null)
             {
-                throw new InvalidDataException("State is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("state is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.State = State;
+                this.State = state;
             }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for PluginContainer and cannot be null");
+                throw new InvalidDataException("type is a required property for PluginContainer and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
-            this.Description = Description;
-            this.Source = Source;
-            this.Url = Url;
-            this.Version = Version;
+            this.Description = description;
+            this.Source = source;
+            this.Url = url;
+            this.Version = version;
         }
         
         /// <summary>
@@ -280,7 +280,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

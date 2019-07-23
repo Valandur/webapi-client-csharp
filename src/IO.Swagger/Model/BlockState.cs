@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BlockState" /> class.
         /// </summary>
-        /// <param name="Data">Additional data attached to the block state.</param>
-        /// <param name="Type">The type of block this block state is from.</param>
-        public BlockState(Dictionary<string, Object> Data = default(Dictionary<string, Object>), CatalogType Type = default(CatalogType))
+        /// <param name="data">Additional data attached to the block state.</param>
+        /// <param name="type">The type of block this block state is from.</param>
+        public BlockState(Dictionary<string, Object> data = default(Dictionary<string, Object>), CatalogType type = default(CatalogType))
         {
-            this.Data = Data;
-            this.Type = Type;
+            this.Data = data;
+            this.Type = type;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

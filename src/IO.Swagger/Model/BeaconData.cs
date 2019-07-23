@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BeaconData" /> class.
         /// </summary>
-        /// <param name="Primary">The primary effect of the beacon.</param>
-        /// <param name="Secondary">The secondary effect of the beacon.</param>
-        public BeaconData(CatalogType Primary = default(CatalogType), CatalogType Secondary = default(CatalogType))
+        /// <param name="primary">The primary effect of the beacon.</param>
+        /// <param name="secondary">The secondary effect of the beacon.</param>
+        public BeaconData(CatalogType primary = default(CatalogType), CatalogType secondary = default(CatalogType))
         {
-            this.Primary = Primary;
-            this.Secondary = Secondary;
+            this.Primary = primary;
+            this.Secondary = secondary;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

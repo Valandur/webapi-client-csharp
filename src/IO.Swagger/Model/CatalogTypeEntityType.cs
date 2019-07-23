@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CatalogTypeEntityType" /> class.
         /// </summary>
-        /// <param name="Id">The unique id that indexes this catalog type (required).</param>
-        public CatalogTypeEntityType(string Id = default(string))
+        /// <param name="id">The unique id that indexes this catalog type (required).</param>
+        public CatalogTypeEntityType(string id = default(string))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for CatalogTypeEntityType and cannot be null");
+                throw new InvalidDataException("id is a required property for CatalogTypeEntityType and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
         }
         
@@ -84,7 +84,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

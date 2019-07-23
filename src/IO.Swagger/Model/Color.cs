@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Color" /> class.
         /// </summary>
-        /// <param name="R">The red value of the color (required).</param>
-        /// <param name="G">The green value of the color (required).</param>
-        /// <param name="B">The blue value of the color (required).</param>
-        public Color(int? R = default(int?), int? G = default(int?), int? B = default(int?))
+        /// <param name="r">The red value of the color (required).</param>
+        /// <param name="g">The green value of the color (required).</param>
+        /// <param name="b">The blue value of the color (required).</param>
+        public Color(int? r = default(int?), int? g = default(int?), int? b = default(int?))
         {
-            // to ensure "R" is required (not null)
-            if (R == null)
+            // to ensure "r" is required (not null)
+            if (r == null)
             {
-                throw new InvalidDataException("R is a required property for Color and cannot be null");
+                throw new InvalidDataException("r is a required property for Color and cannot be null");
             }
             else
             {
-                this.R = R;
+                this.R = r;
             }
-            // to ensure "G" is required (not null)
-            if (G == null)
+            // to ensure "g" is required (not null)
+            if (g == null)
             {
-                throw new InvalidDataException("G is a required property for Color and cannot be null");
-            }
-            else
-            {
-                this.G = G;
-            }
-            // to ensure "B" is required (not null)
-            if (B == null)
-            {
-                throw new InvalidDataException("B is a required property for Color and cannot be null");
+                throw new InvalidDataException("g is a required property for Color and cannot be null");
             }
             else
             {
-                this.B = B;
+                this.G = g;
+            }
+            // to ensure "b" is required (not null)
+            if (b == null)
+            {
+                throw new InvalidDataException("b is a required property for Color and cannot be null");
+            }
+            else
+            {
+                this.B = b;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

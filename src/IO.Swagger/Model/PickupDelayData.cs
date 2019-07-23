@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PickupDelayData" /> class.
         /// </summary>
-        /// <param name="Delay">The delay that entities must wait to pick up this entity (required).</param>
-        /// <param name="Infinite">True if other entities can never pick up this entity, false otherwise (required).</param>
-        public PickupDelayData(int? Delay = default(int?), bool? Infinite = default(bool?))
+        /// <param name="delay">The delay that entities must wait to pick up this entity (required).</param>
+        /// <param name="infinite">True if other entities can never pick up this entity, false otherwise (required).</param>
+        public PickupDelayData(int? delay = default(int?), bool? infinite = default(bool?))
         {
-            // to ensure "Delay" is required (not null)
-            if (Delay == null)
+            // to ensure "delay" is required (not null)
+            if (delay == null)
             {
-                throw new InvalidDataException("Delay is a required property for PickupDelayData and cannot be null");
+                throw new InvalidDataException("delay is a required property for PickupDelayData and cannot be null");
             }
             else
             {
-                this.Delay = Delay;
+                this.Delay = delay;
             }
-            // to ensure "Infinite" is required (not null)
-            if (Infinite == null)
+            // to ensure "infinite" is required (not null)
+            if (infinite == null)
             {
-                throw new InvalidDataException("Infinite is a required property for PickupDelayData and cannot be null");
+                throw new InvalidDataException("infinite is a required property for PickupDelayData and cannot be null");
             }
             else
             {
-                this.Infinite = Infinite;
+                this.Infinite = infinite;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="LeashData" /> class.
         /// </summary>
-        /// <param name="Holder">The holder of this entity&#39;s leash (required).</param>
-        public LeashData(Entity Holder = default(Entity))
+        /// <param name="holder">The holder of this entity&#39;s leash (required).</param>
+        public LeashData(Entity holder = default(Entity))
         {
-            // to ensure "Holder" is required (not null)
-            if (Holder == null)
+            // to ensure "holder" is required (not null)
+            if (holder == null)
             {
-                throw new InvalidDataException("Holder is a required property for LeashData and cannot be null");
+                throw new InvalidDataException("holder is a required property for LeashData and cannot be null");
             }
             else
             {
-                this.Holder = Holder;
+                this.Holder = holder;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

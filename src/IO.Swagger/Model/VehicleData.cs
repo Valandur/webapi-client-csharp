@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="VehicleData" /> class.
         /// </summary>
-        /// <param name="BaseVehicle">The base vehicle entity (required).</param>
-        /// <param name="Vehicle">The vehicle entity itself (required).</param>
-        public VehicleData(EntitySnapshot BaseVehicle = default(EntitySnapshot), EntitySnapshot Vehicle = default(EntitySnapshot))
+        /// <param name="baseVehicle">The base vehicle entity (required).</param>
+        /// <param name="vehicle">The vehicle entity itself (required).</param>
+        public VehicleData(EntitySnapshot baseVehicle = default(EntitySnapshot), EntitySnapshot vehicle = default(EntitySnapshot))
         {
-            // to ensure "BaseVehicle" is required (not null)
-            if (BaseVehicle == null)
+            // to ensure "baseVehicle" is required (not null)
+            if (baseVehicle == null)
             {
-                throw new InvalidDataException("BaseVehicle is a required property for VehicleData and cannot be null");
+                throw new InvalidDataException("baseVehicle is a required property for VehicleData and cannot be null");
             }
             else
             {
-                this.BaseVehicle = BaseVehicle;
+                this.BaseVehicle = baseVehicle;
             }
-            // to ensure "Vehicle" is required (not null)
-            if (Vehicle == null)
+            // to ensure "vehicle" is required (not null)
+            if (vehicle == null)
             {
-                throw new InvalidDataException("Vehicle is a required property for VehicleData and cannot be null");
+                throw new InvalidDataException("vehicle is a required property for VehicleData and cannot be null");
             }
             else
             {
-                this.Vehicle = Vehicle;
+                this.Vehicle = vehicle;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

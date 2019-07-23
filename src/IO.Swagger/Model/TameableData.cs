@@ -38,20 +38,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TameableData" /> class.
         /// </summary>
-        /// <param name="Tamed">True if this entity is tamed, false otherwise (required).</param>
-        /// <param name="Owner">The UUID of the entity which tamed this entity.</param>
-        public TameableData(bool? Tamed = default(bool?), Guid? Owner = default(Guid?))
+        /// <param name="tamed">True if this entity is tamed, false otherwise (required).</param>
+        /// <param name="owner">The UUID of the entity which tamed this entity.</param>
+        public TameableData(bool? tamed = default(bool?), Guid? owner = default(Guid?))
         {
-            // to ensure "Tamed" is required (not null)
-            if (Tamed == null)
+            // to ensure "tamed" is required (not null)
+            if (tamed == null)
             {
-                throw new InvalidDataException("Tamed is a required property for TameableData and cannot be null");
+                throw new InvalidDataException("tamed is a required property for TameableData and cannot be null");
             }
             else
             {
-                this.Tamed = Tamed;
+                this.Tamed = tamed;
             }
-            this.Owner = Owner;
+            this.Owner = owner;
         }
         
         /// <summary>
@@ -86,7 +86,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

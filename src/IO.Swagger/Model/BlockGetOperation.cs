@@ -38,10 +38,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BlockGetOperation" /> class.
         /// </summary>
-        /// <param name="Blocks">Blocks.</param>
-        public BlockGetOperation(List<List<List<BlockState>>> Blocks = default(List<List<List<BlockState>>>), string Error = default(string), float? EstimatedSecondsRemaining = default(float?), Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), float? Progress = default(float?), StatusEnum Status = default(StatusEnum), TypeEnum Type = "BlockGetOperation", Guid? Uuid = default(Guid?), World World = default(World)) : base(Error, EstimatedSecondsRemaining, Link, Max, Min, Progress, Status, Type, Uuid, World)
+        /// <param name="blocks">blocks.</param>
+        public BlockGetOperation(List<List<List<BlockState>>> blocks = default(List<List<List<BlockState>>>), string error = default(string), float? estimatedSecondsRemaining = default(float?), Vector3i max = default(Vector3i), Vector3i min = default(Vector3i), float? progress = default(float?), StatusEnum status = default(StatusEnum), TypeEnum type = "BlockGetOperation", Guid? uuid = default(Guid?), World world = default(World)) : base(error, estimatedSecondsRemaining, link, max, min, progress, status, type, uuid, world)
         {
-            this.Blocks = Blocks;
+            this.Blocks = blocks;
         }
         
         /// <summary>

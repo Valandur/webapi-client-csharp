@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Cause" /> class.
         /// </summary>
-        /// <param name="Causes">The direct sources of this cause (required).</param>
-        /// <param name="Context">The context surrounding the cause (required).</param>
-        public Cause(List<Object> Causes = default(List<Object>), Dictionary<string, Object> Context = default(Dictionary<string, Object>))
+        /// <param name="causes">The direct sources of this cause (required).</param>
+        /// <param name="context">The context surrounding the cause (required).</param>
+        public Cause(List<Object> causes = default(List<Object>), Dictionary<string, Object> context = default(Dictionary<string, Object>))
         {
-            // to ensure "Causes" is required (not null)
-            if (Causes == null)
+            // to ensure "causes" is required (not null)
+            if (causes == null)
             {
-                throw new InvalidDataException("Causes is a required property for Cause and cannot be null");
+                throw new InvalidDataException("causes is a required property for Cause and cannot be null");
             }
             else
             {
-                this.Causes = Causes;
+                this.Causes = causes;
             }
-            // to ensure "Context" is required (not null)
-            if (Context == null)
+            // to ensure "context" is required (not null)
+            if (context == null)
             {
-                throw new InvalidDataException("Context is a required property for Cause and cannot be null");
+                throw new InvalidDataException("context is a required property for Cause and cannot be null");
             }
             else
             {
-                this.Context = Context;
+                this.Context = context;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

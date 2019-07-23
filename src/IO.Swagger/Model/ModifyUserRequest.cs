@@ -33,10 +33,10 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ModifyUserRequest" /> class.
         /// </summary>
-        /// <param name="Permissions">The permissions of the user.</param>
-        public ModifyUserRequest(Object Permissions = default(Object))
+        /// <param name="permissions">The permissions of the user.</param>
+        public ModifyUserRequest(Object permissions = default(Object))
         {
-            this.Permissions = Permissions;
+            this.Permissions = permissions;
         }
         
         /// <summary>
@@ -63,7 +63,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

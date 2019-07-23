@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DurabilityData" /> class.
         /// </summary>
-        /// <param name="Unbreakable">True if this entity is unbreakable, false otherwise (required).</param>
-        /// <param name="Durability">The remaining durability of this entity (required).</param>
-        public DurabilityData(bool? Unbreakable = default(bool?), int? Durability = default(int?))
+        /// <param name="unbreakable">True if this entity is unbreakable, false otherwise (required).</param>
+        /// <param name="durability">The remaining durability of this entity (required).</param>
+        public DurabilityData(bool? unbreakable = default(bool?), int? durability = default(int?))
         {
-            // to ensure "Unbreakable" is required (not null)
-            if (Unbreakable == null)
+            // to ensure "unbreakable" is required (not null)
+            if (unbreakable == null)
             {
-                throw new InvalidDataException("Unbreakable is a required property for DurabilityData and cannot be null");
+                throw new InvalidDataException("unbreakable is a required property for DurabilityData and cannot be null");
             }
             else
             {
-                this.Unbreakable = Unbreakable;
+                this.Unbreakable = unbreakable;
             }
-            // to ensure "Durability" is required (not null)
-            if (Durability == null)
+            // to ensure "durability" is required (not null)
+            if (durability == null)
             {
-                throw new InvalidDataException("Durability is a required property for DurabilityData and cannot be null");
+                throw new InvalidDataException("durability is a required property for DurabilityData and cannot be null");
             }
             else
             {
-                this.Durability = Durability;
+                this.Durability = durability;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

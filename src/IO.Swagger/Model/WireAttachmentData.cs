@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="WireAttachmentData" /> class.
         /// </summary>
-        /// <param name="East">The type of wire attachment to the east of this entity (required).</param>
-        /// <param name="North">The type of wire attachment to the north of this entity (required).</param>
-        /// <param name="South">The type of wire attachment to the south of this entity (required).</param>
-        /// <param name="West">The type of wire attachment to the west of this entity (required).</param>
-        public WireAttachmentData(CatalogType East = default(CatalogType), CatalogType North = default(CatalogType), CatalogType South = default(CatalogType), CatalogType West = default(CatalogType))
+        /// <param name="east">The type of wire attachment to the east of this entity (required).</param>
+        /// <param name="north">The type of wire attachment to the north of this entity (required).</param>
+        /// <param name="south">The type of wire attachment to the south of this entity (required).</param>
+        /// <param name="west">The type of wire attachment to the west of this entity (required).</param>
+        public WireAttachmentData(CatalogType east = default(CatalogType), CatalogType north = default(CatalogType), CatalogType south = default(CatalogType), CatalogType west = default(CatalogType))
         {
-            // to ensure "East" is required (not null)
-            if (East == null)
+            // to ensure "east" is required (not null)
+            if (east == null)
             {
-                throw new InvalidDataException("East is a required property for WireAttachmentData and cannot be null");
+                throw new InvalidDataException("east is a required property for WireAttachmentData and cannot be null");
             }
             else
             {
-                this.East = East;
+                this.East = east;
             }
-            // to ensure "North" is required (not null)
-            if (North == null)
+            // to ensure "north" is required (not null)
+            if (north == null)
             {
-                throw new InvalidDataException("North is a required property for WireAttachmentData and cannot be null");
-            }
-            else
-            {
-                this.North = North;
-            }
-            // to ensure "South" is required (not null)
-            if (South == null)
-            {
-                throw new InvalidDataException("South is a required property for WireAttachmentData and cannot be null");
+                throw new InvalidDataException("north is a required property for WireAttachmentData and cannot be null");
             }
             else
             {
-                this.South = South;
+                this.North = north;
             }
-            // to ensure "West" is required (not null)
-            if (West == null)
+            // to ensure "south" is required (not null)
+            if (south == null)
             {
-                throw new InvalidDataException("West is a required property for WireAttachmentData and cannot be null");
+                throw new InvalidDataException("south is a required property for WireAttachmentData and cannot be null");
             }
             else
             {
-                this.West = West;
+                this.South = south;
+            }
+            // to ensure "west" is required (not null)
+            if (west == null)
+            {
+                throw new InvalidDataException("west is a required property for WireAttachmentData and cannot be null");
+            }
+            else
+            {
+                this.West = west;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

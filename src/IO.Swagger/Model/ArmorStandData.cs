@@ -38,47 +38,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ArmorStandData" /> class.
         /// </summary>
-        /// <param name="Arms">True if the armor stand has arms, false otherwise (required).</param>
-        /// <param name="BasePlate">True if the armor stand has a base plate, false otherwise (required).</param>
-        /// <param name="Marker">True if the armor stand has a marker, false otherwise (required).</param>
-        /// <param name="Small">True if the armor stand is small, false otherwise (required).</param>
-        public ArmorStandData(bool? Arms = default(bool?), bool? BasePlate = default(bool?), bool? Marker = default(bool?), bool? Small = default(bool?))
+        /// <param name="arms">True if the armor stand has arms, false otherwise (required).</param>
+        /// <param name="basePlate">True if the armor stand has a base plate, false otherwise (required).</param>
+        /// <param name="marker">True if the armor stand has a marker, false otherwise (required).</param>
+        /// <param name="small">True if the armor stand is small, false otherwise (required).</param>
+        public ArmorStandData(bool? arms = default(bool?), bool? basePlate = default(bool?), bool? marker = default(bool?), bool? small = default(bool?))
         {
-            // to ensure "Arms" is required (not null)
-            if (Arms == null)
+            // to ensure "arms" is required (not null)
+            if (arms == null)
             {
-                throw new InvalidDataException("Arms is a required property for ArmorStandData and cannot be null");
+                throw new InvalidDataException("arms is a required property for ArmorStandData and cannot be null");
             }
             else
             {
-                this.Arms = Arms;
+                this.Arms = arms;
             }
-            // to ensure "BasePlate" is required (not null)
-            if (BasePlate == null)
+            // to ensure "basePlate" is required (not null)
+            if (basePlate == null)
             {
-                throw new InvalidDataException("BasePlate is a required property for ArmorStandData and cannot be null");
-            }
-            else
-            {
-                this.BasePlate = BasePlate;
-            }
-            // to ensure "Marker" is required (not null)
-            if (Marker == null)
-            {
-                throw new InvalidDataException("Marker is a required property for ArmorStandData and cannot be null");
+                throw new InvalidDataException("basePlate is a required property for ArmorStandData and cannot be null");
             }
             else
             {
-                this.Marker = Marker;
+                this.BasePlate = basePlate;
             }
-            // to ensure "Small" is required (not null)
-            if (Small == null)
+            // to ensure "marker" is required (not null)
+            if (marker == null)
             {
-                throw new InvalidDataException("Small is a required property for ArmorStandData and cannot be null");
+                throw new InvalidDataException("marker is a required property for ArmorStandData and cannot be null");
             }
             else
             {
-                this.Small = Small;
+                this.Marker = marker;
+            }
+            // to ensure "small" is required (not null)
+            if (small == null)
+            {
+                throw new InvalidDataException("small is a required property for ArmorStandData and cannot be null");
+            }
+            else
+            {
+                this.Small = small;
             }
         }
         
@@ -130,7 +130,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

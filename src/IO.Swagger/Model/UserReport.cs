@@ -33,24 +33,24 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UserReport" /> class.
         /// </summary>
-        /// <param name="DailyAverage">DailyAverage.</param>
-        /// <param name="From">From.</param>
-        /// <param name="MonthlyAverage">MonthlyAverage.</param>
-        /// <param name="Name">Name.</param>
-        /// <param name="To">To.</param>
-        /// <param name="Total">Total.</param>
-        /// <param name="Uuid">Uuid.</param>
-        /// <param name="WeeklyAverage">WeeklyAverage.</param>
-        public UserReport(TimeHolder DailyAverage = default(TimeHolder), LocalDate From = default(LocalDate), TimeHolder MonthlyAverage = default(TimeHolder), string Name = default(string), LocalDate To = default(LocalDate), TimeHolder Total = default(TimeHolder), Guid? Uuid = default(Guid?), TimeHolder WeeklyAverage = default(TimeHolder))
+        /// <param name="dailyAverage">dailyAverage.</param>
+        /// <param name="from">from.</param>
+        /// <param name="monthlyAverage">monthlyAverage.</param>
+        /// <param name="name">name.</param>
+        /// <param name="to">to.</param>
+        /// <param name="total">total.</param>
+        /// <param name="uuid">uuid.</param>
+        /// <param name="weeklyAverage">weeklyAverage.</param>
+        public UserReport(TimeHolder dailyAverage = default(TimeHolder), LocalDate from = default(LocalDate), TimeHolder monthlyAverage = default(TimeHolder), string name = default(string), LocalDate to = default(LocalDate), TimeHolder total = default(TimeHolder), Guid? uuid = default(Guid?), TimeHolder weeklyAverage = default(TimeHolder))
         {
-            this.DailyAverage = DailyAverage;
-            this.From = From;
-            this.MonthlyAverage = MonthlyAverage;
-            this.Name = Name;
-            this.To = To;
-            this.Total = Total;
-            this.Uuid = Uuid;
-            this.WeeklyAverage = WeeklyAverage;
+            this.DailyAverage = dailyAverage;
+            this.From = from;
+            this.MonthlyAverage = monthlyAverage;
+            this.Name = name;
+            this.To = to;
+            this.Total = total;
+            this.Uuid = uuid;
+            this.WeeklyAverage = weeklyAverage;
         }
         
         /// <summary>
@@ -125,7 +125,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

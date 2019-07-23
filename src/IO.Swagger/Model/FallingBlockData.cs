@@ -38,77 +38,77 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FallingBlockData" /> class.
         /// </summary>
-        /// <param name="State">The state of the falling block (required).</param>
-        /// <param name="CanDropAsItem">True if the block can drop as an item, false otherwise (required).</param>
-        /// <param name="CanHurtEntities">True if the block can hurt entities, false otherwise (required).</param>
-        /// <param name="CanPlaceAsBlock">True if this falling block can be placed as a normal block, false otherwise (required).</param>
-        /// <param name="FallDamagePerBlock">The amount of damage per block this falling block deals (required).</param>
-        /// <param name="FallTime">The amount of time (in ticks) this block has been falling for (required).</param>
-        /// <param name="MaxFallDamage">The maximum amount of damage this block can deal (required).</param>
-        public FallingBlockData(BlockState State = default(BlockState), bool? CanDropAsItem = default(bool?), bool? CanHurtEntities = default(bool?), bool? CanPlaceAsBlock = default(bool?), double? FallDamagePerBlock = default(double?), int? FallTime = default(int?), double? MaxFallDamage = default(double?))
+        /// <param name="state">The state of the falling block (required).</param>
+        /// <param name="canDropAsItem">True if the block can drop as an item, false otherwise (required).</param>
+        /// <param name="canHurtEntities">True if the block can hurt entities, false otherwise (required).</param>
+        /// <param name="canPlaceAsBlock">True if this falling block can be placed as a normal block, false otherwise (required).</param>
+        /// <param name="fallDamagePerBlock">The amount of damage per block this falling block deals (required).</param>
+        /// <param name="fallTime">The amount of time (in ticks) this block has been falling for (required).</param>
+        /// <param name="maxFallDamage">The maximum amount of damage this block can deal (required).</param>
+        public FallingBlockData(BlockState state = default(BlockState), bool? canDropAsItem = default(bool?), bool? canHurtEntities = default(bool?), bool? canPlaceAsBlock = default(bool?), double? fallDamagePerBlock = default(double?), int? fallTime = default(int?), double? maxFallDamage = default(double?))
         {
-            // to ensure "State" is required (not null)
-            if (State == null)
+            // to ensure "state" is required (not null)
+            if (state == null)
             {
-                throw new InvalidDataException("State is a required property for FallingBlockData and cannot be null");
+                throw new InvalidDataException("state is a required property for FallingBlockData and cannot be null");
             }
             else
             {
-                this.State = State;
+                this.State = state;
             }
-            // to ensure "CanDropAsItem" is required (not null)
-            if (CanDropAsItem == null)
+            // to ensure "canDropAsItem" is required (not null)
+            if (canDropAsItem == null)
             {
-                throw new InvalidDataException("CanDropAsItem is a required property for FallingBlockData and cannot be null");
-            }
-            else
-            {
-                this.CanDropAsItem = CanDropAsItem;
-            }
-            // to ensure "CanHurtEntities" is required (not null)
-            if (CanHurtEntities == null)
-            {
-                throw new InvalidDataException("CanHurtEntities is a required property for FallingBlockData and cannot be null");
+                throw new InvalidDataException("canDropAsItem is a required property for FallingBlockData and cannot be null");
             }
             else
             {
-                this.CanHurtEntities = CanHurtEntities;
+                this.CanDropAsItem = canDropAsItem;
             }
-            // to ensure "CanPlaceAsBlock" is required (not null)
-            if (CanPlaceAsBlock == null)
+            // to ensure "canHurtEntities" is required (not null)
+            if (canHurtEntities == null)
             {
-                throw new InvalidDataException("CanPlaceAsBlock is a required property for FallingBlockData and cannot be null");
-            }
-            else
-            {
-                this.CanPlaceAsBlock = CanPlaceAsBlock;
-            }
-            // to ensure "FallDamagePerBlock" is required (not null)
-            if (FallDamagePerBlock == null)
-            {
-                throw new InvalidDataException("FallDamagePerBlock is a required property for FallingBlockData and cannot be null");
+                throw new InvalidDataException("canHurtEntities is a required property for FallingBlockData and cannot be null");
             }
             else
             {
-                this.FallDamagePerBlock = FallDamagePerBlock;
+                this.CanHurtEntities = canHurtEntities;
             }
-            // to ensure "FallTime" is required (not null)
-            if (FallTime == null)
+            // to ensure "canPlaceAsBlock" is required (not null)
+            if (canPlaceAsBlock == null)
             {
-                throw new InvalidDataException("FallTime is a required property for FallingBlockData and cannot be null");
-            }
-            else
-            {
-                this.FallTime = FallTime;
-            }
-            // to ensure "MaxFallDamage" is required (not null)
-            if (MaxFallDamage == null)
-            {
-                throw new InvalidDataException("MaxFallDamage is a required property for FallingBlockData and cannot be null");
+                throw new InvalidDataException("canPlaceAsBlock is a required property for FallingBlockData and cannot be null");
             }
             else
             {
-                this.MaxFallDamage = MaxFallDamage;
+                this.CanPlaceAsBlock = canPlaceAsBlock;
+            }
+            // to ensure "fallDamagePerBlock" is required (not null)
+            if (fallDamagePerBlock == null)
+            {
+                throw new InvalidDataException("fallDamagePerBlock is a required property for FallingBlockData and cannot be null");
+            }
+            else
+            {
+                this.FallDamagePerBlock = fallDamagePerBlock;
+            }
+            // to ensure "fallTime" is required (not null)
+            if (fallTime == null)
+            {
+                throw new InvalidDataException("fallTime is a required property for FallingBlockData and cannot be null");
+            }
+            else
+            {
+                this.FallTime = fallTime;
+            }
+            // to ensure "maxFallDamage" is required (not null)
+            if (maxFallDamage == null)
+            {
+                throw new InvalidDataException("maxFallDamage is a required property for FallingBlockData and cannot be null");
+            }
+            else
+            {
+                this.MaxFallDamage = maxFallDamage;
             }
         }
         
@@ -184,7 +184,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

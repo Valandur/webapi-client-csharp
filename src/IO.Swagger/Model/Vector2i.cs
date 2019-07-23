@@ -33,16 +33,16 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector2i" /> class.
         /// </summary>
-        /// <param name="X">X.</param>
-        /// <param name="Y">Y.</param>
-        /// <param name="MinAxis">MinAxis.</param>
-        /// <param name="MaxAxis">MaxAxis.</param>
-        public Vector2i(int? X = default(int?), int? Y = default(int?), int? MinAxis = default(int?), int? MaxAxis = default(int?))
+        /// <param name="x">x.</param>
+        /// <param name="y">y.</param>
+        /// <param name="minAxis">minAxis.</param>
+        /// <param name="maxAxis">maxAxis.</param>
+        public Vector2i(int? x = default(int?), int? y = default(int?), int? minAxis = default(int?), int? maxAxis = default(int?))
         {
-            this.X = X;
-            this.Y = Y;
-            this.MinAxis = MinAxis;
-            this.MaxAxis = MaxAxis;
+            this.X = x;
+            this.Y = y;
+            this.MinAxis = minAxis;
+            this.MaxAxis = maxAxis;
         }
         
         /// <summary>
@@ -89,7 +89,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

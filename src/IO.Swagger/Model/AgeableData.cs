@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="AgeableData" /> class.
         /// </summary>
-        /// <param name="Adult">True if this entity is an adult, false otherwise (required).</param>
-        /// <param name="Age">The age of the entity (required).</param>
-        public AgeableData(bool? Adult = default(bool?), int? Age = default(int?))
+        /// <param name="adult">True if this entity is an adult, false otherwise (required).</param>
+        /// <param name="age">The age of the entity (required).</param>
+        public AgeableData(bool? adult = default(bool?), int? age = default(int?))
         {
-            // to ensure "Adult" is required (not null)
-            if (Adult == null)
+            // to ensure "adult" is required (not null)
+            if (adult == null)
             {
-                throw new InvalidDataException("Adult is a required property for AgeableData and cannot be null");
+                throw new InvalidDataException("adult is a required property for AgeableData and cannot be null");
             }
             else
             {
-                this.Adult = Adult;
+                this.Adult = adult;
             }
-            // to ensure "Age" is required (not null)
-            if (Age == null)
+            // to ensure "age" is required (not null)
+            if (age == null)
             {
-                throw new InvalidDataException("Age is a required property for AgeableData and cannot be null");
+                throw new InvalidDataException("age is a required property for AgeableData and cannot be null");
             }
             else
             {
-                this.Age = Age;
+                this.Age = age;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -38,42 +38,22 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="VillagerShopsStockItem" /> class.
         /// </summary>
-        /// <param name="Currency">The currency for this item listing (required).</param>
-        /// <param name="Item">The raw ItemStack data for this shop listing (required).</param>
-        /// <param name="ShopId">The shop uuid offering this item listing (required).</param>
-        /// <param name="Id">The index of this item withing the shops inventory.</param>
-        /// <param name="Link">Link.</param>
-        public VillagerShopsStockItem(CatalogTypeCurrency Currency = default(CatalogTypeCurrency), ItemStack Item = default(ItemStack), Guid? ShopId = default(Guid?), int? Id = default(int?), string Link = default(string))
+        /// <param name="shopId">The shop uuid offering this item listing (required).</param>
+        /// <param name="id">The index of this item withing the shops inventory.</param>
+        /// <param name="link">link.</param>
+        public VillagerShopsStockItem(Guid? shopId = default(Guid?), int? id = default(int?), string link = default(string))
         {
-            // to ensure "Currency" is required (not null)
-            if (Currency == null)
+            // to ensure "shopId" is required (not null)
+            if (shopId == null)
             {
-                throw new InvalidDataException("Currency is a required property for VillagerShopsStockItem and cannot be null");
+                throw new InvalidDataException("shopId is a required property for VillagerShopsStockItem and cannot be null");
             }
             else
             {
-                this.Currency = Currency;
+                this.ShopId = shopId;
             }
-            // to ensure "Item" is required (not null)
-            if (Item == null)
-            {
-                throw new InvalidDataException("Item is a required property for VillagerShopsStockItem and cannot be null");
-            }
-            else
-            {
-                this.Item = Item;
-            }
-            // to ensure "ShopId" is required (not null)
-            if (ShopId == null)
-            {
-                throw new InvalidDataException("ShopId is a required property for VillagerShopsStockItem and cannot be null");
-            }
-            else
-            {
-                this.ShopId = ShopId;
-            }
-            this.Id = Id;
-            this.Link = Link;
+            this.Id = id;
+            this.Link = link;
         }
         
         /// <summary>
@@ -88,7 +68,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>The currency for this item listing</value>
         [DataMember(Name="currency", EmitDefaultValue=false)]
-        public CatalogTypeCurrency Currency { get; set; }
+        public CatalogTypeCurrency Currency { get; private set; }
 
         /// <summary>
         /// Returns wether this shop has a limited stock
@@ -102,7 +82,7 @@ namespace IO.Swagger.Model
         /// </summary>
         /// <value>The raw ItemStack data for this shop listing</value>
         [DataMember(Name="item", EmitDefaultValue=false)]
-        public ItemStack Item { get; set; }
+        public ItemStack Item { get; private set; }
 
         /// <summary>
         /// If this shop has a limited stock, returns how many of these items can be stocked, 0 is unlimited
@@ -171,7 +151,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

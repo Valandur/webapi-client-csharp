@@ -38,20 +38,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteMethodRequest" /> class.
         /// </summary>
-        /// <param name="Method">The method that is executed (required).</param>
-        /// <param name="Parameters">The parameters of the method (if applicable).</param>
-        public ExecuteMethodRequest(string Method = default(string), List<ExecuteMethodParam> Parameters = default(List<ExecuteMethodParam>))
+        /// <param name="method">The method that is executed (required).</param>
+        /// <param name="parameters">The parameters of the method (if applicable).</param>
+        public ExecuteMethodRequest(string method = default(string), List<ExecuteMethodParam> parameters = default(List<ExecuteMethodParam>))
         {
-            // to ensure "Method" is required (not null)
-            if (Method == null)
+            // to ensure "method" is required (not null)
+            if (method == null)
             {
-                throw new InvalidDataException("Method is a required property for ExecuteMethodRequest and cannot be null");
+                throw new InvalidDataException("method is a required property for ExecuteMethodRequest and cannot be null");
             }
             else
             {
-                this.Method = Method;
+                this.Method = method;
             }
-            this.Parameters = Parameters;
+            this.Parameters = parameters;
         }
         
         /// <summary>
@@ -86,7 +86,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

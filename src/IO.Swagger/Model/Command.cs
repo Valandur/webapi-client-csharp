@@ -38,57 +38,57 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Command" /> class.
         /// </summary>
-        /// <param name="Aliases">All the aliases that were registered for this command (required).</param>
-        /// <param name="Description">The description provided with the command (required).</param>
-        /// <param name="Help">Extended help information on the usage of the command (required).</param>
-        /// <param name="Name">The name of the command, sometimes also referred to as primary alias. (required).</param>
-        /// <param name="Usage">A short description of the usage of this command (required).</param>
-        public Command(List<string> Aliases = default(List<string>), string Description = default(string), string Help = default(string), string Name = default(string), string Usage = default(string))
+        /// <param name="aliases">All the aliases that were registered for this command (required).</param>
+        /// <param name="description">The description provided with the command (required).</param>
+        /// <param name="help">Extended help information on the usage of the command (required).</param>
+        /// <param name="name">The name of the command, sometimes also referred to as primary alias. (required).</param>
+        /// <param name="usage">A short description of the usage of this command (required).</param>
+        public Command(List<string> aliases = default(List<string>), string description = default(string), string help = default(string), string name = default(string), string usage = default(string))
         {
-            // to ensure "Aliases" is required (not null)
-            if (Aliases == null)
+            // to ensure "aliases" is required (not null)
+            if (aliases == null)
             {
-                throw new InvalidDataException("Aliases is a required property for Command and cannot be null");
+                throw new InvalidDataException("aliases is a required property for Command and cannot be null");
             }
             else
             {
-                this.Aliases = Aliases;
+                this.Aliases = aliases;
             }
-            // to ensure "Description" is required (not null)
-            if (Description == null)
+            // to ensure "description" is required (not null)
+            if (description == null)
             {
-                throw new InvalidDataException("Description is a required property for Command and cannot be null");
-            }
-            else
-            {
-                this.Description = Description;
-            }
-            // to ensure "Help" is required (not null)
-            if (Help == null)
-            {
-                throw new InvalidDataException("Help is a required property for Command and cannot be null");
+                throw new InvalidDataException("description is a required property for Command and cannot be null");
             }
             else
             {
-                this.Help = Help;
+                this.Description = description;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "help" is required (not null)
+            if (help == null)
             {
-                throw new InvalidDataException("Name is a required property for Command and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
-            // to ensure "Usage" is required (not null)
-            if (Usage == null)
-            {
-                throw new InvalidDataException("Usage is a required property for Command and cannot be null");
+                throw new InvalidDataException("help is a required property for Command and cannot be null");
             }
             else
             {
-                this.Usage = Usage;
+                this.Help = help;
+            }
+            // to ensure "name" is required (not null)
+            if (name == null)
+            {
+                throw new InvalidDataException("name is a required property for Command and cannot be null");
+            }
+            else
+            {
+                this.Name = name;
+            }
+            // to ensure "usage" is required (not null)
+            if (usage == null)
+            {
+                throw new InvalidDataException("usage is a required property for Command and cannot be null");
+            }
+            else
+            {
+                this.Usage = usage;
             }
         }
         
@@ -156,7 +156,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

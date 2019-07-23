@@ -38,26 +38,26 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ExecuteCommandRequest" /> class.
         /// </summary>
-        /// <param name="Command">The command to execute (required).</param>
-        /// <param name="HiddenInConsole">True to hide the execution of the command in the console, false otherwise.</param>
-        /// <param name="Name">The name of the source that executes the command.</param>
-        /// <param name="WaitLines">The amount of text lines to wait for in the response.</param>
-        /// <param name="WaitTime">The amount of time to wait for a response.</param>
-        public ExecuteCommandRequest(string Command = default(string), bool? HiddenInConsole = default(bool?), string Name = default(string), int? WaitLines = default(int?), int? WaitTime = default(int?))
+        /// <param name="command">The command to execute (required).</param>
+        /// <param name="hiddenInConsole">True to hide the execution of the command in the console, false otherwise.</param>
+        /// <param name="name">The name of the source that executes the command.</param>
+        /// <param name="waitLines">The amount of text lines to wait for in the response.</param>
+        /// <param name="waitTime">The amount of time to wait for a response.</param>
+        public ExecuteCommandRequest(string command = default(string), bool? hiddenInConsole = default(bool?), string name = default(string), int? waitLines = default(int?), int? waitTime = default(int?))
         {
-            // to ensure "Command" is required (not null)
-            if (Command == null)
+            // to ensure "command" is required (not null)
+            if (command == null)
             {
-                throw new InvalidDataException("Command is a required property for ExecuteCommandRequest and cannot be null");
+                throw new InvalidDataException("command is a required property for ExecuteCommandRequest and cannot be null");
             }
             else
             {
-                this.Command = Command;
+                this.Command = command;
             }
-            this.HiddenInConsole = HiddenInConsole;
-            this.Name = Name;
-            this.WaitLines = WaitLines;
-            this.WaitTime = WaitTime;
+            this.HiddenInConsole = hiddenInConsole;
+            this.Name = name;
+            this.WaitLines = waitLines;
+            this.WaitTime = waitTime;
         }
         
         /// <summary>
@@ -116,7 +116,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

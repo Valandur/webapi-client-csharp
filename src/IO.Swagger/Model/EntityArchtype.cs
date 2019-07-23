@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EntityArchtype" /> class.
         /// </summary>
-        /// <param name="Type">The entity type represented by this archtype (required).</param>
-        public EntityArchtype(CatalogType Type = default(CatalogType))
+        /// <param name="type">The entity type represented by this archtype (required).</param>
+        public EntityArchtype(CatalogType type = default(CatalogType))
         {
-            // to ensure "Type" is required (not null)
-            if (Type == null)
+            // to ensure "type" is required (not null)
+            if (type == null)
             {
-                throw new InvalidDataException("Type is a required property for EntityArchtype and cannot be null");
+                throw new InvalidDataException("type is a required property for EntityArchtype and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Type = type;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

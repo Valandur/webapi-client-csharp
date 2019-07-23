@@ -33,20 +33,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HideData" /> class.
         /// </summary>
-        /// <param name="HideAttributes">Gets the &#39;attributes hidden&#39; state of the item stack.</param>
-        /// <param name="HideCanDestroy">Gets the &#39;can destory hidden&#39; state of the item stack.</param>
-        /// <param name="HideCanPlace">Gets the &#39;can place hidden&#39; state of the item stack.</param>
-        /// <param name="HideEnchantments">Gets the &#39;enchantments hidden&#39; state of the item stack.</param>
-        /// <param name="HideMiscellaneous">Gets the &#39;miscellaneous hidden&#39; state of the item stack.</param>
-        /// <param name="HideUnbreakable">Gets the &#39;unbreakable hidden&#39; state of the item stack.</param>
-        public HideData(bool? HideAttributes = default(bool?), bool? HideCanDestroy = default(bool?), bool? HideCanPlace = default(bool?), bool? HideEnchantments = default(bool?), bool? HideMiscellaneous = default(bool?), bool? HideUnbreakable = default(bool?))
+        /// <param name="hideAttributes">Gets the &#39;attributes hidden&#39; state of the item stack.</param>
+        /// <param name="hideCanDestroy">Gets the &#39;can destory hidden&#39; state of the item stack.</param>
+        /// <param name="hideCanPlace">Gets the &#39;can place hidden&#39; state of the item stack.</param>
+        /// <param name="hideEnchantments">Gets the &#39;enchantments hidden&#39; state of the item stack.</param>
+        /// <param name="hideMiscellaneous">Gets the &#39;miscellaneous hidden&#39; state of the item stack.</param>
+        /// <param name="hideUnbreakable">Gets the &#39;unbreakable hidden&#39; state of the item stack.</param>
+        public HideData(bool? hideAttributes = default(bool?), bool? hideCanDestroy = default(bool?), bool? hideCanPlace = default(bool?), bool? hideEnchantments = default(bool?), bool? hideMiscellaneous = default(bool?), bool? hideUnbreakable = default(bool?))
         {
-            this.HideAttributes = HideAttributes;
-            this.HideCanDestroy = HideCanDestroy;
-            this.HideCanPlace = HideCanPlace;
-            this.HideEnchantments = HideEnchantments;
-            this.HideMiscellaneous = HideMiscellaneous;
-            this.HideUnbreakable = HideUnbreakable;
+            this.HideAttributes = hideAttributes;
+            this.HideCanDestroy = hideCanDestroy;
+            this.HideCanPlace = hideCanPlace;
+            this.HideEnchantments = hideEnchantments;
+            this.HideMiscellaneous = hideMiscellaneous;
+            this.HideUnbreakable = hideUnbreakable;
         }
         
         /// <summary>
@@ -113,7 +113,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

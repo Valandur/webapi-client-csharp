@@ -71,47 +71,47 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="PluginDependency" /> class.
         /// </summary>
-        /// <param name="Id">The id of the plugin that the original plugin depends on (required).</param>
-        /// <param name="LoadOrder">The load order of the original plugin in relation to the dependency (required).</param>
-        /// <param name="Optional">True if this is an optional dependency, false otherwise (required).</param>
-        /// <param name="Version">The version of the plugin that the original plugin depends on (required).</param>
-        public PluginDependency(string Id = default(string), LoadOrderEnum LoadOrder = default(LoadOrderEnum), bool? Optional = default(bool?), string Version = default(string))
+        /// <param name="id">The id of the plugin that the original plugin depends on (required).</param>
+        /// <param name="loadOrder">The load order of the original plugin in relation to the dependency (required).</param>
+        /// <param name="optional">True if this is an optional dependency, false otherwise (required).</param>
+        /// <param name="version">The version of the plugin that the original plugin depends on (required).</param>
+        public PluginDependency(string id = default(string), LoadOrderEnum loadOrder = default(LoadOrderEnum), bool? optional = default(bool?), string version = default(string))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for PluginDependency and cannot be null");
+                throw new InvalidDataException("id is a required property for PluginDependency and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "LoadOrder" is required (not null)
-            if (LoadOrder == null)
+            // to ensure "loadOrder" is required (not null)
+            if (loadOrder == null)
             {
-                throw new InvalidDataException("LoadOrder is a required property for PluginDependency and cannot be null");
-            }
-            else
-            {
-                this.LoadOrder = LoadOrder;
-            }
-            // to ensure "Optional" is required (not null)
-            if (Optional == null)
-            {
-                throw new InvalidDataException("Optional is a required property for PluginDependency and cannot be null");
+                throw new InvalidDataException("loadOrder is a required property for PluginDependency and cannot be null");
             }
             else
             {
-                this.Optional = Optional;
+                this.LoadOrder = loadOrder;
             }
-            // to ensure "Version" is required (not null)
-            if (Version == null)
+            // to ensure "optional" is required (not null)
+            if (optional == null)
             {
-                throw new InvalidDataException("Version is a required property for PluginDependency and cannot be null");
+                throw new InvalidDataException("optional is a required property for PluginDependency and cannot be null");
             }
             else
             {
-                this.Version = Version;
+                this.Optional = optional;
+            }
+            // to ensure "version" is required (not null)
+            if (version == null)
+            {
+                throw new InvalidDataException("version is a required property for PluginDependency and cannot be null");
+            }
+            else
+            {
+                this.Version = version;
             }
         }
         
@@ -157,7 +157,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

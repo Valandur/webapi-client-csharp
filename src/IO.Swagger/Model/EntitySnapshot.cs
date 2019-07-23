@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="EntitySnapshot" /> class.
         /// </summary>
-        /// <param name="Uuid">The uuid of the entity.</param>
-        /// <param name="Type">The type of the entity.</param>
-        /// <param name="Transform">The transform of the entity.</param>
-        public EntitySnapshot(Guid? Uuid = default(Guid?), CatalogType Type = default(CatalogType), Transform Transform = default(Transform))
+        /// <param name="uuid">The uuid of the entity.</param>
+        /// <param name="type">The type of the entity.</param>
+        /// <param name="transform">The transform of the entity.</param>
+        public EntitySnapshot(Guid? uuid = default(Guid?), CatalogType type = default(CatalogType), Transform transform = default(Transform))
         {
-            this.Uuid = Uuid;
-            this.Type = Type;
-            this.Transform = Transform;
+            this.Uuid = uuid;
+            this.Type = type;
+            this.Transform = transform;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

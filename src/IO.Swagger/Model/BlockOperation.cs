@@ -120,97 +120,97 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BlockOperation" /> class.
         /// </summary>
-        /// <param name="Error">The error message, if any (required).</param>
-        /// <param name="EstimatedSecondsRemaining">The estimated amount of time remaining until this block operation is complete (in seconds) (required).</param>
-        /// <param name="Max">The maximum block belonging to this operation (required).</param>
-        /// <param name="Min">The minimum block belonging to this operation (required).</param>
-        /// <param name="Progress">The current progress of the block operation, from 0 (&#x3D;started) to 1 (&#x3D;finished) (required).</param>
-        /// <param name="Status">The current status of the block operation (required).</param>
-        /// <param name="Type">The type of block operation (required).</param>
-        /// <param name="Uuid">The unique UUID identifying this block operation (required).</param>
-        /// <param name="World">The world in which this block operation is running (required).</param>
-        public BlockOperation(string Error = default(string), float? EstimatedSecondsRemaining = default(float?), Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), float? Progress = default(float?), StatusEnum Status = default(StatusEnum), TypeEnum Type = default(TypeEnum), Guid? Uuid = default(Guid?), World World = default(World))
+        /// <param name="error">The error message, if any (required).</param>
+        /// <param name="estimatedSecondsRemaining">The estimated amount of time remaining until this block operation is complete (in seconds) (required).</param>
+        /// <param name="max">The maximum block belonging to this operation (required).</param>
+        /// <param name="min">The minimum block belonging to this operation (required).</param>
+        /// <param name="progress">The current progress of the block operation, from 0 (&#x3D;started) to 1 (&#x3D;finished) (required).</param>
+        /// <param name="status">The current status of the block operation (required).</param>
+        /// <param name="type">The type of block operation (required).</param>
+        /// <param name="uuid">The unique UUID identifying this block operation (required).</param>
+        /// <param name="world">The world in which this block operation is running (required).</param>
+        public BlockOperation(string error = default(string), float? estimatedSecondsRemaining = default(float?), Vector3i max = default(Vector3i), Vector3i min = default(Vector3i), float? progress = default(float?), StatusEnum status = default(StatusEnum), TypeEnum type = default(TypeEnum), Guid? uuid = default(Guid?), World world = default(World))
         {
-            // to ensure "Error" is required (not null)
-            if (Error == null)
+            // to ensure "error" is required (not null)
+            if (error == null)
             {
-                throw new InvalidDataException("Error is a required property for BlockOperation and cannot be null");
+                throw new InvalidDataException("error is a required property for BlockOperation and cannot be null");
             }
             else
             {
-                this.Error = Error;
+                this.Error = error;
             }
-            // to ensure "EstimatedSecondsRemaining" is required (not null)
-            if (EstimatedSecondsRemaining == null)
+            // to ensure "estimatedSecondsRemaining" is required (not null)
+            if (estimatedSecondsRemaining == null)
             {
-                throw new InvalidDataException("EstimatedSecondsRemaining is a required property for BlockOperation and cannot be null");
-            }
-            else
-            {
-                this.EstimatedSecondsRemaining = EstimatedSecondsRemaining;
-            }
-            // to ensure "Max" is required (not null)
-            if (Max == null)
-            {
-                throw new InvalidDataException("Max is a required property for BlockOperation and cannot be null");
+                throw new InvalidDataException("estimatedSecondsRemaining is a required property for BlockOperation and cannot be null");
             }
             else
             {
-                this.Max = Max;
+                this.EstimatedSecondsRemaining = estimatedSecondsRemaining;
             }
-            // to ensure "Min" is required (not null)
-            if (Min == null)
+            // to ensure "max" is required (not null)
+            if (max == null)
             {
-                throw new InvalidDataException("Min is a required property for BlockOperation and cannot be null");
-            }
-            else
-            {
-                this.Min = Min;
-            }
-            // to ensure "Progress" is required (not null)
-            if (Progress == null)
-            {
-                throw new InvalidDataException("Progress is a required property for BlockOperation and cannot be null");
+                throw new InvalidDataException("max is a required property for BlockOperation and cannot be null");
             }
             else
             {
-                this.Progress = Progress;
+                this.Max = max;
             }
-            // to ensure "Status" is required (not null)
-            if (Status == null)
+            // to ensure "min" is required (not null)
+            if (min == null)
             {
-                throw new InvalidDataException("Status is a required property for BlockOperation and cannot be null");
-            }
-            else
-            {
-                this.Status = Status;
-            }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
-            {
-                throw new InvalidDataException("Type is a required property for BlockOperation and cannot be null");
+                throw new InvalidDataException("min is a required property for BlockOperation and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Min = min;
             }
-            // to ensure "Uuid" is required (not null)
-            if (Uuid == null)
+            // to ensure "progress" is required (not null)
+            if (progress == null)
             {
-                throw new InvalidDataException("Uuid is a required property for BlockOperation and cannot be null");
-            }
-            else
-            {
-                this.Uuid = Uuid;
-            }
-            // to ensure "World" is required (not null)
-            if (World == null)
-            {
-                throw new InvalidDataException("World is a required property for BlockOperation and cannot be null");
+                throw new InvalidDataException("progress is a required property for BlockOperation and cannot be null");
             }
             else
             {
-                this.World = World;
+                this.Progress = progress;
+            }
+            // to ensure "status" is required (not null)
+            if (status == null)
+            {
+                throw new InvalidDataException("status is a required property for BlockOperation and cannot be null");
+            }
+            else
+            {
+                this.Status = status;
+            }
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new InvalidDataException("type is a required property for BlockOperation and cannot be null");
+            }
+            else
+            {
+                this.Type = type;
+            }
+            // to ensure "uuid" is required (not null)
+            if (uuid == null)
+            {
+                throw new InvalidDataException("uuid is a required property for BlockOperation and cannot be null");
+            }
+            else
+            {
+                this.Uuid = uuid;
+            }
+            // to ensure "world" is required (not null)
+            if (world == null)
+            {
+                throw new InvalidDataException("world is a required property for BlockOperation and cannot be null");
+            }
+            else
+            {
+                this.World = world;
             }
         }
         

@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Career" /> class.
         /// </summary>
-        /// <param name="Id">The unique id of the career (required).</param>
-        /// <param name="Name">The name of the career (required).</param>
-        /// <param name="Profession">The profession within the career (required).</param>
-        public Career(string Id = default(string), string Name = default(string), CatalogType Profession = default(CatalogType))
+        /// <param name="id">The unique id of the career (required).</param>
+        /// <param name="name">The name of the career (required).</param>
+        /// <param name="profession">The profession within the career (required).</param>
+        public Career(string id = default(string), string name = default(string), CatalogType profession = default(CatalogType))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for Career and cannot be null");
+                throw new InvalidDataException("id is a required property for Career and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for Career and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
-            // to ensure "Profession" is required (not null)
-            if (Profession == null)
-            {
-                throw new InvalidDataException("Profession is a required property for Career and cannot be null");
+                throw new InvalidDataException("name is a required property for Career and cannot be null");
             }
             else
             {
-                this.Profession = Profession;
+                this.Name = name;
+            }
+            // to ensure "profession" is required (not null)
+            if (profession == null)
+            {
+                throw new InvalidDataException("profession is a required property for Career and cannot be null");
+            }
+            else
+            {
+                this.Profession = profession;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

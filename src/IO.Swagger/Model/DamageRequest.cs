@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DamageRequest" /> class.
         /// </summary>
-        /// <param name="Amount">The amount of damage that should be dealt to the entity.</param>
-        /// <param name="Type">The type of damage that should be dealt.</param>
-        public DamageRequest(int? Amount = default(int?), string Type = default(string))
+        /// <param name="amount">The amount of damage that should be dealt to the entity.</param>
+        /// <param name="type">The type of damage that should be dealt.</param>
+        public DamageRequest(int? amount = default(int?), string type = default(string))
         {
-            this.Amount = Amount;
-            this.Type = Type;
+            this.Amount = amount;
+            this.Type = type;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -38,18 +38,18 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MegaMenusElement" /> class.
         /// </summary>
-        /// <param name="Access">Access properties applicable to MSlot type elements.</param>
-        /// <param name="Icon">Icon for this element.</param>
-        /// <param name="Lore">The lore or values of this element, displayed in the item tooltip as lore.</param>
-        /// <param name="Name">The name of this element, displayed as item name.</param>
-        /// <param name="Type">The type of this element.</param>
-        public MegaMenusElement(int? Access = default(int?), ItemStack Icon = default(ItemStack), List<string> Lore = default(List<string>), string Name = default(string), string Type = default(string))
+        /// <param name="access">Access properties applicable to MSlot type elements.</param>
+        /// <param name="icon">Icon for this element.</param>
+        /// <param name="lore">The lore or values of this element, displayed in the item tooltip as lore.</param>
+        /// <param name="name">The name of this element, displayed as item name.</param>
+        /// <param name="type">The type of this element.</param>
+        public MegaMenusElement(int? access = default(int?), ItemStack icon = default(ItemStack), List<string> lore = default(List<string>), string name = default(string), string type = default(string))
         {
-            this.Access = Access;
-            this.Icon = Icon;
-            this.Lore = Lore;
-            this.Name = Name;
-            this.Type = Type;
+            this.Access = access;
+            this.Icon = icon;
+            this.Lore = lore;
+            this.Name = name;
+            this.Type = type;
         }
         
         /// <summary>
@@ -116,7 +116,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

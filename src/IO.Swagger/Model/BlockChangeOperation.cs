@@ -38,7 +38,7 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BlockChangeOperation" /> class.
         /// </summary>
-        public BlockChangeOperation(string Error = default(string), float? EstimatedSecondsRemaining = default(float?), Vector3i Max = default(Vector3i), Vector3i Min = default(Vector3i), float? Progress = default(float?), StatusEnum Status = default(StatusEnum), TypeEnum Type = "BlockChangeOperation", Guid? Uuid = default(Guid?), World World = default(World)) : base(Error, EstimatedSecondsRemaining, Link, Max, Min, Progress, Status, Type, Uuid, World)
+        public BlockChangeOperation(string error = default(string), float? estimatedSecondsRemaining = default(float?), Vector3i max = default(Vector3i), Vector3i min = default(Vector3i), float? progress = default(float?), StatusEnum status = default(StatusEnum), TypeEnum type = "BlockChangeOperation", Guid? uuid = default(Guid?), World world = default(World)) : base(error, estimatedSecondsRemaining, link, max, min, progress, status, type, uuid, world)
         {
         }
         

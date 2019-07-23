@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SubjectCollection" /> class.
         /// </summary>
-        /// <param name="Id">The unique id of this subject collection (required).</param>
-        /// <param name="LoadedSubjectCount">The amount of subjects currently loaded from this collection (required).</param>
-        public SubjectCollection(string Id = default(string), int? LoadedSubjectCount = default(int?))
+        /// <param name="id">The unique id of this subject collection (required).</param>
+        /// <param name="loadedSubjectCount">The amount of subjects currently loaded from this collection (required).</param>
+        public SubjectCollection(string id = default(string), int? loadedSubjectCount = default(int?))
         {
-            // to ensure "Id" is required (not null)
-            if (Id == null)
+            // to ensure "id" is required (not null)
+            if (id == null)
             {
-                throw new InvalidDataException("Id is a required property for SubjectCollection and cannot be null");
+                throw new InvalidDataException("id is a required property for SubjectCollection and cannot be null");
             }
             else
             {
-                this.Id = Id;
+                this.Id = id;
             }
-            // to ensure "LoadedSubjectCount" is required (not null)
-            if (LoadedSubjectCount == null)
+            // to ensure "loadedSubjectCount" is required (not null)
+            if (loadedSubjectCount == null)
             {
-                throw new InvalidDataException("LoadedSubjectCount is a required property for SubjectCollection and cannot be null");
+                throw new InvalidDataException("loadedSubjectCount is a required property for SubjectCollection and cannot be null");
             }
             else
             {
-                this.LoadedSubjectCount = LoadedSubjectCount;
+                this.LoadedSubjectCount = loadedSubjectCount;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

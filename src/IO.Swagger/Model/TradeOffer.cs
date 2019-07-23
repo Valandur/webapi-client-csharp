@@ -38,70 +38,70 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TradeOffer" /> class.
         /// </summary>
-        /// <param name="Expired">True if this offer is expired, false otherwise (required).</param>
-        /// <param name="GrantsExp">True if this trade grants experience when completed, false otherwise (required).</param>
-        /// <param name="Uses">The amount of times this trade has been used (required).</param>
-        /// <param name="MaxUses">The maximum amount of times that this trade can be used (required).</param>
-        /// <param name="FirstBuyingItem">The first item that is required for the trade (required).</param>
-        /// <param name="SecondBuyingItem">The second item that is required for the trade.</param>
-        /// <param name="SellingItem">The item that is received when trading (required).</param>
-        public TradeOffer(bool? Expired = default(bool?), bool? GrantsExp = default(bool?), int? Uses = default(int?), int? MaxUses = default(int?), ItemStack FirstBuyingItem = default(ItemStack), ItemStack SecondBuyingItem = default(ItemStack), ItemStack SellingItem = default(ItemStack))
+        /// <param name="expired">True if this offer is expired, false otherwise (required).</param>
+        /// <param name="grantsExp">True if this trade grants experience when completed, false otherwise (required).</param>
+        /// <param name="uses">The amount of times this trade has been used (required).</param>
+        /// <param name="maxUses">The maximum amount of times that this trade can be used (required).</param>
+        /// <param name="firstBuyingItem">The first item that is required for the trade (required).</param>
+        /// <param name="secondBuyingItem">The second item that is required for the trade.</param>
+        /// <param name="sellingItem">The item that is received when trading (required).</param>
+        public TradeOffer(bool? expired = default(bool?), bool? grantsExp = default(bool?), int? uses = default(int?), int? maxUses = default(int?), ItemStack firstBuyingItem = default(ItemStack), ItemStack secondBuyingItem = default(ItemStack), ItemStack sellingItem = default(ItemStack))
         {
-            // to ensure "Expired" is required (not null)
-            if (Expired == null)
+            // to ensure "expired" is required (not null)
+            if (expired == null)
             {
-                throw new InvalidDataException("Expired is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("expired is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.Expired = Expired;
+                this.Expired = expired;
             }
-            // to ensure "GrantsExp" is required (not null)
-            if (GrantsExp == null)
+            // to ensure "grantsExp" is required (not null)
+            if (grantsExp == null)
             {
-                throw new InvalidDataException("GrantsExp is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("grantsExp is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.GrantsExp = GrantsExp;
+                this.GrantsExp = grantsExp;
             }
-            // to ensure "Uses" is required (not null)
-            if (Uses == null)
+            // to ensure "uses" is required (not null)
+            if (uses == null)
             {
-                throw new InvalidDataException("Uses is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("uses is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.Uses = Uses;
+                this.Uses = uses;
             }
-            // to ensure "MaxUses" is required (not null)
-            if (MaxUses == null)
+            // to ensure "maxUses" is required (not null)
+            if (maxUses == null)
             {
-                throw new InvalidDataException("MaxUses is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("maxUses is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.MaxUses = MaxUses;
+                this.MaxUses = maxUses;
             }
-            // to ensure "FirstBuyingItem" is required (not null)
-            if (FirstBuyingItem == null)
+            // to ensure "firstBuyingItem" is required (not null)
+            if (firstBuyingItem == null)
             {
-                throw new InvalidDataException("FirstBuyingItem is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("firstBuyingItem is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.FirstBuyingItem = FirstBuyingItem;
+                this.FirstBuyingItem = firstBuyingItem;
             }
-            // to ensure "SellingItem" is required (not null)
-            if (SellingItem == null)
+            // to ensure "sellingItem" is required (not null)
+            if (sellingItem == null)
             {
-                throw new InvalidDataException("SellingItem is a required property for TradeOffer and cannot be null");
+                throw new InvalidDataException("sellingItem is a required property for TradeOffer and cannot be null");
             }
             else
             {
-                this.SellingItem = SellingItem;
+                this.SellingItem = sellingItem;
             }
-            this.SecondBuyingItem = SecondBuyingItem;
+            this.SecondBuyingItem = secondBuyingItem;
         }
         
         /// <summary>
@@ -176,7 +176,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

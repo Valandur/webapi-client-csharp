@@ -33,14 +33,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandTask" /> class.
         /// </summary>
-        /// <param name="Commands">The list of commands that are executed.</param>
-        /// <param name="Name">The name of this task.</param>
-        /// <param name="Schedule">The command that is executed.</param>
-        public CommandTask(List<string> Commands = default(List<string>), string Name = default(string), Schedule Schedule = default(Schedule))
+        /// <param name="commands">The list of commands that are executed.</param>
+        /// <param name="name">The name of this task.</param>
+        /// <param name="schedule">The command that is executed.</param>
+        public CommandTask(List<string> commands = default(List<string>), string name = default(string), Schedule schedule = default(Schedule))
         {
-            this.Commands = Commands;
-            this.Name = Name;
-            this.Schedule = Schedule;
+            this.Commands = commands;
+            this.Name = name;
+            this.Schedule = schedule;
         }
         
         /// <summary>
@@ -83,7 +83,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

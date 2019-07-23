@@ -38,36 +38,36 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CreateWorldRequest" /> class.
         /// </summary>
-        /// <param name="Name">The name of the world (required).</param>
-        /// <param name="AllowCommands">AllowCommands.</param>
-        /// <param name="Difficulty">Which difficulty the world is set to.</param>
-        /// <param name="Dimension">The the dimension that this world belongs to.</param>
-        /// <param name="GameMode">Which game mode the world defaults to.</param>
-        /// <param name="Generator">Which generator to use for the world.</param>
-        /// <param name="KeepSpawnLoaded">KeepSpawnLoaded.</param>
-        /// <param name="LoadOnStartup">LoadOnStartup.</param>
-        /// <param name="Seed">The seed of the world.</param>
-        /// <param name="UsesMapFeatures">UsesMapFeatures.</param>
-        public CreateWorldRequest(string Name = default(string), bool? AllowCommands = default(bool?), CatalogType Difficulty = default(CatalogType), string Dimension = default(string), GameMode GameMode = default(GameMode), CatalogType Generator = default(CatalogType), bool? KeepSpawnLoaded = default(bool?), bool? LoadOnStartup = default(bool?), long? Seed = default(long?), bool? UsesMapFeatures = default(bool?))
+        /// <param name="name">The name of the world (required).</param>
+        /// <param name="allowCommands">allowCommands.</param>
+        /// <param name="difficulty">Which difficulty the world is set to.</param>
+        /// <param name="dimension">The the dimension that this world belongs to.</param>
+        /// <param name="gameMode">Which game mode the world defaults to.</param>
+        /// <param name="generator">Which generator to use for the world.</param>
+        /// <param name="keepSpawnLoaded">keepSpawnLoaded.</param>
+        /// <param name="loadOnStartup">loadOnStartup.</param>
+        /// <param name="seed">The seed of the world.</param>
+        /// <param name="usesMapFeatures">usesMapFeatures.</param>
+        public CreateWorldRequest(string name = default(string), bool? allowCommands = default(bool?), CatalogType difficulty = default(CatalogType), string dimension = default(string), GameMode gameMode = default(GameMode), CatalogType generator = default(CatalogType), bool? keepSpawnLoaded = default(bool?), bool? loadOnStartup = default(bool?), long? seed = default(long?), bool? usesMapFeatures = default(bool?))
         {
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for CreateWorldRequest and cannot be null");
+                throw new InvalidDataException("name is a required property for CreateWorldRequest and cannot be null");
             }
             else
             {
-                this.Name = Name;
+                this.Name = name;
             }
-            this.AllowCommands = AllowCommands;
-            this.Difficulty = Difficulty;
-            this.Dimension = Dimension;
-            this.GameMode = GameMode;
-            this.Generator = Generator;
-            this.KeepSpawnLoaded = KeepSpawnLoaded;
-            this.LoadOnStartup = LoadOnStartup;
-            this.Seed = Seed;
-            this.UsesMapFeatures = UsesMapFeatures;
+            this.AllowCommands = allowCommands;
+            this.Difficulty = difficulty;
+            this.Dimension = dimension;
+            this.GameMode = gameMode;
+            this.Generator = generator;
+            this.KeepSpawnLoaded = keepSpawnLoaded;
+            this.LoadOnStartup = loadOnStartup;
+            this.Seed = seed;
+            this.UsesMapFeatures = usesMapFeatures;
         }
         
         /// <summary>
@@ -162,7 +162,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

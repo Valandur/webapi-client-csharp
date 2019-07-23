@@ -38,57 +38,57 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Inventory" /> class.
         /// </summary>
-        /// <param name="Capacity">The maximum capacity of the inventory (maximum number of stacks) (required).</param>
-        /// <param name="Name">The name of the inventory (required).</param>
-        /// <param name="Slots">Gets a list of slots in the inventory (with their items) (required).</param>
-        /// <param name="TotalItems">The total amount of items currently in the inventory (required).</param>
-        /// <param name="Type">The type of the inventory (required).</param>
-        public Inventory(int? Capacity = default(int?), string Name = default(string), List<Slot> Slots = default(List<Slot>), int? TotalItems = default(int?), CatalogTypeInventoryArchetype Type = default(CatalogTypeInventoryArchetype))
+        /// <param name="capacity">The maximum capacity of the inventory (maximum number of stacks) (required).</param>
+        /// <param name="name">The name of the inventory (required).</param>
+        /// <param name="slots">Gets a list of slots in the inventory (with their items) (required).</param>
+        /// <param name="totalItems">The total amount of items currently in the inventory (required).</param>
+        /// <param name="type">The type of the inventory (required).</param>
+        public Inventory(int? capacity = default(int?), string name = default(string), List<Slot> slots = default(List<Slot>), int? totalItems = default(int?), CatalogTypeInventoryArchetype type = default(CatalogTypeInventoryArchetype))
         {
-            // to ensure "Capacity" is required (not null)
-            if (Capacity == null)
+            // to ensure "capacity" is required (not null)
+            if (capacity == null)
             {
-                throw new InvalidDataException("Capacity is a required property for Inventory and cannot be null");
+                throw new InvalidDataException("capacity is a required property for Inventory and cannot be null");
             }
             else
             {
-                this.Capacity = Capacity;
+                this.Capacity = capacity;
             }
-            // to ensure "Name" is required (not null)
-            if (Name == null)
+            // to ensure "name" is required (not null)
+            if (name == null)
             {
-                throw new InvalidDataException("Name is a required property for Inventory and cannot be null");
-            }
-            else
-            {
-                this.Name = Name;
-            }
-            // to ensure "Slots" is required (not null)
-            if (Slots == null)
-            {
-                throw new InvalidDataException("Slots is a required property for Inventory and cannot be null");
+                throw new InvalidDataException("name is a required property for Inventory and cannot be null");
             }
             else
             {
-                this.Slots = Slots;
+                this.Name = name;
             }
-            // to ensure "TotalItems" is required (not null)
-            if (TotalItems == null)
+            // to ensure "slots" is required (not null)
+            if (slots == null)
             {
-                throw new InvalidDataException("TotalItems is a required property for Inventory and cannot be null");
-            }
-            else
-            {
-                this.TotalItems = TotalItems;
-            }
-            // to ensure "Type" is required (not null)
-            if (Type == null)
-            {
-                throw new InvalidDataException("Type is a required property for Inventory and cannot be null");
+                throw new InvalidDataException("slots is a required property for Inventory and cannot be null");
             }
             else
             {
-                this.Type = Type;
+                this.Slots = slots;
+            }
+            // to ensure "totalItems" is required (not null)
+            if (totalItems == null)
+            {
+                throw new InvalidDataException("totalItems is a required property for Inventory and cannot be null");
+            }
+            else
+            {
+                this.TotalItems = totalItems;
+            }
+            // to ensure "type" is required (not null)
+            if (type == null)
+            {
+                throw new InvalidDataException("type is a required property for Inventory and cannot be null");
+            }
+            else
+            {
+                this.Type = type;
             }
         }
         
@@ -148,7 +148,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

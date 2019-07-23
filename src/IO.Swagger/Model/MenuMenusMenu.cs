@@ -38,14 +38,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MenuMenusMenu" /> class.
         /// </summary>
-        /// <param name="Elements">Flattened list of all element in this menu.</param>
-        /// <param name="Pages">Get the amount of pages for this menu.</param>
-        /// <param name="Title">The title of this menu.</param>
-        public MenuMenusMenu(Dictionary<string, MegaMenusElement> Elements = default(Dictionary<string, MegaMenusElement>), int? Pages = default(int?), string Title = default(string))
+        /// <param name="elements">Flattened list of all element in this menu.</param>
+        /// <param name="pages">Get the amount of pages for this menu.</param>
+        /// <param name="title">The title of this menu.</param>
+        public MenuMenusMenu(Dictionary<string, MegaMenusElement> elements = default(Dictionary<string, MegaMenusElement>), int? pages = default(int?), string title = default(string))
         {
-            this.Elements = Elements;
-            this.Pages = Pages;
-            this.Title = Title;
+            this.Elements = elements;
+            this.Pages = pages;
+            this.Title = title;
         }
         
         /// <summary>
@@ -96,7 +96,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

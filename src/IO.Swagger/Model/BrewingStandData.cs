@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="BrewingStandData" /> class.
         /// </summary>
-        /// <param name="RemainingBrewTime">The time remaining until brewing is complete (required).</param>
-        public BrewingStandData(int? RemainingBrewTime = default(int?))
+        /// <param name="remainingBrewTime">The time remaining until brewing is complete (required).</param>
+        public BrewingStandData(int? remainingBrewTime = default(int?))
         {
-            // to ensure "RemainingBrewTime" is required (not null)
-            if (RemainingBrewTime == null)
+            // to ensure "remainingBrewTime" is required (not null)
+            if (remainingBrewTime == null)
             {
-                throw new InvalidDataException("RemainingBrewTime is a required property for BrewingStandData and cannot be null");
+                throw new InvalidDataException("remainingBrewTime is a required property for BrewingStandData and cannot be null");
             }
             else
             {
-                this.RemainingBrewTime = RemainingBrewTime;
+                this.RemainingBrewTime = remainingBrewTime;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

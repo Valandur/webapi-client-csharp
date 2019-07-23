@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="HorseData" /> class.
         /// </summary>
-        /// <param name="Color">The color of the horse (required).</param>
-        /// <param name="Style">The style of the horse (required).</param>
-        public HorseData(CatalogType Color = default(CatalogType), CatalogType Style = default(CatalogType))
+        /// <param name="color">The color of the horse (required).</param>
+        /// <param name="style">The style of the horse (required).</param>
+        public HorseData(CatalogType color = default(CatalogType), CatalogType style = default(CatalogType))
         {
-            // to ensure "Color" is required (not null)
-            if (Color == null)
+            // to ensure "color" is required (not null)
+            if (color == null)
             {
-                throw new InvalidDataException("Color is a required property for HorseData and cannot be null");
+                throw new InvalidDataException("color is a required property for HorseData and cannot be null");
             }
             else
             {
-                this.Color = Color;
+                this.Color = color;
             }
-            // to ensure "Style" is required (not null)
-            if (Style == null)
+            // to ensure "style" is required (not null)
+            if (style == null)
             {
-                throw new InvalidDataException("Style is a required property for HorseData and cannot be null");
+                throw new InvalidDataException("style is a required property for HorseData and cannot be null");
             }
             else
             {
-                this.Style = Style;
+                this.Style = style;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

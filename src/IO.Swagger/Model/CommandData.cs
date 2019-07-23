@@ -38,40 +38,40 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="CommandData" /> class.
         /// </summary>
-        /// <param name="TracksOutput">True if the output is tracked, false otherwise (required).</param>
-        /// <param name="LastOutput">The last output produced.</param>
-        /// <param name="StoredCommand">The stored command (required).</param>
-        /// <param name="SuccessCount">The amount of successfull executions (required).</param>
-        public CommandData(bool? TracksOutput = default(bool?), string LastOutput = default(string), string StoredCommand = default(string), int? SuccessCount = default(int?))
+        /// <param name="tracksOutput">True if the output is tracked, false otherwise (required).</param>
+        /// <param name="lastOutput">The last output produced.</param>
+        /// <param name="storedCommand">The stored command (required).</param>
+        /// <param name="successCount">The amount of successfull executions (required).</param>
+        public CommandData(bool? tracksOutput = default(bool?), string lastOutput = default(string), string storedCommand = default(string), int? successCount = default(int?))
         {
-            // to ensure "TracksOutput" is required (not null)
-            if (TracksOutput == null)
+            // to ensure "tracksOutput" is required (not null)
+            if (tracksOutput == null)
             {
-                throw new InvalidDataException("TracksOutput is a required property for CommandData and cannot be null");
+                throw new InvalidDataException("tracksOutput is a required property for CommandData and cannot be null");
             }
             else
             {
-                this.TracksOutput = TracksOutput;
+                this.TracksOutput = tracksOutput;
             }
-            // to ensure "StoredCommand" is required (not null)
-            if (StoredCommand == null)
+            // to ensure "storedCommand" is required (not null)
+            if (storedCommand == null)
             {
-                throw new InvalidDataException("StoredCommand is a required property for CommandData and cannot be null");
+                throw new InvalidDataException("storedCommand is a required property for CommandData and cannot be null");
             }
             else
             {
-                this.StoredCommand = StoredCommand;
+                this.StoredCommand = storedCommand;
             }
-            // to ensure "SuccessCount" is required (not null)
-            if (SuccessCount == null)
+            // to ensure "successCount" is required (not null)
+            if (successCount == null)
             {
-                throw new InvalidDataException("SuccessCount is a required property for CommandData and cannot be null");
+                throw new InvalidDataException("successCount is a required property for CommandData and cannot be null");
             }
             else
             {
-                this.SuccessCount = SuccessCount;
+                this.SuccessCount = successCount;
             }
-            this.LastOutput = LastOutput;
+            this.LastOutput = lastOutput;
         }
         
         /// <summary>
@@ -122,7 +122,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="DamageableData" /> class.
         /// </summary>
-        /// <param name="LastAttacker">The entity which last attacked this entity.</param>
-        /// <param name="LastDamage">The amount of damage inflicted by the last attacker.</param>
-        public DamageableData(EntitySnapshot LastAttacker = default(EntitySnapshot), double? LastDamage = default(double?))
+        /// <param name="lastAttacker">The entity which last attacked this entity.</param>
+        /// <param name="lastDamage">The amount of damage inflicted by the last attacker.</param>
+        public DamageableData(EntitySnapshot lastAttacker = default(EntitySnapshot), double? lastDamage = default(double?))
         {
-            this.LastAttacker = LastAttacker;
-            this.LastDamage = LastDamage;
+            this.LastAttacker = lastAttacker;
+            this.LastDamage = lastDamage;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

@@ -33,20 +33,20 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="ServerReport" /> class.
         /// </summary>
-        /// <param name="DailyAverage">DailyAverage.</param>
-        /// <param name="From">From.</param>
-        /// <param name="MonthlyAverage">MonthlyAverage.</param>
-        /// <param name="To">To.</param>
-        /// <param name="Total">Total.</param>
-        /// <param name="WeeklyAverage">WeeklyAverage.</param>
-        public ServerReport(TimeHolder DailyAverage = default(TimeHolder), LocalDate From = default(LocalDate), TimeHolder MonthlyAverage = default(TimeHolder), LocalDate To = default(LocalDate), TimeHolder Total = default(TimeHolder), TimeHolder WeeklyAverage = default(TimeHolder))
+        /// <param name="dailyAverage">dailyAverage.</param>
+        /// <param name="from">from.</param>
+        /// <param name="monthlyAverage">monthlyAverage.</param>
+        /// <param name="to">to.</param>
+        /// <param name="total">total.</param>
+        /// <param name="weeklyAverage">weeklyAverage.</param>
+        public ServerReport(TimeHolder dailyAverage = default(TimeHolder), LocalDate from = default(LocalDate), TimeHolder monthlyAverage = default(TimeHolder), LocalDate to = default(LocalDate), TimeHolder total = default(TimeHolder), TimeHolder weeklyAverage = default(TimeHolder))
         {
-            this.DailyAverage = DailyAverage;
-            this.From = From;
-            this.MonthlyAverage = MonthlyAverage;
-            this.To = To;
-            this.Total = Total;
-            this.WeeklyAverage = WeeklyAverage;
+            this.DailyAverage = dailyAverage;
+            this.From = from;
+            this.MonthlyAverage = monthlyAverage;
+            this.To = to;
+            this.Total = total;
+            this.WeeklyAverage = weeklyAverage;
         }
         
         /// <summary>
@@ -107,7 +107,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

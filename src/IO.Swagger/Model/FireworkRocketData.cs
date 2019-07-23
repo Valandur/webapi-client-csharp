@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="FireworkRocketData" /> class.
         /// </summary>
-        /// <param name="FlightModifier">The flight modifier of this firework rocket (required).</param>
-        public FireworkRocketData(int? FlightModifier = default(int?))
+        /// <param name="flightModifier">The flight modifier of this firework rocket (required).</param>
+        public FireworkRocketData(int? flightModifier = default(int?))
         {
-            // to ensure "FlightModifier" is required (not null)
-            if (FlightModifier == null)
+            // to ensure "flightModifier" is required (not null)
+            if (flightModifier == null)
             {
-                throw new InvalidDataException("FlightModifier is a required property for FireworkRocketData and cannot be null");
+                throw new InvalidDataException("flightModifier is a required property for FireworkRocketData and cannot be null");
             }
             else
             {
-                this.FlightModifier = FlightModifier;
+                this.FlightModifier = flightModifier;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

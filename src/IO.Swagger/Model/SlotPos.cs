@@ -31,7 +31,7 @@ namespace IO.Swagger.Model
     public partial class SlotPos :  IEquatable<SlotPos>, IValidatableObject
     {
         /// <summary>
-        /// Defines _Operator
+        /// Defines Operator
         /// </summary>
         [JsonConverter(typeof(StringEnumConverter))]
         public enum OperatorEnum
@@ -81,25 +81,25 @@ namespace IO.Swagger.Model
         }
 
         /// <summary>
-        /// Gets or Sets _Operator
+        /// Gets or Sets Operator
         /// </summary>
         [DataMember(Name="operator", EmitDefaultValue=false)]
-        public OperatorEnum? _Operator { get; set; }
+        public OperatorEnum? Operator { get; set; }
         /// <summary>
         /// Initializes a new instance of the <see cref="SlotPos" /> class.
         /// </summary>
-        /// <param name="_Operator">_Operator.</param>
-        /// <param name="Key">Key.</param>
-        /// <param name="Value">Value.</param>
-        /// <param name="Y">Y.</param>
-        /// <param name="X">X.</param>
-        public SlotPos(OperatorEnum? _Operator = default(OperatorEnum?), string Key = default(string), Vector2i Value = default(Vector2i), int? Y = default(int?), int? X = default(int?))
+        /// <param name="_operator">_operator.</param>
+        /// <param name="key">key.</param>
+        /// <param name="value">value.</param>
+        /// <param name="y">y.</param>
+        /// <param name="x">x.</param>
+        public SlotPos(OperatorEnum? _operator = default(OperatorEnum?), string key = default(string), Vector2i value = default(Vector2i), int? y = default(int?), int? x = default(int?))
         {
-            this._Operator = _Operator;
-            this.Key = Key;
-            this.Value = Value;
-            this.Y = Y;
-            this.X = X;
+            this.Operator = _operator;
+            this.Key = key;
+            this.Value = value;
+            this.Y = y;
+            this.X = x;
         }
         
 
@@ -135,7 +135,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class SlotPos {\n");
-            sb.Append("  _Operator: ").Append(_Operator).Append("\n");
+            sb.Append("  Operator: ").Append(Operator).Append("\n");
             sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("  Y: ").Append(Y).Append("\n");
@@ -148,7 +148,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
@@ -175,9 +175,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this._Operator == input._Operator ||
-                    (this._Operator != null &&
-                    this._Operator.Equals(input._Operator))
+                    this.Operator == input.Operator ||
+                    (this.Operator != null &&
+                    this.Operator.Equals(input.Operator))
                 ) && 
                 (
                     this.Key == input.Key ||
@@ -210,8 +210,8 @@ namespace IO.Swagger.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this._Operator != null)
-                    hashCode = hashCode * 59 + this._Operator.GetHashCode();
+                if (this.Operator != null)
+                    hashCode = hashCode * 59 + this.Operator.GetHashCode();
                 if (this.Key != null)
                     hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Value != null)

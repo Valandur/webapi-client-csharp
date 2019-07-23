@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SlimeData" /> class.
         /// </summary>
-        /// <param name="Size">The size of the slime entity (required).</param>
-        public SlimeData(int? Size = default(int?))
+        /// <param name="size">The size of the slime entity (required).</param>
+        public SlimeData(int? size = default(int?))
         {
-            // to ensure "Size" is required (not null)
-            if (Size == null)
+            // to ensure "size" is required (not null)
+            if (size == null)
             {
-                throw new InvalidDataException("Size is a required property for SlimeData and cannot be null");
+                throw new InvalidDataException("size is a required property for SlimeData and cannot be null");
             }
             else
             {
-                this.Size = Size;
+                this.Size = size;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

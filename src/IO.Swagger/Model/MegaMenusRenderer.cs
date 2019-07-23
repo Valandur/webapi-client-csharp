@@ -38,14 +38,14 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MegaMenusRenderer" /> class.
         /// </summary>
-        /// <param name="Height">The rendering height for this menu in inventory rows.</param>
-        /// <param name="Menu">The id for the menu this renderer is currently displaying.</param>
-        /// <param name="Viewer">All players currently observing this menu.</param>
-        public MegaMenusRenderer(int? Height = default(int?), Guid? Menu = default(Guid?), List<Guid?> Viewer = default(List<Guid?>))
+        /// <param name="height">The rendering height for this menu in inventory rows.</param>
+        /// <param name="menu">The id for the menu this renderer is currently displaying.</param>
+        /// <param name="viewer">All players currently observing this menu.</param>
+        public MegaMenusRenderer(int? height = default(int?), Guid? menu = default(Guid?), List<Guid?> viewer = default(List<Guid?>))
         {
-            this.Height = Height;
-            this.Menu = Menu;
-            this.Viewer = Viewer;
+            this.Height = height;
+            this.Menu = menu;
+            this.Viewer = viewer;
         }
         
         /// <summary>
@@ -96,7 +96,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

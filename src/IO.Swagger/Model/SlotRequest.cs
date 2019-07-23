@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="SlotRequest" /> class.
         /// </summary>
-        /// <param name="SlotIndex">The index of the slot to change.</param>
-        /// <param name="Stack">The ItemStack that should be in the slot. null for an empty slot.</param>
-        public SlotRequest(int? SlotIndex = default(int?), ItemStack Stack = default(ItemStack))
+        /// <param name="slotIndex">The index of the slot to change.</param>
+        /// <param name="stack">The ItemStack that should be in the slot. null for an empty slot.</param>
+        public SlotRequest(int? slotIndex = default(int?), ItemStack stack = default(ItemStack))
         {
-            this.SlotIndex = SlotIndex;
-            this.Stack = Stack;
+            this.SlotIndex = slotIndex;
+            this.Stack = stack;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

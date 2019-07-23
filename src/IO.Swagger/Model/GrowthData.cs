@@ -38,17 +38,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="GrowthData" /> class.
         /// </summary>
-        /// <param name="Stage">The current growth stage of this entity (required).</param>
-        public GrowthData(int? Stage = default(int?))
+        /// <param name="stage">The current growth stage of this entity (required).</param>
+        public GrowthData(int? stage = default(int?))
         {
-            // to ensure "Stage" is required (not null)
-            if (Stage == null)
+            // to ensure "stage" is required (not null)
+            if (stage == null)
             {
-                throw new InvalidDataException("Stage is a required property for GrowthData and cannot be null");
+                throw new InvalidDataException("stage is a required property for GrowthData and cannot be null");
             }
             else
             {
-                this.Stage = Stage;
+                this.Stage = stage;
             }
         }
         
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

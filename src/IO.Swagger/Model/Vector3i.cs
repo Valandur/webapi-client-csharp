@@ -38,37 +38,37 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Vector3i" /> class.
         /// </summary>
-        /// <param name="X">The x-coordinate (required).</param>
-        /// <param name="Y">The y-coordinate (required).</param>
-        /// <param name="Z">The z-coordinate (required).</param>
-        public Vector3i(int? X = default(int?), int? Y = default(int?), int? Z = default(int?))
+        /// <param name="x">The x-coordinate (required).</param>
+        /// <param name="y">The y-coordinate (required).</param>
+        /// <param name="z">The z-coordinate (required).</param>
+        public Vector3i(int? x = default(int?), int? y = default(int?), int? z = default(int?))
         {
-            // to ensure "X" is required (not null)
-            if (X == null)
+            // to ensure "x" is required (not null)
+            if (x == null)
             {
-                throw new InvalidDataException("X is a required property for Vector3i and cannot be null");
+                throw new InvalidDataException("x is a required property for Vector3i and cannot be null");
             }
             else
             {
-                this.X = X;
+                this.X = x;
             }
-            // to ensure "Y" is required (not null)
-            if (Y == null)
+            // to ensure "y" is required (not null)
+            if (y == null)
             {
-                throw new InvalidDataException("Y is a required property for Vector3i and cannot be null");
-            }
-            else
-            {
-                this.Y = Y;
-            }
-            // to ensure "Z" is required (not null)
-            if (Z == null)
-            {
-                throw new InvalidDataException("Z is a required property for Vector3i and cannot be null");
+                throw new InvalidDataException("y is a required property for Vector3i and cannot be null");
             }
             else
             {
-                this.Z = Z;
+                this.Y = y;
+            }
+            // to ensure "z" is required (not null)
+            if (z == null)
+            {
+                throw new InvalidDataException("z is a required property for Vector3i and cannot be null");
+            }
+            else
+            {
+                this.Z = z;
             }
         }
         
@@ -112,7 +112,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

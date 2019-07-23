@@ -33,12 +33,12 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="TimeHolder" /> class.
         /// </summary>
-        /// <param name="ActiveTime">The amount of active time spent.</param>
-        /// <param name="AfkTime">The amount of time spent afk (only works if Nucleus is present).</param>
-        public TimeHolder(int? ActiveTime = default(int?), int? AfkTime = default(int?))
+        /// <param name="activeTime">The amount of active time spent.</param>
+        /// <param name="afkTime">The amount of time spent afk (only works if Nucleus is present).</param>
+        public TimeHolder(int? activeTime = default(int?), int? afkTime = default(int?))
         {
-            this.ActiveTime = ActiveTime;
-            this.AfkTime = AfkTime;
+            this.ActiveTime = activeTime;
+            this.AfkTime = afkTime;
         }
         
         /// <summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

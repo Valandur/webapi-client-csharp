@@ -38,97 +38,97 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MobSpawnerData" /> class.
         /// </summary>
-        /// <param name="MaximumNearbyEntities">The maximum number of nearby entities for another mob to spawn (required).</param>
-        /// <param name="MaximumSpawnDelay">The maximum delay between two consecutive spawns (required).</param>
-        /// <param name="MinimumSpawnDelay">The minimum delay between two consecutive spawns (required).</param>
-        /// <param name="NextEntityToSpawn">The next entity type that will be spawned by this spawner (required).</param>
-        /// <param name="PossibleEntitiesToSpawn">A weighted table of probability for each entity type to spawn (required).</param>
-        /// <param name="RemainingDelay">The remaining time until the next spawn attempt (required).</param>
-        /// <param name="RequiredPlayerRange">The block range within there must be a player to trigger the spawn (required).</param>
-        /// <param name="SpawnCount">The amount of entities that will spawn in one attempt (required).</param>
-        /// <param name="SpawnRange">The range from the spawner within which the entities will spawn (required).</param>
-        public MobSpawnerData(int? MaximumNearbyEntities = default(int?), int? MaximumSpawnDelay = default(int?), int? MinimumSpawnDelay = default(int?), EntityArchtype NextEntityToSpawn = default(EntityArchtype), List<TableEntryEntityArchetype> PossibleEntitiesToSpawn = default(List<TableEntryEntityArchetype>), int? RemainingDelay = default(int?), int? RequiredPlayerRange = default(int?), int? SpawnCount = default(int?), int? SpawnRange = default(int?))
+        /// <param name="maximumNearbyEntities">The maximum number of nearby entities for another mob to spawn (required).</param>
+        /// <param name="maximumSpawnDelay">The maximum delay between two consecutive spawns (required).</param>
+        /// <param name="minimumSpawnDelay">The minimum delay between two consecutive spawns (required).</param>
+        /// <param name="nextEntityToSpawn">The next entity type that will be spawned by this spawner (required).</param>
+        /// <param name="possibleEntitiesToSpawn">A weighted table of probability for each entity type to spawn (required).</param>
+        /// <param name="remainingDelay">The remaining time until the next spawn attempt (required).</param>
+        /// <param name="requiredPlayerRange">The block range within there must be a player to trigger the spawn (required).</param>
+        /// <param name="spawnCount">The amount of entities that will spawn in one attempt (required).</param>
+        /// <param name="spawnRange">The range from the spawner within which the entities will spawn (required).</param>
+        public MobSpawnerData(int? maximumNearbyEntities = default(int?), int? maximumSpawnDelay = default(int?), int? minimumSpawnDelay = default(int?), EntityArchtype nextEntityToSpawn = default(EntityArchtype), List<TableEntryEntityArchetype> possibleEntitiesToSpawn = default(List<TableEntryEntityArchetype>), int? remainingDelay = default(int?), int? requiredPlayerRange = default(int?), int? spawnCount = default(int?), int? spawnRange = default(int?))
         {
-            // to ensure "MaximumNearbyEntities" is required (not null)
-            if (MaximumNearbyEntities == null)
+            // to ensure "maximumNearbyEntities" is required (not null)
+            if (maximumNearbyEntities == null)
             {
-                throw new InvalidDataException("MaximumNearbyEntities is a required property for MobSpawnerData and cannot be null");
+                throw new InvalidDataException("maximumNearbyEntities is a required property for MobSpawnerData and cannot be null");
             }
             else
             {
-                this.MaximumNearbyEntities = MaximumNearbyEntities;
+                this.MaximumNearbyEntities = maximumNearbyEntities;
             }
-            // to ensure "MaximumSpawnDelay" is required (not null)
-            if (MaximumSpawnDelay == null)
+            // to ensure "maximumSpawnDelay" is required (not null)
+            if (maximumSpawnDelay == null)
             {
-                throw new InvalidDataException("MaximumSpawnDelay is a required property for MobSpawnerData and cannot be null");
-            }
-            else
-            {
-                this.MaximumSpawnDelay = MaximumSpawnDelay;
-            }
-            // to ensure "MinimumSpawnDelay" is required (not null)
-            if (MinimumSpawnDelay == null)
-            {
-                throw new InvalidDataException("MinimumSpawnDelay is a required property for MobSpawnerData and cannot be null");
+                throw new InvalidDataException("maximumSpawnDelay is a required property for MobSpawnerData and cannot be null");
             }
             else
             {
-                this.MinimumSpawnDelay = MinimumSpawnDelay;
+                this.MaximumSpawnDelay = maximumSpawnDelay;
             }
-            // to ensure "NextEntityToSpawn" is required (not null)
-            if (NextEntityToSpawn == null)
+            // to ensure "minimumSpawnDelay" is required (not null)
+            if (minimumSpawnDelay == null)
             {
-                throw new InvalidDataException("NextEntityToSpawn is a required property for MobSpawnerData and cannot be null");
-            }
-            else
-            {
-                this.NextEntityToSpawn = NextEntityToSpawn;
-            }
-            // to ensure "PossibleEntitiesToSpawn" is required (not null)
-            if (PossibleEntitiesToSpawn == null)
-            {
-                throw new InvalidDataException("PossibleEntitiesToSpawn is a required property for MobSpawnerData and cannot be null");
+                throw new InvalidDataException("minimumSpawnDelay is a required property for MobSpawnerData and cannot be null");
             }
             else
             {
-                this.PossibleEntitiesToSpawn = PossibleEntitiesToSpawn;
+                this.MinimumSpawnDelay = minimumSpawnDelay;
             }
-            // to ensure "RemainingDelay" is required (not null)
-            if (RemainingDelay == null)
+            // to ensure "nextEntityToSpawn" is required (not null)
+            if (nextEntityToSpawn == null)
             {
-                throw new InvalidDataException("RemainingDelay is a required property for MobSpawnerData and cannot be null");
-            }
-            else
-            {
-                this.RemainingDelay = RemainingDelay;
-            }
-            // to ensure "RequiredPlayerRange" is required (not null)
-            if (RequiredPlayerRange == null)
-            {
-                throw new InvalidDataException("RequiredPlayerRange is a required property for MobSpawnerData and cannot be null");
+                throw new InvalidDataException("nextEntityToSpawn is a required property for MobSpawnerData and cannot be null");
             }
             else
             {
-                this.RequiredPlayerRange = RequiredPlayerRange;
+                this.NextEntityToSpawn = nextEntityToSpawn;
             }
-            // to ensure "SpawnCount" is required (not null)
-            if (SpawnCount == null)
+            // to ensure "possibleEntitiesToSpawn" is required (not null)
+            if (possibleEntitiesToSpawn == null)
             {
-                throw new InvalidDataException("SpawnCount is a required property for MobSpawnerData and cannot be null");
-            }
-            else
-            {
-                this.SpawnCount = SpawnCount;
-            }
-            // to ensure "SpawnRange" is required (not null)
-            if (SpawnRange == null)
-            {
-                throw new InvalidDataException("SpawnRange is a required property for MobSpawnerData and cannot be null");
+                throw new InvalidDataException("possibleEntitiesToSpawn is a required property for MobSpawnerData and cannot be null");
             }
             else
             {
-                this.SpawnRange = SpawnRange;
+                this.PossibleEntitiesToSpawn = possibleEntitiesToSpawn;
+            }
+            // to ensure "remainingDelay" is required (not null)
+            if (remainingDelay == null)
+            {
+                throw new InvalidDataException("remainingDelay is a required property for MobSpawnerData and cannot be null");
+            }
+            else
+            {
+                this.RemainingDelay = remainingDelay;
+            }
+            // to ensure "requiredPlayerRange" is required (not null)
+            if (requiredPlayerRange == null)
+            {
+                throw new InvalidDataException("requiredPlayerRange is a required property for MobSpawnerData and cannot be null");
+            }
+            else
+            {
+                this.RequiredPlayerRange = requiredPlayerRange;
+            }
+            // to ensure "spawnCount" is required (not null)
+            if (spawnCount == null)
+            {
+                throw new InvalidDataException("spawnCount is a required property for MobSpawnerData and cannot be null");
+            }
+            else
+            {
+                this.SpawnCount = spawnCount;
+            }
+            // to ensure "spawnRange" is required (not null)
+            if (spawnRange == null)
+            {
+                throw new InvalidDataException("spawnRange is a required property for MobSpawnerData and cannot be null");
+            }
+            else
+            {
+                this.SpawnRange = spawnRange;
             }
         }
         
@@ -220,7 +220,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

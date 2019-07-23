@@ -33,40 +33,40 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="UpdatePlayerRequest" /> class.
         /// </summary>
-        /// <param name="Damage">The damage the entity will take.</param>
-        /// <param name="Exhaustion">The exhaustion of the player.</param>
-        /// <param name="ExperienceSinceLevel">The amount of experience gained since the last level.</param>
-        /// <param name="FoodLevel">The food level of the player.</param>
-        /// <param name="GameMode">The game mode of the player.</param>
-        /// <param name="Health">The current amount of health the player has.</param>
-        /// <param name="Inventory">The slots in the inventory of the entity to modify.</param>
-        /// <param name="Level">The player level.</param>
-        /// <param name="MaxHealth">The maximum health of the player.</param>
-        /// <param name="Position">The position that the entity will be moved to.</param>
-        /// <param name="Rotation">The new rotation of the entity.</param>
-        /// <param name="Saturation">The saturation of the player.</param>
-        /// <param name="Scale">The new scale of the entity.</param>
-        /// <param name="TotalExperience">The total experience of the player.</param>
-        /// <param name="Velocity">The new speed of the entity.</param>
-        /// <param name="World">The world that the entity will be moved to.</param>
-        public UpdatePlayerRequest(DamageRequest Damage = default(DamageRequest), double? Exhaustion = default(double?), int? ExperienceSinceLevel = default(int?), int? FoodLevel = default(int?), string GameMode = default(string), double? Health = default(double?), List<SlotRequest> Inventory = default(List<SlotRequest>), int? Level = default(int?), double? MaxHealth = default(double?), Vector3d Position = default(Vector3d), Vector3d Rotation = default(Vector3d), double? Saturation = default(double?), Vector3d Scale = default(Vector3d), int? TotalExperience = default(int?), Vector3d Velocity = default(Vector3d), string World = default(string))
+        /// <param name="damage">The damage the entity will take.</param>
+        /// <param name="exhaustion">The exhaustion of the player.</param>
+        /// <param name="experienceSinceLevel">The amount of experience gained since the last level.</param>
+        /// <param name="foodLevel">The food level of the player.</param>
+        /// <param name="gameMode">The game mode of the player.</param>
+        /// <param name="health">The current amount of health the player has.</param>
+        /// <param name="inventory">The slots in the inventory of the entity to modify.</param>
+        /// <param name="level">The player level.</param>
+        /// <param name="maxHealth">The maximum health of the player.</param>
+        /// <param name="position">The position that the entity will be moved to.</param>
+        /// <param name="rotation">The new rotation of the entity.</param>
+        /// <param name="saturation">The saturation of the player.</param>
+        /// <param name="scale">The new scale of the entity.</param>
+        /// <param name="totalExperience">The total experience of the player.</param>
+        /// <param name="velocity">The new speed of the entity.</param>
+        /// <param name="world">The world that the entity will be moved to.</param>
+        public UpdatePlayerRequest(DamageRequest damage = default(DamageRequest), double? exhaustion = default(double?), int? experienceSinceLevel = default(int?), int? foodLevel = default(int?), string gameMode = default(string), double? health = default(double?), List<SlotRequest> inventory = default(List<SlotRequest>), int? level = default(int?), double? maxHealth = default(double?), Vector3d position = default(Vector3d), Vector3d rotation = default(Vector3d), double? saturation = default(double?), Vector3d scale = default(Vector3d), int? totalExperience = default(int?), Vector3d velocity = default(Vector3d), string world = default(string))
         {
-            this.Damage = Damage;
-            this.Exhaustion = Exhaustion;
-            this.ExperienceSinceLevel = ExperienceSinceLevel;
-            this.FoodLevel = FoodLevel;
-            this.GameMode = GameMode;
-            this.Health = Health;
-            this.Inventory = Inventory;
-            this.Level = Level;
-            this.MaxHealth = MaxHealth;
-            this.Position = Position;
-            this.Rotation = Rotation;
-            this.Saturation = Saturation;
-            this.Scale = Scale;
-            this.TotalExperience = TotalExperience;
-            this.Velocity = Velocity;
-            this.World = World;
+            this.Damage = damage;
+            this.Exhaustion = exhaustion;
+            this.ExperienceSinceLevel = experienceSinceLevel;
+            this.FoodLevel = foodLevel;
+            this.GameMode = gameMode;
+            this.Health = health;
+            this.Inventory = inventory;
+            this.Level = level;
+            this.MaxHealth = maxHealth;
+            this.Position = position;
+            this.Rotation = rotation;
+            this.Saturation = saturation;
+            this.Scale = scale;
+            this.TotalExperience = totalExperience;
+            this.Velocity = velocity;
+            this.World = world;
         }
         
         /// <summary>
@@ -213,7 +213,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }

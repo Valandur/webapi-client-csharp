@@ -38,27 +38,27 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="MinecartBlockData" /> class.
         /// </summary>
-        /// <param name="State">The current state of the block (required).</param>
-        /// <param name="Offset">The offset of the block (required).</param>
-        public MinecartBlockData(BlockState State = default(BlockState), int? Offset = default(int?))
+        /// <param name="state">The current state of the block (required).</param>
+        /// <param name="offset">The offset of the block (required).</param>
+        public MinecartBlockData(BlockState state = default(BlockState), int? offset = default(int?))
         {
-            // to ensure "State" is required (not null)
-            if (State == null)
+            // to ensure "state" is required (not null)
+            if (state == null)
             {
-                throw new InvalidDataException("State is a required property for MinecartBlockData and cannot be null");
+                throw new InvalidDataException("state is a required property for MinecartBlockData and cannot be null");
             }
             else
             {
-                this.State = State;
+                this.State = state;
             }
-            // to ensure "Offset" is required (not null)
-            if (Offset == null)
+            // to ensure "offset" is required (not null)
+            if (offset == null)
             {
-                throw new InvalidDataException("Offset is a required property for MinecartBlockData and cannot be null");
+                throw new InvalidDataException("offset is a required property for MinecartBlockData and cannot be null");
             }
             else
             {
-                this.Offset = Offset;
+                this.Offset = offset;
             }
         }
         
@@ -94,7 +94,7 @@ namespace IO.Swagger.Model
         /// Returns the JSON string presentation of the object
         /// </summary>
         /// <returns>JSON string presentation of the object</returns>
-        public string ToJson()
+        public virtual string ToJson()
         {
             return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
